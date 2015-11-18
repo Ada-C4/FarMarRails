@@ -1,5 +1,5 @@
 <ul>
-  <% Market.all.each do |market| %>
-    <li><%= market.name %></li>
+  <% @markets.each do |market| %>
+    <li><%= link_to market.name, market %></li>
   <% end %>
 </ul>

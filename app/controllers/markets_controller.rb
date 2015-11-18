@@ -2,8 +2,11 @@ class MarketsController < ApplicationController
   def home
   end
   def index
+    @markets = Market.all
   end
   def show
+    id = params[:id]
+    @market = Market.find(id)
   end
   def create
   end
@@ -12,7 +15,5 @@ class MarketsController < ApplicationController
   def edit
   end
   def update
-  end
-  def destroy
   end
 end
