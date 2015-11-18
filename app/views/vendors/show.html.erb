@@ -1,4 +1,7 @@
   <h3>Vendors</h3>
+
+  <%= button_to "Add new vendor", new_vendor_path, method: :get %>
+
     <ul>
       <% @market.vendors.each do |vendor| %>
       <li>
