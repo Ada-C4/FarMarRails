@@ -4,7 +4,8 @@ class MarketsController < ApplicationController
   end
 
   def show
-    # show details of a specific market
+    #needs a conditional
+
   end
 
 end

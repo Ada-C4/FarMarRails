@@ -1,9 +1,13 @@
 class VendorsController < ApplicationController
   def index
-
+      #conditional
   end
 
   def show
-    # go to the same view, render different partials?
+    if request.path_info.include? '/market/'?
+      render market_vendor
+    else
+      render vendor
+    end
   end
 end
