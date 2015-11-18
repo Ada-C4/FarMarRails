@@ -2,6 +2,6 @@
 
 <ul>
   <% @vendors.each do |vendor| %>
-    <li><%= link_to vendor.name, vendor %></li>
+    <li><%= link_to vendor.name, "/markets/#{vendor.market_id}/vendors/#{vendor.id}" %></li>
   <% end %>
 </ul>
