@@ -1,8 +1,3 @@
-<h1>Vendor list</h1>
+<h1>Something</h1>
 
-<% @markets.each do |market| %>
-  <%= market.name %>
-<% end %>
-
-<p> This will contain a list of all vendors. When you click on a vendor, it will
-  direct you to information about that specific vendor.</p>
+<%= render partial: 'shared/vendorlist', locals: { vendors: @vendors} %>

@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   root 'markets#home'
 
-  get 'vendors/' => 'vendors#markets'
+  get 'vendors/' => 'vendors#vendors'
 
   resources :markets do
     resources :vendors do
