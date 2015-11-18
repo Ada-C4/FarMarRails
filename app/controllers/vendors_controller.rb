@@ -25,9 +25,9 @@ class VendorsController < ApplicationController
 	end
 
 	def destroy
-	  id = params[:id]
-	  Vendor.delete(id)
-	  redirect_to "/"
+	  market_id = Vendor.find(params[:id]).market_id
+	  Vendor.delete(params[:id])
+	  redirect_to market_path(id: market_id)
 	end
 
 	def update
