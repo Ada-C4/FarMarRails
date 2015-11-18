@@ -1,0 +1,7 @@
+<h1>Choose a Vendor</h1>
+
+<ul>
+  <% @vendors.each do |vendor| %>
+    <li><%= link_to vendor.name, "/markets/#{vendor.market_id}/vendors/#{vendor.id}" %></li>
+  <% end %>
+</ul>

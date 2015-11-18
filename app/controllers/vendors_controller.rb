@@ -1,6 +1,10 @@
 class VendorsController < ApplicationController
 	def index
-	  @vendors = Vendor.all
+	  @vendors = Vendor.find_by market_id: vendor_params[:vendor][:market_id]
+	end
+
+	def all
+		@vendors = Vendor.all
 	end
 
 	def new
@@ -9,13 +13,15 @@ class VendorsController < ApplicationController
 	end
 
 	def create
-	  Vendor.create(task_params[:vendor])
+	  Vendor.create(vendor_params[:vendor])
 	end
 
 	def edit
-	  id = params[:id]
-	  Vendor.delete(id)
-	  redirect_to "/"
+		@vendor = Vendor.find(params[:id])
+	end
+
+	def show
+		@vendor = Vendor.find(params[:id])
 	end
 
 	def destroy
@@ -39,5 +45,4 @@ class VendorsController < ApplicationController
 	def vendor_params
 	  params.permit(vendor:[:name, :num_emps, :market_id])
 	end
-
 end

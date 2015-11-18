@@ -9,13 +9,15 @@ class SalesController < ApplicationController
   end
 
   def create
-    Sale.create(task_params[:sale])
+    Sale.create(sale_params[:sale])
   end
 
   def edit
-    id = params[:id]
-    Sale.delete(id)
-    redirect_to "/"
+    @sale = Sale.find(params[:id])
+  end
+
+  def show
+    @sale = Sale.find(params[:id])
   end
 
   def destroy

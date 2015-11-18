@@ -13,9 +13,11 @@ class ProductsController < ApplicationController
   end
 
   def edit
-    id = params[:id]
-    Product.delete(id)
-    redirect_to "/"
+    @product = Product.find(params[:id])
+  end
+
+  def show
+    @product = Product.find(params[:id])
   end
 
   def destroy
