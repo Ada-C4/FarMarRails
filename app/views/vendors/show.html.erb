@@ -1,0 +1,11 @@
+<div>
+  <h1>LOOK AT THIS HERE VENDOR</h1>
+  <h2> <%= @vendor.name %></h2>
+    <p>
+      Number of Employees: <%= @vendor.employee_no %> <br>
+      <%= @vendor.market_id.name %>
+    </p>
+
+
+<%= button_to "Delete", "/vendors/#{@vendor.id}", method: :delete, data: { confirm: "Are you sure you want to delete this vendor?"} %>
+</div>
