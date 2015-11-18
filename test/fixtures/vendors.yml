@@ -2,16 +2,10 @@
 
 one:
   name: MyString
-  string,: MyString
-  num_emps: MyString
-  fixnum,: MyString
-  market_id: MyString
-  fixnum: MyString
+  num_emps: 
+  market_id: 
 
 two:
   name: MyString
-  string,: MyString
-  num_emps: MyString
-  fixnum,: MyString
-  market_id: MyString
-  fixnum: MyString
+  num_emps: 
+  market_id: 
