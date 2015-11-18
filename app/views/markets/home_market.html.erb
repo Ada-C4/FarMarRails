@@ -1,1 +1,29 @@
-<h1> From HOME </h1>
+<h1> <%= @market.name %></h1>
+
+<p><%= @market.address %></p>
+<p><%= @market.city %></p>
+<p><%= @market.state %></p>
+<p><%= @market.county %></p>
+<p><%= @market.zip %></p>
+
+<h2>Vendors</h2>
+<table>
+  <tr>
+    <th>
+      Name
+    </th>
+    <th>
+      Number of Employees
+    </th>
+  </tr>
+  <% @vendors.each do |vendor| %>
+    <tr>
+      <td>
+        <%= vendor.name %>
+      </td>
+      <td>
+        <%= vendor.num_employees %>
+      </td>
+    </tr>
+  <% end %>
+</table>
