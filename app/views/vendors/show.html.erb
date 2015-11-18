@@ -2,12 +2,15 @@
 
 <p>Number of Employees: <%= @vendor.employees %></p>
 <p>Market: <%= @vendor.market.name %></p>
+
 <p>Products:</p>
 <ul>
   <% @vendor.products.each do |product| %>
-  <li><%= product.name %></li>
+  <li><%= product.name %> | COMING SOON: Edit | Delete | Create Sale</li>
   <% end %>
 </ul>
+<p>COMING SOON: link_to Add A Product</p>
+
 <p>Sales:</p>
 <ul>
   <% total_sales = 0 %>
@@ -17,4 +20,8 @@
   <% total_sales += sale.amount %>
   <% end %>
 </ul>
+
 <p>Total Sales: $<%= total_sales.to_f/100 %></p>
+
+
+<p>COMING SOON: Current Month Sales & Totals</p>
