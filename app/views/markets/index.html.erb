@@ -3,7 +3,7 @@
 <ol>
   <% @markets.each do |market| %>
   <li>
-    <%= market.name %>
+    <%= link_to market.name, market_path(market.id) %>
   </li>
   <% end %>
 </ol>
