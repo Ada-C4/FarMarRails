@@ -1,0 +1,17 @@
+<h1>You are acting as a vendor</h1>
+
+<%= link_to "Create new Vendor!", new_vendor_path %>
+<br>
+<br>
+<table>
+  <% @vendors.each do |v| %>
+    <tr>
+      <td>
+        <%= link_to v.name, vendor_path(v.id)  %>
+      </td>
+      <td>
+        <%= button_to "Edit", "/vendors/#{v.id}/edit", method: :get %>
+      </td>
+    </tr>
+  <% end %>
+</table>
