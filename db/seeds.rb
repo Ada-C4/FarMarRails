@@ -18,3 +18,7 @@ end
 CSV.read("./seed_csvs/products.csv").map do |row|
   Product.create(id: row[0], name: row[1], vendor_id:row[2])
 end
+
+CSV.read("./seed_csvs/sales.csv").map do |row|
+  Sale.create(id: row[0], amount: row[1], purchase_time:row[2].to_datetime, vendor_id: row[3], product_id: row[4])
+end
