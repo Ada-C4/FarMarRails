@@ -1,5 +1,6 @@
 <div>
   <h1>LOOK AT THIS HERE VENDOR</h1>
+  <%= link_to "Edit Vendor", "/vendors/#{@vendor.id}/edit" %>
   <h2> <%= @vendor.name %></h2>
     <p>
       Number of Employees: <%= @vendor.employee_no %> <br>
@@ -7,4 +8,5 @@
 
 
 <%= button_to "Delete", "/vendors/#{@vendor.id}", method: :delete, data: { confirm: "Are you sure you want to delete this vendor?"} %>
+<%= link_to "Return to list of vendors", "/vendors/" %>
 </div>
