@@ -6,7 +6,8 @@
 <ul>
   <% @market.vendors.each do |vendor| %>
   <li>
-    <%= vendor.name %>
+    <% binding.pry %>
+    <%= vendor.name %> <%= link_to "Edit", edit_market_vendor_path(@market.id,vendor.id) %>
   </li>
   <% end %>
 </ul>

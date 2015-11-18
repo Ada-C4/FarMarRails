@@ -16,9 +16,21 @@ class VendorsController < ApplicationController
     @market = Market.find(id)
     new_params = vendor_params[:vendor]
     new_params[:market_id] = @market.id
-    binding.pry
     Vendor.create(new_params)
     redirect_to "/markets/#{@market.id}/vendors"
+  end
+
+  def edit
+    vendor_id = params[:id]
+    @action = "update"
+    @vendor = Vendor.find(vendor_id)
+  end
+
+  def update
+    market_id = params[:market_id]
+    vendor_id = params[:id]
+    Vendor.update(vendor_id, vendor_params[:vendor])
+    redirect_to "/markets/#{market_id}/vendors"
   end
 
   private
