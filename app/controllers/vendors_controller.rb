@@ -1,13 +1,14 @@
 class VendorsController < ApplicationController
   def index
-      #conditional
+    @vendors = Vendor.all
   end
 
   def show
-    if request.path_info.include? '/market/'?
-      render market_vendor
+    if request.path_info.include?('markets')
+      render :market_vendor
     else
-      render vendor
+      render :show
     end
   end
+
 end
