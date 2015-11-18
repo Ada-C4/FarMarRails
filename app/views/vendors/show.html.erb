@@ -1,2 +1,28 @@
 <h1>Individual market here</h1>
-<%= @vendor.name %>
+<p>
+  <%= @vendor.name %>
+</p>
+<p>
+  <%= @vendor.num_employees %> employees
+</p>
+<p>
+  <%= link_to "sales stuff here", vendor_sales_path(@vendor) %> 
+</p>
+
+<table>
+  <thead>
+    <tr>
+      <td>
+        Products
+      </td>
+    </tr>
+  </thead>
+  <tbody>
+    <% @products.each do |product| %>
+      <tr>
+        <td><%= product.name %></td>
+        <td>edit? (add link later)</td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

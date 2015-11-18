@@ -1,0 +1,22 @@
+<h1>Sales for a vendor</h1>
+<h2>The vendor is <%= @vendor.name %></h2>
+<h2>The number of sales is <%= @sales.length %></h2>
+<h2>Total sales</h2>
+<table>
+  <thead>
+    <tr>
+      <td>
+        Sales
+      </td>
+    </tr>
+  </thead>
+  <tbody>
+    <% @sales.each do |sale| %>
+      <tr>
+        <td><%= sale.product.name %></td>
+        <td><%= "$#{sale.amount.to_f / 100}" %></td>
+        <td><%= sale.purchase_time.strftime("%I:%M %p on %m/%d/%Y") %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

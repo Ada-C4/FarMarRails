@@ -7,6 +7,7 @@ class VendorsController < ApplicationController
   def show
     id = params[:id]
     @vendor = Vendor.find(id)
+    @products = @vendor.products
 
     if request.path_info.include?('markets')
       render :market_vendor
