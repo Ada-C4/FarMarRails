@@ -1,0 +1,13 @@
+<h1><%= @market.name %></h1>
+
+<h2>Who's sellin' stuff here?</h2>
+
+<%= @market.vendors %>
+
+<table>
+  <% @market.vendors.each do |vendor|%>
+    <tr>
+      <td><%= link_to vendor.name, vendor %></td><td>hi</td>
+    </tr>
+  <% end %>
+</table>
