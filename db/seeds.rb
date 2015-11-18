@@ -23,6 +23,26 @@ csv_vendor.each do |row|
   v.save
 end
 
+csv_product = File.read('./seed_csvs/products.csv')
+csv_product = CSV.parse(csv_product)
+csv_product.each do |row|
+  p = Product.new
+  p.name = row[1]
+  p.vendor_id = row[2]
+  p.save
+end
+
+csv_sale = File.read('./seed_csvs/sales.csv')
+csv_sale = CSV.parse(csv_sale)
+csv_sale.each do |row|
+  s = Sale.new
+  s.amount = row[1]
+  s.purchase_time = row[2]
+  s.vendor_id = row[3]
+  s.product_id = row[4]
+  s.save
+end
+
 
 
 # This file should contain all the record creation needed to seed the database with its default values.
