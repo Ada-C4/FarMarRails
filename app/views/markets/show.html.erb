@@ -2,13 +2,10 @@
 
 <h2>Who's sellin' stuff here?</h2>
 
-<%= @market.vendors %>
-<%= @market.vendors.length %>
-
 <table>
   <% @market.vendors.each do |vendor| %>
     <tr>
-      <td><%= link_to vendor.name, vendor %></td><td>hi</td>
+      <td><%= link_to vendor.name, "/markets/#{vendor.market_id}/vendors/#{vendor.id}" %></td>
     </tr>
   <% end %>
 </table>
