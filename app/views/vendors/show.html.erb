@@ -11,6 +11,7 @@
     </tr>
   <% end %>
 </table>
+<%= link_to "Add new product", new_market_vendor_product_path(market_id: @vendor.market_id, vendor_id: @vendor.id) %>
 
 <h2>Sales</h2>
 
