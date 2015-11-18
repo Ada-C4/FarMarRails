@@ -4,5 +4,4 @@ class VendorsController < ApplicationController
     @markets = Market.all
     render :index
   end
-
 end
