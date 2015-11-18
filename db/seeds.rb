@@ -20,3 +20,33 @@ CSV.foreach(csv_file_path_markets) do |row|
     :zip => row[6]
   })
 end
+
+csv_file_path_products = './seed_csvs/products.csv'
+
+CSV.foreach(csv_file_path_products) do |row|
+  Product.create!({
+    :name => row[1],
+    :vendor_id => row[2]
+    })
+end
+
+csv_file_path_sales = './seed_csvs/sales.csv'
+
+CSV.foreach(csv_file_path_sales) do |row|
+  Sale.create!({
+    :amount => row[1],
+    :purchase_time => row[2],
+    :vendor_id => row[3],
+    :product_id => row[4]
+    })
+end
+
+csv_file_path_vendors = './seed_csvs/vendors.csv'
+
+CSV.foreach(csv_file_path_vendors) do |row|
+  Vendor.create!({
+    :name => row[1],
+    :employees => row[2],
+    :market_id => row[3],
+    })
+end
