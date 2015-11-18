@@ -4,6 +4,8 @@ class MarketsController < ApplicationController
   end
 
   def show
+    id = params[:id]
+    @market = Market.find(id)
     if request.path_info.include?('home')
       render :home_market
     else
