@@ -13,4 +13,12 @@ market_array.each do |line|
   )
 end
 
-# vendor_array = CSV.read("./seed)csvs/vendors.csvs")
+vendor_array = CSV.read("./seed_csvs/vendors.csv")
+
+vendor_array.each do |line|
+  Vendor.create(
+    name: line[1],
+    employee_no: line[2].to_i,
+    market_id: line[3].to_i
+  )
+end

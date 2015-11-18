@@ -33,6 +33,11 @@ class MarketsController < ApplicationController
     redirect_to "/markets/#{@market.id}"
   end
 
+  def destroy
+    Market.destroy(params[:id])
+    redirect_to "/markets/"
+  end
+
   private
 
   def market_params

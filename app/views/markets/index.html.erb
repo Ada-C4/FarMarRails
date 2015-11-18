@@ -4,6 +4,7 @@
     <% @markets.each do |market| %>
       <li>
         <%= market.name %>
+        <%= link_to "Show Market", "/markets/#{market.id}" %>
       </li>
     <% end %>
   </ul>
