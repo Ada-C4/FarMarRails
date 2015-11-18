@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
 
-root 'welcome#index'
+root 'home#index'
+
+resources :home, only: [:index]  do
+  resources :markets, only: [:index, :show]
+end
+
 
 resources :markets, except: [:destroy] do
   resources :vendors do
