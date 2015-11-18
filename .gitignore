@@ -15,7 +15,5 @@
 /log/*
 !/log/.keep
 /tmp
-
-# Ignore these too:
 /farmarrails/.DS_Store
 /farmarrails/.keep
