@@ -1,6 +1,6 @@
 class MarketsController < ApplicationController
 
   def home
-    @items = Market.all
+    @markets = Market.all
   end
 end
