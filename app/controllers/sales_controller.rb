@@ -3,5 +3,6 @@ class SalesController < ApplicationController
     id = params[:vendor_id]
     @vendor = Vendor.find(id)
     @sales = @vendor.sales
+    @total_sales = Vendor.total_sales(id).to_f / 100
   end
 end
