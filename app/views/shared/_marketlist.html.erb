@@ -1,0 +1,12 @@
+<ul>
+  <% markets.each do |market| %>
+    <li>
+      <%= link_to market.name, market %>
+        <% if @is_a_market %>
+          <%= link_to "edit", edit_market_path(market.id) %>
+          <%= link_to "delete", "/markets/#{market.id}", method: :delete %>
+        <% end %>
+
+    </li>
+  <% end %>
+</ul>

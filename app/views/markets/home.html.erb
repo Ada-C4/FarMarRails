@@ -1,1 +1,3 @@
-<%= render partial: 'shared/linklist', locals: { items: @markets} %>
+<%= link_to "I Am a Market", markets_path %> <%= link_to "I Am a Vendor", vendors_path %>
+
+<%= render partial: 'shared/marketlist', locals: { markets: @markets} %>
