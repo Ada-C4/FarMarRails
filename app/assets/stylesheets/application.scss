@@ -13,5 +13,46 @@
  */
 
  // "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
- @import "bootstrap-sprockets";
- @import "bootstrap";
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+$dark-blue: rgb(15, 26, 36);
+$light-blue: rgb(75, 152, 217);
+$light-red: rgb(140, 83, 82);
+$green: rgb(149, 153, 75);
+$brown: rgb(64, 21, 19);
+
+.full {
+  background: image-url("market_background.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.navbar-inverse {
+  background-color: $green;
+}
+
+#logo {
+  float: left;
+  margin-right: 10px;
+  font-size: 1.7em;
+  color: $brown;
+  letter-spacing: -1px;
+  padding-top: 9px;
+  font-weight: bold;
+  &:hover {
+    color: $brown;
+    text-decoration: none;
+  }
+}
+
+.centered-block {
+  margin: auto;
+  // max-width: 600px;
+}
+
+.centered-button {
+  margin-top: 40vh;
+}
