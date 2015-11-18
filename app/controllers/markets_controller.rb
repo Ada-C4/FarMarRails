@@ -5,6 +5,6 @@ class MarketsController < ApplicationController
   end
 
   def index
-
+    @markets = Market.all
   end
 end
