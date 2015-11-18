@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  root "welcome#index"
+  root 'welcome#index'
+
+  get 'welcome/select' => 'welcome#select', as: :select_user
 
   resources :markets
 
