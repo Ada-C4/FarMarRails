@@ -2,6 +2,8 @@ Rails.application.routes.draw do
 
   root 'welcome#index'
 
+  get 'welcome/market' => 'welcome#show'
+
   resources :markets do
     resources :vendors
   end
