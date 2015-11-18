@@ -1,6 +1,6 @@
 class VendorsController < ApplicationController
-  def home
-    
+  def v_home
+
   end
 
   def index

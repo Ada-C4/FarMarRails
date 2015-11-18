@@ -4,6 +4,9 @@ class MarketsController < ApplicationController
     @vendor = Vendor.new
   end
 
+  def mkt_home
+  end
+
   def index
 
   end

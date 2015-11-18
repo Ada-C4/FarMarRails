@@ -1,25 +1,23 @@
 <h1>Farmer's Market Homepage</h1>
 
-
 <section>
-  <%= form_for @market do |f| %>
+  <%= form_for @market, :method => :get, url: mkt_home_path(:id) do |f| %>
     <fieldset>
       <legend> Markets </legend>
-      <%= f.collection_select( :id, Market.all, :id, :name, prompt: "Select one:") %>
+      <%= f.collection_select(:id, Market.all, :id, :name, prompt: "Select one:") %>
       <br>
-      <%= f.submit %>
+      <%= f.submit "View Market" %>
     </fieldset>
     <% end %>
 </section>
 
-
 <section>
-  <%= form_for @vendor do |f| %>
+  <%= form_for @vendor, :method => :get, url: v_home_path(:id) do |f| %>
     <fieldset>
       <legend> Vendors </legend>
       <%= f.collection_select( :id, Vendor.all, :id, :name, prompt: "Select one:") %>
       <br>
-      <%= f.submit %>
+      <%= f.submit "View Vendor" %>
     </fieldset>
     <% end %>
 </section>

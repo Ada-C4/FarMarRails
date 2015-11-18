@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
   root 'markets#home'
+  get 'markets/:id/home' => 'markets#mkt_home', as: :mkt_home
+  get 'vendors/:id/home' => 'vendors#v_home', as: :v_home
   resources :vendors
   resources :markets do
     resources :vendors
-
-
   end
 
   # The priority is based upon order of creation: first created -> highest priority.
