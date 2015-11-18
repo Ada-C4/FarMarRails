@@ -1,4 +1,8 @@
 class VendorsController < ApplicationController
+  def home
+    
+  end
+
   def index
 
   end
@@ -6,4 +10,5 @@ class VendorsController < ApplicationController
   def show
 
   end
+
 end

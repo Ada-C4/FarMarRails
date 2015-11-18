@@ -1,1 +1,13 @@
-<h1>THIS IS A WEBSITE</h1>
+<h1>Farmer's Market Homepage</h1>
+
+<
+<section>
+  <%= form_for @markets do |f| %>
+    <fieldset>
+      <legend> Markets </legend>
+      <%= f.collection_select (:market_id, Market.all, :id, :name, prompt: "Select one:") %>
+      <br>
+      <%= f.submit %>
+    </fieldset>
+    <% end %>
+</section>
