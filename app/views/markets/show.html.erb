@@ -1,3 +1,9 @@
 <p>
-  <%= @market.name %>
+  I'm the market: <%= @market.name %>
+</p>
+<p>
+  Here's some info about me: <%= @market.address %>
+</p>
+<p>
+  Here are my vendors: <% @vendors.each do |vendor| %> <%= vendor.name %> <% end %>
 </p>

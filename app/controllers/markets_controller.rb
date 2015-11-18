@@ -21,6 +21,7 @@ class MarketsController < ApplicationController
   def show
     id = params[:id]
     @market = Market.find(id)
+    @vendors = Market.find(id).vendors
   end
 
   def update

@@ -1,6 +1,6 @@
 <p>
   <% @markets.each do |market| %>
-    <%= market.name %>
+    <%= market.name %> <%= button_to "Delete Me", "/markets/#{market.id}",  method: :delete, data: { confirm: "Are you sure you want to delete this market?" } , class: 'x-button' %>
     <br />
   <% end %>
 </p>
