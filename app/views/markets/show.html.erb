@@ -11,6 +11,9 @@
 <h3>Vendors:</h3>
 <ul>
   <% @vendors.each do |vendor| %>
-    <li><%= vendor.name%></li>
+    <li><%= vendor.name%>
+      <br><%= @delete_vendor%>
+      <br><%= @edit_vendor%>
+      <br><%= @create_vendor%></li>
   <% end %>
 </ul>
