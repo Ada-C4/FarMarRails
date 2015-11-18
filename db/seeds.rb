@@ -45,3 +45,20 @@ csv_file.each do |row|
   # Create an object from each row-hash in the csv file
   Vendor.create(csv_hash)
 end
+
+def create_product_hash(product_array)
+  product_hash = {}
+  product_hash[:id] = product_array[0].to_i
+  product_hash[:name] = product_array[1]
+  product_hash[:vendor_id] = product_array[2].to_i
+  return product_hash
+end
+
+csv_file = CSV.read('./seed_csvs/products.csv')
+# Create empty array which will hold all the objects
+csv_file.each do |row|
+  # Convert the array to a hash
+  csv_hash = create_product_hash(row)
+  # Create an object from each row-hash in the csv file
+  Product.create(csv_hash)
+end
