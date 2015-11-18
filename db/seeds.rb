@@ -27,3 +27,21 @@ csv_file.each do |row|
   # Create an object from each row-hash in the csv file
   Market.create(csv_hash)
 end
+
+def create_vendor_hash(array)
+  vendor = {}
+  vendor[:id] = array[0].to_i
+  vendor[:name] = array[1]
+  vendor[:no_employees] = array[2].to_i
+  vendor[:market_id] = array[3].to_i
+  return vendor
+end
+
+csv_file = CSV.read('./seed_csvs/vendors.csv')
+# Create empty array which will hold all the objects
+csv_file.each do |row|
+  # Convert the array to a hash
+  csv_hash = create_vendor_hash(row)
+  # Create an object from each row-hash in the csv file
+  Vendor.create(csv_hash)
+end
