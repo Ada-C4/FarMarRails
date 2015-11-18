@@ -1,8 +1,17 @@
 Rails.application.routes.draw do
 
-  get 'welcome/index'
-
 root 'welcome#index'
+
+resources :markets, except: [:destroy] do
+  resources :vendors
+end
+
+resources :vendors, only: [:index, :show] do
+  resources :products do
+    resources :sales, only: [:index, :create]
+  end
+  resources :sales, only: [:index]
+end
 
 
 
