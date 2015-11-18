@@ -62,3 +62,22 @@ csv_file.each do |row|
   # Create an object from each row-hash in the csv file
   Product.create(csv_hash)
 end
+
+def create_sale_hash(sale_array)
+  sale_hash = {}
+  sale_hash[:id] = sale_array[0].to_i
+  sale_hash[:amount] = sale_array[1].to_i
+  sale_hash[:purchase_time] = DateTime.parse(sale_array[2])
+  sale_hash[:vendor_id] = sale_array[3].to_i
+  sale_hash[:product_id] = sale_array[4].to_i
+  return sale_hash
+end
+
+csv_file = CSV.read('./seed_csvs/sales.csv')
+# Create empty array which will hold all the objects
+csv_file.each do |row|
+  # Convert the array to a hash
+  csv_hash = create_sale_hash(row)
+  # Create an object from each row-hash in the csv file
+  Sale.create(csv_hash)
+end
