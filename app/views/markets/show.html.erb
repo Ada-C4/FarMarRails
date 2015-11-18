@@ -51,3 +51,14 @@
   </tr>
 </table>
 <%= button_to "Edit", edit_market_path(@market), method: :get %>
+
+
+<h2>Vendors</h2>
+
+<ul>
+  <% @market.vendors.each do |vendor| %>
+  <li>
+    <%= vendor.name %>
+  </li>
+  <% end %>
+</ul>
