@@ -8,8 +8,7 @@ class MarketsController < ApplicationController
   end
 
   def new
-    id = params[:id]
-    @market = Market.find(id)
+    @market = Market.new
   end
 
   def show
@@ -21,9 +20,7 @@ class MarketsController < ApplicationController
   end
 
   def edit
-    id = params[:id]
-    Market.delete(id)
-    redirect_to "/"
+    @market=Market.find(params[:id])
   end
 
   def destroy
