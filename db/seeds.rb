@@ -13,4 +13,4 @@ market_array.each do |line|
   )
 end
 
-# vendor_array = CSV.read("./seed)csvs/vendors.csv")
+# vendor_array = CSV.read("./seed)csvs/vendors.csvs")
