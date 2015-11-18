@@ -2,10 +2,10 @@
 
 
 <section>
-  <%= form_for @markets do |f| %>
+  <%= form_for @market do |f| %>
     <fieldset>
       <legend> Markets </legend>
-      <%= f.collection_select(:market_id, Market.all, :id, :name, prompt: "Select one:") %>
+      <%= f.collection_select( :id, Market.all, :id, :name, prompt: "Select one:") %>
       <br>
       <%= f.submit %>
     </fieldset>
