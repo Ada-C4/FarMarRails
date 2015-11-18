@@ -1,0 +1,9 @@
+<p>
+  I'm the vendor: <%= @vendor.name %>
+</p>
+<p>
+  Here's some info about me: <%= @vendor.no_employees %> <%= @vendor.market_id %>
+</p>
+<p>
+  Here are my products: <% @products.each do |product| %> <%= product.name %> <% end %>
+</p>

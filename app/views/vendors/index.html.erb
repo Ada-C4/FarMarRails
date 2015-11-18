@@ -1,0 +1,6 @@
+<p>
+  <% @vendors.each do |vendor| %>
+    <%= vendor.name %> <%= button_to "Delete Me", "/vendors/#{vendor.id}",  method: :delete, data: { confirm: "Are you sure you want to delete this vendor?" } , class: 'x-button' %>
+    <br />
+  <% end %>
+</p>

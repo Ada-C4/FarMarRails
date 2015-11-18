@@ -1,0 +1,12 @@
+<%= form_for @vendor, :html => {:class => "form-inline"} do |f| %>
+  <fieldset>
+    <legend><%= legend_text %></legend>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+    <%= f.label :no_employees %>
+    <%= f.text_field :no_employees %>
+    <%= f.label :market_id %>
+    <%= f.text_field :market_id %>
+    <%= f.submit value: "#{button_text}", class: "new_button"%>
+  </fieldset>
+<% end %>
