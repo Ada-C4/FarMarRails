@@ -1,3 +1,16 @@
 <h1>Market Detail</h1>
 
+<h3><%= @market.name %></h3>
+
+<p>Located at:
+<br>
+<%= @market.address %>
+<br>
+<%= @market.city %> in <%= @market.county %> County
+<br>
+<%= @market.state %>, <%= @market.zip %>
+</p>
+
+<h3>Vendors at <%= @market.name %>:</h3>
+
 <%= render partial: 'shared/vendorlist', locals: { vendors:  @vendors} %>
