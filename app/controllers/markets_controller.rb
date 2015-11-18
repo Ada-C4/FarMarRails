@@ -15,11 +15,24 @@ class MarketsController < ApplicationController
 
   def new
     @market = Market.new()
+    @action = "new"
   end
 
   def create
     Market.create(market_params[:market])
     redirect_to "/markets"
+  end
+
+  def edit
+    id = params[:id]
+    @market = Market.find(id)
+    @action = "update"
+  end
+
+  def update
+    id = params[:id]
+    Market.update(id, market_params[:market])
+    redirect_to "/markets/#{id}"
   end
 
   private
