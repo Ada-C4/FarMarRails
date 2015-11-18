@@ -13,7 +13,11 @@ Rails.application.routes.draw do
     resources :products do
       resources :sales, only: [:index, :create]
     end
-    resources :sales, only: [:index]
+    resources :sales, only: [:index] do
+      collection do
+        get '/month' => 'sales#current_month', as: :current_month
+      end
+    end
   end
 
 
