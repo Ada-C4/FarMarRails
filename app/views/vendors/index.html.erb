@@ -1,0 +1,10 @@
+<h3><%= @market.name %></h3>
+<h3>Vendors</h3>
+
+<ul>
+  <% @market.vendors.each do |vendor| %>
+  <li>
+    <%= vendor.name %>
+  </li>
+  <% end %>
+</ul>
