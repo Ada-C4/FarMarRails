@@ -12,4 +12,11 @@ class Vendor < ActiveRecord::Base
     end
     return total
   end
+
+  def self.current_month_sales(vendor_id)
+    vendor = Vendor.find(vendor_id)
+    sales = vendor.sales
+    month_sales = sales.where()
+    # range?
+  end
 end

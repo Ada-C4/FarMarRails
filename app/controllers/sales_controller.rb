@@ -5,4 +5,9 @@ class SalesController < ApplicationController
     @sales = @vendor.sales
     @total_sales = Vendor.total_sales(id).to_f / 100
   end
+
+  def current_month
+    id = params[:vendor_id]
+    # not finished
+  end
 end
