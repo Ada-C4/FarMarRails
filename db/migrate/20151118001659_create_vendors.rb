@@ -2,8 +2,8 @@ class CreateVendors < ActiveRecord::Migration
   def change
     create_table :vendors do |t|
       t.string :name
-      t.fixnum :num_emps
-      t.fixnum :market_id
+      t.integer :num_emps
+      t.integer :market_id
 
       t.timestamps null: false
     end
