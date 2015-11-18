@@ -1,4 +1,19 @@
 Rails.application.routes.draw do
+  resources :markets do
+    resources :vendors
+  end
+  resources :vendors do
+    member do
+      get 'sales/' => 'sales#index'
+      get 'sales/month' => 'sales#month'
+    end
+    resources :products do
+      member do
+        get 'sales/new'
+        post 'sales/create'
+      end
+    end
+  end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
