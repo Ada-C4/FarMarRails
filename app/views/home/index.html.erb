@@ -1,5 +1,5 @@
-<h1>Welcome page for all users!!! (Jenna)!!!!</h1>
-<h3>Are you a market or a vendor? Click below:</h3>
+<h1>Farmers Markets, USA</h1>
+<h3>Are you a market or a vendor? Choose below:</h3>
 <p>
   <%= link_to "I'm a market", markets_path %>
 </p>
@@ -9,3 +9,21 @@
 
 <h2>This will be a table of all markets, with links to their details (show) page</h2>
 <%= link_to "Market 1", home_market_path(Market.first.id) %>
+
+<h1>Farmers Markets</h1>
+  <table>
+    <% @markets.each do |market| %>
+      <tr>
+        <td>
+         <%= link_to "#{market.name}", home_market_path(market) %>
+        </td>
+        <td>
+          <%= market.city %>
+        </td>
+        <td>
+          <%= market.state %>
+        </td>
+
+     </tr>
+     <% end %>
+  </table>
