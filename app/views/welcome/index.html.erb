@@ -7,9 +7,9 @@
 <%= button_to 'a vendor?', '/vendors', method: :get %>
 
 <ul>
-  <% @markets.each do |market| %>
+  <% @markets.each do |m| %>
     <li>
-      <%= market.name %>
+      <%= link_to m.name, market_path(m.id) %>
     </li>
   <% end %>
 </ul>
