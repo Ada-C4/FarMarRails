@@ -7,3 +7,6 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 markets_csv = CSV.read(seeds_csvs/markets.csv)
+markets_csv.each do |id, name, address, city, county, state, zip|
+  hash = {:id => id, :name => name, :address => address, :city => city, :county => county, :state => state, :zip => zip}
+end
