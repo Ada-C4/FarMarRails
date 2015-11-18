@@ -1,1 +1,18 @@
 <h1> Vendors main page</h1>
+<table>
+  <thead>
+    <tr>
+      <td>
+        Name
+      </td>
+    </tr>
+  </thead>
+  <tbody>
+    <% @vendors.each do |vendor| %>
+      <tr>
+        <td><%= vendor.name %></td>
+        <td><%= link_to "details", vendor_path(vendor) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
