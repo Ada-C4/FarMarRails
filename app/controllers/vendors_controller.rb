@@ -1,6 +1,6 @@
 class VendorsController < ApplicationController
 	def index
-	  @vendors = Vendor.find_by market_id: vendor_params[:vendor][:market_id]
+	  @vendors = Market.find(params[:market_id]).vendors
 	end
 
 	def all
