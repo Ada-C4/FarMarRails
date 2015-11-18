@@ -4,8 +4,7 @@ class ProductsController < ApplicationController
   end
 
   def new
-    id = params[:id]
-    @products = Product.find(id)
+    @product = Product.new
   end
 
   def create
