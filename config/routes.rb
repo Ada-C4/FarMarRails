@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  # root 'welcome#index'
+  root 'markets#home'
 
   resources :markets do
   	resources :vendors do
