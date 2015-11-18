@@ -1,7 +1,10 @@
 class VendorsController < ApplicationController
   def index
+    @vendors = Vendor.all
   end
   def show
+    id = params[:id]
+    @vendor = Vendor.find(id)
   end
   def create
   end
