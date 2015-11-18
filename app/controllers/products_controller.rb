@@ -22,8 +22,10 @@ class ProductsController < ApplicationController
 
   def destroy
     id = params[:id]
+    vendor_id = Product.find(params[:id]).vendor_id
+    market_id = Vendor.find(vendor_id).market_id
     Product.delete(id)
-    redirect_to "/"
+    redirect_to market_vendor_path(market_id: market_id , id: vendor_id)
   end
 
   def update
