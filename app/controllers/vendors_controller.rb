@@ -2,16 +2,17 @@ require 'pry'
 
 class VendorsController < ApplicationController
   def index
-    if request.fullpath == "/vendors"
-      @sign_in = "Vendor"
-    else
-      id = params[:market_id]
-      @market = Market.find(id)
-      @sign_in = "Market"
-    end
+    # if request.fullpath == "/vendors"
+    #   @sign_in = "Vendor"
+    # else
+    id = params[:market_id]
+    @market = Market.find(id)
+    @@sign_in = "Market"
+    # end
   end
 
   def show
+    @@sign_in = "Vendor"
     id = params[:market_id]
     @market = Market.find(id)
   end
@@ -31,9 +32,15 @@ class VendorsController < ApplicationController
   end
 
   def edit
-    vendor_id = params[:id]
+    binding.pry
+    if @@sign_in == "Vendor"
+
+      vendor_id = params[:id]
+      @vendor = Vendor.find(vendor_id)
+    else
+      binding.pry
+    end
     @action = "update"
-    @vendor = Vendor.find(vendor_id)
   end
 
   def update

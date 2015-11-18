@@ -2,7 +2,7 @@
     <ul>
       <% @market.vendors.each do |vendor| %>
       <li>
-        <%= vendor.name %> <%= link_to "Edit", edit_vendor_path(@market.id,vendor.id) %>
+        <%= vendor.name %> <%= link_to "Edit", edit_vendor_path(vendor.id) %>
         <%= link_to "Delete", "/markets/#{@market.id}/vendors/#{vendor.id}", method: :delete %>
       </li>
       <% end %>

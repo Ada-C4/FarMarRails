@@ -6,6 +6,11 @@ Rails.application.routes.draw do
 
   resources :markets do
     get '/vendors' => 'vendors#show'
+    get '/vendors/new' =>'vendors#new'
+    post '/vendors' => 'vendors#create'
+    delete '/vendors/:id' => 'vendors#destroy'
+    get '/vendors/:id/edit' => 'vendors#edit'
+    patch '/vendors/:id' => 'vendors#update'
   end
 
 
