@@ -7,7 +7,7 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 
-CSV.read("../seed_csvs/markets.csv").each do |line|
+CSV.read("./seed_csvs/markets.csv").each do |line|
   market = {name: line[1], address: line[2], city: line[3], county: line[4], state: line[5], zip: line[6]}
   Market.create market
 end
