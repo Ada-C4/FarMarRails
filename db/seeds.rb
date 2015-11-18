@@ -5,3 +5,11 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+markets = [
+  { name: "People's Co-op Farmers Market", address:"30th and Burnside", city: "Portland", county: "Multnomah", state: "Oregon", zip: "97202" }
+]
+
+markets.each do |market|
+  Market.create(market)
+end
