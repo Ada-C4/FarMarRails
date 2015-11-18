@@ -16,14 +16,18 @@ class VendorsController < ApplicationController
     redirect_to "/vendors/#{vendor.id}"
   end
 
-  # def edit
-  #   @vendor = Vendor.find(params[:id])
-  #
-  # end
-  #
-  # def update
-  #
-  # end
+  def edit
+    @vendor = Vendor.find(params[:id])
+    name = params[:name]
+    employee_no = params[:employee_no]
+    market_id = params[:market_id]
+  end
+
+  def update
+    @vendor = Vendor.find(params[:id])
+    Vendor.update(params[:id], vendor_params[:vendor])
+    redirect_to "/vendors/#{@vendor.id}"
+  end
 
   def destroy
     Vendor.destroy(params[:id])
