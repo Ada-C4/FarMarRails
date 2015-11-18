@@ -18,7 +18,7 @@ class MarketsController < ApplicationController
 
   def update
     market = Market.find(params[:id])
-    market.update(task_params[:market])
+    market.update(market_params[:market])
     redirect_to '/markets'
   end
 
