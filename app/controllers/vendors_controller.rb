@@ -2,6 +2,16 @@ require 'pry'
 
 class VendorsController < ApplicationController
   def index
+    if request.fullpath == "/vendors"
+      @sign_in = "Vendor"
+    else
+      id = params[:market_id]
+      @market = Market.find(id)
+      @sign_in = "Market"
+    end
+  end
+
+  def show
     id = params[:market_id]
     @market = Market.find(id)
   end

@@ -1,14 +1,8 @@
-<h3><%= @market.name %></h3>
-<h3>Vendors</h3>
-
-<%= button_to "Add new vendor", new_market_vendor_path, method: :get %>
-
 <ul>
-  <% @market.vendors.each do |vendor| %>
+  <% Vendor.all.each do |vendor| %>
   <li>
-    <% binding.pry %>
-    <%= vendor.name %> <%= link_to "Edit", edit_market_vendor_path(@market.id,vendor.id) %>
-    <%= link_to "Delete", "/markets/#{@market.id}/vendors/#{vendor.id}", method: :delete %>
+    <%= vendor.name %> <%= link_to "Edit", edit_vendor_path(vendor.id) %>
+    <%= link_to "Delete", "/vendors/#{vendor.id}", method: :delete %>
   </li>
   <% end %>
 </ul>

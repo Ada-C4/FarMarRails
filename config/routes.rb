@@ -2,9 +2,13 @@ Rails.application.routes.draw do
 
   root 'markets#sign_in'
 
+  resources :vendors
+
   resources :markets do
-    resources :vendors 
+    get '/vendors' => 'vendors#show'
   end
+
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

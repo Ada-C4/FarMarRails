@@ -1,0 +1,9 @@
+  <h3>Vendors</h3>
+    <ul>
+      <% @market.vendors.each do |vendor| %>
+      <li>
+        <%= vendor.name %> <%= link_to "Edit", edit_vendor_path(@market.id,vendor.id) %>
+        <%= link_to "Delete", "/markets/#{@market.id}/vendors/#{vendor.id}", method: :delete %>
+      </li>
+      <% end %>
+    </ul>
