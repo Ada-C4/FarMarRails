@@ -1,10 +1,17 @@
 <h1>You are acting as a market</h1>
 
 <%= link_to "Create new Market!", new_market_path %>
-<ul>
+<br>
+<br>
+<table>
   <% @markets.each do |m| %>
-    <li>
-      <%= link_to m.name, market_path(m.id)  %>
-    </li>
+    <tr>
+      <td>
+        <%= link_to m.name, market_path(m.id)  %>
+      </td>
+      <td>
+        <%= button_to "Edit", "/markets/#{m.id}/edit", method: :get %>
+      </td>
+    </tr>
   <% end %>
-</ul>
+</table>
