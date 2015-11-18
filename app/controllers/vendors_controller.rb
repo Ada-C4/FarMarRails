@@ -8,8 +8,7 @@ class VendorsController < ApplicationController
 	end
 
 	def new
-	  id = params[:id]
-	  @vendor = Vendor.find(id)
+	  @vendor = Vendor.new
 	end
 
 	def create

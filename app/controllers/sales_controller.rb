@@ -4,8 +4,7 @@ class SalesController < ApplicationController
   end
 
   def new
-    id = params[:id]
-    @sales= Sale.find(id)
+    @sale = Sale.new
   end
 
   def create
