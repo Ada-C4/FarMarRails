@@ -21,7 +21,8 @@ class MarketsController < ApplicationController
   end
 
   def create
-    Market.create(task_params[:market])
+    Market.create(market_params[:market])
+    redirect_to markets_path
   end
 
   def edit

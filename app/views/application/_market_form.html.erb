@@ -1,0 +1,20 @@
+locals form_title
+
+<%=  form_for @market do |f| %>
+<div class='legend'><h1><%= form_title %></h1></div>
+  <fieldset>
+    <%= f.label :name %>:
+    <%= f.text_field :name %><br>
+    <%= f.label :address %>:
+    <%= f.text_field :address %><br>
+    <%= f.label :city %>
+    <%= f.text_field :city %><br>
+    <%= f.label :county %>
+    <%= f.text_field :county %><br>
+    <%= f.label :state %>
+    <%= f.text_field :state %><br>
+    <%= f.label :zip %>
+    <%= f.text_field :zip %><br>
+  </fieldset>
+  <%= f.submit %>
+<% end %>
