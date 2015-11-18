@@ -1,12 +1,12 @@
 Rails.application.routes.draw do
-  root 'markets#index'
+  root 'markets#home'
 
   resources :markets do
 
   end
 
   resources :vendors do
-    
+
   end
 
   # The priority is based upon order of creation: first created -> highest priority.
