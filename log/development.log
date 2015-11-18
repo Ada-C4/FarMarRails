@@ -1,0 +1,292 @@
+  [1m[36m (1.0ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.4ms)[0m  select sqlite_version(*)
+  [1m[36m (0.9ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateMarkets (20151118174607)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (1.0ms)[0m  [1mCREATE TABLE "markets" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "state" varchar, "zip" varchar, "address" varchar, "county" varchar, "city" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20151118174607"]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "markets" ("id", "name", "address", "city", "county", "state", "zip", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["id", 1], ["name", "People's Co-op Farmers Market"], ["address", "30th and Burnside"], ["city", "Portland"], ["county", "Multnomah"], ["state", "Oregon"], ["zip", "97202"], ["created_at", "2015-11-18 17:59:38.989053"], ["updated_at", "2015-11-18 17:59:38.989053"]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "markets" ("id", "name", "address", "city", "county", "state", "zip", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["id", 2], ["name", "Silverdale Farmers Market"], ["address", "98383"], ["city", "Silverdale"], ["county", "Kitsap"], ["state", "Washington"], ["zip", "98383"], ["created_at", "2015-11-18 17:59:38.994269"], ["updated_at", "2015-11-18 17:59:38.994269"]]
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "markets" ("id", "name", "address", "city", "county", "state", "zip", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["id", 3], ["name", "Dolgeville Farmer's Market"], ["address", "(Parking Lot) Between Main St. and Helmer Ave"], ["city", "Dolgeville"], ["county", "Herkimer"], ["state", "New York"], ["zip", "13329"], ["created_at", "2015-11-18 17:59:38.997241"], ["updated_at", "2015-11-18 17:59:38.997241"]]
+  [1m[35m (1.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "markets" ("id", "name", "address", "city", "county", "state", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["id", 4], ["name", "Preston Farmers’ Market"], ["address", "#1 Route 164"], ["city", "Preston"], ["county", "New London"], ["state", "Connecticut"], ["created_at", "2015-11-18 17:59:39.000473"], ["updated_at", "2015-11-18 17:59:39.000473"]]
+  [1m[36m (1.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "markets" ("id", "name", "address", "city", "county", "state", "zip", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["id", 5], ["name", "Quincy Farmers Market"], ["address", "0 Denis Ryan Parkway"], ["city", "Quincy"], ["county", "Norfolk"], ["state", "Massachusetts"], ["zip", "2169"], ["created_at", "2015-11-18 17:59:39.005447"], ["updated_at", "2015-11-18 17:59:39.005447"]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "markets" ("id", "name", "address", "city", "county", "state", "zip", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["id", 6], ["name", "Jefferson City Farmer's Market"], ["address", "000 Main Street"], ["city", "Jefferson City"], ["county", "Cole"], ["state", "Missouri"], ["zip", "0"], ["created_at", "2015-11-18 17:59:39.008428"], ["updated_at", "2015-11-18 17:59:39.008428"]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "markets" ("id", "name", "address", "city", "county", "state", "zip", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["id", 7], ["name", "Petaluma Evening Farmers' Market"], ["address", "1 2nd Street"], ["city", "Petaluma"], ["county", "Sonoma"], ["state", "California"], ["zip", "94952"], ["created_at", "2015-11-18 17:59:39.011659"], ["updated_at", "2015-11-18 17:59:39.011659"]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "markets" ("id", "name", "address", "city", "state", "zip", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["id", 8], ["name", "Charlestown Farmers Market"], ["address", "1 Austin Street, Thompson Square at Austin & Main Streets"], ["city", "Boston"], ["state", "Massachusetts"], ["zip", "2129"], ["created_at", "2015-11-18 17:59:39.016388"], ["updated_at", "2015-11-18 17:59:39.016388"]]
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "markets" ("id", "name", "address", "city", "county", "state", "zip", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["id", 9], ["name", "Farmers Market at Christopher Newport University"], ["address", "1 Avenue of the Arts"], ["city", "Newport News"], ["county", "Newport News"], ["state", "Virginia"], ["zip", "23606"], ["created_at", "2015-11-18 17:59:39.019740"], ["updated_at", "2015-11-18 17:59:39.019740"]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "markets" ("id", "name", "address", "city", "county", "state", "zip", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["id", 10], ["name", "Saratoga Farmers' Market"], ["address", "1 Bayberry Drive"], ["city", "Ballston Sp"], ["county", "Saratoga"], ["state", "New York"], ["zip", "12020"], ["created_at", "2015-11-18 17:59:39.035348"], ["updated_at", "2015-11-18 17:59:39.035348"]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "markets" ("id", "name", "address", "city", "county", "state", "zip", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["id", 11], ["name", "Charles Square"], ["address", "1 Bennett Street,"], ["city", "Cambridge"], ["county", "Middlesex"], ["state", "Massachusetts"], ["zip", "2138"], ["created_at", "2015-11-18 17:59:39.038197"], ["updated_at", "2015-11-18 17:59:39.038197"]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "markets" ("id", "name", "address", "city", "county", "state", "zip", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["id", 12], ["name", "Coxsackie Farmers' Market"], ["address", "1 Betke Boulevard"], ["city", "Coxsackie"], ["county", "Greene"], ["state", "New York"], ["zip", "12051"], ["created_at", "2015-11-18 17:59:39.040939"], ["updated_at", "2015-11-18 17:59:39.040939"]]
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "markets" ("id", "name", "address", "city", "county", "state", "zip", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["id", 13], ["name", "Otsiningo Park Farmers' Market"], ["address", "1 Bevier St"], ["city", "Binghamton"], ["county", "Broome"], ["state", "New York"], ["zip", "13905"], ["created_at", "2015-11-18 17:59:39.044108"], ["updated_at", "2015-11-18 17:59:39.044108"]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "markets" ("id", "name", "address", "city", "county", "state", "zip", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["id", 14], ["name", "Hartford Farmers Market"], ["address", "1 Block North of Highway 60 on Rural Street"], ["city", "Hartford"], ["county", "Washington"], ["state", "Wisconsin"], ["zip", "53027"], ["created_at", "2015-11-18 17:59:39.047419"], ["updated_at", "2015-11-18 17:59:39.047419"]]
+  [1m[36m (1.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "markets" ("id", "name", "address", "city", "state", "zip", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["id", 15], ["name", "Farmers Market in Denison"], ["address", "1 block west of Main St."], ["city", "Denison"], ["state", "Texas"], ["zip", "75090"], ["created_at", "2015-11-18 17:59:39.051935"], ["updated_at", "2015-11-18 17:59:39.051935"]]
+  [1m[35m (1.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "markets" ("id", "name", "address", "city", "county", "state", "zip", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["id", 16], ["name", "Riverside Farmers' Market"], ["address", "1 Burling Rd."], ["city", "Riverside"], ["county", "Cook"], ["state", "Illinois"], ["zip", "60546"], ["created_at", "2015-11-18 17:59:39.055091"], ["updated_at", "2015-11-18 17:59:39.055091"]]
+  [1m[36m (3.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "markets" ("id", "name", "address", "city", "county", "state", "zip", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["id", 17], ["name", "Farmers Market in Camdenton"], ["address", "1 Camden Ct NW"], ["city", "Camdenton"], ["county", "Camden"], ["state", "Missouri"], ["zip", "65020"], ["created_at", "2015-11-18 17:59:39.061580"], ["updated_at", "2015-11-18 17:59:39.061580"]]
+  [1m[35m (1.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "markets" ("id", "name", "address", "city", "county", "state", "zip", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["id", 18], ["name", "Grand Valley State University Farmers Market"], ["address", "1 Campus Drive, Parking Lot F"], ["city", "Allendale"], ["county", "Ottawa"], ["state", "Michigan"], ["zip", "49504"], ["created_at", "2015-11-18 17:59:39.064808"], ["updated_at", "2015-11-18 17:59:39.064808"]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "markets" ("id", "name", "address", "city", "county", "state", "zip", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["id", 19], ["name", "Ringwood Farmers' Market"], ["address", "1 Cannici Drive"], ["city", "Ringwood"], ["county", "Passaic"], ["state", "New Jersey"], ["zip", "7456"], ["created_at", "2015-11-18 17:59:39.067538"], ["updated_at", "2015-11-18 17:59:39.067538"]]
+  [1m[35m (1.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "markets" ("id", "name", "address", "city", "county", "state", "zip", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["id", 20], ["name", "Scottdale Farmers Market"], ["address", "1 Centennial Way"], ["city", "Scottdale"], ["county", "Westmoreland"], ["state", "Pennsylvania"], ["zip", "15683"], ["created_at", "2015-11-18 17:59:39.070512"], ["updated_at", "2015-11-18 17:59:39.070512"]]
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "markets" ("id", "name", "address", "city", "county", "state", "zip", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["id", 21], ["name", "TRAVELERS REST COMMUNITY FARMERS MARKET"], ["address", "1 Center Street"], ["city", "Travelers Rest"], ["county", "Greenville"], ["state", "South Carolina"], ["zip", "29690"], ["created_at", "2015-11-18 17:59:39.073833"], ["updated_at", "2015-11-18 17:59:39.073833"]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "markets" ("id", "name", "address", "city", "state", "zip", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["id", 22], ["name", "Farmers Market on the Westford Common"], ["address", "1 Common Rd"], ["city", "Westford"], ["state", "Vermont"], ["zip", "5494"], ["created_at", "2015-11-18 17:59:39.076722"], ["updated_at", "2015-11-18 17:59:39.076722"]]
+  [1m[36m (2.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "markets" ("id", "name", "address", "city", "county", "state", "zip", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["id", 23], ["name", "Belington Farmers Market"], ["address", "1 County Highway 11"], ["city", "Belington"], ["county", "Barbour"], ["state", "West Virginia"], ["zip", "25250"], ["created_at", "2015-11-18 17:59:39.081145"], ["updated_at", "2015-11-18 17:59:39.081145"]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "markets" ("id", "name", "address", "city", "state", "zip", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["id", 24], ["name", "Plaza Marketplace"], ["address", "1 Courthouse Square"], ["city", "Hillsboro"], ["state", "Illinois"], ["zip", "62049"], ["created_at", "2015-11-18 17:59:39.084314"], ["updated_at", "2015-11-18 17:59:39.084314"]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "markets" ("id", "name", "address", "city", "county", "state", "zip", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["id", 25], ["name", "Cheyenne Farmers Market"], ["address", "1 Depot Plaza"], ["city", "Cheyenne"], ["county", "Laramie"], ["state", "Wyoming"], ["zip", "82001"], ["created_at", "2015-11-18 17:59:39.087031"], ["updated_at", "2015-11-18 17:59:39.087031"]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "markets" ("id", "name", "address", "city", "county", "state", "zip", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["id", 26], ["name", "Pinckneyville Farmers Market"], ["address", "1 E Water St."], ["city", "Pinckneyville"], ["county", "Perry"], ["state", "Illinois"], ["zip", "62274"], ["created_at", "2015-11-18 17:59:39.089633"], ["updated_at", "2015-11-18 17:59:39.089633"]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "markets" ("id", "name", "address", "city", "county", "state", "zip", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["id", 27], ["name", "Skaneateles Farmers Market"], ["address", "1 East Austin Street"], ["city", "Skaneateles"], ["county", "Onondaga"], ["state", "New York"], ["zip", "13152"], ["created_at", "2015-11-18 17:59:39.092405"], ["updated_at", "2015-11-18 17:59:39.092405"]]
+  [1m[35m (1.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "markets" ("id", "name", "address", "city", "county", "state", "zip", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["id", 28], ["name", "North Providence Farmers Market"], ["address", "1 Governor Notte Parkway off 1675 Douglas Avenue"], ["city", "North Providence"], ["county", "Providence"], ["state", "Rhode Island"], ["zip", "2904"], ["created_at", "2015-11-18 17:59:39.096509"], ["updated_at", "2015-11-18 17:59:39.096509"]]
+  [1m[36m (2.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "markets" ("id", "name", "address", "city", "county", "state", "zip", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["id", 29], ["name", "Grafton Farmers Market"], ["address", "1 Grafton Common"], ["city", "Grafton"], ["county", "Worcester"], ["state", "Massachusetts"], ["zip", "1519"], ["created_at", "2015-11-18 17:59:39.101017"], ["updated_at", "2015-11-18 17:59:39.101017"]]
+  [1m[35m (1.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "markets" ("id", "name", "address", "city", "county", "state", "zip", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["id", 30], ["name", "West Stockbridge Farmers Market"], ["address", "1 Harris Street, Merritt Green"], ["city", "West Stockbridge"], ["county", "Berkshire"], ["state", "Massachusetts"], ["zip", "1266"], ["created_at", "2015-11-18 17:59:39.103951"], ["updated_at", "2015-11-18 17:59:39.103951"]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "markets" ("id", "name", "address", "city", "state", "zip", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["id", 31], ["name", "North Quincy Farmers Market"], ["address", "1 Heritage Drive, ING Parking Lot"], ["city", "Quincy"], ["state", "Massachusetts"], ["zip", "2171"], ["created_at", "2015-11-18 17:59:39.106801"], ["updated_at", "2015-11-18 17:59:39.106801"]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "markets" ("id", "name", "address", "city", "county", "state", "zip", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["id", 32], ["name", "St. John's Church Farmers Market"], ["address", "1 Hudson Street"], ["city", "New York City"], ["county", "Westchester"], ["state", "New York"], ["zip", "10701"], ["created_at", "2015-11-18 17:59:39.109661"], ["updated_at", "2015-11-18 17:59:39.109661"]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "markets" ("id", "name", "address", "city", "county", "state", "zip", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["id", 33], ["name", "Historic Park Irvine"], ["address", "1 Irvine Park Rd."], ["city", "City of irvine"], ["county", "Orange"], ["state", "California"], ["zip", "92869"], ["created_at", "2015-11-18 17:59:39.112401"], ["updated_at", "2015-11-18 17:59:39.112401"]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "markets" ("id", "name", "address", "city", "county", "state", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["id", 34], ["name", "Irvine Regional Park Certified Farmers' Market"], ["address", "1 Irvine Park Road"], ["city", "Orange"], ["county", "Orange"], ["state", "California"], ["created_at", "2015-11-18 17:59:39.115119"], ["updated_at", "2015-11-18 17:59:39.115119"]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "markets" ("id", "name", "address", "city", "county", "state", "zip", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["id", 35], ["name", "Braintree Farmers Market"], ["address", "1 JFK Memorial Drive"], ["city", "Braintree"], ["county", "Norfolk"], ["state", "Massachusetts"], ["zip", "2184"], ["created_at", "2015-11-18 17:59:39.117977"], ["updated_at", "2015-11-18 17:59:39.117977"]]
+  [1m[35m (1.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "markets" ("id", "name", "address", "city", "state", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["id", 36], ["name", "Portsmouth Farmers' Market"], ["address", "1 Junkins Avenue"], ["city", "Portsmouth"], ["state", "New Hampshire"], ["created_at", "2015-11-18 17:59:39.120792"], ["updated_at", "2015-11-18 17:59:39.120792"]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "markets" ("id", "name", "address", "city", "county", "state", "zip", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["id", 37], ["name", "Atkinson NH Farmers Market"], ["address", "1 Kip Cam Road"], ["city", "Atkinson"], ["county", "Rockingham"], ["state", "New Hampshire"], ["zip", "3811"], ["created_at", "2015-11-18 17:59:39.123671"], ["updated_at", "2015-11-18 17:59:39.123671"]]
+  [1m[35m (1.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "markets" ("id", "name", "address", "city", "county", "state", "zip", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["id", 38], ["name", "Gettysburg Farmers' Market"], ["address", "1 Lincoln Square"], ["city", "Gettysburg"], ["county", "Adams"], ["state", "Pennsylvania"], ["zip", "17325"], ["created_at", "2015-11-18 17:59:39.128072"], ["updated_at", "2015-11-18 17:59:39.128072"]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "markets" ("id", "name", "address", "city", "county", "state", "zip", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["id", 39], ["name", "Winooski Farmers' Market"], ["address", "1 Main St."], ["city", "Winooski"], ["county", "Chittenden"], ["state", "Vermont"], ["zip", "5404"], ["created_at", "2015-11-18 17:59:39.130959"], ["updated_at", "2015-11-18 17:59:39.130959"]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "markets" ("id", "name", "address", "city", "county", "state", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["id", 40], ["name", "Woodbridge Farmers Market"], ["address", "1 Main Street, Woodbridge"], ["city", "Woodbridge"], ["county", "Middlesex County"], ["state", "New Jersey"], ["created_at", "2015-11-18 17:59:39.133625"], ["updated_at", "2015-11-18 17:59:39.133625"]]
+  [1m[36m (1.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "markets" ("id", "name", "address", "city", "county", "state", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["id", 41], ["name", "Tuma’s Farmers Market"], ["address", "1 mile east of Hot Springs, SD on Hwy 18"], ["city", "Hot Springs"], ["county", "Fall River County"], ["state", "South Dakota"], ["created_at", "2015-11-18 17:59:39.136728"], ["updated_at", "2015-11-18 17:59:39.136728"]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "markets" ("id", "name", "address", "city", "county", "state", "zip", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["id", 42], ["name", "Waltham Farmers' Market"], ["address", "1 Moody Street"], ["city", "Waltham"], ["county", "Middlesex"], ["state", "Massachusetts"], ["zip", "2454"], ["created_at", "2015-11-18 17:59:39.139507"], ["updated_at", "2015-11-18 17:59:39.139507"]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "markets" ("id", "name", "address", "city", "county", "state", "zip", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["id", 43], ["name", "Ocala Farm Market"], ["address", "1 NE 1st Avenue"], ["city", "Ocala"], ["county", "Marion"], ["state", "Florida"], ["zip", "34470"], ["created_at", "2015-11-18 17:59:39.142076"], ["updated_at", "2015-11-18 17:59:39.142076"]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "markets" ("id", "name", "address", "city", "county", "state", "zip", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["id", 44], ["name", "Carbondale Farmers Market"], ["address", "1 North Main Street"], ["city", "Carbondale"], ["county", "Lackawanna"], ["state", "Pennsylvania"], ["zip", "18407"], ["created_at", "2015-11-18 17:59:39.144508"], ["updated_at", "2015-11-18 17:59:39.144508"]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "markets" ("id", "name", "address", "city", "county", "state", "zip", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["id", 45], ["name", "Farmers' Market at Mill Park"], ["address", "1 Northern Ave"], ["city", "Augusta"], ["county", "Kennebec"], ["state", "Maine"], ["zip", "4330"], ["created_at", "2015-11-18 17:59:39.147522"], ["updated_at", "2015-11-18 17:59:39.147522"]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "markets" ("id", "name", "address", "city", "county", "state", "zip", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["id", 46], ["name", "Harvard University Farmers' Market"], ["address", "1 Oxford Street"], ["city", "Cambridge"], ["county", "Middlesex"], ["state", "Massachusetts"], ["zip", "2138"], ["created_at", "2015-11-18 17:59:39.150459"], ["updated_at", "2015-11-18 17:59:39.150459"]]
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "markets" ("id", "name", "address", "city", "county", "state", "zip", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["id", 47], ["name", "Smart Markets Manassas Park"], ["address", "1 Park Center Ct."], ["city", "Manassas Park"], ["county", "Prince William"], ["state", "Virginia"], ["zip", "20111"], ["created_at", "2015-11-18 17:59:39.153155"], ["updated_at", "2015-11-18 17:59:39.153155"]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "markets" ("id", "name", "address", "city", "county", "state", "zip", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["id", 48], ["name", "Acton-Boxborough Farmers Market"], ["address", "1 Pearl St"], ["city", "Acton"], ["county", "Middlesex"], ["state", "Massachusetts"], ["zip", "1720"], ["created_at", "2015-11-18 17:59:39.155962"], ["updated_at", "2015-11-18 17:59:39.155962"]]
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "markets" ("id", "name", "address", "city", "county", "state", "zip", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["id", 49], ["name", "Willoughby Outdoor Market"], ["address", "1 Public Square"], ["city", "Willoughby"], ["county", "Lake"], ["state", "Ohio"], ["zip", "44094"], ["created_at", "2015-11-18 17:59:39.158990"], ["updated_at", "2015-11-18 17:59:39.158990"]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "markets" ("id", "name", "address", "city", "county", "state", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["id", 50], ["name", "REC'S Mobile Farmers Market - YWCA of Central MA"], ["address", "1 Salem Square"], ["city", "Worcester"], ["county", "Worcester"], ["state", "Massachusetts"], ["created_at", "2015-11-18 17:59:39.161852"], ["updated_at", "2015-11-18 17:59:39.161852"]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "markets" ("id", "name", "address", "city", "county", "state", "zip", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["id", 51], ["name", "Castine Farmers' Market"], ["address", "1 School St."], ["city", "Castine"], ["county", "Hancock"], ["state", "Maine"], ["zip", "4420"], ["created_at", "2015-11-18 17:59:39.164922"], ["updated_at", "2015-11-18 17:59:39.164922"]]
+  [1m[35m (1.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "markets" ("id", "name", "address", "city", "state", "zip", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["id", 52], ["name", "Lake Worth Farmer's Market, Waterside"], ["address", "1 South Ocean Blvd."], ["city", "Lake Worth"], ["state", "Florida"], ["zip", "33460"], ["created_at", "2015-11-18 17:59:39.167803"], ["updated_at", "2015-11-18 17:59:39.167803"]]
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "markets" ("id", "name", "address", "city", "county", "state", "zip", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["id", 53], ["name", "Crescent City Farmers Market"], ["address", "1 South Summit Street"], ["city", "Crescent City"], ["county", "Putnam"], ["state", "Florida"], ["zip", "32112"], ["created_at", "2015-11-18 17:59:39.171041"], ["updated_at", "2015-11-18 17:59:39.171041"]]
+  [1m[35m (1.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "markets" ("id", "name", "address", "city", "county", "state", "zip", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["id", 54], ["name", "York Gateway Farmers' Market"], ["address", "1 Stonewall Lane"], ["city", "York"], ["county", "York"], ["state", "Maine"], ["zip", "3909"], ["created_at", "2015-11-18 17:59:39.174525"], ["updated_at", "2015-11-18 17:59:39.174525"]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "markets" ("id", "name", "address", "city", "county", "state", "zip", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["id", 55], ["name", "Carefree Farmers Market"], ["address", "1 Sundial Circle"], ["city", "Carefree"], ["county", "Maricopa"], ["state", "Arizona"], ["zip", "85377"], ["created_at", "2015-11-18 17:59:39.177599"], ["updated_at", "2015-11-18 17:59:39.177599"]]
+  [1m[35m (1.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "markets" ("id", "name", "address", "city", "county", "state", "zip", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["id", 56], ["name", "Troy Waterfront Farmers Market"], ["address", "1 Third Street"], ["city", "Troy"], ["county", "Rensselaer"], ["state", "New York"], ["zip", "12180"], ["created_at", "2015-11-18 17:59:39.180678"], ["updated_at", "2015-11-18 17:59:39.180678"]]
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "markets" ("id", "name", "address", "city", "county", "state", "zip", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["id", 57], ["name", "Taylor Farmers' Market"], ["address", "1 Town Square Lane"], ["city", "Taylor"], ["county", "Lafayette"], ["state", "Mississippi"], ["zip", "38673"], ["created_at", "2015-11-18 17:59:39.183689"], ["updated_at", "2015-11-18 17:59:39.183689"]]
+  [1m[35m (1.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "markets" ("id", "name", "address", "city", "county", "state", "zip", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["id", 58], ["name", "Heart of the City Farmers' Market"], ["address", "1 United Nations Plaza"], ["city", "San Francisco"], ["county", "San Francisco"], ["state", "California"], ["zip", "94102"], ["created_at", "2015-11-18 17:59:39.186854"], ["updated_at", "2015-11-18 17:59:39.186854"]]
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "markets" ("id", "name", "address", "city", "county", "state", "zip", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["id", 59], ["name", "North Asheville Tailgate Market"], ["address", "1 University Heights"], ["city", "Asheville"], ["county", "Buncombe"], ["state", "North Carolina"], ["zip", "28804"], ["created_at", "2015-11-18 17:59:39.189661"], ["updated_at", "2015-11-18 17:59:39.189661"]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "markets" ("id", "name", "address", "city", "county", "state", "zip", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["id", 60], ["name", "Winter Sun Farms Indoor Winter Market"], ["address", "1 Veteran Drive"], ["city", "New Paltz"], ["county", "Ulster"], ["state", "New York"], ["zip", "12561"], ["created_at", "2015-11-18 17:59:39.192655"], ["updated_at", "2015-11-18 17:59:39.192655"]]
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "markets" ("id", "name", "address", "city", "county", "state", "zip", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["id", 61], ["name", "New Lenox Farmers Market"], ["address", "1 Veterans Parkway"], ["city", "New Lenox"], ["county", "Will"], ["state", "Illinois"], ["zip", "60451"], ["created_at", "2015-11-18 17:59:39.195952"], ["updated_at", "2015-11-18 17:59:39.195952"]]
+  [1m[35m (1.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "markets" ("id", "name", "address", "city", "county", "state", "zip", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["id", 62], ["name", "Sandhills Farmers Green Market"], ["address", "1 Village Green Rd West"], ["city", "Pinehurst"], ["county", "Moore"], ["state", "North Carolina"], ["zip", "28374"], ["created_at", "2015-11-18 17:59:39.198809"], ["updated_at", "2015-11-18 17:59:39.198809"]]
+  [1m[36m (1.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "markets" ("id", "name", "address", "city", "county", "state", "zip", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["id", 63], ["name", "Oakmont Farmers Market"], ["address", "1 W Eagle Road"], ["city", "Havertown"], ["county", "Delaware"], ["state", "Pennsylvania"], ["zip", "19083"], ["created_at", "2015-11-18 17:59:39.202551"], ["updated_at", "2015-11-18 17:59:39.202551"]]
+  [1m[35m (1.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "markets" ("id", "name", "address", "city", "county", "state", "zip", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["id", 64], ["name", "Kennedy Plaza Farmers Market"], ["address", "1 w. Chester Street"], ["city", "Long Beach"], ["county", "Nassau"], ["state", "New York"], ["zip", "11561"], ["created_at", "2015-11-18 17:59:39.206352"], ["updated_at", "2015-11-18 17:59:39.206352"]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "markets" ("id", "name", "address", "city", "county", "state", "zip", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["id", 65], ["name", "REAP Ellicottville Farmers Market"], ["address", "1 W. Washington Street"], ["city", "Ellicottville"], ["county", "Cattaraugus"], ["state", "New York"], ["zip", "14731"], ["created_at", "2015-11-18 17:59:39.209167"], ["updated_at", "2015-11-18 17:59:39.209167"]]
+  [1m[35m (1.2ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "markets" ("id", "name", "address", "city", "county", "state", "zip", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["id", 66], ["name", "Forsyth Farmers' Market"], ["address", "1 West Park Avenue"], ["city", "Savannah"], ["county", "Chatham"], ["state", "Georgia"], ["zip", "31401"], ["created_at", "2015-11-18 17:59:39.212206"], ["updated_at", "2015-11-18 17:59:39.212206"]]
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "markets" ("id", "name", "address", "city", "county", "state", "zip", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["id", 67], ["name", "Northport Farmers Market"], ["address", "1 Woodbine Ave."], ["city", "Northport"], ["county", "Suffolk"], ["state", "New York"], ["zip", "11768"], ["created_at", "2015-11-18 17:59:39.214962"], ["updated_at", "2015-11-18 17:59:39.214962"]]
+  [1m[35m (1.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "markets" ("id", "name", "address", "city", "county", "state", "zip", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["id", 68], ["name", "Hollywood Market @ Young Circle"], ["address", "1 Young Circle"], ["city", "Hollywood"], ["county", "Broward"], ["state", "Florida"], ["zip", "33022"], ["created_at", "2015-11-18 17:59:39.217799"], ["updated_at", "2015-11-18 17:59:39.217799"]]
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "markets" ("id", "name", "address", "city", "county", "state", "zip", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["id", 69], ["name", "KC Organics and Natural Market"], ["address", "1/4 mile East of Holmes Road on Red Bridge Road"], ["city", "Kansas City"], ["county", "Jackson"], ["state", "Missouri"], ["zip", "64114"], ["created_at", "2015-11-18 17:59:39.220569"], ["updated_at", "2015-11-18 17:59:39.220569"]]
+  [1m[35m (1.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "markets" ("id", "name", "address", "city", "county", "state", "zip", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["id", 70], ["name", "Towson Farmers' Market"], ["address", "10 Alleghany Avenue"], ["city", "Towson"], ["county", "Baltimore"], ["state", "Maryland"], ["zip", "21204"], ["created_at", "2015-11-18 17:59:39.223335"], ["updated_at", "2015-11-18 17:59:39.223335"]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "markets" ("id", "name", "address", "city", "county", "state", "zip", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["id", 71], ["name", "Thursday Marin Farmers Market"], ["address", "10 Avenue of the Flags"], ["city", "San Rafael"], ["county", "Marin"], ["state", "California"], ["zip", "94903"], ["created_at", "2015-11-18 17:59:39.226121"], ["updated_at", "2015-11-18 17:59:39.226121"]]
+  [1m[35m (1.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "markets" ("id", "name", "address", "city", "county", "state", "zip", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["id", 72], ["name", "Deerfield Farmer's Market"], ["address", "10 Church Street"], ["city", "Deerfield"], ["county", "Rockingham"], ["state", "New Hampshire"], ["zip", "3037"], ["created_at", "2015-11-18 17:59:39.229471"], ["updated_at", "2015-11-18 17:59:39.229471"]]
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "markets" ("id", "name", "address", "city", "county", "state", "zip", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["id", 73], ["name", "Brick District Farmers' Market"], ["address", "10 East 5th Street"], ["city", "Fulton"], ["county", "Callaway"], ["state", "Missouri"], ["zip", "65251"], ["created_at", "2015-11-18 17:59:39.232844"], ["updated_at", "2015-11-18 17:59:39.232844"]]
+  [1m[35m (1.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "markets" ("id", "name", "address", "city", "county", "state", "zip", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["id", 74], ["name", "Fox School Farmers Market"], ["address", "10 East Main Street"], ["city", "South Paris"], ["county", "Oxford"], ["state", "Maine"], ["zip", "4281"], ["created_at", "2015-11-18 17:59:39.235677"], ["updated_at", "2015-11-18 17:59:39.235677"]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "markets" ("id", "name", "address", "city", "state", "zip", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["id", 75], ["name", "Ipswich Farmers Market"], ["address", "10 Estes Street, Ebsco Parking Lot"], ["city", "Ipswich"], ["state", "Massachusetts"], ["zip", "1938"], ["created_at", "2015-11-18 17:59:39.238624"], ["updated_at", "2015-11-18 17:59:39.238624"]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "markets" ("id", "name", "address", "city", "county", "state", "zip", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["id", 76], ["name", "Imperial Beach Certified Farmers Market"], ["address", "10 Evergreen Ave.(Pier Plaza)"], ["city", "Imperial Beach"], ["county", "San Diego"], ["state", "California"], ["zip", "91932"], ["created_at", "2015-11-18 17:59:39.241548"], ["updated_at", "2015-11-18 17:59:39.241548"]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "markets" ("id", "name", "address", "city", "county", "state", "zip", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["id", 77], ["name", "Fresh Friday Farmers Market sponsored by Kaiser Permanente"], ["address", "10 Hopkins Plaza"], ["city", "Baltimore"], ["county", "Baltimore City"], ["state", "Maryland"], ["zip", "21201"], ["created_at", "2015-11-18 17:59:39.244386"], ["updated_at", "2015-11-18 17:59:39.244386"]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "markets" ("id", "name", "address", "city", "state", "zip", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["id", 78], ["name", "Sugar Grove Farmers Market"], ["address", "10 Municipal Drive"], ["city", "Sugar Grove"], ["state", "Illinois"], ["zip", "60554"], ["created_at", "2015-11-18 17:59:39.247124"], ["updated_at", "2015-11-18 17:59:39.247124"]]
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "markets" ("id", "name", "address", "city", "county", "state", "zip", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["id", 79], ["name", "Greater Danville Chamber of Commerce Farmer's Market"], ["address", "10 S Jefferson St."], ["city", "Danville"], ["county", "Hendricks"], ["state", "Indiana"], ["zip", "46122"], ["created_at", "2015-11-18 17:59:39.249955"], ["updated_at", "2015-11-18 17:59:39.249955"]]
+  [1m[35m (1.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "markets" ("id", "name", "address", "city", "county", "state", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["id", 80], ["name", "Charlemont"], ["address", "10 School St./Route 2"], ["city", "charlemont"], ["county", "Franklin"], ["state", "Massachusetts"], ["created_at", "2015-11-18 17:59:39.253263"], ["updated_at", "2015-11-18 17:59:39.253263"]]
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "markets" ("id", "name", "address", "city", "county", "state", "zip", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["id", 81], ["name", "Kittery Community Market"], ["address", "10 Shapleigh RD"], ["city", "Kittery"], ["county", "York"], ["state", "Maine"], ["zip", "3904"], ["created_at", "2015-11-18 17:59:39.256105"], ["updated_at", "2015-11-18 17:59:39.256105"]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "markets" ("id", "name", "address", "city", "county", "state", "zip", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["id", 82], ["name", "Shillington Farmers market"], ["address", "10 South Summit Avenue"], ["city", "Shillington"], ["county", "Berks"], ["state", "Pennsylvania"], ["zip", "19607"], ["created_at", "2015-11-18 17:59:39.258986"], ["updated_at", "2015-11-18 17:59:39.258986"]]
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "markets" ("id", "name", "address", "city", "county", "state", "zip", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["id", 83], ["name", "King City Certified Farmers Market"], ["address", "100 & 200 Block of Broadway St."], ["city", "King City"], ["county", "Monterey"], ["state", "California"], ["zip", "93930"], ["created_at", "2015-11-18 17:59:39.261724"], ["updated_at", "2015-11-18 17:59:39.261724"]]
+  [1m[35m (1.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "markets" ("id", "name", "address", "city", "county", "state", "zip", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["id", 84], ["name", "Janesville Farmers Market"], ["address", "100 & 200 Blocks of Main Street"], ["city", "Janesville"], ["county", "Rock"], ["state", "Wisconsin"], ["zip", "53545"], ["created_at", "2015-11-18 17:59:39.265155"], ["updated_at", "2015-11-18 17:59:39.265155"]]
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "markets" ("id", "name", "address", "city", "county", "state", "zip", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["id", 85], ["name", "Valley Junction Farmers Market"], ["address", "100 & 200 blocks on 5th Street"], ["city", "West Des Moines"], ["county", "Polk"], ["state", "Iowa"], ["zip", "50265"], ["created_at", "2015-11-18 17:59:39.268395"], ["updated_at", "2015-11-18 17:59:39.268395"]]
+  [1m[35m (1.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "markets" ("id", "name", "address", "city", "county", "state", "zip", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["id", 86], ["name", "Hayfield Farmer Market"], ["address", "100 2nd Street NE"], ["city", "Hayfield"], ["county", "Dodge"], ["state", "Minnesota"], ["zip", "55940"], ["created_at", "2015-11-18 17:59:39.271309"], ["updated_at", "2015-11-18 17:59:39.271309"]]
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "markets" ("id", "name", "address", "city", "county", "state", "zip", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["id", 87], ["name", "San Francisco Alemany Farmers Market"], ["address", "100 Alemany Boulevard"], ["city", "San Francisco"], ["county", "San Francisco"], ["state", "California"], ["zip", "94110"], ["created_at", "2015-11-18 17:59:39.274178"], ["updated_at", "2015-11-18 17:59:39.274178"]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "markets" ("id", "name", "address", "city", "county", "state", "zip", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["id", 88], ["name", "South Wedge Farmers Market"], ["address", "100 Alexander St."], ["city", "Rochester"], ["county", "Monroe"], ["state", "New York"], ["zip", "14620"], ["created_at", "2015-11-18 17:59:39.276889"], ["updated_at", "2015-11-18 17:59:39.276889"]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "markets" ("id", "name", "address", "city", "county", "state", "zip", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["id", 89], ["name", "Kelso Bridge Market"], ["address", "100 Allen St. & Pacific Ave."], ["city", "Kelso"], ["county", "Cowlitz"], ["state", "Washington"], ["zip", "98626"], ["created_at", "2015-11-18 17:59:39.279563"], ["updated_at", "2015-11-18 17:59:39.279563"]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "markets" ("id", "name", "address", "city", "county", "state", "zip", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["id", 90], ["name", "Downtown Cumberland"], ["address", "100 Baltimore Street"], ["city", "Cumberland"], ["county", "Allegany"], ["state", "Maryland"], ["zip", "21502"], ["created_at", "2015-11-18 17:59:39.282550"], ["updated_at", "2015-11-18 17:59:39.282550"]]
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "markets" ("id", "name", "address", "city", "county", "state", "zip", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["id", 91], ["name", "Richmond County Farmers Market"], ["address", "100 Biltmore Drive"], ["city", "Rockingham"], ["county", "Richmond"], ["state", "North Carolina"], ["zip", "28379"], ["created_at", "2015-11-18 17:59:39.285846"], ["updated_at", "2015-11-18 17:59:39.285846"]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "markets" ("id", "name", "address", "city", "county", "state", "zip", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["id", 92], ["name", "Mason Area Farmers Market"], ["address", "100 block East Maple at Jefferson (in street)"], ["city", "Mason"], ["county", "Ingham"], ["state", "Michigan"], ["zip", "48854"], ["created_at", "2015-11-18 17:59:39.288699"], ["updated_at", "2015-11-18 17:59:39.288699"]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[36mMarket Load (1.6ms)[0m  [1mSELECT "markets".* FROM "markets"[0m
+  [1m[35mMarket Load (0.3ms)[0m  SELECT  "markets".* FROM "markets" WHERE "markets"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mMarket Load (0.2ms)[0m  [1mSELECT  "markets".* FROM "markets" WHERE "markets"."id" = ? LIMIT 1[0m  [["id", 1]]
