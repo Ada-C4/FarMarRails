@@ -4,8 +4,11 @@ class MarketsController < ApplicationController
   end
 
   def show
-    #needs a conditional
-
+    if request.path_info.include?('home')
+      render :home_market
+    else
+      render :show
+    end
   end
 
 end
