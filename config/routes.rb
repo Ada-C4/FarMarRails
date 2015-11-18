@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   root 'markets#home'
 
+  get 'markets/user_view' => 'markets#user_view'
   resources :markets
   resources :vendors
 
