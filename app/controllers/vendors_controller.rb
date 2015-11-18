@@ -33,6 +33,12 @@ class VendorsController < ApplicationController
     redirect_to "/markets/#{market_id}/vendors"
   end
 
+  def destroy
+    market_id = params[:market_id]
+    Vendor.destroy(params[:id])
+    redirect_to "/markets/#{market_id}/vendors"
+  end
+
   private
 
   def vendor_params

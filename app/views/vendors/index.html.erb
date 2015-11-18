@@ -8,6 +8,7 @@
   <li>
     <% binding.pry %>
     <%= vendor.name %> <%= link_to "Edit", edit_market_vendor_path(@market.id,vendor.id) %>
+    <%= link_to "Delete", "/markets/#{@market.id}/vendors/#{vendor.id}", method: :delete %>
   </li>
   <% end %>
 </ul>
