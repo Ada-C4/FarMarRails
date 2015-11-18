@@ -2,3 +2,9 @@
 
 <%= button_to "Markets", "/markets", method: :get, class: "home-pg-button" %>
 <%= button_to "Vendors", "/vendors", method: :get, class: "home-pg-button" %>
+
+<ul>
+  <% @markets.each do |market| %>
+    <li><%= link_to market.name, market %></li>
+  <% end %>
+</ul>
