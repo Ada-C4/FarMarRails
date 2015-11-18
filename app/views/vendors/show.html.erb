@@ -1,5 +1,20 @@
 <h1><%= @vendor.name %></h1>
 
+<p>Number of Employees: <%= @vendor.employees %></p>
+<p>Market: <%= @vendor.market.name %></p>
+<p>Products:</p>
 <ul>
-  <li>Number of Employees: <%= @vendor.employees %></li>
+  <% @vendor.products.each do |product| %>
+  <li><%= product.name %></li>
+  <% end %>
 </ul>
+<p>Sales:</p>
+<ul>
+  <% total_sales = 0 %>
+  <% @vendor.sales.each do |sale| %>
+  <li>Date: <%= sale.purchase_time%>
+    <br>Amount: $<%= sale.amount.to_f/100 %></li>
+  <% total_sales += sale.amount %>
+  <% end %>
+</ul>
+<p>Total Sales: $<%= total_sales.to_f/100 %></p>
