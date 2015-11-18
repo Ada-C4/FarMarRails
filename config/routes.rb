@@ -1,8 +1,6 @@
 Rails.application.routes.draw do
   root 'static_pages#index'
-  resources :markets do
-    resources :vendors
-  end
+  resources :markets
   resources :vendors do
     member do
       get 'sales/' => 'sales#index'
