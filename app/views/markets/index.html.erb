@@ -1,4 +1,21 @@
-<h1>Market index (as a market)</h1>
-<h2>Table of clickable markets (will go to details for a specific market)</h2>
-<h3>Edit market + new market capabilities</h3>
-<%= link_to "Market 1", market_path(Market.first.id) %>
+<h1>Hi, Market!</h1>
+
+<h1>Farmers Markets</h1>
+<table>
+  <% @markets.each do |market| %>
+    <tr>
+      <td>
+        <%= link_to "#{market.name}", market_path(market) %>
+      </td>
+      <td>
+        <%= market.city %>
+      </td>
+      <td>
+        <%= market.state %>
+      </td>
+      <td>
+        <%= link_to 'Edit', edit_market_path(market) %>
+      </td>
+   </tr>
+   <% end %>
+</table>
