@@ -1,0 +1,7 @@
+<%= render 'static_pages/home_header' %>
+<br><br><br><br><br>
+<h1>Log in as a Vendor</h1>
+<%= form_for(:session, url: login_path) do |f| %>
+  <%= f.collection_select(:vendor_id, Vendor.all, :id, :name, {prompt: "Select the vendor:"}, {class: 'form-control'}) %>
+  <%= f.submit "Log in", class: "btn btn-primary" %>
+<% end %>
