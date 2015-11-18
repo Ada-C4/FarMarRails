@@ -11,3 +11,15 @@
     </fieldset>
     <% end %>
 </section>
+
+
+<section>
+  <%= form_for @vendor do |f| %>
+    <fieldset>
+      <legend> Vendors </legend>
+      <%= f.collection_select( :id, Vendor.all, :id, :name, prompt: "Select one:") %>
+      <br>
+      <%= f.submit %>
+    </fieldset>
+    <% end %>
+</section>

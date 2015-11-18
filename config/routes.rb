@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   root 'markets#home'
+  resources :vendors
   resources :markets do
     resources :vendors
+
 
   end
 
