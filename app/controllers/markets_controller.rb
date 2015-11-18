@@ -8,6 +8,10 @@ class MarketsController < ApplicationController
     @market = Market.find(id)
   end
 
+  def show
+  	@market = Market.find(params[:id])
+  end
+
   def create
     Market.create(task_params[:market])
   end
