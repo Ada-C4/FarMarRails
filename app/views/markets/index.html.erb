@@ -1,5 +1,7 @@
 <h1>All dem Markets</h1>
 
+<%= button_to 'New', {action: 'new', controller: 'markets'}, method: :get %>
+
 <table>
   <% @markets.each do |market| %>
   <tr>

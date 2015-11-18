@@ -8,8 +8,7 @@ class MarketsController < ApplicationController
   end
 
   def new
-    id = params[:id]
-    @market = Market.find(id)
+    @market = Market.new
   end
 
   def show
