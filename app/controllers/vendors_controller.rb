@@ -7,38 +7,48 @@ class VendorsController < ApplicationController
     # else
     id = params[:market_id]
     @market = Market.find(id)
-    @@sign_in = "Market"
+    @@sign_in = "Vendor"
     # end
   end
 
   def show
-    @@sign_in = "Vendor"
+    @@sign_in = "Market"
     id = params[:market_id]
     @market = Market.find(id)
   end
 
   def new
     @vendor = Vendor.new()
-    @action = "create"
+    if @@sign_in == "Market"
+      id = params[:market_id]
+      @market = Market.find(id)
+      @action = "market_vendor_create_path(#{@market})"
+    else
+      @action = "create"
+    end
   end
 
-  def create
+  def market_vendor_create
     id = params[:market_id]
     @market = Market.find(id)
-    new_params = vendor_params[:vendor]
-    new_params[:market_id] = @market.id
-    Vendor.create(new_params)
+    Vendor.create(vendor_params[:vendor])
     redirect_to "/markets/#{@market.id}/vendors"
   end
 
+  def create
+    new_params = vendor_params[:vendor]
+    new_params[:market_id] = 3
+    Vendor.create(new_params)
+    redirect_to "/vendors"
+  end
+
+
   def edit
-    binding.pry
     if @@sign_in == "Vendor"
 
       vendor_id = params[:id]
       @vendor = Vendor.find(vendor_id)
     else
-      binding.pry
     end
     @action = "update"
   end

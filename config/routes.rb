@@ -2,16 +2,18 @@ Rails.application.routes.draw do
 
   root 'markets#sign_in'
 
-  resources :vendors
 
   resources :markets do
     get '/vendors' => 'vendors#show'
     get '/vendors/new' =>'vendors#new'
-    post '/vendors' => 'vendors#create'
+    post '/vendors' => 'vendors#create', as: :vendor_create
     delete '/vendors/:id' => 'vendors#destroy'
     get '/vendors/:id/edit' => 'vendors#edit'
     patch '/vendors/:id' => 'vendors#update'
   end
+
+  resources :vendors
+
 
 
 
