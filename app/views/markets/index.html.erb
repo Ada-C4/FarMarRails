@@ -1,2 +1,15 @@
-<h1>Markets!</h1>
-<%= link_to "Create new Market!", new_market_path %>
+<h1>Welcome to Kelly & Lauren's FarMarFinder!</h1>
+<h3>would you like to proceed as:</h3>
+<%= button_to 'a market?', '/markets', method: :get %>
+<p>
+  or
+</p>
+<%= button_to 'a vendor?', '/vendors', method: :get %>
+<!-- <%= link_to "Create new Market!", new_market_path %> -->
+<ul>
+  <% @markets.each do |market| %>
+    <li>
+      <%= market.name %>
+    </li>
+  <% end %>
+</ul>

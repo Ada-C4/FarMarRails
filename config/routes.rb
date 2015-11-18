@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  root 'markets#decide'
+  root 'markets#index'
 
   resources :markets do
     resources :vendors
