@@ -1,23 +1,20 @@
 Rails.application.routes.draw do
 
-root 'home#index'
+  root 'home#index'
 
-resources :home, only: [:index]  do
-  resources :markets, only: [:index, :show]
-end
+  get 'home/markets/:id' => 'markets#show', as: :home_market
 
-
-resources :markets, except: [:destroy] do
-  resources :vendors do
+  resources :markets, except: [:destroy] do
+    resources :vendors do
+    end
   end
-end
 
-resources :vendors, only: [:index, :show] do
-  resources :products do
-    resources :sales, only: [:index, :create]
+  resources :vendors, only: [:index, :show] do
+    resources :products do
+      resources :sales, only: [:index, :create]
+    end
+    resources :sales, only: [:index]
   end
-  resources :sales, only: [:index]
-end
 
 
 
