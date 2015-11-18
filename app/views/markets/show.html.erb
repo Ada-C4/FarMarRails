@@ -6,6 +6,8 @@
   <% @market.vendors.each do |vendor| %>
     <tr>
       <td><%= link_to vendor.name, "/markets/#{vendor.market_id}/vendors/#{vendor.id}" %></td>
+      <td><%= button_to 'Edit', edit_market_vendor_path(market_id: vendor.market_id, id: vendor.id), method: :get %></td>
+      <td><%= button_to 'Delete', market_vendor_path(market_id:vendor.market_id, id: vendor.id), method: :delete %></td>
     </tr>
   <% end %>
 </table>
