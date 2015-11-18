@@ -1,8 +1,10 @@
 <h1>Welcome to FarMar</h1>
+<%= button_to "I am a market", "/markets", method: :get, class: "home-pg-button" %>
+<%= button_to "I am a vendor", "/vendors", method: :get, class: "home-pg-button" %>
 
-<%= button_to "Markets", "/markets", method: :get, class: "home-pg-button" %>
-<%= button_to "Vendors", "/vendors", method: :get, class: "home-pg-button" %>
-
+<p>
+  All Markets
+</p>
 <ul>
   <% @markets.each do |market| %>
     <li><%= link_to market.name, market %></li>

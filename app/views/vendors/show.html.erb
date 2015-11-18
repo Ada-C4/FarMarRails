@@ -1,0 +1,23 @@
+<h1><%= @vendor.name %></h1>
+
+<h2>Products</h2>
+
+<table>
+  <% @vendor.products.each do |product| %>
+    <tr>
+      <td><%= product.name %></td>
+    </tr>
+  <% end %>
+</table>
+
+<h2>Sales</h2>
+
+<table>
+  <% @vendor.products.each do |product| %>
+    <% product.sales.each do |sale| %>
+      <tr>
+        <td>$<%= p '%.2f' % (sale.amount/100.0) %></td><td><%= sale.purchase_time.strftime("%D") %></td>
+      </tr>
+    <% end %>
+  <% end %>
+</table>
