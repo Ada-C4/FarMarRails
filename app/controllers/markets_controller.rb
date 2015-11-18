@@ -22,6 +22,11 @@ class MarketsController < ApplicationController
     redirect_to '/markets'
   end
 
+  def show
+    @market = Market.find(params[:id])
+    @vendors = @market.vendors
+  end
+
 private
 
   def market_params
