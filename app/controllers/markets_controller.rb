@@ -1,6 +1,6 @@
 class MarketsController < ApplicationController
 
-  def index
+  def sign_in
 
   end
 end
