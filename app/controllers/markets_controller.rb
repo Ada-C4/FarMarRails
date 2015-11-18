@@ -12,4 +12,11 @@ class MarketsController < ApplicationController
     id = params[:id]
     @market = Market.find(id)
   end
+
+  def new
+    @market = Market.new()
+  end
+
+  def create
+  end
 end
