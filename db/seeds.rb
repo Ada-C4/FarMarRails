@@ -5,11 +5,23 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+require 'csv'
+markets = CSV.read("./seed_csvs/markets.csv")
 
-markets = [
-  { name: "People's Co-op Farmers Market", address:"30th and Burnside", city: "Portland", county: "Multnomah", state: "Oregon", zip: "97202" }
-]
+market_list = {}
 
 markets.each do |market|
+  {
+  name: market[0],
+  address: market[1],
+  city: market[2],
+  county: market[3],
+  state: market[4],
+  zip: market[5]
+  }
+  market_list.push(market)
+end
+
+market_list.each do |market|
   Market.create(market)
 end
