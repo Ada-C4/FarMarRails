@@ -20,9 +20,7 @@ class MarketsController < ApplicationController
   end
 
   def edit
-    id = params[:id]
-    Market.delete(id)
-    redirect_to "/"
+    @market=Market.find(params[:id])
   end
 
   def destroy
