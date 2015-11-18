@@ -23,6 +23,6 @@ CSV.read("./seed_csvs/products.csv").each do |line|
 end
 
 CSV.read("./seed_csvs/sales.csv").each do |line|
-  sale = {amount: line[1].to_i, purchase_time: DateTime.strptime(line[2], "%Y-%m-%d %H:%M:%S %z") , vendor_id: line[3].to_i, product_id: line[4].to_i}
+  sale = {amount: line[1].to_i, purchase_time: line[2].to_datetime, vendor_id: line[3].to_i, product_id: line[4].to_i}
   Sale.create sale
 end
