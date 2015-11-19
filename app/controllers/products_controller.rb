@@ -18,6 +18,19 @@ class ProductsController < ApplicationController
     redirect_to "/vendors/#{@vendor_id}/products"
   end
 
+  def edit
+    id = params[:id]
+    @product = Product.find(id)
+    @action = "update"
+  end
+
+  def update
+    @vendor_id = params[:vendor_id]
+    id = params[:id]
+    Product.update(id, product_params[:product])
+    redirect_to "/vendors/#{@vendor_id}/products"
+  end
+
   def destroy
     @vendor_id = params[:vendor_id]
     product_id = params[:id]
