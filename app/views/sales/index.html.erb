@@ -1,0 +1,10 @@
+<h2>Here are the sales:</h2>
+
+<ul>
+  <% @sales.each do |sale| %>
+  <% binding.pry %>
+    <li>
+      <%= sale.product.name %>:<%= sale.amount %>, <%= sale.purchase_time %>
+    </li>
+  <% end %>
+</ul>
