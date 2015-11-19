@@ -15,7 +15,7 @@ class VendorsController < ApplicationController
 	  vendor = Vendor.create(vendor_params[:vendor])
 	  vendor.market_id = params[:market_id]
 	  vendor.save
-	  @button = true
+	  @buttons = true
 	  redirect_to market_path(id: vendor.market_id)
 	end
 
@@ -38,9 +38,10 @@ class VendorsController < ApplicationController
 	  vendor = Vendor.find(id)
 	  vendor.update(
 	  name: vendor_params[:vendor][:name],
-	  num_emps: vendor_params[:vendor][:num_emps],
-	  market_id: vendor_params[:vendor][:market_id],
+	  num_emps: vendor_params[:vendor][:num_emps]
 	  )
+	  @buttons = true
+	  redirect_to market_path(id: vendor.market_id)
 	end
 
 	private
