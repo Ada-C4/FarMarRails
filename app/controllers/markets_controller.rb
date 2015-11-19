@@ -5,10 +5,11 @@ class MarketsController < ApplicationController
   end
 
   def mkt_home
+
   end
 
   def index
-
+    @markets= Market.all
   end
 
   def show
