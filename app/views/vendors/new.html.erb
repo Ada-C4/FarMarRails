@@ -1,0 +1,18 @@
+<%= form_for @vendor, url: { action: @action}, method: @method do |f| %>
+
+  <fieldset>
+    <legend><%=@title%></legend>
+    <%= f.label :name %>
+    <%= f.text_field :name%>
+    <br>
+    <br>
+    <%= f.label :employees%>
+    <%= f.text_field :employees %>
+    <br>
+    <br>
+    <%= f.label :market_id %>
+    <%= f.text_field :market_id %>
+    <br>
+  </fieldset>
+  <%= f.submit %>
+<% end %>

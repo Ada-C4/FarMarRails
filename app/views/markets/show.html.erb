@@ -9,6 +9,7 @@
 </ul>
 <% if @buttons == true %>
   <li><%=link_to "Edit this market", edit_market_path %></li>
+  <li><%=link_to "Create a new vendor", new_vendor_path %></li>
 <% end %>
 
 <h3>Vendors:</h3>
@@ -16,6 +17,8 @@
   <% @vendors.each do |vendor| %>
     <li><%= vendor.name%>
       <% if @buttons == true %>
+      <%= button_to "Delete Vendor", { action: :destroy, id: vendor.id}, method: :delete, data: { confirm: "Are you sure that you want to delete this?" } %>
+      <%=link_to "Edit Vendor", edit_vendor_path(vendor) %></li>
       <% end %>
   <% end %>
 </ul>
