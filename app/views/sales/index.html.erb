@@ -2,6 +2,7 @@
 <h2>The vendor is <%= @vendor.name %></h2>
 <h2>The number of sales is <%= @sales.length %></h2>
 <h2>Total sales is $<%= @total_sales %></h2>
+<%= link_to "current month sales", current_month_vendor_sales_path %>
 <table>
   <thead>
     <tr>
