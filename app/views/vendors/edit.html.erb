@@ -1,0 +1,14 @@
+<fieldset>
+  <%= form_for @vendor, url:{ action: :update } do |f| %>
+    <legend><h1><%= @title %></h1></legend>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+    <br>
+    <%= f.label :employees %>
+    <%= f.text_field :employees %>
+    <br>
+    <%= f.hidden_field :market_id, value: params[:market_id] %>
+    <%= f.submit %>
+  <% end %>
+
+</fieldset>
