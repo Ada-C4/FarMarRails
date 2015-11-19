@@ -14,4 +14,11 @@ class MarketsController < ApplicationController
     @is_a_market = true
     @markets = Market.all
   end
+
+  def edit
+    id = params[:id]
+    @market= Market.find(id)
+    @title = "Edit Market"
+    @action = :update
+  end
 end
