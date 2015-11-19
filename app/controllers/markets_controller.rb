@@ -55,9 +55,8 @@ class MarketsController < ApplicationController
   end
 
   def update
-
-  Market.update(params[:id], market_params[:market])
-  redirect_to '/'
+    Market.update(params[:id], market_params[:market])
+    redirect_to '/'
   end
 
   private

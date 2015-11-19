@@ -1,18 +1,21 @@
 class SalesController < ApplicationController
+
   def new
     @sale = Sale.new
-    @action = "create"
-    @method = :post
-    @title = "Sale Information"
+    @vendor = Vendor.find(params[:vendor_id])
   end
 
   def create
-    Sale.create(sale_params[:sale])
-    redirect_to '/'
+    Sale.create(
+      product_id: sale_params[:sale][:product_id],
+      amount: sale_params[:sale][:amount].to_i * 100,
+      vendor_id: params[:vendor_id],
+      purchase_time: Time.now)
+      redirect_to vendor_path(params[:vendor_id])
   end
 
 private
   def sale_params
-    params.require(:sale).permit(:amount, :purchase_time, :vendor_id, :product_id)
+    params.permit(sale:[:product_id, :amount])
   end
 end
