@@ -20,4 +20,11 @@
     <% end %>
   <% end %>
   <h3>Total sales: $<%= @vendor.total_sales %> </h3>
+
+  <h2>Monthly Sales</h2>
+  <% @vendor.monthly_sales.each do |sale| %>
+    <div>
+      <%="$" + sale.amount.to_s %>
+    </div>
+  <% end %>
 </div>
