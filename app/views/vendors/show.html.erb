@@ -2,7 +2,10 @@
 
 <p>Create, edit, or delete a product<p>
 <ul>
+  <%= link_to "create", new_vendor_product_path(params[:id]) %>
   <% @products.each do |product| %>
-    <li><%= product.name %> <%= link_to "edit", edit_vendor_product_path(product.vendor_id, product.id), method: :get %></li>
+    <li><%= product.name %>
+      <%= link_to "edit", edit_vendor_product_path(product.vendor_id, product.id), method: :get %>
+    </li>
   <% end %>
 </ul>
