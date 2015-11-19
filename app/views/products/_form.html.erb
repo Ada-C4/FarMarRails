@@ -1,0 +1,8 @@
+<%= form_for @product, url:({action: @action}) do |f|%>
+
+<legend> New Product </legend>
+  <%= f.label :name %>
+  <%= f.text_field :name %><br>
+
+  <%= f.submit class: "submit" %>
+<% end %>

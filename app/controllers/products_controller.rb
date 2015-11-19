@@ -4,10 +4,30 @@ class ProductsController < ApplicationController
     @products = Product.where(vendor_id: @vendor_id)
   end
 
+  def new
+    @vendor_id = params[:vendor_id]
+    @product = Product.new()
+    @action = "create"
+  end
+
+  def create
+    @vendor_id = params[:vendor_id]
+    new_params = product_params[:product]
+    new_params[:vendor_id] = @vendor_id
+    Product.create(new_params)
+    redirect_to "/vendors/#{@vendor_id}/products"
+  end
+
   def destroy
     @vendor_id = params[:vendor_id]
     product_id = params[:id]
     Product.destroy(product_id)
     redirect_to "/vendors/#{@vendor_id}/products"
+  end
+
+  private
+
+  def product_params
+    params.permit(product:[:name, :vendor_id])
   end
 end
