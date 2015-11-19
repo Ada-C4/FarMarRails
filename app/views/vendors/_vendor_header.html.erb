@@ -21,9 +21,9 @@
           <ul class="dropdown-menu">
             <li><%= link_to "Create Sale", '#' %></li>
             <li class="divider"></li>
-            <li><%= link_to "Total Sales", sales_vendor(session[:vendor_id]) %></li>
+            <li><%= link_to "Total Sales", sales_vendor_path(session[:vendor_id]) %></li>
             <li class="divider"></li>
-            <li><%= link_to "Monthly Sales", sales_month_vendor(session[:vendor_id]) %></li>
+            <li><%= link_to "Monthly Sales", sales_month_vendor_path(session[:vendor_id]) %></li>
           </ul>
         </li>
         <li><%= link_to "Log out", logout_path, method: "delete" %></li>
