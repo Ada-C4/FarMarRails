@@ -22,10 +22,15 @@ class ProductsController < ApplicationController
   def update
     id = params[:vendor_id]
     vendor = Vendor.find(id)
-    
+    product = vendor.products.find(params[:id])
+    product.update(product_params)
     redirect_to vendor_path(id)
   end
   def destroy
+    id = params[:id]
+    vendor_id = params[:vendor_id]
+    Product.find(id).destroy
+    redirect_to vendor_path(vendor_id)
   end
 
   private
