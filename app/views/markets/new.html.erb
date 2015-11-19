@@ -1,6 +1,6 @@
 <%= form_for @market, url: { action: @action } do |f| %>
   <%= f.label :name %>
-  <%= f.text_field :name %>
+  <%= f.text_field :name, required: true%>
   <br>
   <%= f.label :address %>
   <%= f.text_field :address %>
