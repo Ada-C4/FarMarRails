@@ -11,6 +11,11 @@ class ProductsController < ApplicationController
     redirect_to vendor_path(vendor_id)
   end
 
+  def show
+    @product = Product.find(params[:id])
+    @vendor = Vendor.find(params[:vendor_id])
+  end
+
   ####################
   private
 

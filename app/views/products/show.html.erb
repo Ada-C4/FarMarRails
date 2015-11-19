@@ -1,0 +1,16 @@
+<div class="pretend-nav">
+  <div class="nav-position">
+  <%= link_to "CREATE SALE", new_vendor_product_sale_path(@vendor, @product)  %>
+  </div>
+</div>
+
+<div class="center">
+  <h1><%= @product.name %></h1>
+
+  <h2><% @product %></h2>
+  <% @product.sales.each do |sale| %>
+    <div>
+      <%= "$" + sale.amount.to_s %>
+    </div>
+  <% end %>
+</div>
