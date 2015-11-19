@@ -2,8 +2,8 @@
 
 <h1 class="home-pg-header">Welcome to FarMar</h1>
 <div class="button-container">
-  <%= button_to "I am a market", "/markets", method: :get, class: "home-pg-button" %>
-  <%= button_to "I am a vendor", "/vendors", method: :get, class: "home-pg-button" %>
+  <%= button_to "I am a market", "/markets", method: :get, class: "home-pg-button", params:{user_type: 'market'} %>
+  <%= button_to "I am a vendor", "/vendors", method: :get, class: "home-pg-button", params:{user_type: 'vendor'} %>
 </div>
 
 
