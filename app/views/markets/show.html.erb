@@ -1,9 +1,9 @@
-<h1><%= @market.name %></h1>
-<p>
+<h1 class='pg-header'><%= @market.name %></h1>
+<p class='description'>
   <%= @market.address %> | <%= @market.city%> | <%= @market.county %> county | <%= @market.state %> | <%= @market.zip %>
 </p>
 
-<h2>Who's sellin' stuff here?</h2>
+<h2 class="pg-sub-header">Who's sellin' stuff here?</h2>
 
 <% if @is_guest %>
 <table>
@@ -30,8 +30,8 @@
     <% @market.vendors.each do |vendor| %>
     <tr>
       <td><%= vendor.name %></td>
-      <td><%= button_to 'Edit', edit_market_vendor_path(market_id: vendor.market_id, id: vendor.id), method: :get %></td>
-      <td><%= button_to 'Delete', market_vendor_path(market_id:vendor.market_id, id: vendor.id), method: :delete %></td>
+      <td><%= button_to 'Edit', edit_market_vendor_path(market_id: vendor.market_id, id: vendor.id), method: :get, class: 'table_button' %></td>
+      <td><%= button_to 'Delete', market_vendor_path(market_id:vendor.market_id, id: vendor.id), method: :delete, class: 'table_button' %></td>
     </tr>
     <% end %>
   </table>
