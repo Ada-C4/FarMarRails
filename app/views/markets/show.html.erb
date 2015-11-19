@@ -1,0 +1,15 @@
+<header>
+  <%= link_to "Add Market", new_market_path  %>
+  <%= link_to "Edit", edit_market_path(@market) %>
+</header>
+
+<div>
+  <h1><%= @market.name %> User Portal</h1>
+</div>
+
+<h2>Vendors</h2>
+<% @market.vendors.each do |vendor| %>
+  <div>
+    <%= vendor.name %>
+  </div>
+<% end %>

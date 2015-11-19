@@ -4,9 +4,7 @@ Rails.application.routes.draw do
   get 'welcome/select' => 'welcome#select', as: :select_user
 
   resources :markets do
-    member do
-	    get 'vendors', as: :vendors
-	  end
+	  get 'vendors', on: :member
   end
 
   resources :vendors do
