@@ -5,8 +5,6 @@
         <legend><%= legend_text %></legend>
         <%= f.label :name %>
         <%= f.text_field :name, class: 'form-control'  %>
-        <%= f.label :vendor_id %>
-        <%= f.text_field :vendor_id, class: 'form-control', value: params[:id]  %>
         <br>
         <%= f.submit value: "#{button_text}", class: "btn btn-primary" %>
       </fieldset>
