@@ -8,7 +8,8 @@ class SalesController < ApplicationController
   end
 
   def create
-    Sale.create(sale_params[:sale])
+    sale = Sale.create(sale_params[:sale])
+    redirect_to market_vendor_product_sale(market_id: sale.vendor.market_id, product_id: sale.product_id, vendor_id: sale.vendor.id, sale_id: sale.id,)
   end
 
   def edit
@@ -31,9 +32,8 @@ class SalesController < ApplicationController
     sale.update(
     amount: sale_params[:sale][:amount],
     purchase_time: sale_params[:sale][:purchase_time],
-    vendor_id: sale_params[:sale][:vendor_id],
-    product_id: sale_params[:sale][:product_id],
     )
+    redirect_to market_vendor_product_sale(market_id: sale.vendor.market_id, product_id: sale.product_id, vendor_id: sale.vendor.id, sale_id: sale.id,)
   end
 
   private
