@@ -4,7 +4,6 @@ body {
 }
 
 .home-pg-image {
-  /*height: 200px;*/
   width: 100%;
   filter: grayscale(100%);
   -webkit-filter: grayscale(75%);
@@ -33,31 +32,41 @@ body {
   margin: 10px;
   opacity: 0.6;
   background-color: #FFFFFF;
+  font-size: 14px;
+  font-weight: bold;
 }
 
 #market-button {
   position: absolute;
-  left: 25%;
+  left: 30%;
   top: 400px;
 }
 
 #vendor-button {
   position: absolute;
-  left: 50%;
+  left: 45%;
   top: 400px;
 }
 
 #guest-button {
   position: absolute;
-  left: 75%;
+  left: 60%;
   top: 400px;
 }
 
-/*.button-container {
-  width: 320px;
-  height: 130px;
+.home-pg-sub-header {
+  text-align: center;
+  font-size: 32px;
+}
+
+.home-pg-markets {
+  width: 450px;
   margin: auto;
-  position: absolute;
-  top: 400px;
-  left: 46%;
-}*/
+}
+
+.home-pg-market-link {
+  text-decoration: none;
+  color: #666666;
+}
+
+.home-pg-market-link:hover {color: #000000;}

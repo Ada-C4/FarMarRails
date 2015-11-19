@@ -1,17 +1,17 @@
 <img src="http://www.littlerock.com/!UserFiles/business-listings/attractions/Farmers'%20Market.jpg" alt="farmers market" class="home-pg-image">
 
 <h1 class="home-pg-header">Welcome to FarMar</h1>
-<div class="button-container">
   <%= button_to "I am a market", "/markets", method: :get, class: "home-pg-button", id: "market-button", params:{user_type: 'market'} %>
   <%= button_to "I am a vendor", "/vendors", method: :get, class: "home-pg-button", id: "vendor-button", params:{user_type: 'vendor'} %>
   <%= button_to "I am a guest", "/markets", method: :get, class: "home-pg-button", id: "guest-button", params:{user_type: 'guest'} %>
-</div>
 
-<p>
+
+
+<p class="home-pg-sub-header">
   All Markets
 </p>
-<ul>
+<ul class="home-pg-markets">
   <% @markets.each do |market| %>
-    <li><%= link_to market.name, market %></li>
+    <li><%= link_to market.name, market, class: "home-pg-market-link" %></li>
   <% end %>
 </ul>
