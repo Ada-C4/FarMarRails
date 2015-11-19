@@ -6,9 +6,20 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
+
+<header>
+  <h1>Kelly & Lauren's FarMarFinder</h1>
+  <nav>
+    <%= link_to 'farmar home', root_path %>
+    <%= link_to 'market home', markets_path %>
+    <%= link_to 'vendor home', vendors_path %>
+  </nav>
+</header>
+
 <body>
 
 <%= yield %>
 
 </body>
+
 </html>
