@@ -11,7 +11,7 @@
         <%= sale.product.name %>
       </td>
       <td>
-        $<%= sale.amount.to_f / 100 %>
+        $<%= sprintf('%.2f', sale.amount.to_f / 100) %>
       </td>
       <td>
         <%= sale.purchase_time.strftime("%I:%M %p on %m/%d/%Y") %>
