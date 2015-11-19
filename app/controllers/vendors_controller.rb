@@ -5,6 +5,11 @@ class VendorsController < ApplicationController
     redirect_to market_path(params[:market_id])
   end
 
+  def destroy
+    Vendor.find(params[:id]).destroy
+    redirect_to market_path(params[:market_id])
+  end
+
   def edit
     id = params[:id]
     @vendor = Vendor.find(id)

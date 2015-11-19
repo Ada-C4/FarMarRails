@@ -30,8 +30,9 @@
       <td>
         <%= link_to 'Edit', edit_market_vendor_path(id: vendor.id, market_id: @market.id) %>
       </td>
+      <td>
+        <%= link_to "Delete",  { :controller=>"vendors", action: :destroy, :id => vendor.id, :market_id => @market.id }, method: :delete, data: { confirm: 'Are you sure?' } %>
+      </td>
     </tr>
   <% end %>
 </table>
-
-<h2>Create/delete vendor buttons</h2>
