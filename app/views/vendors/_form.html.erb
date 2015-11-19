@@ -7,6 +7,9 @@
 <%= f.text_field :name %><br>
 <%= f.label :num_employees %>
 <%= f.text_field :num_employees %><br>
+<% if @sign_in == "Vendor" %>
+  <%= f.collection_select(:market_id, Market.all, :id, :name, prompt: "Select the Market:") %>
+<% end %>
 
 <%= f.submit class: "submit" %>
 <% end %>

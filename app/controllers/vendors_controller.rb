@@ -5,9 +5,11 @@ class VendorsController < ApplicationController
     # if request.fullpath == "/vendors"
     #   @sign_in = "Vendor"
     # else
-    id = params[:market_id]
-    @market = Market.find(id)
+    # id = params[:market_id]
+    # @market = Market.find(id)
+    @vendors = Vendor.all
     @@sign_in = "Vendor"
+    @sign_in  = "Vendor"
     # end
   end
 
@@ -18,7 +20,7 @@ class VendorsController < ApplicationController
   end
 
   def new
-    binding.pry
+    @sign_in  = "Vendor"
     @vendor = Vendor.new()
     if @@sign_in == "Market"
       id = params[:market_id]
@@ -38,10 +40,8 @@ class VendorsController < ApplicationController
   end
 
   def create
-    new_params = vendor_params[:vendor]
     # NEED TO ADD PLACE IN FORM FOR MARKET
-    new_params[:market_id] = 3
-    Vendor.create(new_params)
+    Vendor.create(vendor_params[:vendor])
     redirect_to "/vendors"
   end
 
@@ -53,7 +53,8 @@ class VendorsController < ApplicationController
       @market = Market.find(id)
       @vendor = Vendor.find(vendor_id)
       @action = "market_vendor_update"
-    else
+    elsif @@sign_in == "Vendor"
+      binding.pry
       vendor_id = params[:id]
       @vendor = Vendor.find(vendor_id)
       @action = "update"
