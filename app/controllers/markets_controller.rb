@@ -35,8 +35,8 @@ class MarketsController < ApplicationController
   end
 
   def create
-    Market.create( market_params[:market] )
-    redirect_to market_path(params[:id])
+    a = Market.create( market_params[:market] )
+    redirect_to market_path(a.id)
   end
 
   def destroy
