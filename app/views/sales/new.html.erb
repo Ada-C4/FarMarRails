@@ -1,0 +1,9 @@
+<h1>Sale for <%= @product.name %> from <%= @vendor.name %></h1>
+<%= form_for [@vendor, @product, @sale] do |f| %>
+  <fieldset>
+    <legend><%= @product.name.upcase %>Sale Information</legend>
+    <%= f.label :amount %>
+    <%= f.text_field :amount %>
+  </fieldset>
+    <%= f.submit %>
+<% end %>

@@ -4,16 +4,17 @@ Rails.application.routes.draw do
 
   get 'welcome/market' => 'welcome#show'
 
-
-  get 'vendors/:vendor_id/sales/current_month' => 'sales#current_month'
-
   resources :markets do
     resources :vendors
   end
 
   resources :vendors do
-    resources :products
-    resources :sales
+    resources :products do
+      resources :sales, only: [:create, :new]
+    end
+    resources :sales, except: [:create, :new] do
+      get 'current_month', on: :collection
+    end
   end
 
 end
