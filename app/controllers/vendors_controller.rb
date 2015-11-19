@@ -22,12 +22,12 @@ class VendorsController < ApplicationController
   def update
     vendor = Vendor.find(params[:id])
     vendor.update(vendor_params[:vendor])
-    redirect_to market_path(vendor.market_id)
+    redirect_to vendor.market
   end
 
   def destroy
     vendor = Vendor.destroy(params[:id])
-    redirect_to market_path(vendor.market_id)
+    redirect_to vendor.market
   end
 
   def show
