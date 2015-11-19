@@ -4,12 +4,29 @@
 <p>Market: <%= @vendor.market.name %></p>
 
 <p>Products:</p>
-<ul>
-  <% @vendor.products.each do |product| %>
-  <li><%= product.name %> | COMING SOON: Edit | Delete | Create Sale</li>
-  <% end %>
-</ul>
+
+<table>
+  <tbody>
+    <% @vendor.products.each do |product| %>
+      <tr>
+        <td>• <%= product.name %></td>
+        <td> *EDIT* </td>
+        <td> *DELETE* </td>
+        <td> *CREATE SALE* </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
+
+
 <p>COMING SOON: link_to Add A Product</p>
+
+
+
+
+
 
 <p>Sales:</p>
 <ul>
