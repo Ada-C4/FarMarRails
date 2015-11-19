@@ -8,11 +8,18 @@ class ProductsController < ApplicationController
   def edit
   end
   def create
-    # Product.create(market_params[:product])
-    # redirect_to
+    id = params[:vendor_id]
+    vendor = Vendor.find(id)
+    vendor.products.create(product_params)
+    redirect_to vendor_path(id)
   end
   def update
   end
   def destroy
   end
+
+  private
+  def product_params
+  params.require(:product).permit(:name, :vendor_id)
+end
 end
