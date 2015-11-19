@@ -19,4 +19,15 @@ class MarketsController < ApplicationController
   def new
     @market = Market.new
   end
+
+  def create
+    @market = Market.create(market_params)
+    redirect_to root_path
+  end
+
+  private
+
+  def market_params
+    params.require(:market).permit(:name, :address, :city, :country, :state, :zip)
+  end
 end
