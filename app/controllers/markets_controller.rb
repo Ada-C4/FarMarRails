@@ -46,6 +46,7 @@ class MarketsController < ApplicationController
     state: market_params[:market][:state],
     zip: market_params[:market][:zip],
     )
+    redirect_to markets_path
   end
 
   private
