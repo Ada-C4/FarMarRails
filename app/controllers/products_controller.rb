@@ -12,7 +12,9 @@ class ProductsController < ApplicationController
 
   def create
     vendor_id = params[:vendor_id]
-    Product.create(product_params[:product])
+    Product.create(
+      name: product_params[:product][:name],
+      vendor_id: session[:vendor_id])
     redirect_to "/vendors/#{vendor_id}/products"
   end
 
@@ -48,7 +50,7 @@ class ProductsController < ApplicationController
   private
 
   def product_params
-    params.permit(product:[:id, :name, :vendor_id])
+    params.permit(product:[:name])
   end
 
 end

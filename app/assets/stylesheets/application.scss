@@ -21,6 +21,7 @@ $light-blue: rgb(75, 152, 217);
 $light-red: rgb(140, 83, 82);
 $purple: rgb(80, 48, 90);
 $yellow: rgb(227, 230, 61);
+
 $jumbo-height: 300px;
 
 .navbar-inverse {
@@ -94,4 +95,17 @@ $jumbo-height: 300px;
 
 .centered-button {
   margin-top: 40vh;
+}
+
+thead {
+  font-size: 1.3em;
+  font-weight: bold;
+}
+
+.table-color {
+  border-collapse:collapse;
+  border:2px solid $yellow;
+  thead {
+    background: $yellow;
+  }
 }

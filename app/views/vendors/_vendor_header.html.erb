@@ -6,21 +6,19 @@
         <li><%= link_to "Home", root_path %></li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-            Product Tools <b class="caret"></b>
+            Products & Sales <b class="caret"></b>
           </a>
           <ul class="dropdown-menu">
-            <li><%= link_to "Create Product", '#' %></li>
+            <li><%= link_to "Create Product", new_vendor_product_path(session[:vendor_id]) %></li>
             <li class="divider"></li>
-            <li><%= link_to "View Products", vendor_products_path(session[:vendor_id]) %></li>
+            <li><%= link_to "Add Sale", vendor_products_path(session[:vendor_id]) %></li>
           </ul>
         </li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-            Sales Tools <b class="caret"></b>
+            Sales Stats <b class="caret"></b>
           </a>
           <ul class="dropdown-menu">
-            <li><%= link_to "Create Sale", '#' %></li>
-            <li class="divider"></li>
             <li><%= link_to "Total Sales", sales_vendor_path(session[:vendor_id]) %></li>
             <li class="divider"></li>
             <li><%= link_to "Monthly Sales", sales_month_vendor_path(session[:vendor_id]) %></li>
