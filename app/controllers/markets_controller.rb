@@ -1,6 +1,6 @@
 class MarketsController < ApplicationController
   def home
-    @markets = Market.all
+    @markets = Market.order(:name)
   end
 
   def index
@@ -18,8 +18,8 @@ class MarketsController < ApplicationController
   def show
   	@market = Market.find(params[:id])
 		@is_market = true if session[:user_type] == 'market'
-		@is_vendor = true if session[:user_type] == 'vendor'
-		@is_guest = true if session[:user_type] == 'guest'
+		@is_vendor = true if session[:user_type] == 'vendor' 
+		@is_guest = true if session[:user_type] == 'guest' || session[:user_type].nil?
   end
 
   def create
