@@ -9,7 +9,7 @@ class VendorsController < ApplicationController
 
   def create
     @vendor = Vendor.create(vendor_params)
-    redirect_to mkt_home_path
+    redirect_to mkt_home_path(@vendor.market_id)
   end
 
   def select
@@ -27,6 +27,6 @@ class VendorsController < ApplicationController
   private
 
   def vendor_params
-    params.require(:vendor).permit(:name, :no_of_employees)
+    params.require(:vendor).permit(:name, :no_of_employees, :market_id)
   end
 end

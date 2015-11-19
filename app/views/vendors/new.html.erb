@@ -7,6 +7,7 @@
     <%= f.text_field :name %><br>
     <%= f.label :no_of_employees %>
     <%= f.text_field :no_of_employees %>
+    <%= f.hidden_field :market_id, :value => params[:market_id] %>
     <br>
     <%= f.submit %>
   </fieldset>
