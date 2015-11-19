@@ -14,20 +14,25 @@
       <tbody>
         <% total_sales_amount = 0 %>
         <% product_count = 0 %>
-        <% @sales.each do |sale| %>
+        <% if !@sales.nil? %>
+          <% @sales.each do |sale| %>
+            <tr>
+              <td><%= sale.product.name %></td>
+              <td><%= number_to_currency(sale.amount / 100.0) %></td>
+              <td><%= sale.purchase_time.strftime("%b %-d, %Y") %></td>
+              <td><%= sale.purchase_time.strftime("%l:%M %P") %></td>
+            </tr>
+            <% total_sales_amount += sale.amount %>
+            <% product_count += 1 %>
+          <% end %>
+        <% else %>
           <tr>
-            <td><%= sale.product.name %></td>
-            <td><%= number_to_currency(sale.amount / 100) %></td>
-            <td><%= sale.purchase_time.strftime("%b %-d, %Y") %></td>
-            <td><%= sale.purchase_time.strftime("%l:%M %P") %></td>
+            <td colspan="3">No sales to display</td>
           </tr>
-          <% total_sales_amount += sale.amount %>
-          <% product_count += 1 %>
-        <% end %>
       </tbody>
     </table>
     <h3>
-      Total sales: <%= number_to_currency(total_sales_amount / 100) %>
+      Total sales: <%= number_to_currency(total_sales_amount / 100.0) %>
     </h3>
     <h3>Total products sold: <%= product_count %></h3>
     </p>
