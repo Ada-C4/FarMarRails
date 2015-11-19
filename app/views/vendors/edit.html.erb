@@ -1,6 +1,7 @@
 <h1>Edit this vendor </h1>
 <section>
-<%= form_for @vendor do |f| %>
+
+<%= form_for @vendor, :url => {:action => "update"} do |f| %>
   <fieldset>
     <legend><%= @vendor_name %></legend>
     <div>

@@ -22,4 +22,17 @@ class VendorsController < ApplicationController
     end
   end
 
+  def update
+    id = params[:id]
+    @vendor = Vendor.find(id)
+    @vendor.update(vendor_params[:vendor])
+    redirect_to market_path(@vendor.market)
+  end
+
+  private
+
+  def vendor_params
+    params.permit(vendor:[:name, :num_employees, :market_id])
+  end
+
 end
