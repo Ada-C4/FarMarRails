@@ -1,5 +1,5 @@
-<%=  form_for :sale, url: new_market_vendor_product_sale do |f| %>
-<div class='legend'><h1><%= form_title %></h1></div>
+<%=  form_for :sale, url: new_product_sale_path do |f| %>
+<div class='legend'><h1>Add a Sale</h1></div>
   <fieldset>
     <%= f.label :amount %>:
     <%= f.text_field :amount %><br>
