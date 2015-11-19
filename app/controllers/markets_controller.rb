@@ -4,6 +4,8 @@ class MarketsController < ApplicationController
   end
 
   def index
+  	session[:user_type] = params[:user_type]
+  	@buttons = true if session[:user_type] == 'market'
     @markets = Market.all
   end
 

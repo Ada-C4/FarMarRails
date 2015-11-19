@@ -1,12 +1,27 @@
 <h1>All dem Markets</h1>
 
+
+<% if @buttons %>
 <%= button_to 'New', {action: 'new', controller: 'markets'}, method: :get %>
 
-<table>
-  <% @markets.each do |market| %>
-  <tr>
-    <td><%= link_to market.name, market %></td>
-    <td><%= button_to 'Edit', edit_market_path(id: market.id), method: :get %></td>
-  </tr>
-  <% end %>
-</table>
+  <table>
+    <% @markets.each do |market| %>
+    <tr>
+      <td><%= link_to market.name, market %></td>
+      <td><%= button_to 'Edit', edit_market_path(id: market.id), method: :get %></td>
+    </tr>
+    <% end %>
+  </table>
+<% end %>
+
+<% if !@buttons %>
+  <table>
+    <% @markets.each do |market| %>
+    <tr>
+      <td><%= link_to market.name, market %></td>
+    </tr>
+    <% end %>
+  </table>
+<% end %>
+
+
