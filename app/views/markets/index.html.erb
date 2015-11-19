@@ -1,5 +1,5 @@
 <% @markets.each do |market| %>
   <div>
-    <%= link_to market.name, vendors_market_path(market) %>
+    <%= link_to market.name, market_vendors_path(market) %>
   </div>
 <% end %>

@@ -1,5 +1,10 @@
 class VendorsController < ApplicationController
+  def index
+    @market = Market.find(params[:market_id])
+  end
+
   def show
+    @market_view = params[:market_id].present?
     @vendor = Vendor.find(params[:id])
   end
 
@@ -9,8 +14,10 @@ class VendorsController < ApplicationController
   end
 
   def create
-    new_vendor = Vendor.create(vendor_params)
-    redirect_to vendor_path(new_vendor)
+    Vendor.create(vendor_params)
+
+    market_id = params[:market_id]
+    redirect_to market_path(market_id)
   end
 
   def edit
@@ -29,7 +36,8 @@ class VendorsController < ApplicationController
 ####################
   private
   def vendor_params
-    params.require(:vendor).permit(:name, :employees)
+    vendor = params.require(:vendor).permit(:name)
+    vendor.merge(params.permit(:market_id))
   end
 
 end
