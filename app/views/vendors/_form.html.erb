@@ -1,7 +1,7 @@
 <h1>Add a New Vendor</h1>
 
-<%= form_for @vendor, url: @action do |f| %>
-<%= binding.pry %>
+<%= form_for @vendor, url:({action: @action}) do |f|%>
+
 <legend> New Vendor </legend>
 <%= f.label :name %>
 <%= f.text_field :name %><br>

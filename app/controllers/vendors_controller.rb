@@ -18,11 +18,12 @@ class VendorsController < ApplicationController
   end
 
   def new
+    binding.pry
     @vendor = Vendor.new()
     if @@sign_in == "Market"
       id = params[:market_id]
       @market = Market.find(id)
-      @action = "market_vendor_create_path(#{@market})"
+      @action = "market_vendor_create"
     else
       @action = "create"
     end
@@ -30,13 +31,15 @@ class VendorsController < ApplicationController
 
   def market_vendor_create
     id = params[:market_id]
-    @market = Market.find(id)
-    Vendor.create(vendor_params[:vendor])
-    redirect_to "/markets/#{@market.id}/vendors"
+    new_params = vendor_params[:vendor]
+    new_params[:market_id] = id
+    Vendor.create(new_params)
+    redirect_to "/markets/#{id}/vendors"
   end
 
   def create
     new_params = vendor_params[:vendor]
+    # NEED TO ADD PLACE IN FORM FOR MARKET
     new_params[:market_id] = 3
     Vendor.create(new_params)
     redirect_to "/vendors"
@@ -44,20 +47,31 @@ class VendorsController < ApplicationController
 
 
   def edit
-    if @@sign_in == "Vendor"
-
+    if @@sign_in == "Market"
+      id = params[:market_id]
+      vendor_id = params[:id]
+      @market = Market.find(id)
+      @vendor = Vendor.find(vendor_id)
+      @action = "market_vendor_update"
+    else
       vendor_id = params[:id]
       @vendor = Vendor.find(vendor_id)
-    else
+      @action = "update"
     end
-    @action = "update"
   end
 
-  def update
+  def market_vendor_update
     market_id = params[:market_id]
     vendor_id = params[:id]
     Vendor.update(vendor_id, vendor_params[:vendor])
     redirect_to "/markets/#{market_id}/vendors"
+  end
+
+  def update
+    #market_id = params[:market_id]
+    vendor_id = params[:id]
+    Vendor.update(vendor_id, vendor_params[:vendor])
+    redirect_to "/vendors"
   end
 
   def destroy
