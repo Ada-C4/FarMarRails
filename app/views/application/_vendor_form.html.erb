@@ -3,7 +3,7 @@
   <fieldset>
     <%= f.label :name %>:
     <%= f.text_field :name %><br>
-    <%= f.label :num_emps %>:
+    <%= f.label :num_emps, 'Number of Employees' %>:
     <%= f.text_field :num_emps %><br>
     <%= hidden_field_tag :market_id, params[:market_id] %>
   </fieldset>
