@@ -15,11 +15,7 @@ class MarketsController < ApplicationController
 
   def show
   	@market = Market.find(params[:id])
-		if URI(request.referrer).path == '/markets'
-			@buttons = true
-		else 
-			@buttons = false
-		end
+		@buttons = true if session[:user_type] == 'market'
   end
 
   def create
