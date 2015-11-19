@@ -1,15 +1,15 @@
-<header>
-  <%= link_to "Add Market", new_market_path  %>
-  <%= link_to "Edit", edit_market_path(@market) %>
-</header>
-
-<div>
-  <h1><%= @market.name %> User Portal</h1>
+<div class="pretend-nav">
+  <%= link_to "CREATE", new_market_path  %>
+  <%= link_to "EDIT", edit_market_path(@market) %>
 </div>
 
-<h2>Vendors</h2>
-<% @market.vendors.each do |vendor| %>
-  <div>
-    <%= vendor.name %>
-  </div>
-<% end %>
+<div class="center">
+  <h1><%= @market.name %></h1>
+
+  <h2>Vendors</h2>
+  <% @market.vendors.each do |vendor| %>
+    <div>
+      <%= vendor.name %>
+    </div>
+  <% end %>
+</div>

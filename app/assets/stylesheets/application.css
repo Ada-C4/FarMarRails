@@ -13,3 +13,83 @@
  *= require_tree .
  *= require_self
  */
+
+ body {
+  word-wrap: break-word;
+  max-width: 1280px;
+  margin: 0 auto;
+  font-family: 'Open Sans', sans-serif;
+ }
+
+ a {
+  font-family: 'Open Sans', sans-serif;
+  text-decoration: none;
+ }
+
+ nav a, .pretend-nav a {
+  color: black;
+  font-size: 14px;
+  margin-right: 20px;
+ }
+
+.wrapper {
+  min-height: 640px;
+  background-color: pink;
+  padding: 5% 0;
+}
+
+header {
+  min-width: 1280px;
+  height: 72px;
+  background-color: grey;
+  position: fixed;
+  top: 0;
+}
+
+nav, .pretend-nav {
+  text-align: right;
+  line-height: 72px;
+}
+
+.pretend-nav {
+  position: fixed;
+  top: 0;
+  right: 190px;
+}
+
+.content {
+  width: 50%;
+  margin: auto;
+  margin-top: 72px;
+}
+
+.center {
+  padding: 10% 0;
+}
+
+select {
+  width: 100%;
+  font-size: 20px;
+}
+
+.logo {
+  position: fixed;
+  top: 0;
+  width: 72px;
+  height: 62px;
+  background-color: purple;
+  color: black;
+  line-height: 0;
+  text-align: center;
+  font-family: 'Fugaz One', cursive;
+  font-size: 60px;
+  padding-top: 10px;
+}
+
+.logo h6 {
+  margin: 20px;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: 'Fugaz One', cursive;
+}
