@@ -3,6 +3,7 @@
     <%= form_for @sale, url: @url_path, :html => {:class => "form-group"} do |f| %>
       <fieldset>
         <legend><%= legend_text %></legend>
+        <h3>Product: <%= Product.find(params[:id]).name %> </h3>
         <%= f.label :amount, "Amount of sale (in pennies)" %>
         <%= f.number_field :amount, class: 'form-control' %>
         <br>

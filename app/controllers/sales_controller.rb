@@ -6,6 +6,7 @@ class SalesController < ApplicationController
 
   def new
     @sale = Sale.new
+    @url_path = sales_create_vendor_product_path
   end
 
   # def create
