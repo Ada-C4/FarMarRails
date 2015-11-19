@@ -1,6 +1,9 @@
 <h1>Hi, Market!</h1>
 
 <h1>Farmers Markets</h1>
+<p>
+<%= link_to "Create a Market", new_market_path %>
+</p>
 <table>
   <% @markets.each do |market| %>
     <tr>
