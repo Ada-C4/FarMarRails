@@ -1,7 +1,7 @@
 <h1>Farmer's Market Homepage</h1>
 
 <section>
-  <%= form_tag mkt_home_path(:id), method: :get do %>
+  <%= form_tag mkt_select_path, method: :get do %>
     <fieldset>
       <legend> Visit Market Homepage </legend>
       <%= collection_select(:market, :id, Market.all, :id, :name, prompt: "Select one:") %>
@@ -10,7 +10,7 @@
     </fieldset>
   <% end %>
 
-  <%= form_tag v_home_path(:id), method: :get do %>
+  <%= form_tag v_select_path, method: :get do %>
     <fieldset>
       <legend> Visit Vendor Homepage </legend>
       <%= collection_select(:vendor, :id, Vendor.all, :id, :name, prompt: "Select one:") %>
@@ -21,7 +21,7 @@
 </section>
 
 <section>
-  <%= form_tag market_path(:id), method: :get do %>
+  <%= form_tag mkt_details_path, method: :get do %>
     <fieldset>
       <legend> View Market Details </legend>
       <%= collection_select(:market, :id, Market.all, :id, :name, prompt: "Select one:") %>

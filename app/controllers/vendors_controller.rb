@@ -12,6 +12,10 @@ class VendorsController < ApplicationController
     redirect_to mkt_home_path
   end
 
+  def select
+    redirect_to v_home_path(params[:vendor][:id])
+  end
+
   def index
 
   end

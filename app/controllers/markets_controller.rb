@@ -3,8 +3,16 @@ class MarketsController < ApplicationController
 
   end
 
+  def select
+    redirect_to mkt_home_path(params[:market][:id])
+  end
+
   def mkt_home
     @market = Market.find(params[:id])
+  end
+
+  def details
+    redirect_to market_path(params[:market][:id])
   end
 
   def index

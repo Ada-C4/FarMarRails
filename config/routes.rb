@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
   root 'markets#home'
+  get 'markets/select' => 'markets#select', as: :mkt_select
+  get 'vendors/select' => 'vendors#select', as: :v_select
+  get 'markets/details' => 'markets#details', as: :mkt_details
   get 'markets/:id/home' => 'markets#mkt_home', as: :mkt_home
   get 'vendors/:id/home' => 'vendors#v_home', as: :v_home
   resources :vendors
