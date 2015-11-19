@@ -27,6 +27,10 @@ class ProductsController < ApplicationController
     redirect_to vendor_path(id)
   end
   def destroy
+    id = params[:id]
+    vendor_id = params[:vendor_id]
+    Product.find(id).destroy
+    redirect_to vendor_path(vendor_id)
   end
 
   private
