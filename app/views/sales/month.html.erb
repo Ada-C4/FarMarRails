@@ -2,12 +2,12 @@
 <%= render 'vendors/vendor_header' %>
 
 <%= form_for(@sales, url: @url_path) do |f| %>
-  <%= month_field(:sale, :purchase_time) %>
+  <%= select_month(1) %>
   <br>
   <%= f.submit "View sales", class: "btn btn-primary" %>
 <% end %>
 
-<p>
+<!-- <p>
   <% total_sales_amount = 0 %>
   <% product_count = 0 %>
   <% @sales.each do |sale| %>
@@ -19,4 +19,4 @@
 </p>
 <p>
   Total sales: <%= number_to_currency(total_sales_amount / 100) %> Total products sold: <%= product_count %>
-</p>
+</p> -->

@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   resources :vendors do
     member do
       get 'sales/' => 'sales#index'
-      get 'sales/month' => 'sales#month'
+      get 'sales/month/:id' => 'sales#month'
     end
     resources :products do
       member do
