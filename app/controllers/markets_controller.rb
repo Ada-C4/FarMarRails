@@ -36,8 +36,19 @@ class MarketsController < ApplicationController
   def create
   end
   def new
+    @market = Market.new
+    @action = "create"
+    @method = :post
+    @title = "Market Information"
   end
+
   def edit
+    @title = "Edit your market"
+    id = params[:id]
+    @action = "update"
+    @method = :patch
+    @task = Market.find(id)
+    render "new"
   end
   def update
   end
