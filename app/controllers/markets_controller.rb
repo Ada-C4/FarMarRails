@@ -25,6 +25,16 @@ class MarketsController < ApplicationController
     redirect_to root_path
   end
 
+  def edit
+    @market = Market.find(params[:id])
+  end
+
+  def update
+    @market = Market.find(params[:id])
+    @market.update_attributes(market_params)
+    render :mkt_home
+  end
+
   private
 
   def market_params
