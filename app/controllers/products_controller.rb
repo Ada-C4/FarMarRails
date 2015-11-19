@@ -9,7 +9,7 @@ class ProductsController < ApplicationController
 
   def create
     product = Product.create(name: product_params[:product][:name], vendor_id: params[:vendor_id])
-    redirect_to "/vendors/#{product.vendor_id}"
+    redirect_to vendor_path(params[:vendor_id])
   end
 
   def edit
