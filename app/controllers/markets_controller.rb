@@ -18,7 +18,7 @@ class MarketsController < ApplicationController
   end
 
   def create
-    new_market = Market.create(market_params[:market])
+    new_market = Market.create(market_params)
 
     redirect_to market_path(new_market)
   end
@@ -32,15 +32,16 @@ class MarketsController < ApplicationController
   end
 
   def update
-    updated_market = Market.update(params[:id], market_params[:market])
+    updated_market = Market.update(params[:id], market_params)
 
     redirect_to market_path(updated_market)
   end
 
+###################################
   private
 
   def market_params
-    params.permit(market:[:name, :address, :city, :county, :state, :zip])
+    params.require(:market).permit(:name, :address, :city, :county, :state, :zip)
   end
 
 end
