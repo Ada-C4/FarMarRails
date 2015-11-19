@@ -12,6 +12,9 @@
 </p>
 <ul class="home-pg-markets">
   <% @markets.each do |market| %>
-    <li><%= link_to market.name, market, class: "home-pg-market-link" %></li>
+  <tr>
+    <td><%= link_to market.name, market, class: "market-link" %></td>
+  </tr>
+
   <% end %>
 </ul>

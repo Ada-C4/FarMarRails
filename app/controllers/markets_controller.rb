@@ -1,14 +1,15 @@
 class MarketsController < ApplicationController
   def home
-    @markets = Market.all
+    @markets = Market.order(:name)
   end
 
   def index
-  	session[:user_type] = params[:user_type]
+  	user = params[:user_type]
+  	session[:user_type] = user unless user.nil?
   	@buttons = true if session[:user_type] == 'market'
+  	@markets = Market.all if params[:order].nil?
     @markets = Market.order(name: :desc) if params[:order] == 'za'
     @markets = Market.order(:name) if params[:order] == 'az'
-    @markets = Market.all if params[:order].nil?
   end
 
   def new
@@ -18,8 +19,8 @@ class MarketsController < ApplicationController
   def show
   	@market = Market.find(params[:id])
 		@is_market = true if session[:user_type] == 'market'
-		@is_vendor = true if session[:user_type] == 'vendor'
-		@is_guest = true if session[:user_type] == 'guest'
+		@is_vendor = true if session[:user_type] == 'vendor' 
+		@is_guest = true if session[:user_type] == 'guest' || session[:user_type].nil?
   end
 
   def create
