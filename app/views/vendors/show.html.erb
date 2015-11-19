@@ -1,7 +1,8 @@
 <h1><%= @vendor.name %></h1>
 <br>
 <h2><%= @vendor.name %> has <%= @vendor.num_employees%> employees and is located at <%= @vendor.market.name %></h2>
-
+<%= link_to "Create new Product!", new_vendor_product_path(@vendor.id) %>
+<br>
 <h2><%= @vendor.name %> sells: </h2>
   <% @products.each do |product| %>
     <h3><%= product.name %></h3>
