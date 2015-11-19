@@ -35,8 +35,8 @@ class ProductsController < ApplicationController
     market_id = Vendor.find(vendor_id).market_id
     product = Product.find(id)
     product.update(
-    name: product_params[:product][:name],
-    vendor_id: product_params[:product][:vendor_id],
+    name: product_params[:name],
+    vendor_id: product_params[:vendor_id],
     )
     redirect_to market_vendor_path(market_id: market_id , id: vendor_id)
   end
