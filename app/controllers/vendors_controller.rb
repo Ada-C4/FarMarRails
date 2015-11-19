@@ -1,5 +1,6 @@
 class VendorsController < ApplicationController
 	def index
+		session[:user_type] = params[:user_type]
 	  @vendors = Market.find(params[:market_id]).vendors
 	end
 
