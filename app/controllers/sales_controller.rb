@@ -8,10 +8,21 @@ class SalesController < ApplicationController
     @sale = Sale.new
   end
 
+  # def create
+  #   Sale.create(sale_params[:sale])
+  #   vendor_id = params[:vendor_id]
+  #   redirect_to "/vendors/#{vendor_id}/sales"
+  #   @url_path = sales_create_vendor_product_path
+  # end
+
   def create
-    Sale.create(sale_params[:sale])
-    vendor_id = params[:vendor_id]
-    redirect_to "/vendors/#{vendor_id}/sales"
+    Sale.create(
+    amount: sale_params[:amount],
+    purchase_time: Time.now,
+    vendor_id: sale_params[:vendor_id],
+    product_id: sale_params[:id]
+    )
+    redirect_to sales_vendor_path(session[:vendor_id])
   end
 
   def month
