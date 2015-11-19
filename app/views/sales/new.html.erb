@@ -1,5 +1,7 @@
 <%=  form_for :sale, url: product_sales_path do |f| %>
-<div class='legend'><h1>Add a Sale</h1></div>
+<div class='legend'><h1>Add a Sale</h1><p>
+  Product: <%= @product.name %>
+</p></div>
   <fieldset>
     <%= f.label :amount, "Amount: $" %>:
     <%= f.number_field :amount, :value => 0, :min => 0, :step => 0.01 %><br>

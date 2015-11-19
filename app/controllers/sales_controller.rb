@@ -5,6 +5,7 @@ class SalesController < ApplicationController
 
   def new
     @sale = Sale.new
+    @product = Product.find(params[:product_id])
     session[:return_to] = request.referrer
   end
 
