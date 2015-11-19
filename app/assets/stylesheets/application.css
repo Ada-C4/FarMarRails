@@ -25,7 +25,6 @@ body {
   width: 130px;
   height: 130px;
   border-radius: 50%;
-  display: inline-block;
   border-color: #000000;
   border-style: solid;
   border-width: 1px;
@@ -36,11 +35,29 @@ body {
   background-color: #FFFFFF;
 }
 
-.button-container {
+#market-button {
+  position: absolute;
+  left: 25%;
+  top: 400px;
+}
+
+#vendor-button {
+  position: absolute;
+  left: 50%;
+  top: 400px;
+}
+
+#guest-button {
+  position: absolute;
+  left: 75%;
+  top: 400px;
+}
+
+/*.button-container {
   width: 320px;
   height: 130px;
   margin: auto;
   position: absolute;
   top: 400px;
   left: 46%;
-}
+}*/
