@@ -1,2 +1,15 @@
 <% provide(:title, "Show All Vendor Sales") %>
 <%= render 'vendors/vendor_header' %>
+<p>
+  <% total_sales_amount = 0 %>
+  <% product_count = 0 %>
+  <% @sales.each do |sale| %>
+    <%= sale.product.name %> <%= number_to_currency(sale.amount / 100) %> <%= sale.purchase_time %>
+    <% total_sales_amount += sale.amount %>
+    <% product_count += 1 %>
+    <br />
+  <% end %>
+</p>
+<p>
+  Total sales: <%= number_to_currency(total_sales_amount / 100) %> Total products sold: <%= product_count %>
+</p>
