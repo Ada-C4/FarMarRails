@@ -1,10 +1,10 @@
 class MarketsController < ApplicationController
   def home
-  
+
   end
 
   def mkt_home
-    @market = Market.find(params[:market][:id])
+    @market = Market.find(params[:id])
   end
 
   def index
@@ -12,7 +12,7 @@ class MarketsController < ApplicationController
   end
 
   def show
-    @market = Market.find(params[:market][:id])
+    @market = Market.find(params[:id])
   end
 
   def new

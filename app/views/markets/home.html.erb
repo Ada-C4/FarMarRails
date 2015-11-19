@@ -1,34 +1,34 @@
 <h1>Farmer's Market Homepage</h1>
 
 <section>
-  <%= form_tag mkt_home_path, method: :get do %>
+  <%= form_tag mkt_home_path(:id), method: :get do %>
     <fieldset>
       <legend> Visit Market Homepage </legend>
-      <%= collection_select(:id, Market.all, :id, :name, prompt: "Select one:") %>
+      <%= collection_select(:market, :id, Market.all, :id, :name, prompt: "Select one:") %>
       <br>
       <%= submit_tag "Go to Market" %>
     </fieldset>
-    <% end %>
+  <% end %>
 
-  <%= form_tag v_home_path, method: :get do %>
+  <%= form_tag v_home_path(:id), method: :get do %>
     <fieldset>
       <legend> Visit Vendor Homepage </legend>
-      <%= collection_select( :id, Vendor.all, :id, :name, prompt: "Select one:") %>
+      <%= collection_select(:vendor, :id, Vendor.all, :id, :name, prompt: "Select one:") %>
       <br>
       <%= submit_tag "View Vendor" %>
     </fieldset>
-    <% end %>
+  <% end %>
 </section>
 
 <section>
-  <%= form_tag market_path, method: :get do %>
+  <%= form_tag market_path(:id), method: :get do %>
     <fieldset>
       <legend> View Market Details </legend>
-      <%= collection_select(:id, Market.all, :id, :name, prompt: "Select one:") %>
+      <%= collection_select(:market, :id, Market.all, :id, :name, prompt: "Select one:") %>
       <br>
       <%= submit_tag "View Market" %>
     </fieldset>
-    <% end %>
+  <% end %>
   </section>
 
   <section>
