@@ -1,10 +1,31 @@
+<% provide(:title, "Vendor Information") %>
 <%= render 'vendors/vendor_header' %>
-<p>
-  I'm the vendor: <%= @vendor.name %>
-</p>
-<p>
-  Here's some info about me: <%= @vendor.no_employees %> <%= @vendor.market_id %>
-</p>
-<p>
-  Here are my products: <% @products.each do |product| %> <%= product.name %> <% end %>
-</p>
+<div class="row">
+  <div class="col-sm-6 col-md-4">
+    <div class="thumbnail">
+      <h3>Vendor Name</h3>
+      <p>
+        <%= @vendor.name %>
+      </p>
+    </div>
+  </div>
+  <div class="col-sm-6 col-md-4">
+    <div class="thumbnail">
+      <h3>Vendor Stats</h3>
+      <p>
+        Number of Employees: <%= @vendor.no_employees %>
+      </p>
+      <p>
+        Our Market: <%= @vendor.market.name %>
+      </p>
+    </div>
+  </div>
+  <div class="col-sm-6 col-md-4">
+    <div class="thumbnail">
+      <h3>Products</h3>
+      <% @products.each do |product| %>
+        <p><%= product.name %></p>
+      <% end %>
+    </div>
+  </div>
+</div>
