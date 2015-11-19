@@ -8,6 +8,6 @@ class SalesController < ApplicationController
 
   def current_month
     id = params[:vendor_id]
-    # not finished
+    
   end
 end
