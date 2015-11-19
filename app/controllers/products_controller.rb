@@ -12,8 +12,7 @@ class ProductsController < ApplicationController
     product.vendor_id = params[:vendor_id]
     product.save
     market_id = params[:market_id]
-    redirect_to "/"
-    # redirect_to market_vendor_path(market_id: market_id, id: product.vendor_id)
+    redirect_to market_vendor_path(market_id: market_id, id: product.vendor_id)
   end
 
   def edit
@@ -34,11 +33,14 @@ class ProductsController < ApplicationController
 
   def update
     id = params[:id]
+    vendor_id = Product.find(params[:id]).vendor_id
+    market_id = Vendor.find(vendor_id).market_id
     product = Product.find(id)
     product.update(
     name: product_params[:product][:name],
     vendor_id: product_params[:product][:vendor_id],
     )
+    redirect_to market_vendor_path(market_id: market_id , id: vendor_id)
   end
 
   private
