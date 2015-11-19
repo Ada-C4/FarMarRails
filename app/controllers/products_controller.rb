@@ -15,6 +15,7 @@ class ProductsController < ApplicationController
 
   def edit
     @product = Product.find(params[:id])
+    session[:return_to] = request.referrer
   end
 
   def show
@@ -31,14 +32,12 @@ class ProductsController < ApplicationController
 
   def update
     id = params[:id]
-    vendor_id = Product.find(params[:id]).vendor_id
-    market_id = Vendor.find(vendor_id).market_id
     product = Product.find(id)
     product.update(
     name: product_params[:name],
     vendor_id: product_params[:vendor_id],
     )
-    redirect_to market_vendor_path(market_id: market_id , id: vendor_id)
+    redirect_to session[:return_to]
   end
 
   private
