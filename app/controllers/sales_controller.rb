@@ -3,6 +3,7 @@ class SalesController < ApplicationController
   def new
     @sale = Sale.new
     @vendor = Vendor.find(params[:vendor_id])
+    @product = Product.find(params[:product_id])
   end
 
   def create
@@ -11,7 +12,7 @@ class SalesController < ApplicationController
     product.sales.create(
     #Sale.create(
       product_id: sale_params[:sale][:product_id],
-      amount: sale_params[:sale][:amount].to_i * 100,
+      amount: sale_params[:sale][:amount].to_f * 100,
       vendor_id: params[:vendor_id],
       purchase_time: Time.now)
       redirect_to vendor_path(params[:vendor_id])
