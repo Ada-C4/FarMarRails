@@ -1,0 +1,21 @@
+<h1>All Time Sales for <%= @vendor.name %></h1>
+
+<% total_sales = [] %>
+<table>
+  <% @sales.each do |s| %>
+    <% total_sales.push(s.amount) %>
+    <tr>
+      <td>
+        $<%= p '%.2f' % (s.amount/100.0) %>
+      </td>
+      <td>
+         <%= s.purchase_time.strftime("%D") %>
+      </td>
+    </tr>
+  <% end %>
+    <tr>
+      <td colspan="2">
+        Total Sales for <%= @vendor.name %>: $<%= p '%.2f' % (total_sales.inject(:+)/100) %>
+      </td>
+    </tr>
+</table>
