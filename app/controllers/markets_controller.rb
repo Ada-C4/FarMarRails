@@ -27,6 +27,9 @@ class MarketsController < ApplicationController
     redirect_to market_path(params[:id])
   end
 
+  def destroy
+  end
+
   private
 
   def market_params
