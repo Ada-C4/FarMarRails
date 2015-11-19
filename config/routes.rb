@@ -12,7 +12,9 @@ Rails.application.routes.draw do
     patch '/vendors/:id' => 'vendors#market_vendor_update'
   end
 
-  resources :vendors
+  resources :vendors do
+    resources :sales, :products
+  end
 
 
 

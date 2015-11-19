@@ -18,3 +18,15 @@ vendors_csv.each do |id, name, num_employees, market_id|
   hash = {:id => id, :name => name, :num_employees => num_employees, :market_id => market_id}
   Vendor.create(hash)
 end
+
+sales_csv = CSV.read("./seed_csvs/sales.csv")
+sales_csv.each do |id, amount, purchase_time, vendor_id, product_id|
+  hash = {:id => id, :amount => amount, :purchase_time => purchase_time, :vendor_id => vendor_id, :product_id => product_id}
+  Sale.create(hash)
+end
+
+products_csv = CSV.read("./seed_csvs/products.csv")
+products_csv.each do |id, name, vendor_id|
+  hash = {:id => id, :name => name, :vendor_id => vendor_id}
+  Product.create(hash)
+end
