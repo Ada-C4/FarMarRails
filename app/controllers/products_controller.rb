@@ -1,10 +1,14 @@
 class ProductsController < ApplicationController
+  def index
+    @products = Product.all
+  end
+
   def new
     @product = Product.new
   end
 
   def create
-    product = Product.create(product_params[:product])
+    product = Product.create(name: product_params[:product][:name], vendor_id: params[:vendor_id])
     redirect_to "/vendors/#{product.vendor_id}"
   end
 
