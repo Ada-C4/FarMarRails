@@ -1,6 +1,6 @@
 <div class="pretend-nav">
   <div class="nav-position">
-  <%= link_to "CREATE", new_vendor_path  %>
+  <%= link_to "CREATE PRODUCT", new_vendor_product_path(@vendor)  %>
   <%= link_to "EDIT", edit_vendor_path(@vendor) %>
   </div>
 </div>
@@ -8,11 +8,14 @@
 <div class="center">
   <h1><%= @vendor.name %></h1>
 
-  <h2>Vendors</h2>
+  <h2>Products</h2>
   <% @vendor.products.each do |product| %>
+  <div>
+    <%= product.name %>
+  </div>
     <% product.sales.each do |sale| %>
       <div>
-        <%= product.name + " $" + sale.amount.to_s %>
+        <%="$" + sale.amount.to_s %>
       </div>
     <% end %>
   <% end %>
