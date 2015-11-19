@@ -1,10 +1,12 @@
-<%= form_for @product, url: {action: "create"} do |f| %>
-  <fieldset>
-    <legend>Add a product:</legend>
-    <%=f.label :name %>
-    <%=f.text_field :name %>
-    <br><br>
-  </fieldset>
-  <br>
-  <%= f.submit("Add Product!") %>
-<% end %>
+<div class="container">
+  <%= form_for @product, url: {action: "create"} do |f| %>
+    <fieldset>
+      <legend>Add a product:</legend>
+      <%=f.label :name %>
+      <%=f.text_field :name %>
+      <br><br>
+    </fieldset>
+    <br>
+    <%= f.submit("Add Product!") %>
+  <% end %>
+</div>

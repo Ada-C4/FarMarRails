@@ -1,16 +1,18 @@
-<%= form_for @vendor do |f| %>
-  <fieldset>
-    <legend>Add a vendor:</legend>
-    <%=f.label :name %>
-    <%=f.text_field :name %>
-    <br><br>
-    <%= f.label :employees %>
-    <%= f.text_field :employee_no %>
-    <br><br>
-    <%= f.label :market_id %>
-    <%= f.text_field :market_id%>
-    <br><br>
-  </fieldset>
-  <br>
-  <%= f.submit("Add Vendor!") %>
-<% end %>
+<div class="container">
+  <%= form_for @vendor do |f| %>
+    <fieldset>
+      <legend>Add a vendor:</legend>
+      <%=f.label :name %>
+      <%=f.text_field :name %>
+      <br><br>
+      <%= f.label :employees %>
+      <%= f.text_field :employee_no %>
+      <br><br>
+      <%= f.label :market_id %>
+      <%= f.text_field :market_id%>
+      <br><br>
+    </fieldset>
+    <br>
+    <%= f.submit("Add Vendor!") %>
+  <% end %>
+</div>

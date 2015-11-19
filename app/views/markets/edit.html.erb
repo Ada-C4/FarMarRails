@@ -1,28 +1,30 @@
-<%= form_for @market do |f| %>
-  <fieldset>
-    <legend>Update a market:</legend>
-    <%=f.label :name %>
-    <%=f.text_field :name %>
-    <br><br>
-    <%= f.label :address %>
-    <%= f.text_field :address %>
-    <br><br>
-    <%= f.label :city %>
-    <%= f.text_field :city%>
-    <br><br>
-    <br><br>
-    <%= f.label :county %>
-    <%= f.text_field :county%>
-    <br><br>
-    <br><br>
-    <%= f.label :state %>
-    <%= f.text_field :state%>
-    <br><br>
-    <br><br>
-    <%= f.label :zip %>
-    <%= f.text_field :zip%>
-    <br><br>
-  </fieldset>
-  <br>
-  <%= f.submit("Save Changes!") %>
-<% end %>
+<div>
+  <%= form_for @market do |f| %>
+    <fieldset>
+      <legend>Update a market:</legend>
+      <%=f.label :name %>
+      <%=f.text_field :name %>
+      <br><br>
+      <%= f.label :address %>
+      <%= f.text_field :address %>
+      <br><br>
+      <%= f.label :city %>
+      <%= f.text_field :city%>
+      <br><br>
+      <br><br>
+      <%= f.label :county %>
+      <%= f.text_field :county%>
+      <br><br>
+      <br><br>
+      <%= f.label :state %>
+      <%= f.text_field :state%>
+      <br><br>
+      <br><br>
+      <%= f.label :zip %>
+      <%= f.text_field :zip%>
+      <br><br>
+    </fieldset>
+    <br>
+    <%= f.submit("Save Changes!") %>
+  <% end %>
+</div>

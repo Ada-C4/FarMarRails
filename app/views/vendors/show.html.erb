@@ -16,12 +16,11 @@
             <% total += sale.amount %>
         <% end %>
       </ul>
-        <%= button_to "Delete", "/vendors/#{@vendor.id}/products/#{product.id}", method: :delete, data: { confirm: "Are you sure you want to delete #{product.name}?"} %>
+        <%= button_to "Delete Product", "/vendors/#{@vendor.id}/products/#{product.id}", method: :delete, data: { confirm: "Are you sure you want to delete #{product.name}?"} %>
       </li>
       <% end %>
       Total Sales: $<%= total/100.0 %>
     </ul>
 
-
-<%= button_to "Delete", "/vendors/#{@vendor.id}", method: :delete, data: { confirm: "Are you sure you want to delete this vendor?"} %>
+<%= button_to "Delete Vendor", "/vendors/#{@vendor.id}", method: :delete, data: { confirm: "Are you sure you want to delete this vendor?"} %>
 </div>
