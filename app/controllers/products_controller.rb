@@ -12,7 +12,8 @@ class ProductsController < ApplicationController
     product.vendor_id = params[:vendor_id]
     product.save
     market_id = params[:market_id]
-    redirect_to market_vendor_path(market_id: market_id, id: product.vendor_id)
+    redirect_to "/"
+    # redirect_to market_vendor_path(market_id: market_id, id: product.vendor_id)
   end
 
   def edit
