@@ -9,8 +9,13 @@ Rails.application.routes.draw do
   	end
   end
 
-  resources :products do
+  resources :vendors do
+  	resources :products, only: [:new, :create, :update]
+  end
+
+  resources :products, except: [:new, :create, :update] do
     resources :sales do
     end
   end
 end
+

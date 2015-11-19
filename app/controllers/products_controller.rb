@@ -4,13 +4,13 @@ class ProductsController < ApplicationController
   end
 
   def new
-    @product = Product.new
+    @product = Product.new(vendor_id: params[:id])
+    session[:return_to] = request.referrer
   end
 
   def create
     product = Product.create(product_params[:product])
-    market_id = Vendor.find(product.vendor_id).market_id
-    redirect_to market_vendor_path(market_id: market_id, id: product.vendor_id)
+    redirect_to session[:return_to]
   end
 
   def edit
