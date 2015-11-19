@@ -19,7 +19,7 @@
   <% @vendors.each do |vendor| %>
     <tr>
       <td>
-        <%= vendor.name %>
+        <%= link_to "#{vendor.name}", home_vendor_path(vendor) %>
       </td>
       <td>
         <%= vendor.num_employees %>

@@ -34,6 +34,8 @@ class VendorsController < ApplicationController
 
     if request.path_info.include?('markets')
       render :market_vendor
+    elsif request.path_info.include?('home')
+      render :home_vendor
     else
       render :show
     end
