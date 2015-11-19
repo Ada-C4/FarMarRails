@@ -1,0 +1,7 @@
+The number of sales this month is <%= @num_current_month_sales %>
+
+<% @current_month_sales.each do |sale| %>
+  <p>
+    <%= sale.product.name %>
+  </p>
+<% end %>

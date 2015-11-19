@@ -8,6 +8,7 @@ class SalesController < ApplicationController
 
   def current_month
     id = params[:vendor_id]
-    
+    @current_month_sales = Sale.current_month_sales(id)
+    @num_current_month_sales = Sale.num_current_month_sales(id)
   end
 end
