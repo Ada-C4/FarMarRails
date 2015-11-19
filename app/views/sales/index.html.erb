@@ -18,8 +18,8 @@
           <tr>
             <td><%= sale.product.name %></td>
             <td><%= number_to_currency(sale.amount / 100) %></td>
-            <td><%= sale.purchase_time %></td>
-            <td></td>
+            <td><%= sale.purchase_time.strftime("%b %-d, %Y") %></td>
+            <td><%= sale.purchase_time.strftime("%l:%M %P") %></td>
           </tr>
           <% total_sales_amount += sale.amount %>
           <% product_count += 1 %>
