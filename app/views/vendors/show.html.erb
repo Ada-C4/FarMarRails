@@ -9,6 +9,7 @@
       <% @vendor.products.each do |product| %>
       <li>
         <%= product.name %>
+        <%= button_to "Delete", "/vendors/#{@vendor.id}/products/#{product.id}", method: :delete, data: { confirm: "Are you sure you want to delete #{product.name}?"} %>
       </li>
       <% end %>
     </ul>
