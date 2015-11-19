@@ -13,15 +13,13 @@
 
 <p>Sales:</p>
 <ul>
-  <% total_sales = 0 %>
   <% @vendor.sales.each do |sale| %>
   <li>Date: <%= sale.purchase_time%>
     <br>Amount: $<%= sale.amount.to_f/100 %></li>
-  <% total_sales += sale.amount %>
   <% end %>
 </ul>
 
-<p>Total Sales: $<%= total_sales.to_f/100 %></p>
+<p>Total Sales: $<%= @vendor.sales.sum(:amount).to_f/100 %></p>
 
 
 <p>COMING SOON: Current Month Sales & Totals</p>
