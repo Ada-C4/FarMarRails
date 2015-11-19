@@ -6,12 +6,11 @@ Rails.application.routes.draw do
 
   resources :markets do
   	resources :vendors do
-  		resources :products do
-  			resources :sales do
-
-  			end
-  		end
   	end
   end
 
+  resources :products do
+    resources :sales do
+    end
+  end
 end
