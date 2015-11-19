@@ -6,7 +6,10 @@ class SalesController < ApplicationController
   end
 
   def create
-    Sale.create(
+    id = params[:product_id]
+    product = Product.find(id)
+    product.sales.create(
+    #Sale.create(
       product_id: sale_params[:sale][:product_id],
       amount: sale_params[:sale][:amount].to_i * 100,
       vendor_id: params[:vendor_id],
