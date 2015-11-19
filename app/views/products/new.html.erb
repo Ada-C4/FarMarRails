@@ -1,0 +1,15 @@
+<section>
+<%= form_for @new_vendor_product, url: {action: "create"} do |f| %>
+  <fieldset>
+    <legend>New Product</legend>
+    <div>
+      <%= f.label :name, "name"%>
+      <%= f.text_field :name %><br />
+    </div>
+    <div>
+      <%= f.submit %>
+    </div>
+  </fieldset>
+<% end %>
+
+</section>
