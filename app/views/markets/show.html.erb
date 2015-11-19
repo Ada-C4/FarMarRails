@@ -1,9 +1,3 @@
-<h2>list of Market 1's vendors, address, etc.</h2>
-<h2>Vendors are clickable to edit them</h2>
-<h2>Create/delete vendor buttons</h2>
-
-<h2>Vendors are also clickable</h2>
-
 <h1> <%= @market.name %></h1>
 
 <p><%= @market.address %></p>
@@ -30,6 +24,13 @@
       <td>
         <%= vendor.num_employees %>
       </td>
+      <td>
+        <!-- <%= link_to 'Edit', edit_market_vendor_path(vendor) %> -->
+      </td>
     </tr>
   <% end %>
 </table>
+
+
+<h2>Vendors are clickable to edit them</h2>
+<h2>Create/delete vendor buttons</h2>

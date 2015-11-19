@@ -1,11 +1,22 @@
 class MarketsController < ApplicationController
+
+  def create
+    Market.create(market_params[:market])
+    redirect_to action: :index
+  end
+
   def edit
     id = params[:id]
     @market = Market.find(id)
   end
 
   def index
-    @markets = Market.all
+    markets = Market.all
+    @markets = markets.order(:name)
+  end
+
+  def new
+    @market = Market.new
   end
 
   def show
