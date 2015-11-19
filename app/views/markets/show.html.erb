@@ -25,7 +25,7 @@
         <%= vendor.num_employees %>
       </td>
       <td>
-        <%= link_to 'Edit', edit_market_vendor_path(market_id: @market.id, vendor_id: vendor.id) %>
+        <%= link_to 'Edit', edit_market_vendor_path(id: vendor.id, market_id: @market.id) %>
       </td>
     </tr>
   <% end %>
