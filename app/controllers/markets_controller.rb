@@ -27,6 +27,18 @@ class MarketsController < ApplicationController
     redirect_to market_path(params[:id])
   end
 
+  def new
+    id = params[:id]
+    @market= Market.new
+    @title = "Create a Market"
+    @action = :create
+  end
+
+  def create
+    Market.create(params[:id], market_params[:market] )
+    redirect_to market_path(params[:id])
+  end
+
   def destroy
   end
 
