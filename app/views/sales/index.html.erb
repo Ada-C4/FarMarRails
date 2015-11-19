@@ -1,15 +1,35 @@
 <% provide(:title, "Show All Vendor Sales") %>
 <%= render 'vendors/vendor_header' %>
-<p>
-  <% total_sales_amount = 0 %>
-  <% product_count = 0 %>
-  <% @sales.each do |sale| %>
-    <%= sale.product.name %> <%= number_to_currency(sale.amount / 100) %> <%= sale.purchase_time %>
-    <% total_sales_amount += sale.amount %>
-    <% product_count += 1 %>
-    <br />
-  <% end %>
-</p>
-<p>
-  Total sales: <%= number_to_currency(total_sales_amount / 100) %> Total products sold: <%= product_count %>
-</p>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <table class="table table-hover table-color">
+      <thead>
+        <tr>
+          <td>Product Name</td>
+          <td>Price</td>
+          <td>Date</td>
+          <td>Time</td>
+        </tr>
+      </thead>
+      <tbody>
+        <% total_sales_amount = 0 %>
+        <% product_count = 0 %>
+        <% @sales.each do |sale| %>
+          <tr>
+            <td><%= sale.product.name %></td>
+            <td><%= number_to_currency(sale.amount / 100) %></td>
+            <td><%= sale.purchase_time %></td>
+            <td></td>
+          </tr>
+          <% total_sales_amount += sale.amount %>
+          <% product_count += 1 %>
+        <% end %>
+      </tbody>
+    </table>
+    <h3>
+      Total sales: <%= number_to_currency(total_sales_amount / 100) %>
+    </h3>
+    <h3>Total products sold: <%= product_count %></h3>
+    </p>
+  </div>
+</div>
