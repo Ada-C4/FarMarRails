@@ -1,10 +1,12 @@
 <h2>Here are the sales:</h2>
 
 <ul>
+  <% count = 0 %>
   <% @sales.each do |sale| %>
-  <% binding.pry %>
     <li>
-      <%= sale.product.name %>:<%= sale.amount %>, <%= sale.purchase_time %>
+      <%= @product_names[count] %>:<%= sale.amount %>,
+      <%= sale.purchase_time %>
     </li>
+    <% count += 1 %>
   <% end %>
 </ul>
