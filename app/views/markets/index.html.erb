@@ -6,7 +6,7 @@
   <% @markets.each do |market| %>
   <tr>
     <td><%= link_to market.name, market %></td>
-    <td><%= button_to 'Edit', edit_market_path(id: market.id) %></td>
+    <td><%= button_to 'Edit', edit_market_path(id: market.id), method: :get %></td>
   </tr>
   <% end %>
 </table>
