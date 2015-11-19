@@ -1,4 +1,10 @@
 class VendorsController < ApplicationController
+
+  def edit
+    id = params[:id]
+    @vendor = Vendor.find(id)
+  end
+
   def index
     vendors = Vendor.all
     @vendors = vendors.order(:name)

@@ -5,8 +5,7 @@ Rails.application.routes.draw do
   get 'home/markets/:id' => 'markets#show', as: :home_market
 
   resources :markets, except: [:destroy] do
-    resources :vendors do
-    end
+    resources :vendors
   end
 
   resources :vendors, only: [:index, :show] do
