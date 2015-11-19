@@ -18,12 +18,14 @@
 
 // jumbotron code from http://www.bootply.com/103783
 
-var jumboHeight = $('.jumbotron').outerHeight();
-function parallax(){
+$( document ).ready(function() {
+  var jumboHeight = $('.jumbotron').outerHeight();
+  function parallax(){
     var scrolled = $(window).scrollTop();
+    console.log(scrolled, jumboHeight);
     $('.bg').css('height', (jumboHeight-scrolled) + 'px');
-}
-
-$(window).scroll(function(e){
-    parallax();
+  }
+  $(window).scroll(function(e){
+      parallax();
+  });
 });
