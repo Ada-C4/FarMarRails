@@ -5,7 +5,17 @@
 
 <h2>Who's sellin' stuff here?</h2>
 
-<% if !@buttons %>
+<% if @is_guest %>
+<table>
+  <% @market.vendors.each do |vendor| %>
+    <tr>
+      <td>vendor.name%></td>
+    </tr>
+  <% end %>
+</table>
+<% end %>
+
+<% if @is_vendor %>
   <table>
     <% @market.vendors.each do |vendor| %>
       <tr>
@@ -15,7 +25,7 @@
   </table>
 <% end %>
 
-<% if @buttons %>
+<% if @is_market %>
   <table>
     <% @market.vendors.each do |vendor| %>
     <tr>

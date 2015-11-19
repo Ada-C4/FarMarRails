@@ -15,7 +15,9 @@ class MarketsController < ApplicationController
 
   def show
   	@market = Market.find(params[:id])
-		@buttons = true if session[:user_type] == 'market'
+		@is_market = true if session[:user_type] == 'market'
+		@is_vendor = true if session[:user_type] == 'vendor'
+		@is_guest = true if session[:user_type] == 'guest'
   end
 
   def create
