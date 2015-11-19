@@ -21,7 +21,16 @@
           <ul class="dropdown-menu">
             <li><%= link_to "Total Sales", sales_vendor_path(session[:vendor_id]) %></li>
             <li class="divider"></li>
-            <li><%= link_to "Monthly Sales", sales_month_vendor_path(session[:vendor_id]) %></li>
+            <li class="dropdown-header">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                Monthly Sales
+              </a>
+            </li>
+            <li><%= link_to "January", sales_month_vendor_path(session[:vendor_id], 1) %></li>
+            <li><%= link_to "February", sales_month_vendor_path(session[:vendor_id], 2) %></li>
+            <li><%= link_to "March", sales_month_vendor_path(session[:vendor_id], 3) %></li>
+            <li><%= link_to "April", sales_month_vendor_path(session[:vendor_id], 4) %></li>
+            <li><%= link_to "May", sales_month_vendor_path(session[:vendor_id], 5) %></li>
           </ul>
         </li>
         <li><%= link_to "Log out", logout_path, method: "delete" %></li>
