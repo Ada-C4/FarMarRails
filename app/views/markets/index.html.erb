@@ -9,7 +9,7 @@
   <table>
     <% @markets.each do |market| %>
     <tr>
-      <td><%= link_to market.name, market %></td>
+      <td><%= link_to market.name, market, class: "market-link"%></td>
       <td><%= button_to 'Edit', edit_market_path(id: market.id), method: :get %></td>
     </tr>
     <% end %>
@@ -20,7 +20,7 @@
   <table>
     <% @markets.each do |market| %>
     <tr>
-      <td><%= link_to market.name, market %></td>
+      <td><%= link_to market.name, market, class: "market-link" %></td>
     </tr>
     <% end %>
   </table>

@@ -4,7 +4,8 @@ class MarketsController < ApplicationController
   end
 
   def index
-  	session[:user_type] = params[:user_type]
+  	user = params[:user_type]
+  	session[:user_type] = user unless user.nil?
   	@buttons = true if session[:user_type] == 'market'
   	@markets = Market.all if params[:order].nil?
     @markets = Market.order(name: :desc) if params[:order] == 'za'
