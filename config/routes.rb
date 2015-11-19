@@ -5,8 +5,9 @@ Rails.application.routes.draw do
   get 'markets/:id/user_show' => 'markets#user_show', as: :user_show
   resources :markets
   resources :vendors do
-  	resources :products
-  	resources :sales
+  	resources :products do
+    	resources :sales	  
+  	end
   end
 
   # The priority is based upon order of creation: first created -> highest priority.
