@@ -1,11 +1,10 @@
 <%=  form_for :sale, url: new_market_vendor_product_sale do |f| %>
 <div class='legend'><h1><%= form_title %></h1></div>
   <fieldset>
-    <%= f.label :name %>:
-    <%= f.text_field :name %><br>
-    <%= f.label :num_emps, 'Number of Employees' %>:
-    <%= f.text_field :num_emps %><br>
-    <%= hidden_field_tag :market_id, params[:market_id] %>
+    <%= f.label :amount %>:
+    <%= f.text_field :amount %><br>
+    <%= f.label :purchase_time, 'Number of Employees' %>:
+    <%= f.text_field :purchase_time %><br>
   </fieldset>
   <%= f.submit %>
 <% end %>
