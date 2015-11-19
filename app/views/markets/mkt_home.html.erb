@@ -21,7 +21,7 @@
     <td>
       <ul>
         <% @market.vendors.each do |vendor| %>
-        <li><%= vendor.name %></li>
+        <li><%= vendor.name %> <%= link_to "Delete", vendor, method: :delete %></li>
         <% end %>
       </ul>
     </td>
