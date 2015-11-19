@@ -10,8 +10,8 @@
     <% @vendor.products.each do |product| %>
       <tr>
         <td>• <%= product.name %></td>
-        <td> <%= link_to "Edit", edit_vendor_product_path(@vendor.id,product.id) %> </td>
-        <td> <%=link_to "Delete", vendor_product_path(@vendor.id,product.id), method: :delete, data: {confirm: "Are you sure?"} %></td>
+        <td> <%= link_to "✐", edit_vendor_product_path(@vendor.id,product.id) %> </td>
+        <td> <%=link_to "✘", vendor_product_path(@vendor.id,product.id), method: :delete, data: {confirm: "Are you sure?"} %></td>
         <td> *CREATE SALE* </td>
       </tr>
     <% end %>
