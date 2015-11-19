@@ -1,0 +1,11 @@
+<%=  form_for :vendor, url: market_vendors_path do |f| %>
+<div class='legend'><h1><%= form_title %></h1></div>
+  <fieldset>
+    <%= f.label :name %>:
+    <%= f.text_field :name %><br>
+    <%= f.label :num_emps %>:
+    <%= f.text_field :num_emps %><br>
+    <%= hidden_field_tag :market_id, params[:market_id] %>
+  </fieldset>
+  <%= f.submit %>
+<% end %>
