@@ -1,9 +1,10 @@
 <h2>Here are the products:</h2>
-
+<%= button_to "Add new product", new_vendor_product_path, method: :get %>
 <ul>
   <% @products.each do |product| %>
     <li>
-      <%= product.name %>
+      <%= product.name %> <%= link_to "Edit", edit_vendor_product_path(@vendor_id, product.id) %>
+      <%= link_to "Delete", "/vendors/#{@vendor_id}/products/#{product.id}", method: :delete %>
     </li>
   <% end %>
 </ul>
