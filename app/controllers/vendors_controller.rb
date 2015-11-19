@@ -17,6 +17,8 @@ class VendorsController < ApplicationController
     id = params[:id]
     @vendor = Vendor.find(id)
     @action = "update"
+
+    render :new
   end
 
   def update

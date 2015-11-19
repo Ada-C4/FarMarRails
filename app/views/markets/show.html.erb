@@ -1,7 +1,8 @@
 <div class="pretend-nav">
   <div class="nav-position">
-  <%= link_to "CREATE", new_market_path  %>
+  <%= link_to "CREATE MARKET", new_market_path  %>
   <%= link_to "EDIT", edit_market_path(@market) %>
+  <%= link_to "ADD VENDOR", new_vendor_path %>
   </div>
 </div>
 
@@ -11,7 +12,7 @@
   <h2>Vendors</h2>
   <% @market.vendors.each do |vendor| %>
     <div>
-      <%= vendor.name %>
+      <%= link_to vendor.name, vendor_path(vendor) %>
     </div>
   <% end %>
 </div>
