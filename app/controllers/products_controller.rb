@@ -9,9 +9,7 @@ class ProductsController < ApplicationController
 
   def create
     product = Product.create(product_params[:product])
-    product.vendor_id = params[:vendor_id]
-    product.save
-    market_id = params[:market_id]
+    market_id = Vendor.find(product.vendor_id).market_id
     redirect_to market_vendor_path(market_id: market_id, id: product.vendor_id)
   end
 
