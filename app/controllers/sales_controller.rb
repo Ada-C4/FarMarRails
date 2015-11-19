@@ -16,6 +16,7 @@ class SalesController < ApplicationController
   end
 
   def create
+    params[:sale][:amount] = params[:sale][:amount].to_f * 100
     sale = Sale.create(sale_params) do |s|
       s.vendor = Vendor.find(params[:vendor_id])
       s.purchase_time = Time.now

@@ -3,7 +3,7 @@
   <fieldset>
     <legend><%= @product.name.upcase %>Sale Information</legend>
     <%= f.label :amount %>
-    <%= f.text_field :amount %>
+    <%= f.number_field :amount, :value => 0, :min => 0, :step => 0.01 %>
   </fieldset>
     <%= f.submit %>
 <% end %>
