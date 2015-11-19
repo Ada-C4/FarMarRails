@@ -1,4 +1,9 @@
 class MarketsController < ApplicationController
+  def edit
+    id = params[:id]
+    @market = Market.find(id)
+  end
+
   def index
     @markets = Market.all
   end
@@ -13,4 +18,18 @@ class MarketsController < ApplicationController
       render :show
     end
   end
+
+  def update
+    id = params[:id]
+    @market = Market.find(id)
+    @market.update(market_params[:market])
+    redirect_to action: :index
+  end
+
+  private
+
+  def market_params
+    params.permit(market:[:name, :address, :city, :county, :state, :zip])
+  end
+
 end

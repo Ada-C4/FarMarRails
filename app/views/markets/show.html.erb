@@ -1,6 +1,35 @@
-<h1>Market 1 Details</h1>
 <h2>list of Market 1's vendors, address, etc.</h2>
 <h2>Vendors are clickable to edit them</h2>
 <h2>Create/delete vendor buttons</h2>
 
 <h2>Vendors are also clickable</h2>
+
+<h1> <%= @market.name %></h1>
+
+<p><%= @market.address %></p>
+<p><%= @market.city %></p>
+<p><%= @market.state %></p>
+<p><%= @market.county %></p>
+<p><%= @market.zip %></p>
+
+<h2>Vendors</h2>
+<table>
+  <tr>
+    <th>
+      Name
+    </th>
+    <th>
+      Number of Employees
+    </th>
+  </tr>
+  <% @vendors.each do |vendor| %>
+    <tr>
+      <td>
+        <%= vendor.name %>
+      </td>
+      <td>
+        <%= vendor.num_employees %>
+      </td>
+    </tr>
+  <% end %>
+</table>
