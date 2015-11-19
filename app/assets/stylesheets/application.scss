@@ -19,34 +19,73 @@
 $dark-blue: rgb(15, 26, 36);
 $light-blue: rgb(75, 152, 217);
 $light-red: rgb(140, 83, 82);
-$green: rgb(149, 153, 75);
-$brown: rgb(64, 21, 19);
-
-.full {
-  background: image-url("market_background.jpg") no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-}
+$purple: rgb(80, 48, 90);
+$yellow: rgb(227, 230, 61);
+$jumbo-height: 300px;
 
 .navbar-inverse {
-  background-color: $green;
+  background-color: $purple;
 }
+.navbar-inverse .navbar-nav > li > a,
+.btn,
+.btn-primary
+ {
+  background-color: $purple;
+  font-size: 1.2em;
+  color: $yellow;
+  font-weight: bold;
+  transition: all 0.5s ease-out;
+  &:hover,
+  &:active {
+    background-color: $yellow;
+    color: $purple;
+    transition: all 0.2s ease-out;
+  }
+}
+
+.navbar-inverse .navbar-nav > .open > a,
+.navbar-inverse .navbar-nav > .open > a:hover,
+.navbar-inverse .navbar-nav > .open > a:focus {
+  background-color: $yellow;
+  color: $purple;
+  transition: all 0.2s ease-out;
+}
+
 
 #logo {
   float: left;
   margin-right: 10px;
   font-size: 1.7em;
-  color: $brown;
+  color: $yellow;
   letter-spacing: -1px;
   padding-top: 9px;
   font-weight: bold;
   &:hover {
-    color: $brown;
+    color: $yellow;
     text-decoration: none;
   }
 }
+
+// jumbotron code from http://www.bootply.com/103783
+
+.bg {
+  background: image-url("market.jpg") no-repeat center center;
+  position: fixed;
+  width: 100%;
+  height: $jumbo-height; /*same height as jumbotron */
+  top:0;
+  left:0;
+  z-index: -1;
+}
+
+.jumbotron {
+  height: $jumbo-height;
+  color: $yellow;
+  text-shadow: #444 0 1px 1px;
+  background:transparent;
+  padding-top: 70px;
+}
+
 
 .centered-block {
   margin: auto;

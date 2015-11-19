@@ -11,7 +11,7 @@
           <ul class="dropdown-menu">
             <li><%= link_to "Create Product", '#' %></li>
             <li class="divider"></li>
-            <li><%= link_to "View Products", '#' %></li>
+            <li><%= link_to "View Products", vendor_products_path(session[:vendor_id]) %></li>
           </ul>
         </li>
         <li class="dropdown">
@@ -21,13 +21,14 @@
           <ul class="dropdown-menu">
             <li><%= link_to "Create Sale", '#' %></li>
             <li class="divider"></li>
-            <li><%= link_to "Total Sales", '#' %></li>
+            <li><%= link_to "Total Sales", sales_vendor_path(session[:vendor_id]) %></li>
             <li class="divider"></li>
-            <li><%= link_to "Monthly Sales", '#' %></li>
+            <li><%= link_to "Monthly Sales", sales_month_vendor_path(session[:vendor_id]) %></li>
           </ul>
         </li>
-        <li><%= link_to "Log Out", root_path %></li>
+        <li><%= link_to "Log out", logout_path, method: "delete" %></li>
       </ul>
     </nav>
   </div>
 </header>
+<%= render 'layouts/jumbotron' %>
