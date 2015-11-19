@@ -1,6 +1,11 @@
-<h1>Welcome to FarMar</h1>
-<%= button_to "I am a market", "/markets", method: :get, class: "home-pg-button" %>
-<%= button_to "I am a vendor", "/vendors", method: :get, class: "home-pg-button" %>
+<img src="http://www.littlerock.com/!UserFiles/business-listings/attractions/Farmers'%20Market.jpg" alt="farmers market" class="home-pg-image">
+
+<h1 class="home-pg-header">Welcome to FarMar</h1>
+<div class="button-container">
+  <%= button_to "I am a market", "/markets", method: :get, class: "home-pg-button" %>
+  <%= button_to "I am a vendor", "/vendors", method: :get, class: "home-pg-button" %>
+</div>
+
 
 <p>
   All Markets

@@ -1,15 +1,36 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any styles
- * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
- * file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+body {
+  font-family: 'Quicksand', sans-serif;
+  background-color: #FFFFFF;
+}
+
+.home-pg-image {
+  /*height: 200px;*/
+  width: 100%;
+  filter: grayscale(100%);
+  -webkit-filter: grayscale(75%);
+  position: relative;
+  z-index: -1;
+}
+
+.home-pg-header {
+  position: absolute;
+  top: 200px;
+  left: 0;
+  text-align: center;
+  width: 100%;
+  font-size: 80px;
+}
+
+.home-pg-button {
+
+  text-align: center;
+
+}
+
+.button-container {
+  width: 200px;
+  margin: auto;
+  position: absolute;
+  top: 400px;
+  left: 50%;
+}
