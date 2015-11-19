@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root 'home#index'
 
   get 'home/markets/:id' => 'markets#show', as: :home_market
-  get 'home/markets/:id/vendors/:id' => 'vendors#show', as: :home_vendor
+  get 'home/markets/:market_id/vendors/:id' => 'vendors#show', as: :home_vendor
 
   resources :markets, except: [:destroy] do
     resources :vendors
