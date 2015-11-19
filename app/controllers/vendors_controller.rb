@@ -19,9 +19,13 @@ class VendorsController < ApplicationController
 
   def show
     id = params[:id]
-    @vendor = Vendor.find(id)
-    @products = Vendor.find(id).products
-    @sales = Vendor.find(id).sales
+    if session[:vendor_id] != id
+      render 'vendors/error'
+    else
+      @vendor = Vendor.find(id)
+      @products = Vendor.find(id).products
+      @sales = Vendor.find(id).sales
+    end
   end
 
   def update
