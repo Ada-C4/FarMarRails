@@ -1,10 +1,10 @@
-<%=  form_for :sale, url: new_product_sale_path do |f| %>
+<%=  form_for :sale, url: product_sales_path do |f| %>
 <div class='legend'><h1>Add a Sale</h1></div>
   <fieldset>
     <%= f.label :amount %>:
     <%= f.text_field :amount %><br>
-    <%= f.label :purchase_time, 'Number of Employees' %>:
-    <%= f.text_field :purchase_time %><br>
+    <%= hidden_field_tag :purchase_time, Time.now %>
+    <%= hidden_field_tag :product_id, params[:product_id] %>
   </fieldset>
   <%= f.submit %>
 <% end %>
