@@ -34,7 +34,10 @@ class MarketsController < ApplicationController
   end
 
   def create
+    Market.create(market_params[:market])
+    redirect_to '/'
   end
+
   def new
     @market = Market.new
     @action = "create"
@@ -47,9 +50,19 @@ class MarketsController < ApplicationController
     id = params[:id]
     @action = "update"
     @method = :patch
-    @task = Market.find(id)
+    @market = Market.find(id)
     render "new"
   end
+
   def update
+  Market.update(params[:id], market_params[:market])
+  redirect_to '/'
+  end
+
+  private
+
+  def market_params
+    #this makes strong params
+    params.permit(market:[:name, :address, :city, :county, :state, :zip])
   end
 end
