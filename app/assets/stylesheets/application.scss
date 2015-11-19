@@ -33,6 +33,27 @@ $brown: rgb(64, 21, 19);
 .navbar-inverse {
   background-color: $green;
 }
+.navbar-inverse .navbar-nav > li > a {
+  font-size: 1.2em;
+  color: $brown;
+  font-weight: bold;
+  transition: all 0.5s ease-out;
+  &:hover,
+  &:active {
+    background-color: $brown;
+    color: $green;
+    transition: all 0.2s ease-out;
+  }
+}
+
+.navbar-inverse .navbar-nav > .open > a,
+.navbar-inverse .navbar-nav > .open > a:hover,
+.navbar-inverse .navbar-nav > .open > a:focus {
+  background-color: $brown;
+  color: $green;
+  transition: all 0.2s ease-out;
+}
+
 
 #logo {
   float: left;
