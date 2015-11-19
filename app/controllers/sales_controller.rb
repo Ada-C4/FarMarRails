@@ -20,16 +20,19 @@ class SalesController < ApplicationController
   end
 
   def month
-    @url_path = sales_month_vendor_path
-    start_date = DateTime.parse(name: sale_params[:sale][:month])
-    end_date = DateTime.parse('2015-01-01 00:00:00')
-    @sales = Sale.where("vendor_id = ? AND purchase_time > ? AND purchase_time < ?", params[:id], start_date, end_date) #id is vendor_id
+    month_id = params[:id]
+    @sales = Sale.where("vendor_id = ?", session[:vendor_id]).select{ |sale| sale.purchase_time.month == month_id.to_i }
+    render :index
   end
 
   private
 
   def sale_params
     params.permit(sale:[:amount, :purchase_time, :vendor_id, :product_id])
+  end
+
+  def month_params
+    params.permit(params[:id])
   end
 
 end
