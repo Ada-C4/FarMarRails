@@ -1,5 +1,7 @@
 <h1>All dem Markets</h1>
 
+<%= link_to 'A-Z', markets_path(order: 'az') %>
+<%= link_to 'Z-A', markets_path(order: 'za') %>
 
 <% if @buttons %>
 <%= button_to 'New', {action: 'new', controller: 'markets'}, method: :get %>
