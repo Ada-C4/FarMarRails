@@ -12,7 +12,11 @@ class VendorsController < ApplicationController
 	end
 
 	def create
-	  Vendor.create(vendor_params[:vendor])
+	  vendor = Vendor.create(vendor_params[:vendor])
+	  vendor.market_id = params[:market_id]
+	  vendor.save
+	  @button = true
+	  redirect_to market_path(id: vendor.market_id)
 	end
 
 	def edit
