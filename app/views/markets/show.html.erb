@@ -17,7 +17,7 @@
   <% @vendors.each do |vendor| %>
     <li><%= vendor.name%>
       <% if @buttons == true %>
-      <%= button_to "Delete Vendor", { action: :destroy, id: vendor.id}, method: :delete, data: { confirm: "Are you sure that you want to delete this?" } %>
+      <%=link_to "Delete Vendor",vendor_path(vendor), method: :delete, data: {confirm: "Are you sure?"} %></li>
       <%=link_to "Edit Vendor", edit_vendor_path(vendor) %></li>
       <% end %>
   <% end %>
