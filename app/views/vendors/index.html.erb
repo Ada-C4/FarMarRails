@@ -5,7 +5,7 @@
   <% @vendors.each do |vendor| %>
     <tr>
       <td>
-        <%= link_to "#{vendor.name}", vendor_path(vendor) %>
+        <%= vendor.name %>
       </td>
       <td>
         <td><%= link_to "details", vendor_path(vendor) %></td>
