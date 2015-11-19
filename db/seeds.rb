@@ -33,7 +33,7 @@ sales_array = CSV.read("./seed_csvs/sales.csv")
 sales_array.each do |line|
   Sale.create(
     amount: line[1].to_i,
-    purchase_time: line[2],
+    purchase_time: line[2].to_datetime,
     vendor_id: line[3].to_i,
     product_id: line[4].to_i
   )

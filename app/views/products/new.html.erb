@@ -1,0 +1,10 @@
+<%= form_for @product do |f| %>
+  <fieldset>
+    <legend>Add a product:</legend>
+    <%=f.label :name %>
+    <%=f.text_field :name %>
+    <br><br>
+  </fieldset>
+  <br>
+  <%= f.submit("Add Product!") %>
+<% end %>
