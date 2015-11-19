@@ -10,7 +10,7 @@
     <% @vendor.products.each do |product| %>
       <tr>
         <td>• <%= product.name %></td>
-        <td> *EDIT* </td>
+        <td> <%= link_to "Edit", edit_vendor_product_path(@vendor.id,product.id) %> </td>
         <td> *DELETE* </td>
         <td> *CREATE SALE* </td>
       </tr>
