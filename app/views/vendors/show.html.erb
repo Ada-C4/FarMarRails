@@ -19,22 +19,27 @@
 </table>
 
 
-
-
 <p>COMING SOON: link_to Add A Product</p>
 
 
-
-
-
-
 <p>Sales:</p>
-<ul>
-  <% @vendor.sales.each do |sale| %>
-  <li>Date: <%= sale.purchase_time%>
-    <br>Amount: $<%= sale.amount.to_f/100 %></li>
-  <% end %>
-</ul>
+<table>
+  <thead>
+    <tr>
+      <th>Date</th>
+      <th>Amount</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @vendor.sales.each do |sale| %>
+      <tr>
+        <td><%= sale.purchase_time%></td>
+        <td>$ <%= sale.amount.to_f/100 %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
 
 <p>Total Sales: $<%= @vendor.sales.sum(:amount).to_f/100 %></p>
 
