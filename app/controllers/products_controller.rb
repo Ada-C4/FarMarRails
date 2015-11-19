@@ -4,12 +4,12 @@ class ProductsController < ApplicationController
   end
 
   def new
-    @product = Product.new(vendor_id: params[:id])
+    @product = Product.new(vendor_id: params[:vendor_id])
     session[:return_to] = request.referrer
   end
 
   def create
-    product = Product.create(product_params[:product])
+    product = Product.create(product_params)
     redirect_to session[:return_to]
   end
 
@@ -44,7 +44,8 @@ class ProductsController < ApplicationController
   private
 
   def product_params
-    params.permit(product:[:name, :vendor_id])
+    product = params.require(:product).permit(:name)
+    product.merge(params.permit(:vendor_id))
   end
 
 end

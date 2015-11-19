@@ -3,8 +3,7 @@
   <fieldset>
     <%= f.label :name %>:
     <%= f.text_field :name %><br>
-    <%= f.label :vendor_id %>:
-    <%= f.text_field :vendor_id %><br>
+    <%= hidden_field_tag :vendor_id, params[:vendor_id] %>
   </fieldset>
   <%= f.submit %>
 <% end %>
