@@ -3,7 +3,7 @@ class MarketsController < ApplicationController
   end
   def index
     @markets = Market.all
-    @market_link = "Add new market!"
+    @market_link = true
     @url = ""
   end
 
@@ -11,15 +11,17 @@ class MarketsController < ApplicationController
     id = params[:id]
     @market = Market.find(id)
     @vendors = @market.vendors
-    @delete_vendor = "DESTROY vendor is coming soon!"
-    @create_vendor = "ADD a vendor is coming soon!"
-    @edit_vendor =  "EDIT a vendor is coming soon!"
+    @buttons = true
+
+    #@delete_vendor = "DESTROY vendor is coming soon!"
+    #@create_vendor = "ADD a vendor is coming soon!"
+    #@edit_vendor =  "EDIT a vendor is coming soon!"
   end
 
   def user_view
     @url = "/user_show"
     @markets = Market.all
-    @market_link = ""
+    @market_link = false
     render "index"
   end
 
@@ -27,9 +29,7 @@ class MarketsController < ApplicationController
     id = params[:id]
     @market = Market.find(id)
     @vendors = @market.vendors
-    @delete_vendor = ""
-    @create_vendor = ""
-    @edit_vendor =  ""
+    @buttons = false
     render "show"
   end
 
@@ -55,6 +55,7 @@ class MarketsController < ApplicationController
   end
 
   def update
+
   Market.update(params[:id], market_params[:market])
   redirect_to '/'
   end

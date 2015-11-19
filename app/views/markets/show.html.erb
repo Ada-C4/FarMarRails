@@ -7,13 +7,15 @@
   <li>State: <%= @market.state %></li>
   <li>Zip Code: <%= @market.zip %></li>
 </ul>
+<% if @buttons == true %>
+  <li><%=link_to "Edit this market", edit_market_path %></li>
+<% end %>
 
 <h3>Vendors:</h3>
 <ul>
   <% @vendors.each do |vendor| %>
     <li><%= vendor.name%>
-      <br><%= @delete_vendor%>
-      <br><%= @edit_vendor%>
-      <br><%= @create_vendor%></li>
+      <% if @buttons == true %>
+      <% end %>
   <% end %>
 </ul>
