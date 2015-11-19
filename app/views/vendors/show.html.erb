@@ -13,7 +13,7 @@
         <%= link_to "Edit", edit_vendor_product_path(:id => product.id, :vendor_id => @vendor.id) %>
       </td>
       <td>
-        delete?
+        <%= link_to "DELETE",  { :controller=>"products", action: :destroy, :id => product.id, :vendor_id => @vendor.id }, method: :delete, data: { confirm: 'Are you sure?' } %>
       </td>
    </tr>
    <% end %>
