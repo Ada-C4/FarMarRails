@@ -1,4 +1,4 @@
-<%= form_for @vendor do |f| %>
+<%= form_for [@market, @vendor] do |f| %>
   <fieldset>
     <legend>Vendor Information</legend>
     <%= f.label :name %>
@@ -6,9 +6,6 @@
 
     <%= f.label :num_employees %>
     <%= f.text_field :num_employees %>
-
-    <%= f.label :market_id %>
-    <%= f.text_field :market_id %>
   </fieldset>
     <%= f.submit %>
 <% end %>
