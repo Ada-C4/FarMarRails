@@ -4,9 +4,18 @@
 <%= link_to "Create new Product!", new_vendor_product_path(@vendor.id) %>
 <br>
 <h2><%= @vendor.name %> sells: </h2>
+<table>
   <% @products.each do |product| %>
-    <h3><%= product.name %></h3>
+    <tr>
+      <td>
+        <h3><%= product.name %></h3>
+      </td>
+      <td>
+        <%= button_to "Edit", edit_vendor_product_path(vendor_id: product.vendor_id, id: product.id), method: :get %>
+      </td>
+    </tr>
   <% end %>
+</table>
 
 <h2><%= @vendor.name %>'s Sales Data</h2>
   <%= link_to 'all time sales', vendor_sales_path(@vendor.id)  %>
