@@ -10,8 +10,9 @@ class SalesController < ApplicationController
   end
 
   def create
+    num_pennies = sale_params[:sale][:amount].to_f * 100
     Sale.create(
-    amount: sale_params[:sale][:amount],
+    amount: num_pennies,
     purchase_time: Time.now,
     vendor_id: params[:vendor_id],
     product_id: params[:id]

@@ -4,12 +4,13 @@
       <fieldset>
         <legend><%= legend_text %></legend>
         <h3>Product: <%= Product.find(params[:id]).name %> </h3>
-        <%= f.label :amount, "Amount of sale (in pennies)" %>
-        <%= f.number_field :amount, class: 'form-control' %>
         <br>
-        <!-- <%= f.label :purchase_time %>
-        <%= f.datetime_field :purchase_time, class: 'form-control' %>
-        <br> -->
+        <%= f.label :amount, "Amount of sale" %>
+        <div class="input-group">
+          <span class="input-group-addon">$</span>
+          <input type="text" class="form-control" type="number" name="sale[amount]" id="sale_amount" aria-label="Amount in dollars">
+        </div>
+      <br>
         <%= f.submit value: "#{button_text}", class: "btn btn-primary" %>
       </fieldset>
     <% end %>
