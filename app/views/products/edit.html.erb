@@ -1,0 +1,15 @@
+<section>
+<%= form_for @edit_vendor_product, url: {action: "update"} do |f| %>
+  <fieldset>
+    <legend>Edit Product</legend>
+    <div>
+      <%= f.label :name, "name"%>
+      <%= f.text_field :name %><br />
+    </div>
+    <div>
+      <%= f.submit %>
+    </div>
+  </fieldset>
+<% end %>
+
+</section>

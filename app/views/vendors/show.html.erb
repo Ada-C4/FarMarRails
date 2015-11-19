@@ -10,7 +10,7 @@
         <%= product.name %>
       </td>
       <td>
-        edit?
+        <%= link_to "Edit", edit_vendor_product_path(:id => product.id, :vendor_id => @vendor.id) %>
       </td>
       <td>
         delete?
