@@ -67,6 +67,10 @@ nav, .pretend-nav {
   padding: 10% 0;
 }
 
+li {
+  list-style: none;
+}
+
 select {
   width: 100%;
   font-size: 20px;
