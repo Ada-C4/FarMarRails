@@ -1,0 +1,13 @@
+<h1><%= @vendor.name %></h1>
+<h3>Number of employees: <%= @vendor.num_employees %></h3>
+
+<h1>Products</h1>
+<table>
+  <% @products.each do |product| %>
+    <tr>
+      <td>
+        <%= product.name %>
+      </td>
+   </tr>
+   <% end %>
+</table>
