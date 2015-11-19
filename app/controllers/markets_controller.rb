@@ -40,6 +40,8 @@ class MarketsController < ApplicationController
   end
 
   def destroy
+    Market.destroy(params[:id])
+    redirect_to markets_path
   end
 
   private

@@ -1,3 +1,26 @@
 // Place all the styles related to the markets controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import url('https://fonts.googleapis.com/css?family=Amatic+SC|Open+Sans');
+
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  background-image: image-url("p-patch.jpg");
+  background-size: cover;
+}
+
+h1 {
+  font-family: 'Amatic SC';
+  text-align: center;
+  font-size: 3em;
+}
+
+.fade {
+  width: 750px;
+  background-color: rgba(255, 255, 255, .75);
+  margin: auto;
+  padding:  15px 50px;
+  border-radius: 10px;
+}
