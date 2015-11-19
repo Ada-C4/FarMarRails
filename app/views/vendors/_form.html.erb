@@ -8,7 +8,7 @@
         <%= f.label :no_employees %>
         <%= f.text_field :no_employees, class: 'form-control' %>
         <%= f.label :market_id %>
-        <%= f.text_field :market_id, class: 'form-control' %>
+        <%= f.collection_select(:market_id, Market.all, :id, :name, {class: 'form-control'}) %>
         <br>
         <%= f.submit value: "#{button_text}", class: "btn btn-primary" %>
       </fieldset>
