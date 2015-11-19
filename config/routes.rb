@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   root 'markets#home'
 
   get 'markets/user_view' => 'markets#user_view'
-  get 'markets/:id/user_show' => 'markets#user_show'
+  get 'markets/:id/user_show' => 'markets#user_show', as: :user_show
   resources :markets
   resources :vendors
 

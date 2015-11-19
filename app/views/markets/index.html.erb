@@ -2,6 +2,10 @@
 <%= @market_link %>
 <ul>
   <% @markets.each do |market| %>
-    <li><a href= <%=market.id%>><%=market.name%></li>
+    <% if @market_link == ""%>
+      <li><%=link_to market.name, user_show_path(market.id) %></li>
+    <% else %>
+      <li><%=link_to market.name, market_path(market.id) %></li>
+    <% end %>
   <% end %>
 </ul>

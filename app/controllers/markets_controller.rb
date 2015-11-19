@@ -4,7 +4,9 @@ class MarketsController < ApplicationController
   def index
     @markets = Market.all
     @market_link = "Add new market!"
+    @url = ""
   end
+
   def show
     id = params[:id]
     @market = Market.find(id)
@@ -15,6 +17,7 @@ class MarketsController < ApplicationController
   end
 
   def user_view
+    @url = "/user_show"
     @markets = Market.all
     @market_link = ""
     render "index"
