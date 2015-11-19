@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
 
   resources :markets do
-    get '/vendors' => 'vendors#show'
+    get '/vendors' => 'vendors#market_vendor_show'
     get '/vendors/new' =>'vendors#new'
     post '/vendors' => 'vendors#market_vendor_create' #, as: :vendor_create
     delete '/vendors/:id' => 'vendors#destroy'
