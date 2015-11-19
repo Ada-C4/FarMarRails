@@ -54,7 +54,7 @@ body {
   top: 400px;
 }
 
-.home-pg-sub-header {
+.pg-header {
   text-align: center;
   font-size: 32px;
 }
@@ -69,4 +69,42 @@ body {
   color: #666666;
 }
 
-.home-pg-market-link:hover {color: #000000;}
+.market-link:hover {color: #000000;}
+
+.nav_button {
+  float: left;
+  display: inline;
+  font-family: 'Quicksand', sans-serif;
+  text-align: center;
+  width: 100px;
+  height: 65px;
+  font-size: 24px;
+  color: #666666;
+  border: 1px solid #666666;
+  margin: 10px;
+  border-radius: 80%;
+  background-color: #FFFFFF;
+  padding-top: 30px;
+  text-decoration: none;
+}
+
+.button_nav {
+  width: 375px;
+  height: 100px;
+  margin: 0 auto;
+  text-align: center;
+  display: block;
+}
+
+table {
+  margin-top: 25px;
+  margin: auto;
+}
+
+.table_list {
+  display:block;
+}
+
+tr {
+  margin: 3px;
+}

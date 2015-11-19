@@ -1,20 +1,25 @@
-<h1>All dem Markets</h1>
+<h1 class="pg-header">All dem Markets</h1>
 
-<%= link_to 'A-Z', markets_path(order: 'az') %>
-<%= link_to 'Z-A', markets_path(order: 'za') %>
 
-<% if @buttons %>
-<%= button_to 'New', {action: 'new', controller: 'markets'}, method: :get %>
+  <% if @buttons %>
+  <div class='button_nav'>
+    <%= link_to 'A-Z', markets_path(order: 'az'), class: 'nav_button' %>
+    <%= link_to 'New', new_market_path, class: 'nav_button' %>
+    <%= link_to 'Z-A', markets_path(order: 'za'), class: 'nav_button' %>
+    </div>
+<br><br>
+  <div class='table_list'>
+    <table>
+      <% @markets.each do |market| %>
+      <tr>
+        <td><%= link_to market.name, market, class: "market-link"%></td>
+        <td><%= button_to 'Edit', edit_market_path(id: market.id), method: :get %></td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+  <% end %>
 
-  <table>
-    <% @markets.each do |market| %>
-    <tr>
-      <td><%= link_to market.name, market, class: "market-link"%></td>
-      <td><%= button_to 'Edit', edit_market_path(id: market.id), method: :get %></td>
-    </tr>
-    <% end %>
-  </table>
-<% end %>
 
 <% if !@buttons %>
   <table>
