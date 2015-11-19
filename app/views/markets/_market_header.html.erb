@@ -1,0 +1,31 @@
+<header class="navbar navbar-fixed-top navbar-inverse">
+  <div class="container">
+    <%= link_to "FarMarRails", root_path, :id => "logo" %>
+    <nav>
+      <ul class="nav navbar-nav navbar-right">
+        <li><%= link_to "Home", root_path %></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+            Market Tools <b class="caret"></b>
+          </a>
+          <ul class="dropdown-menu">
+            <li><%= link_to "Create Market", new_market_path %></li>
+            <li class="divider"></li>
+            <li><%= link_to "View Markets", markets_path %></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+            Vendor Tools <b class="caret"></b>
+          </a>
+          <ul class="dropdown-menu">
+            <li><%= link_to "Create Vendor", new_vendor_path %></li>
+            <li class="divider"></li>
+            <li><%= link_to "View Vendors", vendors_path %></li>
+          </ul>
+        </li>
+        <li><%= link_to "Log Out", root_path %></li>
+      </ul>
+    </nav>
+  </div>
+</header>
