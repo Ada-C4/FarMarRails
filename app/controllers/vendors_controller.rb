@@ -4,8 +4,8 @@ class VendorsController < ApplicationController
   end
 
   def create
-    Vendor.create(vendor_params[:vendor])
-    redirect_to '/vendors'
+    vendor = Vendor.create(vendor_params[:vendor])
+    redirect_to market_path(vendor.market_id)
   end
 
   def edit
@@ -14,13 +14,13 @@ class VendorsController < ApplicationController
 
   def update
     vendor = Vendor.find(params[:id])
-    vendor.update(market_params[:vendor])
-    redirect_to '/vendors'
+    vendor.update(vendor_params[:vendor])
+    redirect_to market_path(vendor.market_id)
   end
 
   def destroy
-    Vendor.destroy(params[:id])
-    redirect_to '/vendors'
+    vendor = Vendor.destroy(params[:id])
+    redirect_to market_path(vendor.market_id)
   end
 
 private
