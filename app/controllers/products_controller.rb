@@ -13,11 +13,14 @@ class ProductsController < ApplicationController
   end
 
   def edit
-
+    @product = Product.find(params[:id])
+    name = params[:name]
   end
 
   def update
-
+    @product = Product.find(params[:id])
+    Product.update(params[:id], product_params[:product], vendor_id: params[:vendor_id])
+    redirect_to vendor_path(params[:vendor_id])
   end
 
   def destroy

@@ -1,0 +1,10 @@
+<%= form_for @product, url: {action: "update"} do |f| %>
+  <fieldset>
+    <legend>Edit a product:</legend>
+    <%=f.label :name %>
+    <%=f.text_field :name %>
+    <br><br>
+  </fieldset>
+  <br>
+  <%= f.submit("Save Changes") %>
+<% end %>
