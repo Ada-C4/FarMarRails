@@ -2,4 +2,4 @@
 <h4>Employees: <%= @vendor.num_employees %></h4>
 <h4>Market: <%= @vendor.market.name %></h4>
 <%= button_to "Sales", vendor_sales_path(@vendor.id), method: :get %>
-<%= button_to "Products", vendor_products_path(@vendor.id) %>
+<%= button_to "Products", vendor_products_path(@vendor.id), method: :get %>
