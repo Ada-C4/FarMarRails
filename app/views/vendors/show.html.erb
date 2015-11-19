@@ -6,3 +6,7 @@
   <% @products.each do |product| %>
     <h3><%= product.name %></h3>
   <% end %>
+
+<h2><%= @vendor.name %>'s Sales Data</h2>
+  <%= link_to 'all time sales', vendor_sales_path(@vendor.id)  %>
+  <%= link_to 'current month sales', "/vendors/#{@vendor.id}/sales/current_month"  %>
