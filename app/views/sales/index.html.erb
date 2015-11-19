@@ -1,23 +1,21 @@
-<h1>Sales for a vendor</h1>
-<h2>The vendor is <%= @vendor.name %></h2>
-<h2>The number of sales is <%= @sales.length %></h2>
-<h2>Total sales is $<%= @total_sales %></h2>
-<%= link_to "current month sales", current_month_vendor_sales_path %>
+<h1>Sales for <%= @vendor.name %></h1>
+<h3>Number of sales: <%= @sales.length %></h2>
+<h3>Total sales: $<%= @total_sales %></h2>
+<h3><%= link_to "current month sales", current_month_vendor_sales_path %></h3>
+
+<h1>Sales</h1>
 <table>
-  <thead>
+  <% @sales.each do |sale| %>
     <tr>
       <td>
-        Sales
+        <%= sale.product.name %>
       </td>
-    </tr>
-  </thead>
-  <tbody>
-    <% @sales.each do |sale| %>
-      <tr>
-        <td><%= sale.product.name %></td>
-        <td>$<%= sale.amount.to_f / 100 %></td>
-        <td><%= sale.purchase_time.strftime("%I:%M %p on %m/%d/%Y") %></td>
-      </tr>
-    <% end %>
-  </tbody>
+      <td>
+        $<%= sale.amount.to_f / 100 %>
+      </td>
+      <td>
+        <%= sale.purchase_time.strftime("%I:%M %p on %m/%d/%Y") %>
+      </td>
+   </tr>
+   <% end %>
 </table>

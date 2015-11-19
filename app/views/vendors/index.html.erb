@@ -1,18 +1,15 @@
-<h1> Vendors main page</h1>
+<h1>Hi, Vendor!</h1>
+
+<h1>Vendors</h1>
 <table>
-  <thead>
+  <% @vendors.each do |vendor| %>
     <tr>
       <td>
-        Name
+        <%= link_to "#{vendor.name}", vendor_path(vendor) %>
       </td>
-    </tr>
-  </thead>
-  <tbody>
-    <% @vendors.each do |vendor| %>
-      <tr>
-        <td><%= vendor.name %></td>
+      <td>
         <td><%= link_to "details", vendor_path(vendor) %></td>
-      </tr>
-    <% end %>
-  </tbody>
+      </td>
+   </tr>
+   <% end %>
 </table>

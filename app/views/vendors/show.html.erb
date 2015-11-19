@@ -1,30 +1,22 @@
-<h1>Individual market here</h1>
-<p>
-  <%= @vendor.name %>
-</p>
-<p>
-  <%= @vendor.num_employees %> employees
-</p>
-<p>
-  <%= link_to "sales stuff here", vendor_sales_path(@vendor) %>
-</p>
+<h1><%= @vendor.name %></h1>
+<h3>Number of employees: <%= @vendor.num_employees %></h3>
+<h3><%= link_to "Sales for this vendor", vendor_sales_path(@vendor) %></h3>
 
+<h1>Products</h1>
 <table>
-  <thead>
+  <% @products.each do |product| %>
     <tr>
       <td>
-        Products
+        <%= product.name %>
       </td>
-    </tr>
-  </thead>
-  <tbody>
-    <% @products.each do |product| %>
-      <tr>
-        <td><%= product.name %></td>
-        <td>edit? (add link later)</td>
-      </tr>
-    <% end %>
-  </tbody>
+      <td>
+        edit?
+      </td>
+      <td>
+        delete?
+      </td>
+   </tr>
+   <% end %>
 </table>
 
 <p>
