@@ -1,6 +1,6 @@
 class VendorsController < ApplicationController
   def v_home
-
+    @vendor = Vendor.find(params[:id])
   end
 
   def new
