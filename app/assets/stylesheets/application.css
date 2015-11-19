@@ -74,7 +74,6 @@ body {
 .nav_button {
   float: left;
   display: inline;
-  font-family: 'Quicksand', sans-serif;
   text-align: center;
   width: 100px;
   height: 65px;
@@ -94,6 +93,15 @@ body {
   margin: 0 auto;
   text-align: center;
   display: block;
+}
+
+.table_button {
+  text-decoration: none;
+  font-family: 'Quicksand', sans-serif;
+  background-color: #FFFFFF;
+  color: #666666;
+  border: 1px solid #666666;
+  border-radius: 80%;
 }
 
 table {

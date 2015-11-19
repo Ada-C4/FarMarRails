@@ -13,7 +13,7 @@
       <% @markets.each do |market| %>
       <tr>
         <td><%= link_to market.name, market, class: "market-link"%></td>
-        <td><%= button_to 'Edit', edit_market_path(id: market.id), method: :get %></td>
+        <td><%= button_to 'Edit', edit_market_path(id: market.id), method: :get, class: 'table_button' %></td>
       </tr>
       <% end %>
     </table>
