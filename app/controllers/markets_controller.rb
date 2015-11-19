@@ -21,4 +21,16 @@ class MarketsController < ApplicationController
     @title = "Edit Market"
     @action = :update
   end
+
+  def update
+    Market.update(params[:id], market_params[:market] )
+    redirect_to market_path(params[:id])
+  end
+
+  private
+
+  def market_params
+    params.permit(market:[:name, :address, :city, :county, :state, :zip])
+  end
+
 end
