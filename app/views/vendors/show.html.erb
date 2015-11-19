@@ -3,6 +3,6 @@
 <p>Create, edit, or delete a product<p>
 <ul>
   <% @products.each do |product| %>
-    <li><%= link_to product.name %> <%= link_to "edit", product.create %></li>
+    <li><%= product.name %> <%= link_to "edit", edit_vendor_product_path(product.vendor_id, product.id), method: :get %></li>
   <% end %>
 </ul>
