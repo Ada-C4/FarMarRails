@@ -7,6 +7,9 @@
 <p><%= @market.zip %></p>
 
 <h2>Vendors</h2>
+<p>
+<%= link_to "Create a Vendor", new_market_vendor_path(market_id: @market.id) %>
+</p>
 <table>
   <tr>
     <th>
@@ -31,6 +34,4 @@
   <% end %>
 </table>
 
-
-<h2>Vendors are clickable to edit them</h2>
 <h2>Create/delete vendor buttons</h2>
