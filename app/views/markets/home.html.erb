@@ -1,32 +1,32 @@
 <h1>Farmer's Market Homepage</h1>
 
 <section>
-  <%= form_for @market, :method => :get, url: mkt_home_path(:id) do |f| %>
+  <%= form_tag mkt_home_path, method: :get do %>
     <fieldset>
       <legend> Visit Market Homepage </legend>
-      <%= f.collection_select(:id, Market.all, :id, :name, prompt: "Select one:") %>
+      <%= collection_select(:id, Market.all, :id, :name, prompt: "Select one:") %>
       <br>
-      <%= f.submit "Go to Market" %>
+      <%= submit_tag "Go to Market" %>
     </fieldset>
     <% end %>
 
-  <%= form_for @vendor, :method => :get, url: v_home_path(:id) do |f| %>
+  <%= form_tag v_home_path, method: :get do %>
     <fieldset>
       <legend> Visit Vendor Homepage </legend>
-      <%= f.collection_select( :id, Vendor.all, :id, :name, prompt: "Select one:") %>
+      <%= collection_select( :id, Vendor.all, :id, :name, prompt: "Select one:") %>
       <br>
-      <%= f.submit "View Vendor" %>
+      <%= submit_tag "View Vendor" %>
     </fieldset>
     <% end %>
 </section>
 
 <section>
-  <%= form_for @market, :method => :get, url: market_path(:id) do |f| %>
+  <%= form_tag market_path, method: :get do %>
     <fieldset>
       <legend> View Market Details </legend>
-      <%= f.collection_select(:id, Market.all, :id, :name, prompt: "Select one:") %>
+      <%= collection_select(:id, Market.all, :id, :name, prompt: "Select one:") %>
       <br>
-      <%= f.submit "View Market" %>
+      <%= submit_tag "View Market" %>
     </fieldset>
     <% end %>
   </section>

@@ -1,0 +1,13 @@
+<h1>Add a Vendor</h1>
+
+<%= form_for @vendor do |f| %>
+  <fieldset>
+    <legend>Create a New Market</legend>
+    <%= f.label :name %>
+    <%= f.text_field :name %><br>
+    <%= f.label :no_of_employees %>
+    <%= f.text_field :no_of_employees %>
+    <br>
+    <%= f.submit %>
+  </fieldset>
+<% end %>

@@ -3,6 +3,15 @@ class VendorsController < ApplicationController
 
   end
 
+  def new
+    @vendor = Vendor.new
+  end
+
+  def create
+    @vendor = Vendor.create(vendor_params)
+    redirect_to mkt_home_path
+  end
+
   def index
 
   end
@@ -11,4 +20,9 @@ class VendorsController < ApplicationController
 
   end
 
+  private
+
+  def vendor_params
+    params.require(:vendor).permit(:name, :no_of_employees)
+  end
 end

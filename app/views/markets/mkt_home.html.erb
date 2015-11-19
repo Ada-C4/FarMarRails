@@ -31,3 +31,4 @@
 <%= link_to "Create a New Market", new_market_path %>
 
 <%= link_to "Edit Yourself", edit_market_path(:id => @market.id) %>
+<%= link_to "Add a New Vendor", new_market_vendor_path(:market_id => @market.id) %>
