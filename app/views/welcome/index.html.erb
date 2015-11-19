@@ -1,4 +1,4 @@
-<h1>Welcome to Farmer's Market Disney Land!</h1>
+<h1>FARMAR</h1>
 
 <%= form_tag select_user_path, method: :get do %>
   <%= collection_select(:market, :id, @markets, :id, :name, prompt: "Select the Market") %>
@@ -11,3 +11,7 @@
   <%= collection_select(:vendor, :id, @vendors, :id, :name, prompt: "Select the Vendor") %>
   <%= submit_tag "View Vendor" %>
 <% end %>
+
+<br>
+
+<%= link_to "See All Markets", markets_path %>

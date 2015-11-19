@@ -5,7 +5,7 @@ class WelcomeController < ApplicationController
   end
 
   def select
-    if !params[:market].nil? && !params[:market][:id].empty?
+    if params[:market].nil? && !params[:market][:id].empty?
       redirect_to market_path(params[:market][:id])
     elsif !params[:vendor].nil? && !params[:vendor][:id].empty?
       redirect_to vendor_path(params[:vendor][:id])

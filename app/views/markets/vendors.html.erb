@@ -1,0 +1,7 @@
+<h1><%= @market.name %> Vendors</h1>
+
+<% @market.vendors.each do |vendor| %>
+  <div>
+    <%= vendor.name %>
+  </div>
+<% end %>

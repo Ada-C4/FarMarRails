@@ -3,7 +3,11 @@ Rails.application.routes.draw do
 
   get 'welcome/select' => 'welcome#select', as: :select_user
 
-  resources :markets
+  resources :markets do
+    member do
+	    get 'vendors', as: :vendors
+	  end
+  end
 
   resources :vendors do
     resources :products do
