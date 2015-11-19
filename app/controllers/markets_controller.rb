@@ -4,7 +4,6 @@ class MarketsController < ApplicationController
   end
 
   def index
-  	fdsfds
     @markets = Market.all
   end
 
