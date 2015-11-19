@@ -25,6 +25,11 @@ class MarketsController < ApplicationController
   def show
     @market = Market.find(params[:id])
     @vendors = @market.vendors
+    if params[:type] == "user"
+      @im_a_market = false
+    else
+      @im_a_market = true
+    end
   end
 
 private
