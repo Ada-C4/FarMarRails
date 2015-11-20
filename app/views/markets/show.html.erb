@@ -13,7 +13,7 @@
 <ul>
   <% @market.vendors.each do |vendor| %>
     <li>
-      <%= link_to vendor.name, market_vendor_path(@market, vendor) %>
+      <span><%= link_to vendor.name, market_vendor_path(@market, vendor) %></span>
     </li>
   <% end %>
 </ul>
