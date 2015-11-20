@@ -1,0 +1,25 @@
+<h1> Sales for <%= @vendor.name %> </h1>
+
+
+  <table>
+    <tr>
+      <th>Amount</th>
+      <th>Purchase Time</th>
+      <th>Product</th>
+    </tr>
+    <% @sales.each do |sale| %>
+    <tr>
+      <td>$<%= sale.amount/100.0 %></td>
+      <td><%= sale.purchase_time %></td>
+      <td><%= Product.find(sale.product_id).name %></td>
+    </tr>
+    <% end %>
+  </table>
+
+<h2 class = "footer"> Total Sales:
+  <% total = 0 %>
+  <% @sales.each do |sale| %>
+    <% total += sale.amount %>
+  <% end %>
+  $<%= total/100.0 %>
+</h2>

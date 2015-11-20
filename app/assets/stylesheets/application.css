@@ -43,6 +43,10 @@ table {
   margin: auto;
 }
 
+th {
+  text-decoration: underline;
+}
+
 table a {
   font-size: 20px;
 }

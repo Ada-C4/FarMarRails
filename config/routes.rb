@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get 'vendors/:id/home' => 'vendors#v_home', as: :v_home
   post 'vendors/:id' => 'products#create', as: :p_create
   resources :vendors do
+    resources :sales
     resources :products
   end
   resources :markets do
