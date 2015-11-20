@@ -4,10 +4,10 @@ Rails.application.routes.draw do
   get 'welcome/select' => 'welcome#select', as: :select_user
 
   resources :markets do
-    resources :vendors, only: [:show, :index, :new, :create]
+    resources :vendors, only: [:show, :index, :new, :create, :destroy]
   end
 
-  resources :vendors, except: [:index, :new, :create] do
+  resources :vendors, except: [:index, :new, :create, :destroy] do
     resources :products do
       resources :sales do
       end

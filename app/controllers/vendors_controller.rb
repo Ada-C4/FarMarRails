@@ -4,8 +4,8 @@ class VendorsController < ApplicationController
   end
 
   def show
-    @market_view = params[:market_id].present?
     @vendor = Vendor.find(params[:id])
+    @market = Market.find(params[:market_id]) if params[:market_id].present?
   end
 
   def new

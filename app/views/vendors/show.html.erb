@@ -1,8 +1,8 @@
 <div class="pretend-nav">
   <div class="nav-position">
-  <%= link_to "CREATE PRODUCT", new_vendor_product_path(@vendor) unless @market_view %>
+  <%= link_to "CREATE PRODUCT", new_vendor_product_path(@vendor) unless @market %>
   <%= link_to "EDIT", edit_vendor_path(@vendor) %>
-  <%= link_to "DELETE VENDOR", , method: :delete, onclick: "return confirm('Are you sure?')" %>
+  <%= link_to "DELETE VENDOR", market_vendor_path(@market, @vendor), method: :delete, onclick: "return confirm('Are you sure?')" if @market%>
   </div>
 </div>
 
