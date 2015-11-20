@@ -1,9 +1,14 @@
-<%=  form_for :product, url: url, method: method do |f| %>
-<div class='legend'><h1><%= form_title %></h1></div>
-  <fieldset>
-    <%= f.label :name %>:
-    <%= f.text_field :name %><br>
-    <%= hidden_field_tag :vendor_id, params[:vendor_id] %>
-  </fieldset>
-  <%= f.submit %>
-<% end %>
+<div>
+  <%=  form_for :product, url: url, method: method do |f| %>
+  <div class='legend'><h1><%= form_title %></h1></div>
+    <fieldset>
+      <%= f.label :name %>:
+      <%= f.text_field :name %><br>
+      <%= hidden_field_tag :vendor_id, params[:vendor_id] %>
+    </fieldset>
+    <%= f.submit %>
+  <% end %>
+  <%= link_to 'return to vendor', @back, method: :get, class: "top-nav-button" %>
+  </div>
+</div>
+
