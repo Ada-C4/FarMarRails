@@ -1,7 +1,7 @@
 <div>
   <%= form_for @market do |f| %>
     <fieldset>
-      <legend>Update a market:</legend>
+      <legend>Update <%= @market.name %>:</legend>
       <%=f.label :name %>
       <%=f.text_field :name %>
       <br><br>
@@ -27,4 +27,5 @@
     <br>
     <%= f.submit("Save Changes!") %>
   <% end %>
+  <%= link_to "Go back to list of markets", "/markets/", class: "btn btn-default" %>
 </div>

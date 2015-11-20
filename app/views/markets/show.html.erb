@@ -1,19 +1,20 @@
 <div class="container">
-  <h1>LOOK AT THIS HERE MARKET</h1>
-  <h2> <%= @market.name %></h2>
-    <p>
-      Address: <%= @market.address %>, <%= @market.city %>, <%= @market.state %> <%=@market.zip%>
-    </p>
-    <h3>Vendors</h3>
-    <ul>
-      <% @market.vendors.each do |vendor| %>
-      <li>
-        <%= vendor.name %>
-      </li>
-      <% end %>
-    </ul>
+  <h1><%= @market.name %></h1>
+    <div>
+      <h3>Address</h3>
+      <%= @market.address %><br><%= @market.city %>,<%= @market.state %> <%=@market.zip%>
+    </div>
+    <div>
+      <h3>Vendors</h3>
+      <ul>
+        <% @market.vendors.each do |vendor| %>
+        <li>
+          <%= vendor.name %>
+        </li>
+        <% end %>
+      </ul>
+    </div>
 
-
-<%= button_to "Delete", "/markets/#{@market.id}", method: :delete, data: { confirm: "Are you sure you want to delete this market?"} %>
-<%= link_to "Go back to list of markets", "/markets/" %>
+<%= button_to "Delete", "/markets/#{@market.id}", method: :delete, class: "btn btn-default", data: { confirm: "Are you sure you want to delete this market?"} %>
+<%= link_to "Go back to list of markets", "/markets/", class: "btn btn-default" %>
 </div>
