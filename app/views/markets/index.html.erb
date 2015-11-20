@@ -22,9 +22,9 @@
 
 
 <% if !@buttons %>
-<div class='two_button_nav'>
-  <%= link_to 'A-Z', markets_path(order: 'az'), class: 'nav_button' %>
-  <%= link_to 'Z-A', markets_path(order: 'za'), class: 'nav_button' %>
+  <div class='two_button_nav'>
+    <%= link_to 'A-Z', markets_path(order: 'az'), class: 'nav_button' %>
+    <%= link_to 'Z-A', markets_path(order: 'za'), class: 'nav_button' %>
   </div>
   <div class='table_list'>
     <table>
@@ -36,5 +36,9 @@
     </table>
   </div>
 <% end %>
+<div class='one_button_nav'>
+  <%= link_to 'Home', '/', class: 'nav_button' %>
+</div>
+
 
 

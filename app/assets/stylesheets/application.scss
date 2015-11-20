@@ -99,13 +99,12 @@ body {
   width: 130px;
   height: 75px;
   font-size: 24px;
-  color: #666666;
-  border: 1px solid $grey;
+  color: $grey;
   margin: 10px;
   border-radius: 80%;
-  background-color: #FFFFFF;
   padding-top: 45px;
   text-decoration: none;
+  background-color: $button_color;
 }
 
 .larger_nav_button {
@@ -116,7 +115,6 @@ body {
   height: 75px;
   font-size: 24px;
   color: $grey;
-  border: 1px solid $grey;
   margin: 10px;
   margin-top: 40px;
   border-radius: 80%;
@@ -143,7 +141,15 @@ body {
   display: block;
 }
 
-.one_return_nav {
+.two_button_nav {
+  width: 400px;
+  height: 100px;
+  margin: 0 auto;
+  text-align: center;
+  display: block;
+}
+
+.one_button_nav {
   width: 200px;
   height: 200px;
   margin: 0 auto;
@@ -164,6 +170,7 @@ body {
 
 table {
   margin-top: 25px;
+  margin-bottom: 25px;
   margin: auto;
   width: 500px;
 }
