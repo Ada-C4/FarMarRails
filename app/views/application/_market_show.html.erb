@@ -1,0 +1,13 @@
+<% if user_type %>
+  <table class='guest_table'>
+    <% @market.vendors.each do |vendor| %>
+      <tr>
+        <td><%= table_data %></td>
+      </tr>
+    <% end %>
+  </table>
+  <br><br>
+  <div class="one_button_nav">
+    <%= link_to 'return to markets', markets_path, class: 'top-nav-button' %>
+  </div>
+<% end %>
