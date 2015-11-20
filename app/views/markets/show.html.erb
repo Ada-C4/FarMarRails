@@ -1,6 +1,8 @@
-<table class='table table-hover table-responsive table-bordered'>
+<div class="table-master">
+
+<table class='table table-hover'>
   <tr>
-    <td>
+    <td class="table_headers">
       Name
     </td>
     <td>
@@ -8,7 +10,7 @@
     </td>
   </tr>
   <tr>
-    <td>
+    <td class="table_headers">
       Address
     </td>
     <td>
@@ -16,7 +18,7 @@
     </td>
   </tr>
   <tr>
-    <td>
+    <td class="table_headers">
       City
     </td>
     <td>
@@ -24,7 +26,7 @@
     </td>
   </tr>
   <tr>
-    <td>
+    <td class="table_headers">
       State
     </td>
     <td>
@@ -32,7 +34,7 @@
     </td>
   </tr>
   <tr>
-    <td>
+    <td class="table_headers">
       County
     </td>
     <td>
@@ -40,7 +42,7 @@
     </td>
   </tr>
   <tr>
-    <td>
+    <td class="table_headers">
       Zip
     </td>
     <td>
@@ -48,8 +50,8 @@
     </td>
   </tr>
 </table>
-<%= button_to "Edit", edit_market_path(@market), method: :get %>
+</div>
 
-<%= link_to "View Market Vendors", "/markets/#{@market.id}/vendors" %>
-
-<%= button_to "Delete", "/markets/#{@market.id}", method: :delete %>
+<div class="sign-in-button"><%= link_to "View Market Vendors", "/markets/#{@market.id}/vendors", role: "button", class: "btn btn-default" %></div>
+<div class="sign-in-button"><%= button_to "Edit", edit_market_path(@market), method: :get, class: "btn btn-default" %></div>
+<%= button_to "Delete", "/markets/#{@market.id}", method: :delete, class: "btn btn-default" %>

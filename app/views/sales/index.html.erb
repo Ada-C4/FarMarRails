@@ -2,16 +2,17 @@
 <div class="sign-in-button">
 <%= button_to "New Sale", new_vendor_sale_path, method: :get, class: "btn btn-default" %>
 </div>
-<ul>
+<table>
   <% count = 0 %>
   <% @sales.each do |sale| %>
-    <li>
-      <%= @product_names[count] %>: <%= number_to_currency(sale.amount/100.0) %>,
-      <%= sale.purchase_time.localtime.strftime("%A, %B %e, %Y @ %m:%M %p") %>
-    </li>
+  <tr>
+    <td><%= @product_names[count] %></td>
+    <td><%= number_to_currency(sale.amount/100.0) %></td>
+    <td><%= sale.purchase_time.localtime.strftime("%A, %B %e, %Y @ %m:%M %p") %></td>
     <% count += 1 %>
+  </tr>
   <% end %>
-</ul>
+</table>
 
 <p>
   The sale total is <%= number_to_currency(@total/100.0) %>
