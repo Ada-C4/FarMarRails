@@ -13,13 +13,13 @@
 
 <h2 class='pg-sub-header'>products</h2>
 
-<table class="sale_table_list">
+<table class="product_table_list">
   <% @vendor.products.each do |product| %>
     <tr>
       <td><%= product.name.downcase %></td>
-      <td><%= button_to '', edit_vendor_product_path(vendor_id: product.vendor_id, id: product.id ), method: :get, class: 'edit-button' %></td>
-      <td><%= button_to '', product, method: :delete, class: "delete-button" %></td>
-      <td><%= button_to '+ sale', new_product_sale_path(product_id: product.id), method: :get, class: "add-sale-button" %></td>
+      <td class='button_column'><%= button_to '', edit_vendor_product_path(vendor_id: product.vendor_id, id: product.id ), method: :get, class: 'edit-button' %></td>
+      <td class='button_column'><%= button_to '', product, method: :delete, class: "delete-button" %></td>
+      <td class='button_column'><%= button_to '+ sale', new_product_sale_path(product_id: product.id), method: :get, class: "add-sale-button" %></td>
     </tr>
   <% end %>
 </table>
