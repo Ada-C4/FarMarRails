@@ -11,10 +11,7 @@
         <%= link_to "#{market.name}", market_path(market) %>
       </td>
       <td>
-        <%= market.city %>
-      </td>
-      <td>
-        <%= market.state %>
+        <%= market.city %>, <%= market.state %>
       </td>
       <td>
         <%= link_to 'Edit', edit_market_path(market) %>

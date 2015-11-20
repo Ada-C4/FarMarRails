@@ -9,6 +9,16 @@ h1, h2, h3, h4, h5, h6 {
       text-align: center;
   }
 
+.market_info {
+  text-align: center;
+}
+
+.market_info div {
+  display: inline-block;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
 p {
   text-align: center;
 }

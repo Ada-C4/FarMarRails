@@ -1,10 +1,12 @@
 <h1> <%= @market.name %></h1>
 
-<p><%= @market.address %></p>
-<p><%= @market.city %></p>
-<p><%= @market.state %></p>
-<p><%= @market.county %></p>
-<p><%= @market.zip %></p>
+<section class="market_info">
+  <div><%= @market.address %></div>
+  <div><%= @market.city %></div>
+  <div><%= @market.state %></div>
+  <div><%= @market.county %></div>
+  <div><%= @market.zip %></div>
+</section>
 
 <h2>Vendors</h2>
 <p>
