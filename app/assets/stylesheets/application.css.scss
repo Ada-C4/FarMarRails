@@ -18,9 +18,12 @@
  @import url(https://fonts.googleapis.com/css?family=Montserrat);
  @import url(https://fonts.googleapis.com/css?family=EB+Garamond);
  @import url(https://fonts.googleapis.com/css?family=Fjalla+One);
+ @import url(https://fonts.googleapis.com/css?family=PT+Serif);
+ @import url(https://fonts.googleapis.com/css?family=Muli);
 
- body {
-   font-family: 'EB Garamond', serif;
+
+body {
+  font-family: 'PT Serif', serif;
     font-size: 16px;
     line-height: 23px;
     margin: 0 0 23px 0;
@@ -47,7 +50,7 @@
     text-align: center;
     padding: 25px;
     padding-top: 40px;
-    font-family: 'Fjalla One', sans-serif;
+    font-family: 'Muli', sans-serif;
       font-weight: normal;
       text-transform: uppercase;
       line-height: 50px;
