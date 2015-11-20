@@ -6,7 +6,7 @@
   <% count = 0 %>
   <% @sales.each do |sale| %>
     <li>
-      <%= @product_names[count] %>: <%= sale.amount %>,
+      <%= @product_names[count] %>: <%= number_to_currency(sale.amount/100.0) %>,
       <%= sale.purchase_time %>
     </li>
     <% count += 1 %>
@@ -14,7 +14,7 @@
 </ul>
 
 <p>
-  The sale total is <%= @total %>
+  The sale total is <%= number_to_currency(@total/100.0) %>
 </p>
 <ul>
   <%  %>
@@ -22,12 +22,12 @@
   The sales for this month are:
   <% @sales_month.each do |sale| %>
   <li>
-  <%= @monthly_product_names[month_count] %>: <%= sale.amount %>, <%= sale.purchase_time %>
+  <%= @monthly_product_names[month_count] %>: <%= number_to_currency(sale.amount/100.0) %>, <%= sale.purchase_time %>
   </li>
   <% month_count += 1 %>
   <% end %>
 </ul>
 
 <p>
-  The total sales for the month is <%= @monthly_total %>
+  The total sales for the month is <%= number_to_currency(@monthly_total/100.0) %>
 </p>
