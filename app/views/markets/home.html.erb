@@ -1,9 +1,9 @@
 <img src="http://www.littlerock.com/!UserFiles/business-listings/attractions/Farmers'%20Market.jpg" alt="farmers market" class="home-pg-image">
 
 <h1 class="home-pg-header">Welcome to FarMar</h1>
-  <%= button_to "I am a market", "/markets", method: :get, class: "home-pg-button", id: "market-button", params:{user_type: 'market'} %>
-  <%= button_to "I am a vendor", "/vendors", method: :get, class: "home-pg-button", id: "vendor-button", params:{user_type: 'vendor'} %>
-  <%= button_to "I am a guest", "/markets", method: :get, class: "home-pg-button", id: "guest-button", params:{user_type: 'guest'} %>
+  <%= link_to "I am a market", markets_path, class: "home-pg-button", id: "market-button", params:{user_type: 'market'} %>
+  <%= link_to "I am a vendor", vendors_path, class: "home-pg-button", id: "vendor-button", params:{user_type: 'vendor'} %>
+  <%= link_to "I am a guest", markets_path, class: "home-pg-button", id: "guest-button", params:{user_type: 'guest'} %>
 
 
 
