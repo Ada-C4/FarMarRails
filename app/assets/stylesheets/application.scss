@@ -117,6 +117,13 @@ h1, h2, h3, h4, h5 {
   font-family: 'Fugaz One', cursive;
 }
 
+h1 {
+  color: rgb(255, 55, 0);
+  font-size: 2.75em;
+  text-shadow: 2px 8px 6px rgba(0,0,0,0.2),
+  0px -5px 35px rgba(255,255,255,0.3);
+}
+
 input[type="text"] {
   display: block;
   width: 100%;
