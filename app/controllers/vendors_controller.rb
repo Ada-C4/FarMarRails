@@ -9,7 +9,7 @@ class VendorsController < ApplicationController
   end
 
   def create
-    vendor = Vendor.create(vendor_params[:vendor]) do |v|
+    vendor = Vendor.create(vendor_params) do |v|
       v.market = Market.find(params[:market_id])
     end
     redirect_to vendor.market
@@ -22,7 +22,7 @@ class VendorsController < ApplicationController
 
   def update
     vendor = Vendor.find(params[:id])
-    vendor.update(vendor_params[:vendor])
+    vendor.update(vendor_params)
     redirect_to vendor.market
   end
 
@@ -36,10 +36,9 @@ class VendorsController < ApplicationController
     @products = @vendor.products
   end
 
-private
+  private
 
   def vendor_params
-    params.permit(vendor:[:name, :num_employees])
+    params.require(:vendor).permit([:name, :num_employees])
   end
-
 end
