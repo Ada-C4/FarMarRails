@@ -59,7 +59,6 @@ class VendorsController < ApplicationController
       @vendor = Vendor.find(vendor_id)
       @action = "market_vendor_update"
     elsif @@sign_in == "Vendor"
-      binding.pry
       vendor_id = params[:id]
       @vendor = Vendor.find(vendor_id)
       @action = "update"

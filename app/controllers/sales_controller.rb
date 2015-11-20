@@ -1,15 +1,14 @@
 class SalesController < ApplicationController
   def index
-    vendor_id = params[:vendor_id]
+    @vendor_id = params[:vendor_id]
     @product_names = []
     @total = 0
-    @sales = Sale.where(vendor_id: vendor_id)
+    @sales = Sale.where(vendor_id: @vendor_id)
     @sales.each do |sale|
       @total += sale.amount
-      product = sale.vendor.products.find(sale.product_id).name
+      product = sale.product
       @product_names.push(product)
     end
-
   end
 
   def new
@@ -24,11 +23,10 @@ class SalesController < ApplicationController
     @vendor_id = params[:vendor_id]
     new_params = sales_params[:sale]
     new_params[:vendor_id] = @vendor_id
-
+    new_params[:purchase_time] = Time.now
     Sale.create(new_params)
     redirect_to "/vendors/#{@vendor_id}/sales"
   end
-
 
   private
 

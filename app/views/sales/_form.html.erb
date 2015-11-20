@@ -3,10 +3,10 @@
 <legend> New Sale </legend>
   <%= f.label :amount %>
   <%= f.text_field :amount %><br>
-  <%= f.label :purchase_time %>
-  <%= f.text_field :purchase_time %><br>
-
+ 
   <%= f.collection_select(:product_id, @options, :id, :name, prompt: "Select the Product:") %>
 
   <%= f.submit class: "submit" %>
+
+
 <% end %>

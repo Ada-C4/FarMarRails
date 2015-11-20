@@ -16,3 +16,14 @@
 <p>
   The sale total is <%= @total %>
 </p>
+<ul>
+  <% @sales_month = Vendor.find(@vendor_id).monthly_sales %>
+  <% month_count = 0 %>
+  The sales for this month are:
+  <% @sales_month.each do |sale| %>
+  <li>
+  <%= sale.amount %>, <%= sale.purchase_time %>
+  </li>
+  <% month_count += 1 %>
+  <% end %>
+</ul>
