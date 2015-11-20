@@ -1,5 +1,5 @@
 body {
-  background-image: url("eggs.png");
+  background: image-url("eggs.png");
   text-align: center;
   background-repeat: no-repeat;
   background-position: relative;
