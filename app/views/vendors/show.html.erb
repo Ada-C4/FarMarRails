@@ -13,7 +13,7 @@
     <td>
       <ul>
         <% @vendor.products.each do |product| %>
-          <li><%= product.name %></li>
+          <li><%= product.name %> <%= link_to "Delete", product, method: :delete %> </li>
         <% end %>
       </ul>
     </td>
