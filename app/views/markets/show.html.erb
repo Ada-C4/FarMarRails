@@ -13,6 +13,20 @@
 
 <h3>Vendors at <%= @market.name %>:</h3>
 
-<%= render partial: 'shared/vendorlist', locals: { vendors:  @vendors} %>
+<ul>
 
-<%= link_to "Add a new vendor", new_market_vendor_path(params[:id]) %>
+  <% @vendors.each do |vendor| %>
+
+    <li><%= vendor.name %>
+      <%= link_to "✎", edit_market_vendor_path(vendor.market_id, vendor.id), {class: "edit"}%>
+      <%= link_to "✘", market_vendor_path(vendor.market_id, vendor.id), method: :delete, class: "delete" %>
+    </li>
+  <% end %>
+
+</ul>
+
+<div class="center">
+  <div class="button vendor_button">
+    <%= link_to "Add a new vendor", new_market_vendor_path(params[:id]) %>
+  </div>
+</div>

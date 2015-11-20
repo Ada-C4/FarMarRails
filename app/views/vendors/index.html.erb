@@ -1,12 +1,16 @@
-<h1> TO FIX details</h1>
+<h1> Welcome to the Vendor Portal</h1>
+
+<h3>All Vendors:</h3>
+
+<p>
+  Choose your vendor name to log in.
+</p>
 
 <ul>
 
   <% @vendors.each do |vendor| %>
 
     <li><%= link_to vendor.name, market_vendor_path(vendor.market_id, vendor.id) %>
-        <%= link_to "edit", edit_market_vendor_path(vendor.market_id, vendor.id) %>
-        <%= link_to "delete", market_vendor_path(vendor.market_id, vendor.id), method: :delete %>
     </li>
   <% end %>
 
