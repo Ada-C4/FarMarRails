@@ -7,14 +7,14 @@
 
 
 
-<p class="home-pg-sub-header">
+<h2 class="pg-sub-header">
   All Markets
-</p>
-<ul class="home-pg-markets">
+</h2>
+<table class="home-pg-markets">
   <% @markets.each do |market| %>
   <tr>
     <td><%= link_to market.name, market, class: "market-link" %></td>
   </tr>
 
   <% end %>
-</ul>
+</table>
