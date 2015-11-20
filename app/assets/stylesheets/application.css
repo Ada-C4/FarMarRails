@@ -13,3 +13,10 @@
  *= require_tree .
  *= require_self
  */
+@import url(https://fonts.googleapis.com/css?family=Pacifico);
+
+ header {
+   background-color: #2056AC;
+   color: white;
+   font-family: Pacifico;
+ }
