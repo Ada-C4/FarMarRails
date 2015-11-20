@@ -1,25 +1,25 @@
 <h1>Edit this vendor </h1>
 <section>
-<%= form_for @vendor, :url => {:action => "update"} do |f| %>
-  <fieldset>
-    <legend><%= @vendor_name %></legend>
-    <div>
-      <%= f.label :name, "name"%>
-      <%= f.text_field :name %><br />
-    </div>
+  <%= form_for @vendor, :url => {:action => "update"} do |f| %>
+    <fieldset>
+      <legend><%= @vendor_name %></legend>
+      <div>
+        <%= f.label :name, "name"%>
+        <%= f.text_field :name %><br />
+      </div>
 
-    <div>
-      <%= f.label :num_employees, "number of employees" %>
-      <%= f.text_field :num_employees %><br />
-    </div>
+      <div>
+        <%= f.label :num_employees, "number of employees" %>
+        <%= f.text_field :num_employees %><br />
+      </div>
 
-    <div>
-      <%= f.submit %>
-    </div>
-  </fieldset>
-<% end %>
+      <div>
+        <%= f.submit %>
+      </div>
+    </fieldset>
+  <% end %>
 
-<nav>
-  <%= link_to "Back to market details", market_path(@vendor.market) %>
-</nav>
+  <nav>
+    <%= link_to "Back to Market Details", market_path(@vendor.market) %>
+  </nav>
 </section>

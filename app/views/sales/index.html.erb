@@ -15,7 +15,7 @@
     <% @sales.each do |sale| %>
       <tr>
         <td>
-          <%= sale.product.name %>
+          <%= sale.product ? sale.product.name : "(product no longer exists)" %>
         </td>
         <td>
           $<%= sprintf('%.2f', sale.amount.to_f / 100) %>
