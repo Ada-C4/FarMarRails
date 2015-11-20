@@ -2,9 +2,17 @@
 @import "bootstrap";
 @import url('https://fonts.googleapis.com/css?family=Lobster|Open Sans|');
 
-
 body {
   margin-left: 20px;
+}
+
+div.title_link {
+  display: inline-block;
+}
+
+div.title_link_holder {
+  display: flex;
+  justify-content: center;
 }
 
 h1.title_page {
