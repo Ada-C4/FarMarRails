@@ -16,15 +16,24 @@
 
 <h2>Sales</h2>
 
+<%= link_to 'Ascending', vendor_path(order: 'asc') %>
+<%= link_to 'Descending', vendor_path(order: 'desc') %>
+
 <table>
   <% total_sales = 0 %>
-  <% @vendor.products.each do |product| %>
+  <!-- <% @vendor.products.each do |product| %>
     <% product.sales.each do |sale| %>
       <% total_sales += sale.amount %>
       <tr>
         <td>$<%= p '%.2f' % (sale.amount/100.0) %></td><td><%= sale.purchase_time.strftime("%D") %></td>
       </tr>
     <% end %>
+  <% end %> -->
+  <% @sales.each do |sale| %>
+    <% total_sales += sale.amount %>
+    <tr>
+      <td>$<%= p '%.2f' % (sale.amount/100.0) %></td><td><%= sale.purchase_time.strftime("%D") %></td>
+    </tr>
   <% end %>
   <tr>
     <td>Total: $<%= p '%.2f' % (total_sales/100.0) %></td>
