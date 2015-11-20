@@ -19,11 +19,15 @@ class VendorsController < ApplicationController
   end
 
   def update
-    # id = params[:id]
-    # vendor = Vendor.find(id)
-      Vendor.update(params[:id], vendor_params[:vendor])
+    Vendor.update(params[:id], vendor_params[:vendor])
     redirect_to market_path(vendor_params[:vendor][:market_id])
   end
+
+  def destroy
+    Vendor.destroy(params[:id])
+    redirect_to market_path(params[:market_id])
+  end
+
 
   private
 
