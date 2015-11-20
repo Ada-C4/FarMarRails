@@ -1,8 +1,6 @@
 class MarketsController < ApplicationController
 
-  before_action only:[:show, :edit] do
-    @market = Market.find(params[:id])
-  end
+  before_action only:[:show, :edit] { @market = Market.find(params[:id]) }
 
   def index
     @markets = Market.all
@@ -15,7 +13,6 @@ class MarketsController < ApplicationController
 
   def create
     new_market = Market.create(market_params)
-
     redirect_to market_path(new_market)
   end
 

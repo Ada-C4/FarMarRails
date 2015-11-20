@@ -1,4 +1,7 @@
 class VendorsController < ApplicationController
+
+  before_action only:[:show, :edit] { @vendor = Vendor.find(params[:id]) }
+
   def index
     @market = Market.find(params[:market_id])
   end
@@ -7,7 +10,6 @@ class VendorsController < ApplicationController
     if params[:product_select].present?
       redirect_to(vendor_product_path(params[:id], params[:product_select]))
     end
-    @vendor = Vendor.find(params[:id])
     @market = Market.find(params[:market_id]) if params[:market_id].present?
   end
 
@@ -24,10 +26,7 @@ class VendorsController < ApplicationController
   end
 
   def edit
-    id = params[:id]
-    @vendor = Vendor.find(id)
     @action = "update"
-
     render :new
   end
 
