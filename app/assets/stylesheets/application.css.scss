@@ -28,8 +28,8 @@ div.title_link_holder {
   padding-bottom: 30px;
 }
 
-.font_16 table {
-  font-size: 16px;
+.font_18 table {
+  font-size: 18px;
 }
 
 h1.title_page {
@@ -77,6 +77,20 @@ header img.cows {
   display: inline-block;
   margin-left: 10px;
   margin-right: 10px;
+}
+
+.narrower_table {
+  margin: 0 auto;
+  max-width: 100%;
+  margin-bottom: 20px;
+  padding: 8px;
+  line-height: 1.428571429;
+  vertical-align: top;
+  border-top: 1px solid #ddd;
+  display: table;
+  border-collapse: separate;
+  border-spacing: 2px;
+  border-color: grey;
 }
 
 p {
