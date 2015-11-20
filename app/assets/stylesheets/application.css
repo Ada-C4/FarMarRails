@@ -15,10 +15,11 @@
  */
  body {
    font-family: 'Old Standard TT', serif;
-   width: 100%;
-   background-size: cover;
    background-image: url(apple_black.jpeg);
-   background-size: 100%;
+   -webkit-background-size: cover;
+   -moz-background-size: cover;
+   -o-background-size: cover;
+   background-size: cover;
    color: #F0F0F0;
    background-color: #251B4A;
    background-attachment: fixed;
