@@ -58,3 +58,5 @@
     <td>Total: $<%= p '%.2f' % (total_sales/100.0) %></td>
   </tr>
 </table>
+
+<%= link_to 'Return to Vendors', vendors_path, method: :get, class: "back-button" %>
