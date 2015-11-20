@@ -2,19 +2,21 @@
   <h1><%= @title %></h1>
 </div>
 
-<%= form_for @market, url:({action: "#{@action}"}) do |f| %>
-<legend> New Market </legend>
+<div class="new-market-form">
+
+<%= bootstrap_form_for @market, class: "form-group", url:({action: "#{@action}"}) do |f| %>
 <%= f.label :name %>
-<%= f.text_field :name %><br>
+<%= f.text_field :name, hide_label: true %><br>
 <%= f.label :address %>
-<%= f.text_field :address %><br>
+<%= f.text_field :address, hide_label: true  %><br>
 <%= f.label :city %>
-<%= f.text_field :city %><br>
+<%= f.text_field :city, hide_label: true  %><br>
 <%= f.label :state %>
-<%= f.text_field :state %><br>
+<%= f.text_field :state, hide_label: true  %><br>
 <%= f.label :county %>
-<%= f.text_field :county %><br>
+<%= f.text_field :county, hide_label: true  %><br>
 <%= f.label :zip %>
-<%= f.text_field :zip %><br>
-<%= f.submit class: "submit" %>
+<%= f.text_field :zip, hide_label: true  %><br>
+<%= f.submit class: "submit", class: "btn btn-default" %>
 <% end %>
+</div>

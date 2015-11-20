@@ -2,7 +2,7 @@
   <h1 >Markets </h1>
 </div>
 
-<%= button_to "Add New Market", new_market_path, method: :get %>
+<%= button_to "Add New Market", new_market_path, method: :get, class: "btn btn-default" %><br>
 <ol>
   <% @markets.each do |market| %>
   <li>

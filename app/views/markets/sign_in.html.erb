@@ -1,6 +1,22 @@
 <div class="page-header">
-  <h1 >Sign In</h1>
+  <table>
+    <tr>
+      <td>
+        <%= image_tag("farmersMarket2.jpg", class: "img-circle") %>
+      </td>
+      <td>
+        <h1 id="sign-in">Farmer Market Sign In</h1>
+      </td>
+      <td>
+        <%= image_tag("veggies.jpg", class: "img-circle") %>
+      </td>
+    </tr>
+  </table>
 </div>
 
-<%= button_to "Sign in as a Market", markets_path, class: "btn btn-default"  %>
+<div class="center-block sign-in-master">
+<div class="sign-in-button">
+  <%= button_to "Sign in as a Market", markets_path, class: "btn btn-default" %>
+</div>
 <%= button_to "Sign in as a Vendor", "/vendors", method: :get, class: "btn btn-default" %>
+</div>
