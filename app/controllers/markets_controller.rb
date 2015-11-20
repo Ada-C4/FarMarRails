@@ -5,6 +5,7 @@ class MarketsController < ApplicationController
   end
 
   def index
+    @is_market = true if session[:user_type] == "market"
     user = params[:user_type]
     session[:user_type] = user unless user.nil?
     @markets = Market.all

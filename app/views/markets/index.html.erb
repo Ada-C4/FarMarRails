@@ -1,5 +1,8 @@
 <div class="container">
   <h1>ALL OF THEM MARKETS</h1>
+  <% if @is_market %>
+    <%= link_to "Add a Market", new_market_path, class: "btn btn-default" %>
+  <% end %>
   <table class="table table-hover">
     <% @markets.each do |market| %>
       <tr>
