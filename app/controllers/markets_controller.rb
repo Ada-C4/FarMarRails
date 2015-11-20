@@ -1,11 +1,21 @@
 class MarketsController < ApplicationController
 
+  def home
+
+  end
+
   def index
+    user = params[:user_type]
+    session[:user_type] = user unless user.nil?
     @markets = Market.all
+
   end
 
   def show
     @market = Market.find(params[:id])
+    @is_market = true if session[:user_type] == "market"
+    @is_vendor = true if session[:user_type] == "vendor"
+    @if_guest = true if session[:user_type] == "guest"
   end
 
   def new

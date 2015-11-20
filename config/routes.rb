@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root 'markets#index'
+  root 'markets#home'
   resources :markets do
 
   end
