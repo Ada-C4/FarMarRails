@@ -1,7 +1,7 @@
 class WelcomeController < ApplicationController
   def index
-    @markets = Market.all
-    @vendors = Vendor.all
+    @markets = Market.all.sort_by { |object| object.name }
+    @vendors = Vendor.all.sort_by { |object| object.name }
   end
 
   def select
