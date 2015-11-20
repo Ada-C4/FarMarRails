@@ -7,11 +7,18 @@ class VendorsController < ApplicationController
     @vendor = Vendor.find(id)
   end
 
+  #def create
+  #  Vendor.create(vendor_params[:vendor])
+  #  redirect_to "/"
+  #end
+
   def create
-    Vendor.create(vendor_params[:vendor])
-    redirect_to '/'
+
+    market = Market.find(params[:market_id])
+    market.vendors.create(vendor_params)
+    redirect_to market_path(params[:market_id])
   end
-  
+
   def new
     @vendor = Vendor.new
     @action = "create"
@@ -40,6 +47,6 @@ class VendorsController < ApplicationController
 private
   def vendor_params
     #this makes strong params
-    params.permit(vendor:[:name, :employees, :market_id])
+    params.require(:vendor).permit(:name, :employees)
   end
 end

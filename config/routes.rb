@@ -3,10 +3,14 @@ Rails.application.routes.draw do
 
   get 'markets/user_view' => 'markets#user_view'
   get 'markets/:id/user_show' => 'markets#user_show', as: :user_show
-  resources :markets
+
+  resources :markets do
+    resources :vendors
+  end
+
   resources :vendors do
   	resources :products do
-    	resources :sales	  
+    	resources :sales
   	end
   end
 

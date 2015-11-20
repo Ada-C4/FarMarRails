@@ -9,7 +9,7 @@
 </ul>
 <% if @buttons == true %>
   <li><%=link_to "Edit this market", edit_market_path %></li>
-  <li><%=link_to "Create a new vendor", new_vendor_path %></li>
+  <li><%=link_to "Create a new vendor", new_market_vendor_path(@market) %></li>
 <% end %>
 
 <h3>Vendors:</h3>
