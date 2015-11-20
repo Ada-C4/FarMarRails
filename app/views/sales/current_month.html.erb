@@ -24,7 +24,7 @@
           <% if total_sales.length == 0 %>
             No sales were made this month
           <% else %>
-            Current Month's Total Sales for <%= @vendor.name %>: $<%= p '%.2f' %    (total_sales.inject(:+)/100.00) %>
+            Total: $<%= p '%.2f' %    (total_sales.inject(:+)/100.00) %>
           <% end %>
         </td>
       </tr>
