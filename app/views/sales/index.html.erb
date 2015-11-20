@@ -1,23 +1,27 @@
 <h1>Sales for <%= @vendor.name %></h1>
 <h3>Number of sales: <%= @sales.length %></h2>
-<h3>Total sales: $<%= @total_sales %></h2>
+<h3>Total sales: $<%= sprintf('%.2f', @total_sales.to_f / 100) %></h2>
 <h3><%= link_to "current month sales", current_month_vendor_sales_path %></h3>
 
 <h1>Sales</h1>
 <table class="table">
-  <% @sales.each do |sale| %>
-    <tr>
-      <td>
-        <%= sale.product.name %>
-      </td>
-      <td>
-        $<%= sprintf('%.2f', sale.amount.to_f / 100) %>
-      </td>
-      <td>
-        <%= sale.purchase_time.strftime("%I:%M %p on %m/%d/%Y") %>
-      </td>
-   </tr>
-   <% end %>
+  <% if @sales.length == 0 %>
+    <h4>no sales :(</h4>
+  <% else %>
+    <% @sales.each do |sale| %>
+      <tr>
+        <td>
+          <%= sale.product.name %>
+        </td>
+        <td>
+          $<%= sprintf('%.2f', sale.amount.to_f / 100) %>
+        </td>
+        <td>
+          <%= sale.purchase_time.strftime("%I:%M %p on %m/%d/%Y") %>
+        </td>
+     </tr>
+     <% end %>
+  <% end %>
 </table>
 
 <p>
