@@ -8,8 +8,8 @@ class MarketsController < ApplicationController
   end
 
   def create
-    Market.create(market_params[:market])
-    redirect_to '/markets'
+    Market.create(market_params)
+    redirect_to markets_path
   end
 
   def edit
@@ -18,24 +18,19 @@ class MarketsController < ApplicationController
 
   def update
     market = Market.find(params[:id])
-    market.update(market_params[:market])
-    redirect_to '/markets'
+    market.update(market_params)
+    redirect_to markets_path
   end
 
   def show
     @market = Market.find(params[:id])
     @vendors = @market.vendors
-    if params[:type] == "user"
-      @im_a_market = false
-    else
-      @im_a_market = true
-    end
+    @im_a_market = true unless params[:type] == "user"
   end
 
-private
+  private
 
   def market_params
-    params.permit(market:[:name, :address, :city, :county, :state, :zip])
+    params.require(:market).permit([:name, :address, :city, :county, :state, :zip])
   end
-
 end
