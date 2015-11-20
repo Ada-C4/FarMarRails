@@ -7,13 +7,8 @@ class VendorsController < ApplicationController
     @vendor = Vendor.find(id)
   end
 
-  #def create
-  #  Vendor.create(vendor_params[:vendor])
-  #  redirect_to "/"
-  #end
 
   def create
-
     market = Market.find(params[:market_id])
     market.vendors.create(vendor_params)
     redirect_to market_path(params[:market_id])
@@ -38,6 +33,7 @@ class VendorsController < ApplicationController
     Vendor.update(params[:id], vendor_params[:vendor])
     redirect_to '/'
   end
+
   def destroy
     id = params[:id]
     @vendor =Vendor.find(id).destroy
