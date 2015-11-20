@@ -30,11 +30,15 @@
  nav a, .pretend-nav a {
   font-size: 14px;
   margin-right: 20px;
+  color: white;
  }
 
 .wrapper {
   min-height: 640px;
-  background-color: pink;
+  /*background-color: pink;*/
+  background-image: url("food-background.jpg");
+  background-position: center;
+  background-size: cover;
   padding: 5% 0;
 }
 
@@ -46,7 +50,7 @@ header {
 }
 
 nav {
-  background-color: grey;
+  background-color: #333333;
   max-width: 1280px;
   text-align: right;
   line-height: 72px;
@@ -62,8 +66,11 @@ nav {
 
 .content {
   width: 50%;
+  min-height: 525px;
   margin: auto;
   margin-top: 72px;
+  background-color: rgba(255, 255, 255, 0.6);
+  padding: 20px;
 }
 
 .center {
@@ -83,14 +90,15 @@ select {
   position: fixed;
   top: 0;
   width: 72px;
-  height: 62px;
-  background-color: purple;
+  height: 63px;
+  background-color: rgb(255, 55, 0);;
   color: black;
   line-height: 0;
   text-align: center;
   font-family: 'Fugaz One', cursive;
   font-size: 60px;
   padding-top: 10px;
+
 }
 
 .logo h6 {
