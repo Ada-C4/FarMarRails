@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   get 'markets/:id/home' => 'markets#mkt_home', as: :mkt_home
   get 'vendors/:id/home' => 'vendors#v_home', as: :v_home
   resources :vendors do
-    resources :products, only: [:create, :new, :edit, :destroy, :update]
+    resources :products
   end
   resources :markets do
       resources :vendors

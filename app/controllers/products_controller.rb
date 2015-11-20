@@ -9,4 +9,10 @@ class ProductsController < ApplicationController
     redirect_to v_home_path(@product.vendor_id)
   end
 
+  private
+
+  def product_params
+    params.require(:product).permit(:name, :vendor_id)
+  end
+
 end
