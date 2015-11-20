@@ -1,9 +1,9 @@
-<h1>Farmer's Market Homepage</h1>
+<h1>Farmer's Markets</h1>
 
 <section>
   <%= form_tag mkt_select_path, method: :get, class: "notopaque" do %>
     <fieldset>
-      <legend> Visit Market Homepage </legend>
+      <legend> Visit Market Home</legend>
       <%= collection_select(:market, :id, Market.all, :id, :name, prompt: "Select one:") %>
       <br>
       <%= submit_tag "Go to Market" %>
@@ -12,7 +12,7 @@
 
   <%= form_tag v_select_path, method: :get, class: "notopaque" do %>
     <fieldset>
-      <legend> Visit Vendor Homepage </legend>
+      <legend> Visit Vendor Home </legend>
       <%= collection_select(:vendor, :id, Vendor.all, :id, :name, prompt: "Select one:") %>
       <br>
       <%= submit_tag "View Vendor" %>
