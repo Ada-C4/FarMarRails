@@ -46,7 +46,7 @@ class VendorsController < ApplicationController
   private
 
   def vendor_params
-    vendor = params.require(:vendor).permit(:name)
+    vendor = params.require(:vendor).permit(:name, :employees)
     vendor.merge(params.permit(:market_id))
   end
 
