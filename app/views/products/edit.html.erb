@@ -1,23 +1,6 @@
-<<<<<<< HEAD
 <%= render partial: 'form', locals: { :button_text => "Update Product", :method_type => :patch } %>
-=======
-<section>
-  <%= form_for @edit_vendor_product, url: {action: "update"} do |f| %>
-    <fieldset>
-      <legend>Edit Product</legend>
-      <div>
-        <%= f.label :name, "name"%>
-        <%= f.text_field :name %><br />
-      </div>
-      <div>
-        <%= f.submit %>
-      </div>
-    </fieldset>
-  <% end %>
 
-  <nav>
-    <%= link_to "Back to Vendor", vendor_path(:id => @edit_vendor_product.vendor.id) %>
-		<%= link_to "Back to all Vendors", vendors_path %>
-  </nav>
-</section>
->>>>>>> 525c945ab596b4c774083a68773e30b2baabdbd8
+<nav>
+  <%= link_to "Back to Vendor", vendor_path(:id => @edit_vendor_product.vendor.id) %>
+	<%= link_to "Back to all Vendors", vendors_path %>
+</nav>
