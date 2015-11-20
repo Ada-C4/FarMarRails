@@ -1,4 +1,4 @@
-<h1 class="pg-header">Every Farmer's Market</h1>
+<h1 class="pg-header">Every Farket</h1>
 
 
   <% if @buttons %>
@@ -12,7 +12,7 @@
     <table>
       <% @markets.each do |market| %>
       <tr>
-        <td><%= link_to market.name, market, class: "market-link"%></td>
+        <td><%= link_to market.name.titleize, market, class: "market-link"%></td>
         <td><%= button_to 'Edit', edit_market_path(id: market.id), method: :get, class: 'table_button' %></td>
       </tr>
       <% end %>
@@ -30,7 +30,7 @@
     <table>
       <% @markets.each do |market| %>
       <tr>
-        <td class="guest_table"><%= link_to market.name, market, class: "market-link" %></td>
+        <td class="guest_table"><%= link_to market.name.titleize, market, class: "market-link" %></td>
       </tr>
       <% end %>
     </table>

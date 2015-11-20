@@ -1,6 +1,6 @@
-<h1><%= @vendor.name %></h1>
+<h1 class='pg-header'><%= @vendor.name %></h1>
 
-<h2>Products</h2>
+<h2 class='pg-sub-header'>Products</h2>
 
 <table>
   <% @vendor.products.each do |product| %>
@@ -12,9 +12,9 @@
     </tr>
   <% end %>
 </table>
-<%= link_to "Add new product", new_vendor_product_path(vendor_id: params[:id]) %>
+<%= link_to "Add new product", new_vendor_product_path(vendor_id: params[:id]), class: 'larger_nav_button' %>
 
-<h2>Sales</h2>
+<h2 class='pg-sub-header'>Sales</h2>
 
 <%= link_to 'Ascending', vendor_path(order: 'asc') %>
 <%= link_to 'Descending', vendor_path(order: 'desc') %>

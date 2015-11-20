@@ -24,7 +24,14 @@ class MarketsController < ApplicationController
   end
 
   def create
-    Market.create(market_params[:market])
+    Market.create(
+    	name: market_params[:name].titleize,
+    	address: market_params[:address].titleize,
+    	city: market_params[:city].titleize,
+    	county: market_params[:county].titleize,
+    	state: market_params[:state].titleize,
+    	zip: market_params[:zip],
+    	)
     redirect_to markets_path
   end
 
@@ -42,12 +49,12 @@ class MarketsController < ApplicationController
     id = params[:id]
     market = Market.find(id)
     market.update(
-    name: market_params[:market][:name],
-    address: market_params[:market][:address],
-    city: market_params[:market][:city],
-    county: market_params[:market][:county],
-    state: market_params[:market][:state],
-    zip: market_params[:market][:zip],
+    name: market_params[:name].titleize,
+    address: market_params[:address].titleize,
+    city: market_params[:city].titleize,
+    county: market_params[:county].titleize,
+    state: market_params[:state].titleize,
+    zip: market_params[:zip],
     )
     redirect_to markets_path
   end
@@ -55,7 +62,7 @@ class MarketsController < ApplicationController
   private
 
   def market_params
-    params.permit(market:[:name, :address, :city, :county, :state, :zip])
+    market = params.require(:market).permit(:name, :address, :city, :county, :state, :zip)
   end
 
 end

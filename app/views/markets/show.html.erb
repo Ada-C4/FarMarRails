@@ -1,6 +1,6 @@
 <h1 class='pg-header'><%= @market.name %></h1>
 <div class='description'>
-  <%= @market.address %> | <%= @market.city%> | <%= @market.county %> county | <%= @market.state %> | <%= @market.zip %>
+  <%= @market.address.titleize %> | <%= @market.city.titleize %> | <%= @market.county.titleize %> county | <%= @market.state.titleize %> | <%= @market.zip %>
 </div>
 
 <h2 class="pg-sub-header">Who's sellin' stuff here?</h2>
@@ -9,7 +9,7 @@
   <table>
     <% @market.vendors.each do |vendor| %>
       <tr>
-        <td><%= vendor.name %></td>
+        <td><%= vendor.name.titleize %></td>
       </tr>
     <% end %>
   </table>
@@ -22,7 +22,7 @@
   <table>
     <% @market.vendors.each do |vendor| %>
       <tr>
-        <td><%= link_to vendor.name, market_vendor_path(market_id: vendor.market_id, id: vendor.id ) %></td>
+        <td><%= link_to vendor.name.titleize, market_vendor_path(market_id: vendor.market_id, id: vendor.id ) %></td>
       </tr>
     <% end %>
   </table>
@@ -35,7 +35,7 @@
   <table>
     <% @market.vendors.each do |vendor| %>
     <tr>
-      <td><%= vendor.name %></td>
+      <td><%= vendor.name.titleize %></td>
       <td><%= button_to 'Edit', edit_market_vendor_path(market_id: vendor.market_id, id: vendor.id), method: :get, class: 'table_button' %></td>
       <td><%= button_to 'Delete', market_vendor_path(market_id:vendor.market_id, id: vendor.id), method: :delete, class: 'table_button' %></td>
     </tr>
