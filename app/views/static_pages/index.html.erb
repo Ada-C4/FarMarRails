@@ -1,10 +1,12 @@
 <% provide(:title, "Farmers Market Central") %>
-<div class="centered-button">
-  <%= button_to "View All Markets", markets_path, class: "btn btn-lg btn-primary center-block" %>
-</div>
-
+<%= button_to "View All Markets", markets_path, class: "btn btn-lg btn-primary center-block" %>
+<br>
 <%= form_tag("/markets/search", method: "get", class: "form-group") do %>
-  <%= label_tag(:search_term, "Search for markets by name:") %>
-  <%= text_field_tag(:search_term) %>
-  <%= submit_tag("Search") %>
+  <fieldset>
+    <legend>Market Search</legend>
+    <%= label_tag(:search_term, "Search for markets by name:") %>
+    <%= text_field_tag(:search_term, nil, class: 'form-control') %>
+    <br>
+    <%= submit_tag("Search", class: 'btn btn-primary') %>
+  </fieldset>
 <% end %>
