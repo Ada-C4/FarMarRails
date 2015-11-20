@@ -16,6 +16,7 @@ class MarketsController < ApplicationController
   def new
     @market = Market.new()
     @action = "create"
+    @title = "Add a Market"
   end
 
   def create
@@ -27,6 +28,7 @@ class MarketsController < ApplicationController
     id = params[:id]
     @market = Market.find(id)
     @action = "update"
+    @title = "Edit a Market"
   end
 
   def update

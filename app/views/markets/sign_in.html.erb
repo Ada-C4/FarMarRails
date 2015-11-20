@@ -1,2 +1,6 @@
-<%= button_to "Sign in as a Market", markets_path  %>
-<%= button_to "Sign in as a Vendor", "/vendors", method: :get %>
+<div class="page-header">
+  <h1 >Sign In</h1>
+</div>
+
+<%= button_to "Sign in as a Market", markets_path, class: "btn btn-default"  %>
+<%= button_to "Sign in as a Vendor", "/vendors", method: :get, class: "btn btn-default" %>

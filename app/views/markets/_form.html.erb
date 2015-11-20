@@ -1,4 +1,6 @@
-<h1>Add a New Market</h1>
+<div class="page-header">
+  <h1><%= @title %></h1>
+</div>
 
 <%= form_for @market, url:({action: "#{@action}"}) do |f| %>
 <legend> New Market </legend>
