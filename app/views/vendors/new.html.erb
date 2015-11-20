@@ -1,0 +1,14 @@
+<h1>Add a new new vendor</h1>
+<fieldset>
+  <%= form_for @new_vendor, url: {action: :create} do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <br>
+  <%= f.label "Number of Employees" %>
+  <%= f.text_field :employees %>
+  <%= f.hidden_field :market_id, value: params[:market_id] %>
+  <br>
+  <%= f.submit "Add vendor" %>
+
+  <% end %>
+</fieldset>

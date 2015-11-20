@@ -1,5 +1,8 @@
 <h1> <%= @vendor.name %> details </h1>
 
+<p> You can find me at <%= @vendor.market.name %></p>
+<p> Number of employees: <%= @vendor.employees %></p>
+
 <p>Create, edit, or delete a product<p>
 <ul>
   <%= link_to "create", new_vendor_product_path(params[:id]) %>

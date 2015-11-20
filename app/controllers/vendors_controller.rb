@@ -9,6 +9,11 @@ class VendorsController < ApplicationController
     @new_vendor = Vendor.new
   end
 
+  def create
+    a = Vendor.create( vendor_params[:vendor])
+    redirect_to vendor_path(a.id)
+  end
+
   def show
     @is_a_vendor = true
     id = params[:id]
