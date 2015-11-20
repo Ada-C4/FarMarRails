@@ -23,10 +23,15 @@
    color: #F0F0F0;
    background-color: #251B4A;
    background-attachment: fixed;
+   cursor: url("apple.png"), auto
  }
  img{
    width: 100%;
    height: 100%;
+ }
+ .index {
+   line-height: 200%;
+
  }
  a {
   color: #F2F2F2;
