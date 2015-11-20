@@ -1,27 +1,14 @@
 <div>
   <h1><%= @vendor.name %></h1>
+  
     <p>
       Employees Number: <%= @vendor.employee_no %>
       Market: <%= @market.name %>, <%= @market.state %>
     </p>
+
   <h2>Products</h2>
+
   <%= link_to "Add a Product", "/vendors/#{@vendor.id}/products/new", class: "btn btn-default" %>
-  <ul>
-    <% total = 0 %>
-    <% @vendor.products.each do |product| %>
-    <li>
-      <%= product.name %>
-      <%= button_to "Delete Product", "/vendors/#{@vendor.id}/products/#{product.id}", method: :delete, data: { confirm: "Are you sure you want to delete #{product.name}?"} %>
-      <ul>
-        <% product.sales.each do |sale|%>
-          <li>Purchase Amount: <%= number_to_currency(sale.amount/100) %> | Purchase Date: <%= sale.purchase_time.strftime("%B %d, %Y") %></li>
-          <% total += sale.amount %>
-      <% end %>
-    </ul>
-    </li>
-    <% end %>
-    Total Sales: <%= number_to_currency(total/100) %>
-  </ul>
 
   <div class="container">
     <h2>Products</h2>

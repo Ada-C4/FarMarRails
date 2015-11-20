@@ -2,7 +2,7 @@
   <h1>ALL OF THEM VENDORS</h1>
   <table class="table table-hover">
     <tr >
-      <th>
+      <th class="col-md-6">
         VENDOR
       </th>
       <th>
@@ -11,23 +11,18 @@
       <th>
         STATE
       </th>
-      <th>
-        MORE INFO
-      </th>
     </tr>
     <% @vendors.each do |vendor| %>
       <tr>
         <td>
-          <%= vendor.name %>
+          <%= link_to "#{vendor.name}", "/vendors/#{vendor.id}" %>
         </td>
         <td>
-          market
+          <% market = Market.find(vendor.market_id) %>
+          <%= market.name %>
         </td>
        <td>
-         state
-       </td>
-       <td>
-         <%= link_to "Show Vendor", "/vendors/#{vendor.id}" %>
+         <%= market.state %>
        </td>
      </tr>
     <% end %>
