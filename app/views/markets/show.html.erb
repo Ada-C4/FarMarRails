@@ -13,12 +13,16 @@
 <% end %>
 
 <h3>Vendors:</h3>
-<ul>
+<table>
+  <tbody>
   <% @vendors.each do |vendor| %>
-    <li><%= vendor.name%>
+  <tr>
+      <td>◦ <%= vendor.name%></td>
       <% if @buttons == true %>
-      <%=link_to "Delete Vendor",vendor_path(vendor), method: :delete, data: {confirm: "Are you sure?"} %></li>
-      <%=link_to "Edit Vendor", edit_vendor_path(vendor) %></li>
+        <td><%=link_to "✐", edit_vendor_path(vendor) %></td>
+        <td><%=link_to "✘",vendor_path(vendor), method: :delete, data: {confirm: "Are you sure?"} %></td>
       <% end %>
   <% end %>
-</ul>
+  </tr>
+</tbody>
+</table>
