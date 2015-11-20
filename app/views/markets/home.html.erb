@@ -4,15 +4,32 @@
 
 <div class="home-pg-header-container">
   <h1 class="home-pg-header">FARMERS MARKETS</h1>
-  <h3 class="home-pg-h3">CONTINUE AS A:</h3>
+  <p class="home-pg-sub-header">continue as a:</p>
 </div>
 
 
+<div class="button-container">
+  <%= link_to(markets_path(user_type: 'market'), :class => "home-pg-button", :id => "market-button") do %>
+    <hr />
+    MARKET
+    <hr />
+  <% end %>
 
-  <%= link_to "I am a market", markets_path(user_type: 'market'), class: "home-pg-button", id: "market-button" %>
-  <%= link_to "I am a vendor", vendors_path(user_type: 'vendor'), class: "home-pg-button", id: "vendor-button" %>
-  <%= link_to "I am a guest", markets_path(user_type: 'guest'), class: "home-pg-button", id: "guest-button" %>
+  <%= link_to(vendors_path(user_type: 'vendor'), :class => "home-pg-button", :id => "vendor-button") do %>
+    <hr />
+    VENDOR
+    <hr />
+  <% end %>
 
+  <%= link_to(markets_path(user_type: 'guest'), :class => "home-pg-button", :id => "guest-button") do %>
+    <hr />
+    GUEST
+    <hr />
+  <% end %>
+
+  <!-- <%= link_to "GUEST", markets_path(user_type: 'guest'), class: "home-pg-button", id: "guest-button" %> -->
+
+</div>
 
 
 <h2 class="pg-sub-header">
@@ -23,6 +40,5 @@
   <tr>
     <td><%= link_to market.name.titleize, market, class: "market-link" %></td>
   </tr>
-
   <% end %>
 </table>
