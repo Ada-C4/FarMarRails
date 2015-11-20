@@ -1,4 +1,11 @@
-<h1>Market List</h1>
+<h1>Welcome to the Market Portal</h1>
 
-<%= link_to "Add a New Market", new_market_path %>
+<div class="center">
+  <div class="button market_button">
+    <%= link_to "Add a New Market", new_market_path %>
+  </div>
+</div>
+
+<h2>All Markets:</h2>
+
 <%= render partial: 'shared/marketlist', locals: { markets: @markets} %>

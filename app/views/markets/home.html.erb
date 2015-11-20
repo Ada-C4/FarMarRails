@@ -1,3 +1,15 @@
-<%= link_to "I Am a Market", markets_path %> <%= link_to "I Am a Vendor", vendors_path %>
+<h1>Welcome to the FarMar Finder</h1>
+
+<div class="center">
+  <div class="button market_button">
+    <%= link_to "I Am a Market", markets_path %>
+  </div>
+  <div class="button vendor_button">
+    <%= link_to "I Am a Vendor", vendors_path %>
+  </div>
+</div>
+
+<h2>All Markets:</h2>
+
 
 <%= render partial: 'shared/marketlist', locals: { markets: @markets} %>

@@ -9,18 +9,66 @@ body {
   font-family: 'Open Sans', sans-serif;
   background-image: image-url("p-patch.jpg");
   background-size: cover;
+  color: #004d00;
 }
 
 h1 {
-  font-family: 'Amatic SC';
+  font-family: 'Amatic SC', sans-serif;
   text-align: center;
   font-size: 3em;
 }
 
-.fade {
-  width: 750px;
+div.fade {
+  width: 700px;
   background-color: rgba(255, 255, 255, .75);
-  margin: auto;
+  margin: 50px auto;
   padding:  15px 50px;
   border-radius: 10px;
+  text-align: left;
+}
+
+div.button {
+  display:inline-block;
+  padding: 40px;
+  border-radius: 10px;
+  border-width: medium;
+  margin: 50px;
+  text-align: center;
+
+}
+
+div.button > a {
+  text-decoration: none;
+  font-family: 'Amatic SC', sans-serif;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 2em;
+}
+
+div.button > a:hover {
+  font-size: 250%;
+}
+
+div.center{
+  text-align: center;
+}
+
+li {
+  line-height: 150%;
+}
+
+a {
+  text-decoration:none;
+  color: #004d00;
+
+}
+
+.market_button {
+  background-color: rgba(41, 41, 163, .75);
+
+}
+
+.vendor_button{
+  background-color: rgba(0, 102, 34, .75);
+
 }
