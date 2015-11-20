@@ -2,6 +2,7 @@ class SalesController < ApplicationController
   def index
     @title = "Sales"
     @vendor_id = params[:vendor_id]
+    @vendor = Vendor.find(@vendor_id)
     @product_names = []
     @monthly_product_names = []
     @total = 0

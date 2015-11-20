@@ -1,4 +1,10 @@
-  <%= button_to "Add new vendor", market_vendors_new_path(params[:market_id]), method: :get %>
+<h3><%= @market.name %></h3>
+
+  <div class="sign-in-button">
+
+    <%= button_to "Add new vendor", market_vendors_new_path(params[:market_id]), class: "btn btn-default", method: :get %>
+
+  </div>
 
     <ul>
       <% @market.vendors.each do |vendor| %>

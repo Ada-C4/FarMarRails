@@ -2,6 +2,7 @@ class ProductsController < ApplicationController
   def index
     @title = "Products"
     @vendor_id = params[:vendor_id]
+    @vendor = Vendor.find(@vendor_id)
     @products = Product.where(vendor_id: @vendor_id)
   end
 

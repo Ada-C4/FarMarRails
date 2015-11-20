@@ -18,13 +18,13 @@ class VendorsController < ApplicationController
     @@sign_in = "Market"
     id = params[:market_id]
     @market = Market.find(id)
-    @title = "#{@market.vendor} Info"
+    @title = "Market Vendors"
   end
 
   def show
     id = params[:id]
     @vendor = Vendor.find(id)
-    @title = "#{@vendor.name} Info"
+    @title = "Vendor Info"
   end
 
   def new
