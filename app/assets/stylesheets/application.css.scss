@@ -1,8 +1,15 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import url('https://fonts.googleapis.com/css?family=Lobster|Open Sans|');
+
 
 body {
   margin-left: 20px;
+}
+
+h1.title_page {
+  font-family: Lobster;
+  font-size: 2cm;
 }
 
 h1, h2, h3, h4, h5, h6 {
