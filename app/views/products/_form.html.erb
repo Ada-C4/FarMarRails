@@ -1,8 +1,7 @@
 <%= form_for [@vendor, @product] do |f| %>
-  <fieldset>
-    <legend>Product Information</legend>
     <%= f.label :name %>
     <%= f.text_field :name %>
-  </fieldset>
+    <br>
+    <br>
     <%= f.submit %>
 <% end %>
