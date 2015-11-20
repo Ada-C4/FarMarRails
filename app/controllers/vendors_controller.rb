@@ -5,10 +5,13 @@ class VendorsController < ApplicationController
     render :index
   end
 
+  def new
+    @new_vendor = Vendor.new
+  end
+
   def show
     @is_a_vendor = true
     id = params[:id]
-    # market_id = params[:market_id]
     @vendor = Vendor.find(id)
     @products = @vendor.products
   end
