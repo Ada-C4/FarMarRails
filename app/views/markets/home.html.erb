@@ -10,10 +10,10 @@
 <h2 class="pg-sub-header">
   All Markets
 </h2>
-<table class="home-pg-markets">
+<table class="guest_table">
   <% @markets.each do |market| %>
   <tr>
-    <td><%= link_to market.name, market, class: "market-link" %></td>
+    <td><%= link_to market.name.titleize, market, class: "market-link" %></td>
   </tr>
 
   <% end %>
