@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   get 'welcome/select' => 'welcome#select', as: :select_user
 
   resources :markets do
-    resources :vendors, only: [:show, :index, :new, :create, :destroy]
+    resources :vendors, only: [:show, :index, :new, :create, :destroy, :edit, :update]
   end
 
   resources :vendors, except: [:index, :new, :create, :destroy] do

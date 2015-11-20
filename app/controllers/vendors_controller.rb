@@ -32,8 +32,12 @@ class VendorsController < ApplicationController
   end
 
   def update
-    updated_vendor = Vendor.update(params[:id], vendor_params)
-    redirect_to vendor_path(updated_vendor)
+    if params[:market_id].present?
+      redirect_to market_path(params[:market_id])
+    else
+      updated_vendor = Vendor.update(params[:id], vendor_params)
+      redirect_to vendor_path(updated_vendor)
+    end
   end
 
   def destroy
