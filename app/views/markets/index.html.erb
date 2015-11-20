@@ -34,7 +34,7 @@
       <% @markets.each do |market| %>
       <tr>
         <td><%= link_to market.name.titleize, market, class: "market-link"%></td>
-        <td><%= button_to '', edit_market_path(id: market.id), method: :get, class: 'table_button' %></td>
+        <td><%= button_to '', edit_market_path(id: market.id), method: :get, class: 'edit-button' %></td>
       </tr>
       <% end %>
     </table>
@@ -44,8 +44,16 @@
 
 <% if !@buttons %>
   <div class='two_button_nav'>
-    <%= link_to 'A-Z', markets_path(order: 'az'), class: 'nav_button' %>
-    <%= link_to 'Z-A', markets_path(order: 'za'), class: 'nav_button' %>
+    <%= link_to(markets_path(order: 'az'), :class => "nav_button") do %>
+      <hr />
+      a - z
+      <hr />
+    <% end %>
+    <%= link_to(markets_path(order: 'za'), :class => "nav_button") do %>
+      <hr />
+      z - a
+      <hr />
+    <% end %>
   </div>
   <div class='table_list'>
     <table>

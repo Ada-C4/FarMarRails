@@ -169,7 +169,7 @@ hr {
 }
 
 .two_button_nav {
-  width: 350px;
+  width: 120px;
   height: 100px;
   margin: 0 auto;
   text-align: center;
@@ -192,8 +192,18 @@ hr {
   display: block;
 }
 
-.table_button {
+.edit-button {
   background: url(edit-button.png);
+  background-size: 20px 20px;
+  width: 20px;
+  height: 20px;
+  display: inline;
+  border-width: 1px;
+  border-style: none;
+}
+
+.delete-button {
+  background: url(delete-button.png);
   background-size: 20px 20px;
   width: 20px;
   height: 20px;
@@ -317,7 +327,7 @@ label {
 
 .nav {
   text-align: center;
-  width: 80px;
+  width: 150px;
   height: 30px;
   margin: auto;
   display: block;
