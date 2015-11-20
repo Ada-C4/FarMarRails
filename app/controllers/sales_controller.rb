@@ -26,6 +26,10 @@ class SalesController < ApplicationController
     render :index
   end
 
+  def destroy
+    
+  end
+
   private
 
   def sale_params

@@ -13,9 +13,11 @@ Rails.application.routes.draw do
       member do
         get 'sales/new'
         post 'sales/create'
+        delete 'sales/:id' => 'sales#destroy'
       end
     end
   end
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
