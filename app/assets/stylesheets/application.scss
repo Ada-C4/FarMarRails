@@ -136,18 +136,11 @@ hr {
   text-align: center;
   width: 40px;
   height: 20px;
-  // font-size: 24px;
-  // color: $grey;
   margin: 10px;
-  // border-radius: 80%;
-  // padding-top: 45px;
-  // text-decoration: none;
-  // background-color: $button_color;
-
   text-decoration: none;
   font-size: 16px;
   color: #000000;
-} 
+}
 
 .larger_nav_button {
   float: left;
@@ -254,13 +247,15 @@ tr {
   text-align: center;
   width: 40px;
   height: 20px;
-  font-size: 24px;
+  font-size: 16px;
   color: $grey;
   margin: 10px;
   text-decoration: none;
   margin-top: 10%;
-  border-top: 1px $grey solid;
-  border-bottom: 1px $grey solid;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  border-top: 1px $grey-teal solid;
+  border-bottom: 1px $grey-teal solid;
 }
 
 .market_form {
