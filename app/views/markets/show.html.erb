@@ -53,3 +53,5 @@
 <%= button_to "Edit", edit_market_path(@market), method: :get %>
 
 <%= link_to "View Market Vendors", "/markets/#{@market.id}/vendors" %>
+
+<%= button_to "Delete", "/markets/#{@market.id}", method: :delete %>
