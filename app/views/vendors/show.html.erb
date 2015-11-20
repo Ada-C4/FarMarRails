@@ -28,6 +28,7 @@
 <table>
   <thead>
     <tr>
+      <th>Product</th>
       <th>Date</th>
       <th>Amount</th>
     </tr>
@@ -35,6 +36,7 @@
   <tbody>
     <% @vendor.sales.each do |sale| %>
       <tr>
+        <td><%= sale.product.name%></td>
         <td><%= sale.purchase_time%></td>
         <td><%= number_to_currency(sale.amount.to_f/100) %></td>
       </tr>
@@ -46,6 +48,7 @@
 <table>
   <thead>
     <tr>
+      <th>Product</th>
       <th>Date</th>
       <th>Amount</th>
     </tr>
@@ -53,6 +56,7 @@
   <tbody>
       <% @vendor.month_sales.each do |vendor|%>
       <tr>
+          <td><%= vendor.product.name%></td>
           <td><%=vendor.purchase_time%></td>
           <td><%=number_to_currency(vendor.amount.to_f/100)%></td>
         <%end%>
