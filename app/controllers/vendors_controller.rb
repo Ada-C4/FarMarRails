@@ -1,5 +1,3 @@
-require 'pry'
-
 class VendorsController < ApplicationController
   def index
     # if request.fullpath == "/vendors"

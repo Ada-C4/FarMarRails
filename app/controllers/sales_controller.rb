@@ -32,10 +32,8 @@ class SalesController < ApplicationController
 
   def create
     @vendor_id = params[:vendor_id]
-
     new_params = sales_params[:sale]
     sale_amount = new_params[:amount]
-    binding.pry
     sale_amount = sale_amount.to_f * 100
     new_params[:amount] = sale_amount
     new_params[:vendor_id] = @vendor_id
