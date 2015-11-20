@@ -1,4 +1,9 @@
 class MarketsController < ApplicationController
+  before_action :get_market, only: [:edit, :show, :update]
+
+  def get_market
+    @market = Market.find(params[:id])
+  end
 
   def create
     Market.create(market_params[:market])
@@ -6,8 +11,7 @@ class MarketsController < ApplicationController
   end
 
   def edit
-    id = params[:id]
-    @market = Market.find(id)
+
   end
 
   def index
@@ -20,8 +24,6 @@ class MarketsController < ApplicationController
   end
 
   def show
-    id = params[:id]
-    @market = Market.find(id)
     @vendors = @market.vendors.order(:name)
     if request.path_info.include?('home')
       render :home_market
@@ -31,8 +33,6 @@ class MarketsController < ApplicationController
   end
 
   def update
-    id = params[:id]
-    @market = Market.find(id)
     @market.update(market_params[:market])
     redirect_to action: :index
   end
