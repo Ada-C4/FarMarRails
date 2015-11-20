@@ -68,7 +68,13 @@ h3 a:hover {
   color: black;
 }
 
-
  ul {
    list-style-type: none;
  }
+
+.address, .vendors {
+  margin-left: 30px;
+  margin-right: 30px;
+  display: inline-block;
+  vertical-align: top;
+}
