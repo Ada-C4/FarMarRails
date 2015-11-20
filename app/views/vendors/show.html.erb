@@ -1,4 +1,4 @@
-<h1> Vendor home </h1>
+<h1>Welcome, <%= @vendor.name %>!</h1>
 
 <table>
   <tr>
@@ -19,6 +19,6 @@
     </td>
   </tr>
 </table>
-<section>
+<section class ="footer">
   <%= link_to "Add a Product", new_vendor_product_path(@vendor.id) %>
 </section>
