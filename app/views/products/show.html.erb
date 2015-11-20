@@ -4,13 +4,16 @@
   </div>
 </div>
 
-<div class="center">
-  <h1><%= @product.name %></h1>
+<h1><%= @product.name %></h1>
 
-  <h2><% @product %></h2>
+<h2><% @product %></h2>
+<ul>
+  <li>
+    <h3>All Sales</h3>
+  </li>
   <% @product.sales.each do |sale| %>
-    <div>
-      <%= "$" + sale.amount.to_s %>
-    </div>
+    <li>
+      <%= number_to_currency(in_dollars sale.amount) %>
+    </li>
   <% end %>
-</div>
+</ul>

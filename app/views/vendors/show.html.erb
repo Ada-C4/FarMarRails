@@ -6,29 +6,29 @@
   </div>
 </div>
 
-<div class="center">
-  <h1><%= @vendor.name %></h1>
+<h1><%= @vendor.name %></h1>
 
-  <h2>Products</h2>
-  <% @vendor.products.each do |product| %>
-  <div>
-    <%= link_to product.name, vendor_product_path(@vendor, product) %>
-  </div>
-    <% product.sales.each do |sale| %>
-      <div>
-        <%="$" + sale.amount.to_s %>
-      </div>
-    <% end %>
-  <% end %>
-  <h3>Total sales: $<%= @vendor.total_sales %> </h3>
-
-  <h2>Monthly Sales</h2>
-  <% @vendor.monthly_sales.each do |sale| %>
+<h2>Products</h2>
+<ul>
+<% @vendor.products.each do |product| %>
+  <li>
+    <span><%= link_to product.name, vendor_product_path(@vendor, product) %></span>
+  </li>
+  <% product.sales.each do |sale| %>
     <div>
-      <%="$" + sale.amount.to_s %>
+      <%= number_to_currency(in_dollars sale.amount) %>
     </div>
   <% end %>
+<% end %>
+<h3>Total sales: <%= number_to_currency(in_dollars @vendor.total_sales) %> </h3>
+</ul>
 
-  <h3>Total monthly sales: $<%= @vendor.total_monthly %> </h3>
 
-</div>
+<h2>Monthly Sales</h2>
+<% @vendor.monthly_sales.each do |sale| %>
+  <li>
+    <%= number_to_currency(in_dollars sale.amount) %>
+  </li>
+<% end %>
+
+<h3>Total monthly sales: <%= number_to_currency(in_dollars @vendor.total_monthly) %> </h3>

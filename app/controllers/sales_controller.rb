@@ -15,6 +15,7 @@ class SalesController < ApplicationController
 
   def sale_params
     sale = params.require(:sale).permit(:amount)
+    sale[:amount] = sale[:amount].to_f * 100
     sale.merge(params.permit(:product_id))
   end
 end

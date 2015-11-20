@@ -15,7 +15,9 @@ class Vendor < ActiveRecord::Base
 
     self.products.each do |product|
       sales = product.sales.find_all do |sale|
-        Time.now.month == sale.purchase_time.month && Time.now.year == sale.purchase_time.year
+        unless sale.purchase_time.nil?
+          Time.now.month == sale.purchase_time.month && Time.now.year == sale.purchase_time.year
+        end
       end
 
     month_sales += sales

@@ -6,13 +6,14 @@
   </div>
 </div>
 
-<div class="center">
-  <h1><%= @market.name %></h1>
+<h1><%= @market.name %></h1>
 
-  <h2>Vendors</h2>
+
+<h2>Vendors</h2>
+<ul>
   <% @market.vendors.each do |vendor| %>
-    <div>
+    <li>
       <%= link_to vendor.name, market_vendor_path(@market, vendor) %>
-    </div>
+    </li>
   <% end %>
-</div>
+</ul>
