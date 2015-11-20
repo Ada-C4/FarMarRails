@@ -25,6 +25,7 @@ class VendorsController < ApplicationController
   end
 
   def new
+    @title = "Add a New Vendor"
     @sign_in  = "Vendor"
     @vendor = Vendor.new()
     if @@sign_in == "Market"
@@ -52,6 +53,7 @@ class VendorsController < ApplicationController
 
 
   def edit
+    @title = "Edit a Vendor"
     if @@sign_in == "Market"
       id = params[:market_id]
       vendor_id = params[:id]

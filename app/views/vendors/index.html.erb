@@ -1,8 +1,12 @@
+<h1> Vendors </h1>
+
 <%= button_to "Add new vendor", new_vendor_path, method: :get %>
 <ul>
   <% Vendor.all.each do |vendor| %>
   <li>
-    <%= vendor.name %> <%= link_to "Edit", edit_vendor_path(vendor.id) %>
+    <%= link_to vendor.name, vendor_path(vendor.id) %>
+    <br>
+    <%= link_to "Edit", edit_vendor_path(vendor.id) %>
     <%= link_to "Delete", "/vendors/#{vendor.id}", method: :delete %>
   </li>
   <% end %>
