@@ -1,8 +1,10 @@
-<%= form_for @sale, url:({action: @action}) do |f|%>
+<div class="new-market-form">
+
+<%= bootstrap_form_for @sale, class: "form-group", url:({action: @action}) do |f|%>
 
 <legend> New Sale </legend>
   <%= f.label :amount %>
-  <%= f.number_field :amount, :step => 0.01 %><br>
+  <%= f.number_field :amount, :step => 0.01, hide_label: true %>
 
   <%= f.collection_select(:product_id, @options, :id, :name, prompt: "Select the Product:") %>
 
@@ -10,3 +12,4 @@
 
 
 <% end %>
+</div>
