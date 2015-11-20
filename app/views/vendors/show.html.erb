@@ -3,13 +3,12 @@
   <%= link_to 'all vendors', vendors_path, method: :get, class: "top-nav-button" %>
 </div>
 
-<!-- <div class='one_button_nav'>
-
-</div> -->
-
 <hr class="nav-hr" />
 
 <h1 class='pg-header'><%= @vendor.name %></h1>
+<br>
+
+<hr class="nav-hr" />
 
 <h2 class='pg-sub-header'>products</h2>
 
@@ -30,6 +29,8 @@
   <%= link_to "Add new product", new_vendor_product_path(vendor_id: params[:id]), class: 'nav_button_bottom' %><br><br>
 </div>
 
+
+
 <h2 class='pg-sub-header'>sales</h2>
 
 <div class="two_button_nav_wider">
@@ -44,6 +45,8 @@
     <hr />
   <% end %>
 </div>
+
+
 
 <table class='sale_table_list'>
   <% total_sales = 0 %>

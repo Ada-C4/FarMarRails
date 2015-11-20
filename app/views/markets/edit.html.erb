@@ -1,1 +1,8 @@
-<%= render partial:'market_form', locals:{form_title:'Edit this Market'} %>
+<div class='nav-two-links'>
+  <%= link_to 'home', '/', class: 'top-nav-button' %>
+  <%= link_to 'return to markets', markets_path, method: :get, class: "top-nav-button" %>
+</div>
+
+<hr class="nav-hr" />
+
+<%= render partial:'market_form', locals:{form_title:'edit this market'} %>
