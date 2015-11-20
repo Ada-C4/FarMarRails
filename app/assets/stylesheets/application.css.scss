@@ -5,13 +5,18 @@ body {
   margin-left: 20px;
 }
 
-body.strawberries {
-  background-image: url('strawberries.jpg');
-}
-
 h1, h2, h3, h4, h5, h6 {
       text-align: center;
   }
+
+header.cows {
+  height: 330px;
+}
+
+header img.cows {
+  width: 1200px;
+  height: 330px;
+}
 
 .market_info {
   text-align: center;

@@ -1,4 +1,9 @@
-<% content_for :body_class, 'strawberries' %>
+<% content_for :header_class, 'cows' %>
+<%= content_for :header do %>
+  <div>
+    <%= image_tag "cows.jpg", class:"cows" %>
+  </div>
+<% end %>
 
 <h1>Farmers Markets, USA</h1>
 <h3>Are you a market or a vendor? Choose below:</h3>
