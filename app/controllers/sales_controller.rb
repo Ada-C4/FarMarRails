@@ -1,21 +1,22 @@
 class SalesController < ApplicationController
+  before_action :get_vendor, only: [:index, :current_month, :new]
+
+  def get_vendor
+    @vendor = Vendor.find(params[:vendor_id])
+  end
+
   def index
-    id = params[:vendor_id]
-    @vendor = Vendor.find(id)
     @sales = @vendor.sales.order(purchase_time: :desc)
-    @total_sales = Vendor.total_sales(id).to_f / 100
+    @total_sales = Vendor.total_sales(@vendor.id).to_f / 100
   end
 
   def current_month
-    id = params[:vendor_id]
-    @vendor = Vendor.find(id)
-    @current_month_sales = Sale.current_month_sales(id).order(purchase_time: :desc)
-    @current_month_revenue = Sale.current_month_revenue(id).to_f / 100
+    @current_month_sales = Sale.current_month_sales(@vendor.id).order(purchase_time: :desc)
+    @current_month_revenue = Sale.current_month_revenue(@vendor.id).to_f / 100
   end
 
   def new
     @new_vendor_sale = Sale.new
-    @vendor = Vendor.find(params[:vendor_id])
   end
 
   def create
