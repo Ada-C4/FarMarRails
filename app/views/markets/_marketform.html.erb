@@ -1,3 +1,8 @@
+<nav>
+<a class="nav_link" href="/">Return Home | </a>
+<a class="nav_link" href="/markets">View All Markets</a>
+</nav>
+
 <fieldset>
   <%= form_for @market, url:{ action: @action } do |f| %>
     <legend><h1><%= @title %></h1></legend>
@@ -20,7 +25,7 @@
     <%= f.text_field :zip %>
     <br>
 
-    <%= f.submit %>
+    <%= f.submit :class => 'submit_button' %>
   <% end %>
 
 </fieldset>
