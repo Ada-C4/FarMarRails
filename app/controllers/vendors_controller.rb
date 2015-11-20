@@ -32,6 +32,7 @@ class VendorsController < ApplicationController
 
   def update
     if params[:market_id].present?
+      updated_vendor = Vendor.update(params[:id], vendor_params)
       redirect_to market_path(params[:market_id])
     else
       updated_vendor = Vendor.update(params[:id], vendor_params)
