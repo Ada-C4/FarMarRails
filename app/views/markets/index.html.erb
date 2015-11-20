@@ -1,19 +1,40 @@
-<h1 class="pg-header">Every Farket</h1>
+<div class='nav'>
+  <%= link_to 'home', '/', class: 'top-nav-button' %>
+</div>
+
+<hr class="nav-hr" />
+
+<div class="pg-header-container">
+  <h1 class="pg-header">farmers markets</h1>
+</div>
+
 
 
   <% if @buttons %>
   <div class='three_button_nav'>
-    <%= link_to 'A-Z', markets_path(order: 'az'), class: 'nav_button' %>
-    <%= link_to 'New', new_market_path, class: 'nav_button' %>
-    <%= link_to 'Z-A', markets_path(order: 'za'), class: 'nav_button' %>
+    <%= link_to(markets_path(order: 'az'), :class => "nav_button") do %>
+      <hr />
+      a - z
+      <hr />
+    <% end %>
+    <%= link_to(new_market_path, :class => "nav_button") do %>
+      <hr />
+      add
+      <hr />
+    <% end %>
+    <%= link_to(markets_path(order: 'za'), :class => "nav_button") do %>
+      <hr />
+      z - a
+      <hr />
+    <% end %>
     </div>
-<br><br>
+
   <div class='table_list'>
     <table>
       <% @markets.each do |market| %>
       <tr>
         <td><%= link_to market.name.titleize, market, class: "market-link"%></td>
-        <td><%= button_to 'Edit', edit_market_path(id: market.id), method: :get, class: 'table_button' %></td>
+        <td><%= button_to '', edit_market_path(id: market.id), method: :get, class: 'table_button' %></td>
       </tr>
       <% end %>
     </table>
@@ -36,9 +57,3 @@
     </table>
   </div>
 <% end %>
-<div class='one_button_nav'>
-  <%= link_to 'Home', '/', class: 'nav_button' %>
-</div>
-
-
-

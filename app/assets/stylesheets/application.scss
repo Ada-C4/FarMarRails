@@ -10,8 +10,8 @@ body {
 
 .home-pg-image {
   width: 100%;
-  filter: grayscale(0%);
-  -webkit-filter: grayscale(0%);
+  filter: grayscale(50%);
+  -webkit-filter: grayscale(50%);
   position: relative;
   z-index: -1;
   margin: -75px 0 0 0;
@@ -87,6 +87,15 @@ hr {
 .pg-header {
   text-align: center;
   font-size: 32px;
+  font-family: 'News Cycle', sans-serif;
+  color: $grey;
+  margin: 10px;
+}
+
+.pg-header-container {
+  width: 250px;
+  height: 50px;
+  margin: auto;
 }
 
 .pg-sub-header {
@@ -124,15 +133,19 @@ hr {
   float: left;
   display: inline;
   text-align: center;
-  width: 130px;
-  height: 75px;
-  font-size: 24px;
-  color: $grey;
+  width: 40px;
+  height: 20px;
+  // font-size: 24px;
+  // color: $grey;
   margin: 10px;
-  border-radius: 80%;
-  padding-top: 45px;
+  // border-radius: 80%;
+  // padding-top: 45px;
+  // text-decoration: none;
+  // background-color: $button_color;
+
   text-decoration: none;
-  background-color: $button_color;
+  font-size: 16px;
+  color: #000000;
 }
 
 .larger_nav_button {
@@ -154,7 +167,7 @@ hr {
 
 
 .three_button_nav {
-  width: 500px;
+  width: 190px;
   height: 100px;
   margin: 0 auto;
   text-align: center;
@@ -186,14 +199,13 @@ hr {
 }
 
 .table_button {
-  text-decoration: none;
-  font-family: 'Quicksand', sans-serif;
-  background-color: #FFFFFF;
-  color: #666666;
-  border: 1px solid #666666;
-  border-radius: 80%;
-  padding: 5px;
-  margin: 0px 10px;
+  background: url(edit-button.png);
+  background-size: 20px 20px;
+  width: 20px;
+  height: 20px;
+  display: inline;
+  border-width: 1px;
+  border-style: none;
 }
 
 table {
@@ -209,7 +221,11 @@ table {
 
 .table_list {
   display: block;
-  width: 400px;
+  width: 500px;
+  padding: 5px;
+  margin: auto;
+  border-style: solid;
+  border-width: 1px;
 }
 
 #vendor_table {
@@ -236,4 +252,34 @@ fieldset {
 
 #num_emp {
   width: 25px;
+}
+
+.nav {
+  text-align: center;
+  width: 80px;
+  height: 30px;
+  margin: auto;
+  display: block;
+}
+
+.nav-hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid;
+  border-color: $grey;
+  text-align: center;
+  padding: 0;
+  width: 200px;
+}
+
+a.top-nav-button {
+  text-decoration: none;
+  text-align: center;
+  width: 40px;
+  height: 20px;
+  margin: 10px;
+  font-size: 16px;
+  color: #000000;
+  font-family: 'Petit Formal Script', cursive;
 }
