@@ -23,6 +23,10 @@ class SalesController < ApplicationController
   def month
     month_id = params[:id]
     @sales = Sale.where("vendor_id = ?", session[:vendor_id]).select{ |sale| sale.purchase_time.month == month_id.to_i }
+    month_hash = {1 => "January", 2 => "February", 3 => "March", 4 => "April",
+      5 => "May", 6 => "June", 7 => "July", 8 => "August",
+      9 => "September", 10 => "October", 11 => "November", 12 => "December"}
+    @month = month_hash[month_id.to_i]
     render :index
   end
 
