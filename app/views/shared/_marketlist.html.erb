@@ -2,11 +2,6 @@
   <% markets.each do |market| %>
     <li>
       <%= link_to market.name, market %>
-        <% if @is_a_market %>
-          <%= link_to "✎", edit_market_path(market.id),{class: "edit"} %>
-          <%= link_to "✘", market_path(market.id), method: :delete, class: "delete"%>
-        <% end %>
-
     </li>
   <% end %>
 </ul>
