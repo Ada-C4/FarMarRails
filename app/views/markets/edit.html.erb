@@ -1,0 +1,45 @@
+<h1>Edit this market </h1>
+<section>
+  <%= form_for @market, :html => {:role => "form"} do |f| %>
+    <fieldset class="form-group col-lg-4">
+      <legend><%= @market_name %></legend>
+      <div class="form-group">
+        <%= f.label :name, "name" %>
+        <%= f.text_field :name, :class => "form-control" %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :address, "address" %>
+        <%= f.text_field :address, :class => "form-control" %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :city, "city" %>
+        <%= f.text_field :city, :class => "form-control" %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :county, "county" %>
+        <%= f.text_field :county, :class => "form-control" %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :state, "state" %>
+        <%= f.text_field :state, :class => "form-control" %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :zip, "zip" %>
+        <%= f.text_field :zip, :class => "form-control" %>
+      </div>
+
+      <div class="form-group">
+        <%= f.submit %>
+      </div>
+    </fieldset>
+  <% end %>
+
+  <nav>
+    <%= link_to "Back to Markets", markets_path, class: "col-lg-10" %>
+  </nav
+</section>

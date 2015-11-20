@@ -1,4 +1,31 @@
 Rails.application.routes.draw do
+
+  root 'home#index'
+
+  get 'home', to: redirect('/')
+  get 'home/markets/', to: redirect('/')
+  get 'home/markets/:id' => 'markets#show', as: :home_market
+  get 'home/markets/:market_id/vendors/:id' => 'vendors#show', as: :home_vendor
+
+  resources :markets, except: [:destroy] do
+    resources :vendors
+  end
+
+  resources :vendors, only: [:index, :show] do
+    resources :products, except: [:show]
+
+    resources :sales, only: [:index, :create, :new] do
+      collection do
+        get '/month' => 'sales#current_month', as: :current_month
+      end
+    end
+  end
+
+
+
+
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

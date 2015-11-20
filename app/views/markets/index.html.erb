@@ -1,0 +1,25 @@
+<h1>Hi, Market!</h1>
+
+<h1>Farmers Markets</h1>
+<p>
+<%= link_to "Create a Market", new_market_path %>
+</p>
+<table class="table, narrower_table">
+  <% @markets.each do |market| %>
+    <tr>
+      <td>
+        <%= link_to "#{market.name}", market_path(market) %>
+      </td>
+      <td>
+        <%= market.city %>, <%= market.state %>
+      </td>
+      <td>
+        <%= link_to 'Edit', edit_market_path(market) %>
+      </td>
+   </tr>
+   <% end %>
+</table>
+
+<nav>
+  <%= link_to "Back to Main Page", home_path %>
+</nav>

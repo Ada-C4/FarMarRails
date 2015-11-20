@@ -1,0 +1,34 @@
+<h1>Sales for <%= @vendor.name %></h1>
+<h3>Number of sales: <%= @sales.length %></h2>
+<h3>Total sales: $<%= sprintf('%.2f', @total_sales.to_f ) %></h2>
+<h3><%= link_to "current month sales", current_month_vendor_sales_path %></h3>
+
+<h1>Sales</h1>
+<p>
+  <%= link_to "Add a new sale", new_vendor_sale_path(:vendor_id => @vendor.id) %>
+</p>
+
+<table class="table, narrower_table">
+  <% if @sales.length == 0 %>
+    <h4>no sales :(</h4>
+  <% else %>
+    <% @sales.each do |sale| %>
+      <tr>
+        <td>
+          <%= sale.product ? sale.product.name : "(product no longer exists)" %>
+        </td>
+        <td>
+          $<%= sprintf('%.2f', sale.amount.to_f / 100) %>
+        </td>
+        <td>
+          <%= sale.purchase_time.strftime("%I:%M %p on %m/%d/%Y") %>
+        </td>
+     </tr>
+     <% end %>
+  <% end %>
+</table>
+
+<nav>
+  <%=link_to "Back to Vendor", vendor_path(:id => @vendor.id) %>
+  <%= link_to "Back to all Vendors", vendors_path %>
+</nav>

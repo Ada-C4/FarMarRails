@@ -1,0 +1,31 @@
+<% content_for :header_class, 'cows' %>
+<%= content_for :header do %>
+  <div>
+    <%= image_tag "cows.jpg", class:"cows" %>
+  </div>
+<% end %>
+
+<h1 class= "title_page">Farmers Markets, USA</h1>
+<h3>Are you a market or a vendor?</h3>
+<div class = "title_link_holder">
+  <div class= "title_link">
+    <%= link_to "Market", markets_path, class: "btn btn-default title_link", id: "market_link", role: "button" %>
+  </div>
+  <div class= "title_link">
+    <%= link_to "Vendor", vendors_path, class: "btn btn-default title_link", id: "vendor_link", role: "button" %>
+  </div>
+</div>
+
+<h1>Farmers Markets</h1>
+<table class="table, narrower_table">
+  <% @markets.each do |market| %>
+    <tr>
+      <td>
+        <%= link_to "#{market.name}", home_market_path(market) %>
+      </td>
+      <td>
+        <%= market.city %>, <%= market.state %>
+      </td>
+   </tr>
+   <% end %>
+</table>

@@ -1,0 +1,19 @@
+<h1>Hi, Vendor!</h1>
+
+<h1>Vendors</h1>
+<table class="table, narrower_table">
+  <% @vendors.each do |vendor| %>
+    <tr>
+      <td>
+        <%= vendor.name %>
+      </td>
+      <td>
+        <td><%= link_to "details", vendor_path(vendor) %></td>
+      </td>
+   </tr>
+   <% end %>
+</table>
+
+<nav>
+  <%= link_to "Back to Main Page", home_path %>
+</nav>

@@ -1,0 +1,29 @@
+<h1><%= @vendor.name %></h1>
+<h3>Number of employees: <%= @vendor.num_employees %></h3>
+<h3><%= link_to "Sales for this vendor", vendor_sales_path(@vendor) %></h3>
+
+<h1>Products</h1>
+
+<p>
+  <%= link_to "Add a new product", new_vendor_product_path(@vendor) %>
+</p>
+
+<table class="table, narrower_table">
+  <% @products.each do |product| %>
+    <tr>
+      <td>
+        <%= product.name %>
+      </td>
+      <td>
+        <%= link_to "edit", edit_vendor_product_path(:id => product.id, :vendor_id => @vendor.id) %>
+      </td>
+      <td>
+        <%= link_to "delete",  { :controller=>"products", action: :destroy, :id => product.id, :vendor_id => @vendor.id }, method: :delete, data: { confirm: 'Are you sure?' } %>
+      </td>
+   </tr>
+   <% end %>
+</table>
+
+<nav>
+  <%= link_to "Back to Vendors", vendors_path %>
+</nav>

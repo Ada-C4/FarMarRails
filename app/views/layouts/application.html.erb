@@ -6,9 +6,15 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
+<body class="<%= content_for :body_class %>, font_18">
+  <header class="<%= content_for :header_class %>" >
+  <%= content_for :header %>
+  </header>
 
-<%= yield %>
+  <%= yield %>
+
+  <footer class= "<%= content_for :footer_class %>">
+  </footer>
 
 </body>
 </html>

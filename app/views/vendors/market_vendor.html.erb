@@ -1,0 +1,21 @@
+<h1><%= @vendor.name %></h1>
+<h3>Number of employees: <%= @vendor.num_employees %></h3>
+
+<h1>Products</h1>
+<% if @products.length == 0 %>
+  <h4>no products :(</h4>
+<% else %>
+  <table class="table, narrower_table">
+    <% @products.each do |product| %>
+      <tr>
+        <td>
+          <%= product.name %>
+        </td>
+     </tr>
+     <% end %>
+  </table>
+<% end %>
+
+<nav>
+  <%= link_to "Back to Market", market_path(params[:market_id]) %>
+</nav>

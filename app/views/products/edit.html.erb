@@ -1,0 +1,6 @@
+<%= render partial: 'form', locals: { :button_text => "Update Product", :method_type => :patch } %>
+
+<nav>
+  <%= link_to "Back to Vendor", vendor_path(:id => @vendor_product.vendor.id) %>
+	<%= link_to "Back to all Vendors", vendors_path %>
+</nav>

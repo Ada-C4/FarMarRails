@@ -1,0 +1,48 @@
+<h1> <%= @market.name %></h1>
+
+<section class="market_info">
+  <div><%= @market.address %></div>
+  <div><%= @market.city %></div>
+  <div><%= @market.state %></div>
+  <div><%= @market.county %></div>
+  <div><%= @market.zip %></div>
+</section>
+
+<h2>Vendors</h2>
+<p>
+<%= link_to "Create a Vendor", new_market_vendor_path(market_id: @market.id) %>
+</p>
+<table class="table, narrower_table">
+  <tr>
+    <th>
+      Name
+    </th>
+    <th>
+      Number of Employees
+    </th>
+  </tr>
+  <% if @vendors.length == 0 %>
+    <h4>no vendors :(</h4>
+  <% else %>
+    <% @vendors.each do |vendor| %>
+      <tr>
+        <td>
+          <%= link_to "#{vendor.name}", market_vendor_path(id: vendor.id, market_id: @market.id) %>
+        </td>
+        <td>
+          <%= vendor.num_employees %>
+        </td>
+        <td>
+          <%= link_to 'Edit', edit_market_vendor_path(id: vendor.id, market_id: @market.id) %>
+        </td>
+        <td>
+          <%= link_to "Delete",  { :controller=>"vendors", action: :destroy, :id => vendor.id, :market_id => @market.id }, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </td>
+      </tr>
+    <% end %>
+  <% end %>
+</table>
+
+<nav>
+  <%=link_to "Back to Markets", markets_path %>
+</nav>

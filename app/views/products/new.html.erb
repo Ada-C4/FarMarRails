@@ -1,0 +1,7 @@
+
+<%= render partial: 'form', locals: { :button_text => "New Product" }  %>
+
+<nav>
+  <%= link_to "Back to Vendor", vendor_path(params[:vendor_id]) %>
+  <%= link_to "Back to all Vendors", vendors_path %>
+</nav>

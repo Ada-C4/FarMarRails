@@ -1,0 +1,39 @@
+<h1> <%= @market.name %></h1>
+
+<section class="market_info">
+  <div><%= @market.address %></div>
+  <div><%= @market.city %></div>
+  <div><%= @market.state %></div>
+  <div><%= @market.county %></div>
+  <div><%= @market.zip %></div>
+</section>
+
+<h2>Vendors</h2>
+<table class="table, narrower_table", id="home_market_table">
+  <tr>
+    <th>
+      Name
+    </th>
+    <th>
+      Number of Employees
+    </th>
+  </tr>
+  <% if @vendors.length == 0 %>
+    <h4>no vendors :(</h4>
+  <% else %>
+    <% @vendors.each do |vendor| %>
+      <tr>
+        <td>
+          <%= link_to "#{vendor.name}", home_vendor_path(id: vendor.id, market_id:  vendor.market.id) %>
+        </td>
+        <td>
+          <%= vendor.num_employees %>
+        </td>
+      </tr>
+    <% end %>
+  <% end %>
+</table>
+
+<nav>
+  <%= link_to "Back to Main Page", home_path %>
+</nav>
