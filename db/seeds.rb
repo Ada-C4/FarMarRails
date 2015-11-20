@@ -1,5 +1,3 @@
-require 'csv'
-
 market_array = CSV.read("./seed_csvs/markets.csv")
 market_array.each do |line|
   Market.create(
