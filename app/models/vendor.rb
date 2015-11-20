@@ -12,5 +12,5 @@ class Vendor < ActiveRecord::Base
     end
     return total
   end
-
+  
 end

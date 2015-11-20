@@ -1,19 +1,23 @@
 <h1><%= Time.now.strftime("%B") %> <%= Time.now.year %> Sales for <%= @vendor.name %></h1>
-<h3>Number of sales for this month: <%= @num_current_month_sales %></h3>
+<h3>Sales for this month: $<%= @current_month_revenue %></h3>
 
 <h1>Current month sales</h1>
 <table class="table">
-  <% @current_month_sales.each do |sale| %>
-    <tr>
-      <td>
-        <%= sale.product.name %>
-      </td>
-      <td>
-        $<%= sale.amount.to_f / 100 %>
-      </td>
-      <td>
-        <%= sale.purchase_time.strftime("%I:%M %p on %m/%d/%Y") %>
-      </td>
-   </tr>
-   <% end %>
+  <% if @current_month_sales.length == 0 %>
+    <h4>no sales :(</h4>
+  <% else %>
+    <% @current_month_sales.each do |sale| %>
+      <tr>
+        <td>
+          <%= sale.product.name %>
+        </td>
+        <td>
+          $<%= sale.amount.to_f / 100 %>
+        </td>
+        <td>
+          <%= sale.purchase_time.strftime("%I:%M %p on %m/%d/%Y") %>
+        </td>
+     </tr>
+     <% end %>
+  <% end %>
 </table>

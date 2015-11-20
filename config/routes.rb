@@ -12,9 +12,8 @@ Rails.application.routes.draw do
   end
 
   resources :vendors, only: [:index, :show] do
-    resources :products do
-      resources :sales, only: [:index]
-    end
+    resources :products
+  
     resources :sales, only: [:index, :create, :new] do
       collection do
         get '/month' => 'sales#current_month', as: :current_month
