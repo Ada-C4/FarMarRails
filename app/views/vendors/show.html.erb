@@ -8,6 +8,10 @@
 
 <h1><%= @vendor.name %></h1>
 
+WE ARE HERE!!!!!
+  <%= select_tag("Your Products", options_from_collection_for_select(@vendor.products, "id", "name"), onchange: "this.form.submit") %>
+  <%= %>
+
 <h2>Sales</h2>
 <ul>
 <% @vendor.products.each do |product| %>
