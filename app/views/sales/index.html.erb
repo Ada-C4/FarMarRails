@@ -1,6 +1,6 @@
 <h1>Sales for <%= @vendor.name %></h1>
 <h3>Number of sales: <%= @sales.length %></h2>
-<h3>Total sales: $<%= sprintf('%.2f', @total_sales.to_f / 100) %></h2>
+<h3>Total sales: $<%= sprintf('%.2f', @total_sales.to_f ) %></h2>
 <h3><%= link_to "current month sales", current_month_vendor_sales_path %></h3>
 
 <h1>Sales</h1>

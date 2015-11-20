@@ -1,11 +1,15 @@
 <h1><%= @vendor.name %></h1>
 <h1>Products</h1>
-<table class="table">
-  <% @products.each do |product| %>
-    <tr>
-      <td>
-        <%= product.name %>
-      </td>
-   </tr>
-   <% end %>
-</table>
+<% if @products.length == 0 %>
+  <h4>no products :(</h4>
+<% else %>
+  <table class="table">
+    <% @products.each do |product| %>
+      <tr>
+        <td>
+          <%= product.name %>
+        </td>
+     </tr>
+     <% end %>
+  </table>
+<% end %>

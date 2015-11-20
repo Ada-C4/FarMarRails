@@ -18,14 +18,18 @@
       Number of Employees
     </th>
   </tr>
-  <% @vendors.each do |vendor| %>
-    <tr>
-      <td>
-        <%= link_to "#{vendor.name}", home_vendor_path(id: vendor.id, market_id:  vendor.market.id) %>
-      </td>
-      <td>
-        <%= vendor.num_employees %>
-      </td>
-    </tr>
+  <% if @vendors.length == 0 %>
+    <h4>no vendors :(</h4>
+  <% else %>
+    <% @vendors.each do |vendor| %>
+      <tr>
+        <td>
+          <%= link_to "#{vendor.name}", home_vendor_path(id: vendor.id, market_id:  vendor.market.id) %>
+        </td>
+        <td>
+          <%= vendor.num_employees %>
+        </td>
+      </tr>
+    <% end %>
   <% end %>
 </table>

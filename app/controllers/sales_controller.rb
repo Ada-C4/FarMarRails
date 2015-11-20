@@ -10,7 +10,7 @@ class SalesController < ApplicationController
     id = params[:vendor_id]
     @vendor = Vendor.find(id)
     @current_month_sales = Sale.current_month_sales(id).order(purchase_time: :desc)
-    @num_current_month_sales = Sale.num_current_month_sales(id)
+    @current_month_revenue = Sale.current_month_revenue(id).to_f / 100
   end
 
   def new
