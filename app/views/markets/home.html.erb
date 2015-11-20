@@ -1,9 +1,8 @@
 <div>
   <h1>Welcome to FarMar!</h1>
-  <p>
-    <%= link_to "I am a Market", markets_path(user_type: "market"), class: "btn-default" %><br>
-    <%= link_to "I am a Vendor", markets_path(user_type: "vendor"), class: "btn-default", %>
-    <%= link_to "I am a Guest", markets_path(user_type: "guest"), class: "btn-default",  %>
-
-  </p>
+  <div>
+    <%= link_to "I am a Market", markets_path(user_type: "market"), class: "btn-default" %>
+    <%= link_to "I am a Vendor", markets_path(user_type: "vendor"), class: "btn-default" %>
+    <%= link_to "I am a Guest", markets_path(user_type: "guest"), class: "btn-default"  %>
+  </div>
 </div>
