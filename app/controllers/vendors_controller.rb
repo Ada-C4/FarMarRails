@@ -22,6 +22,7 @@ class VendorsController < ApplicationController
     @sales = @vendor.sales
     @total_sales = total_sales(@sales)
     @sales_this_month = @sales.find_all { |sale| sale.purchase_time.month == Time.now.month && sale.purchase_time.year == Time.now.year }
+    @total_sales_this_month = total_sales(@sales_this_month)
   end
 
   def total_sales(sales)
@@ -31,6 +32,7 @@ class VendorsController < ApplicationController
     end
     return total_sales/100
   end
+
 
   def edit
     id = params[:id]
