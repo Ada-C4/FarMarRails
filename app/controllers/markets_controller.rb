@@ -15,7 +15,7 @@ class MarketsController < ApplicationController
 
   def new
     @market = Market.new()
-    @action = "new"
+    @action = "create"
   end
 
   def create
