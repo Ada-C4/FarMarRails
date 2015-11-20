@@ -5,11 +5,11 @@ Rails.application.routes.draw do
   get 'markets/details' => 'markets#details', as: :mkt_details
   get 'markets/:id/home' => 'markets#mkt_home', as: :mkt_home
   get 'vendors/:id/home' => 'vendors#v_home', as: :v_home
-  resources :vendors
+  resources :vendors do
+    resources :products, only: [:create, :new, :edit, :destroy, :update]
+  end
   resources :markets do
-    resources :vendors do
-      resources :vendors, only: [:create, :new, :edit, :destroy, :update]
-    end
+      resources :vendors
   end
 
   # The priority is based upon order of creation: first created -> highest priority.
