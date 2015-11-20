@@ -15,14 +15,16 @@
  // "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import url(https://fonts.googleapis.com/css?family=Bitter:700);
+@import url(https://fonts.googleapis.com/css?family=Lato);
 
-$dark-blue: rgb(15, 26, 36);
-$light-blue: rgb(75, 152, 217);
-$light-red: rgb(140, 83, 82);
 $purple: rgb(80, 48, 90);
 $yellow: rgb(227, 230, 61);
+$orange: rgb(231, 110, 38);
 
 $jumbo-height: 300px;
+$title-font: 'Bitter', serif;
+$body-font: 'Lato', sans-serif;
 
 .navbar-inverse {
   background-color: $purple;
@@ -82,15 +84,21 @@ $jumbo-height: 300px;
 .jumbotron {
   height: $jumbo-height;
   color: $yellow;
-  text-shadow: #444 0 1px 1px;
+  text-shadow: #444 1px 2px 1px;
   background:transparent;
   padding-top: 70px;
+  h1{
+    color: $yellow;
+    font-size: 5em;
+  }
 }
 
+h1 {
+  font-family: $title-font;
+}
 
 .centered-block {
   margin: auto;
-  // max-width: 600px;
 }
 
 .centered-button {
@@ -108,4 +116,8 @@ thead {
   thead {
     background: $yellow;
   }
+}
+
+body {
+  font-family: $body-font;
 }
