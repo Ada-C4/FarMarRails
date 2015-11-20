@@ -1,0 +1,12 @@
+<h1>Add a Product</h1>
+
+<%= form_for @product do |f| %>
+  <fieldset>
+    <legend>Add a New Product</legend>
+    <%= f.label :name %>
+    <%= f.text_field :name %><br>
+    <%= f.hidden_field :vendor_id, :value => params[:vendor_id] %>
+    <br>
+    <%= f.submit %>
+  </fieldset>
+<% end %>
