@@ -8,7 +8,7 @@
   <%= link_to "Add a new sale", new_vendor_sale_path(:vendor_id => @vendor.id) %>
 </p>
 
-<table class="table">
+<table class="table, narrower_table">
   <% if @sales.length == 0 %>
     <h4>no sales :(</h4>
   <% else %>
