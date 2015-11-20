@@ -5,7 +5,7 @@ class ProductsController < ApplicationController
   end
 
   def create
-    product = Product.create(product_params[:product]) do |p|
+    product = Product.create(product_params) do |p|
       p.vendor = Vendor.find(params[:vendor_id])
     end
     redirect_to product.vendor
@@ -18,7 +18,7 @@ class ProductsController < ApplicationController
 
   def update
     product = Product.find(params[:id])
-    product.update(product_params[:product])
+    product.update(product_params)
     redirect_to product.vendor
   end
 
@@ -27,10 +27,9 @@ class ProductsController < ApplicationController
     redirect_to product.vendor
   end
 
-private
+  private
 
   def product_params
-    params.permit(product:[:name])
+    params.require(:product).permit(:name)
   end
-
 end
