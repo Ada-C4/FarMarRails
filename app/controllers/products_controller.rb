@@ -15,6 +15,7 @@ class ProductsController < ApplicationController
 
   def edit
     @product = Product.find(params[:id])
+    @back = request.referrer
     session[:return_to] = request.referrer
   end
 
