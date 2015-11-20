@@ -5,8 +5,7 @@ Rails.application.routes.draw do
   end
   resources :vendors do
     resources :products do
-      resources :sales
     end
-    resources :sales, only: [:index]
+    resources :sales
   end
 end

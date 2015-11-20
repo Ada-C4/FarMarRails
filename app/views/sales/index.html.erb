@@ -1,5 +1,6 @@
 <div>
   <h1><%= @vendor.name %> Sales</h1>
+  <%= link_to "Add a Sale", "/vendors/#{@vendor.id}/sales/new" %>
   <div class="container">
     <table class="table table-bordered">
       <tr >
