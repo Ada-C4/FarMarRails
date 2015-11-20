@@ -1,7 +1,7 @@
 <h1>Edit this market </h1>
 <section>
 <%= form_for @market, :html => {:role => "form"} do |f| %>
-  <fieldset class="form-group">
+  <fieldset class="form-group col-lg-4">
     <legend><%= @market_name %></legend>
     <div class="form-group">
       <%= f.label :name, "name" %>
@@ -39,6 +39,6 @@
   </fieldset>
 <% end %>
 
-<%= link_to "Back to Markets", markets_path %>
+<%= link_to "Back to Markets", markets_path, class: "col-lg-10" %>
 
 </section>
