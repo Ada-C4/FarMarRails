@@ -42,9 +42,6 @@
   </tbody>
 </table>
 
-
-<h4>Total Sales: $<%= @vendor.sales.sum(:amount).to_f/100 %></h4>
-
 <h3>Monthly Sales:</h3>
 <table>
   <thead>
@@ -54,15 +51,15 @@
     </tr>
   </thead>
   <tbody>
-        <td> <%= @vendor.month_sales %></td>
-        <td>$ <%= @vendor.month_totals %></td>
+      <% @vendor.month_sales.each do |vendor|%>
+      <tr>
+          <td><%=vendor.purchase_time%></td>
+          <td><%=vendor.amount.to_f/100%></td>
+        <%end%>
       </tr>
   </tbody>
 </table>
 
 
-<p>COMING SOON: Current Month Sales & Totals
-
-  <%= @vendor.month_totals %>
-
-</p>
+<h4>Total Sales This Month: $<%= @vendor.month_totals %></h4>
+<h4>Overall Total Sales: $<%= @vendor.sales.sum(:amount).to_f/100 %></h4>
