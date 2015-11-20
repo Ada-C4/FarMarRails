@@ -12,8 +12,6 @@
         <td> <%= link_to "✐", edit_vendor_product_path(@vendor.id,product.id) %> </td>
         <td> <%=link_to "✘", vendor_product_path(@vendor.id,product.id), method: :delete, data: {confirm: "Are you sure?"} %></td>
         <td> <%= link_to "$ Add Sale", new_vendor_product_sale_path(@vendor.id,product.id) %></td>
-
-
       </tr>
     <% end %>
   </tbody>
@@ -21,8 +19,6 @@
 
 <br>
 <%= link_to "Add A New Product", new_vendor_product_path(@vendor) %>
-
-
 
 <h3>Total Sales:</h3>
 <table>
@@ -63,7 +59,6 @@
       </tr>
   </tbody>
 </table>
-
 
 <h4>Total Sales This Month: $<%= @vendor.month_totals %></h4>
 <h4>Overall Total Sales: $<%= @vendor.sales.sum(:amount).to_f/100 %></h4>
