@@ -27,14 +27,20 @@
     <hr />
   <% end %>
 
-  <!-- <%= link_to "GUEST", markets_path(user_type: 'guest'), class: "home-pg-button", id: "guest-button" %> -->
-
+  <%= link_to("#markets", :class => "home-pg-button", :id => "all-markets-button") do %>
+    <hr />
+    SEE ALL MARKETS
+    <hr />
+  <% end %>
 </div>
 
 
-<h2 class="pg-sub-header">
-  All Markets
-</h2>
+<div class="pg-sub-header">
+  <a name="markets" class="pg-sub-header">
+    All Markets
+  </a>
+</div>
+
 <table class="guest_table">
   <% @markets.each do |market| %>
   <tr>

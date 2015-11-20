@@ -49,6 +49,8 @@ body {
   color: #FFFFFF;
 }
 
+.home-pg-button:hover {color: $grey}
+
 hr {
   color: $grey-teal;
   border: 0;
@@ -74,6 +76,14 @@ hr {
   top: 380px;
 }
 
+#all-markets-button {
+  position: absolute;
+  left: 47%;
+  top: 660px;
+  color: #000000;
+  font-size: 16px;
+}
+
 .pg-header {
   text-align: center;
   font-size: 32px;
@@ -81,7 +91,13 @@ hr {
 
 .pg-sub-header {
   text-align: center;
+  width: 200px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 10px;
+  margin-top: 10px;
   font-size: 24px;
+
 }
 
 .description {
