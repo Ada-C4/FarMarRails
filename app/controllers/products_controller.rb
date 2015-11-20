@@ -6,7 +6,7 @@ class ProductsController < ApplicationController
 
   def create
     @product = Product.create(product_params)
-    redirect_to v_home_path(@product.vendor_id)
+    redirect_to vendor_path(@product.vendor_id)
   end
 
   private

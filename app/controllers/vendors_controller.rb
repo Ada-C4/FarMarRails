@@ -1,7 +1,4 @@
 class VendorsController < ApplicationController
-  def v_home
-    @vendor = Vendor.find(params[:id])
-  end
 
   def new
     @vendor = Vendor.new
@@ -13,7 +10,7 @@ class VendorsController < ApplicationController
   end
 
   def select
-    redirect_to v_home_path(params[:vendor][:id])
+    redirect_to vendor_path(params[:vendor][:id])
   end
 
   def index
@@ -21,7 +18,7 @@ class VendorsController < ApplicationController
   end
 
   def show
-
+    @vendor = Vendor.find(params[:id])
   end
 
   def destroy

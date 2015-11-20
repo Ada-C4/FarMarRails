@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get 'markets/details' => 'markets#details', as: :mkt_details
   get 'markets/:id/home' => 'markets#mkt_home', as: :mkt_home
   get 'vendors/:id/home' => 'vendors#v_home', as: :v_home
+  post 'vendors/:id' => 'products#create', as: :p_create
   resources :vendors do
     resources :products
   end
