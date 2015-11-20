@@ -1,5 +1,6 @@
 <h1>Add a Product</h1>
 
+<section>
 <%= form_for @product, url: p_create_path(params[:vendor_id]) do |f| %>
   <fieldset>
     <legend>Add a New Product</legend>
@@ -10,3 +11,4 @@
     <%= f.submit %>
   </fieldset>
 <% end %>
+</section>
