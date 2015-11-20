@@ -2,23 +2,30 @@ body {
   background-image: url("eggs.png");
   text-align: center;
   background-repeat: no-repeat;
-  /*background-position: relative;*/
+  background-position: relative;
   background-size: cover;
   margin: auto;
 }
 
 a {
-  font-family: Julius Sans One, sans-serif;
+  font-family: Cinzel, sans-serif;
   color: black;
-  font-size: 40px;
+  font-size: 30px;
 
 }
+
 
 section {
   background-color: rgba(225,225,225,0.5);
   width: 50%;
   margin: auto;
+}
 
+.footer {
+  background-color: rgba(225,225,225,0.5);
+  width: 80%;
+  margin: auto;
+  font-size: 30px;
 }
 
 form {
@@ -27,12 +34,26 @@ form {
 
 .notopaque {
   opacity: 1;
-;
+}
+
+table {
+  font-family: Cinzel, sans-serif;
+  color: black;
+  font-size: 20px;
+  width: 80%;
+  margin-top: 60px;
+  margin-bottom: 20px;
+  background-color: rgba(225,225,225,0.5);
+  margin: auto;
+}
+
+table a {
+  font-size: 20px;
 }
 
 
 h1 {
-  font-family: Megrim, sans-serif;
+  font-family: Pacifico, sans-serif;
   color: white;
   font-size: 70px;
   font-weight: bolder;
@@ -43,7 +64,7 @@ h1 {
 }
 
 fieldset {
-  font-family: Julius Sans One, sans-serif;
+  font-family: Cinzel, sans-serif;
   color: black;
   font-size: 20px;
   width: 450px;
@@ -54,7 +75,7 @@ fieldset {
 }
 
 legend {
-  font-family: Megrim, sans-serif;
+  font-family: Cinzel, sans-serif;
   color: black;
   font-size: 40px;
 }
