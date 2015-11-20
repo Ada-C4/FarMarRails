@@ -1,20 +1,38 @@
 <div class="container">
   <h1><%= @market.name %></h1>
     <div>
-      <h3>Address</h3>
-      <%= @market.address %><br><%= @market.city %>,<%= @market.state %> <%=@market.zip%>
+      <h3>Address:</h3>
+      <%= @market.address %><br><%= @market.city %>, <%= @market.state %> <%=@market.zip%>
     </div>
     <div>
       <h3>Vendors</h3>
-      <ul>
+      <table class="table table-hover">
+        <tr >
+          <th>
+            VENDORS
+          </th>
+          <th>
+            SALES
+          </th>
+          <th>
+            MORE INFO
+          </th>
+        </tr>
         <% @market.vendors.each do |vendor| %>
-        <li>
-          <%= vendor.name %>
-        </li>
+          <tr>
+            <td>
+              <%= vendor.name %>
+            </td>
+            <td>
+              $
+            </td>
+            <td>
+              <%= vendor.name %>
+            </td>
+         </tr>
         <% end %>
-      </ul>
+      </table>
     </div>
-
 <%= button_to "Delete", "/markets/#{@market.id}", method: :delete, class: "btn btn-default", data: { confirm: "Are you sure you want to delete this market?"} %>
 <%= link_to "Go back to list of markets", "/markets/", class: "btn btn-default" %>
 </div>
