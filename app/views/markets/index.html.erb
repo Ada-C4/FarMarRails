@@ -10,12 +10,24 @@
         </tr>
       </thead>
       <tbody>
-        <% @markets.each do |market| %>
+        <% if @markets.empty? %>
           <tr>
-            <td><%= market.name %></td>
-            <td><%= button_to "Edit", edit_market_path(market), method: :get %></td>
-            <td><%= button_to "Delete", market_path(market),  method: :delete, data: { confirm: "Are you sure you want to delete #{market.name}?" } , class: 'x-button' %></td>
+            <td>
+              There are no markets with that name.
+            </td>
+            <td>
+            </td>
+            <td>
+            </td>
           </tr>
+        <% else %>
+          <% @markets.each do |market| %>
+            <tr>
+              <td><%= market.name %></td>
+              <td><%= button_to "Edit", edit_market_path(market), method: :get %></td>
+              <td><%= button_to "Delete", market_path(market),  method: :delete, data: { confirm: "Are you sure you want to delete #{market.name}?" } , class: 'x-button' %></td>
+            </tr>
+          <% end %>
         <% end %>
       </tbody>
     </table>
