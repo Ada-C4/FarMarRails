@@ -7,12 +7,14 @@
 
 <h1 class= "title_page">Farmers Markets, USA</h1>
 <h3>Are you a market or a vendor? Choose below:</h3>
-<p>
-  <%= link_to "I'm a market", markets_path %>
-</p>
-<p>
-  <%= link_to "I'm a vendor", vendors_path %>
-</p>
+<div class = "title_link_holder">
+  <div class= "title_link">
+    <%= link_to "Market", markets_path, class: "btn btn-default title_link", role: "button" %>
+  </div>
+  <div class= "title_link">
+    <%= link_to "Vendor", vendors_path, class: "btn btn-default title_link", role: "button" %>
+  </div>
+</div>
 
 <h1>Farmers Markets</h1>
 <table class="table">
