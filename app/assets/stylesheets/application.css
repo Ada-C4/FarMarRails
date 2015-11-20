@@ -30,7 +30,11 @@
  }
  a {
   color: #F2F2F2;
+  text-decoration: none;
+
 }
+
+a:hover {color: #20c98e}
 h1{
   font-family: 'Pacifico', cursive;
   font-size: 40px;

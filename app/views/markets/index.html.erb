@@ -1,6 +1,6 @@
 <h1>Markets</h1>
 <% if @market_link == true %>
-  <li><%=link_to "Add a Market!", new_market_path %></li>
+  <h2><%=link_to "Add a Market!", new_market_path %></h2>
 <% end %>
 <ul>
   <% @markets.each do |market| %>
