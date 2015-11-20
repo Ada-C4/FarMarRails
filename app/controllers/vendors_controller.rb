@@ -21,7 +21,7 @@ class VendorsController < ApplicationController
     @products = @vendor.products
     @sales = @vendor.sales
     @total_sales = total_sales(@sales)
-    @sales_this_month = total_sales()
+    @sales_this_month = @sales.find_all { |sale| sale.purchase_time.month == Time.now.month && sale.purchase_time.year == Time.now.year }
   end
 
   def total_sales(sales)
