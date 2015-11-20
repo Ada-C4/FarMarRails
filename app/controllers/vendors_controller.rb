@@ -4,6 +4,9 @@ class VendorsController < ApplicationController
   end
 
   def show
+    if params[:product_select].present?
+      redirect_to(vendor_product_path(params[:id], params[:product_select]))
+    end
     @vendor = Vendor.find(params[:id])
     @market = Market.find(params[:market_id]) if params[:market_id].present?
   end
