@@ -2,6 +2,9 @@ class SalesController < ApplicationController
 
   def index
     @vendor = Vendor.find(params[:vendor_id])
+    @is_market = true if session[:user_type] == "market"
+    @is_vendor = true if session[:user_type] == "vendor"
+    @if_guest = true if session[:user_type] == "guest"
   end
 
   def new
