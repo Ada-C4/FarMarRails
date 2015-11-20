@@ -4,6 +4,7 @@
 
 body {
   margin-left: 20px;
+  margin-right: 0 auto;
 }
 
 btn.title_link {
@@ -23,11 +24,15 @@ div.title_link {
 div.title_link_holder {
   display: flex;
   justify-content: center;
+  padding-top: 10px;
+  padding-bottom: 30px;
 }
 
 h1.title_page {
   font-family: Lobster;
   font-size: 2cm;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -35,12 +40,15 @@ h1, h2, h3, h4, h5, h6 {
   }
 
 header.cows {
-  height: 330px;
+  margin: 0 auto;
 }
 
 header img.cows {
-  width: 1200px;
-  height: 330px;
+  width: 100%;
+  height: 30%;
+  margin: 0 auto;
+  min-width: 1200px;
+  min-height: 200px;
 }
 
 #market_link {
