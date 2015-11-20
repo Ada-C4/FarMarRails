@@ -1,0 +1,14 @@
+<h1> <%= @title %> </h1>
+
+<%= form_for @sale, url: "/vendors/#{@vendor.id}/products/#{@product.id}/sales" do |f| %>
+  <%= f.label :sale_amount %>: $
+  <%= f.number_field :amount, :value => 0, :min => 0, :step => 0.01, :require => true  %>
+	<br>
+	<%= f.label :purchase_time %>:
+	<%= f.date_field :purchase_time, :require => true  %>
+	<br>
+	<%= f.hidden_field :product_id, value: @product.id %>
+	<%= f.hidden_field :vendor_id, value: @vendor.id %>
+  <%= f.submit value: "Add Sale" %>
+<% end %>
+<br>

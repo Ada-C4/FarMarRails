@@ -1,0 +1,11 @@
+<h1> <%= @title %> </h1>
+
+<%= form_for @product, url: "/vendors/#{@vendor.id}/products/#{@product.id}" do |f| %>
+  <%= f.label :product_name %>:
+  <%= f.text_field :name, :require => true  %>
+	<br>
+  <%= @product.persisted? ? (f.submit value: "Update Product", id: 'special-button') : (f.submit value: "Add Product", id: 'special-button') %>
+
+  <%= f.hidden_field :vendor_id, value: @vendor.id %>
+<% end %>
+

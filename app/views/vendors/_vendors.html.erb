@@ -1,0 +1,22 @@
+<h1>Vendors List</h1>
+<h3><%= link_to "Add a New Vendor.", new_vendor_path %> </h3>
+<table>
+	<th>Name</th>
+	<th>See Products</th>
+	<th colspan="2">Update</th>
+
+	<% @vendors.each do |vendor| %>
+		<tr>
+			<td><%= link_to "#{vendor.name}", vendor_path(vendor.id) %></td>
+			<td><%= link_to "Products", vendor_products_path(vendor.id) %></td>
+      <% if @market.nil? %>
+			   <td class="update"><%= link_to "Edit", edit_vendor_path(vendor.id) %></td>
+      <% else %>
+        <td class="update"><%= link_to "Edit", edit_vendor_markets_path(vendor.id) %></td>
+      <% end %>
+		  <td class="update"><%= link_to 'Delete', vendor,  method: :delete, data: { confirm: 'Are you sure?' } %></td>
+	  </tr>
+
+	<% end %>
+
+</table>

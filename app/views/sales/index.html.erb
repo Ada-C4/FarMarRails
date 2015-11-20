@@ -1,0 +1,39 @@
+<h2><%= @vendor.name %>'s Total Sales</h2>
+<% if Sale.no_sales(@sales) %>
+			No sales for this vendor.
+<% else %>
+	<table>
+		<th>Sale Amount</th>
+		<th>Purchase Time</th>
+			<% @sales.each do |sale| %>
+				<tr>
+					<td><li>$<%= sale.amount.to_f/100 %></li></td>
+					<td><li><%= !sale.purchase_time.nil? ? sale.purchase_time : "N/A" %></li></td>
+			 	</tr>
+			<% end %>
+	</table>
+	<% end %>
+	<% if Sale.total_month(@sales) > 0 %>
+		<h3>Total sales for this vendor: $<%= Sale.add_total(@sales) %> </h3>
+		<h2><%= @vendor.name %>'s Current Month Sales</h2>
+				<% @sales.each do |sale| %>
+					<% if Sale.current_month_sale(sale) %>
+							<table>
+								<th>Sale Amount</th>
+								<th>Purchase Time</th>
+									<tr>
+										<td><li>$<%= sale.amount.to_f/100 %></li></td>
+										<td><li><%= sale.purchase_time %></li></td>
+								 	</tr>
+
+							</table>
+						<% end %>
+					<% end %>
+								<h3> Total sales for current month: $<%= Sale.total_month(@sales) %> </h3>
+		<% end %>
+
+
+<%= link_to "See Product List", vendor_products_path(@vendor.id) %>
+<br>
+<%= link_to "Back to the Vendors List", show_vendors_vendors_path %>
+<br><br>

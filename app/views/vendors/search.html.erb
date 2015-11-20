@@ -1,0 +1,12 @@
+<h1>Search for a Vendor</h1>
+
+<%= form_tag(search_vendors_path, :method => "get") do %>
+  <%= text_field_tag :search, params[:search] %>
+  <button id="special-button" type="submit">Search Vendors</button>
+<% end %>
+
+<h2>Search Results</h2>
+
+<% @vendors_search.each do |vendor| %>
+  <h4><%= link_to vendor.name, vendor %></h4>
+<% end %>

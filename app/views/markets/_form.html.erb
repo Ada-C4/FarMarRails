@@ -1,0 +1,21 @@
+<%= form_for @market do |f| %>
+  <%= f.label :name %>:
+  <%= f.text_field :name, :require => true %>
+	<br>
+  <%= f.label :address %>:
+  <%= f.text_field :address %>
+	<br>
+  <%= f.label :city %>:
+  <%= f.text_field :city %>
+	<br>
+  <%= f.label :county %>:
+  <%= f.text_field :county %>
+	<br>
+  <%= f.label :state %>:
+  <%= f.text_field :state %>
+	<br>
+  <%= f.label :zip %>:
+  <%= f.text_field :zip %>
+	<br>
+  <%= @market.persisted? ? (f.submit value: "Update Market", id: 'special-button') : (f.submit value: "Add Market", id: 'special-button') %>
+<% end %>

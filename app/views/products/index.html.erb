@@ -1,0 +1,26 @@
+<h2><%= @vendor.name %>'s Products</h2>
+<% if @products.length == 0 %>
+	No Products for this vendor. 
+<% else %> 
+	<table>
+	<th>Name</th>
+	<th>New Sale</th>
+	<th colspan="2">Update</th>
+		<% @products.each do |product| %> 
+			<tr>
+				<td><li><%= product.name %></li></td>
+				<td><%= link_to 'Create',new_vendor_product_sale_path(product.vendor_id, product.id) %></td>
+				<td class="update"><%= link_to "Edit", edit_vendor_product_path(product.vendor.id, product.id) %></td>
+		 	 	<td class="update"><%= link_to 'Delete',vendor_product_path(product.vendor.id, product.id), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+		 	</tr>
+		<% end %>
+	<table>
+<% end %> 
+
+<br>
+<%= link_to "Create New Product", new_vendor_product_path %>
+<br><br>
+<%= link_to "See Sales List for Vendor", sales_path(@vendor.id) %>
+<br>
+<%= link_to "Back to the Vendors List", show_vendors_vendors_path %>
+<br><br>

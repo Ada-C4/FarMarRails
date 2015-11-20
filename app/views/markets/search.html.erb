@@ -1,0 +1,12 @@
+<h1>Search for a Market</h1>
+
+<%= form_tag(search_markets_path, :method => "get") do %>
+  <%= text_field_tag :search, params[:search] %>
+  <button id="special-button" type="submit">Search Markets</button>
+<% end %>
+
+<h2>Search Results</h2>
+
+<% @markets_search.each do |market| %>
+  <h4><%= link_to market.name, market %></h4>
+<% end %>

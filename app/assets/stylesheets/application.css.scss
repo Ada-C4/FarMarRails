@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css?family=Lato|News+Gothic|Inconsolata|Droid+Sans|Raleway|Leckerli+One');
+
+body {
+  text-align: center;
+  background: rgba(255, 255, 255, .5);
+  font-family: Raleway, sans-serif;
+  width: 100%;
+  margin: auto;
+  font-size: 20px;
+  height: 100%;
+}
+
+.main-nav {
+  background: rgba(243, 222, 58, .3);
+  color: rgb(113,146,8);
+  position: relative;
+  top: 0;
+  height: 60px;
+  width: 100%;
+  font-weight: bold;
+  text-align:center;
+  font-size: 22px;
+  padding-top: 10px;
+}
+
+img {
+  height: 200px;
+  width: 300px;
+  -webkit-filter: blur(2px);
+  filter: blur(2px);
+  padding: 20px;
+}
+
+h1 {
+  font-family: 'Leckerli One', 'Lato', sans-serif;
+  font-size: 50px;
+  color: rgb(113,146,8); 
+}
+
+.market {
+  background-image: image-url('market.png');
+  background-size: 300px 200px;
+}
+
+.vendor {
+  background-image: image-url('vendor.jpeg');
+  background-size: 300px 200px;
+}
+
+.new {
+  background-image: image-url('new.jpeg');
+  background-size: 300px 200px;
+}
+
+.edit {
+  background-image: image-url('update.jpeg');
+  background-size: 300px 200px;
+}
+
+.market_back, .vendor_back {
+  padding: 20px;
+  background: rgba(34,34,34,0.75);
+  padding-bottom: 50px;
+}
+
+.market_back:hover, .vendor_back:hover {
+  padding: 20px;
+  background: rgba(34,34,34,0.85);
+  padding-bottom: 50px;
+}
+
+.market_back h2, .vendor_back h2 { 
+  text-align: center; 
+  color: #fefefe; 
+  font-family: 'Raleway', sans-serif;
+  font-size: 40px;
+  font-weight: bold; 
+}
+
+#special-button {
+  margin: 20px;
+  border-color: black;
+  background-color: white;
+  border-width: 1px;
+  outline: none;
+  font-family: 'Lato', sans-serif;
+  font-size: 15px;
+  border-radius: 10px;
+}
+
+li
+{
+  list-style-type: none;
+}
+
+textarea {
+  padding: 10px;
+}
+
+table {
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+  padding-bottom: 20px;
+}
+
+input {
+  font-size: 15px;
+}
+
+.update {
+  padding: 0px;
+}
+
+td, th {
+  padding-right: 30px;
+}
+
+a { text-decoration: none;
+ color: rgb(0, 50, 20);   }
+a:hover { text-decoration: none;
+color: rgb(113,146,8); }
+a:visited { color: rgb(85, 92, 43); }  
+
+footer {
+  position: relative;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: .8rem;
+  text-align: center;
+  font-size: 18px;
+  background: rgba(243, 222, 58, .3);
+  color: #000;
+  height: 60px;
+}

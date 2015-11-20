@@ -1,14 +1,25 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>FarMarRails</title>
+  <title>Farmer's Market Finder</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+	<header>
+		<nav class="main-nav">
+			<%= link_to "Home Page", root_path %> | <%= link_to "List of All Markets", markets_users_path %> | <%= link_to "Market Main Page", markets_path %> | <%= link_to "Vendor Main Page", vendors_path %> 
+		</nav>
+	</header>
 
 <%= yield %>
+
+	<footer>
+		Webpage by <%= link_to "Tamar Hershi", "https://github.com/TamarHershi" %> and <%= link_to "Logan McDonald", "https://github.com/loganmeetsworld" %> <br>
+		Copyright &copy; <%= Time.now.year %> All rights reserved.
+	</footer>
+
 
 </body>
 </html>

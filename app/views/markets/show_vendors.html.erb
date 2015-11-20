@@ -1,0 +1,18 @@
+<h2><%= @market.name %>'s Vendors</h2>
+
+<table>
+	<th>Name</th>
+	<th>No. Employees</th>
+	<th colspan="2">Update</th>
+	<% @vendors.each do |vendor| %> 
+		<tr> 
+			<td><%= vendor.name %></td>
+			<td><%= vendor.no_employees %></td>
+			<td class="update"><%= link_to "Edit", market_edit_vendor_path(@market, vendor) %></td>
+			<td class="update"><%= link_to "Delete", market_delete_vendor_path(@market, vendor), method: :delete, data: { confirm: "Are you sure?"} %></td>
+		</tr>
+	<% end %>
+</table>
+
+<h3><%= link_to "New Vendor", market_new_vendor_path %></h3>
+<h3><%= link_to "Back to Markets", show_markets_markets_path %></h3>

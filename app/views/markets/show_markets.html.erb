@@ -1,0 +1,14 @@
+<h1>Markets List</h1>
+<table>
+	<th>Name</th>
+	<th colspan="2">Update</th>
+
+	<% @markets.each do |market| %>
+		<tr>
+			<td><%= link_to "#{market.name}", market_path(market.id) %></td>
+			<td class="update"><%= link_to "Edit", edit_market_path(market.id) %></td>
+		  <td class="update"><%= link_to 'Destroy', market,  method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+	<% end %>
+
+</table>

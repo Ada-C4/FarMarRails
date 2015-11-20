@@ -1,0 +1,13 @@
+<h1> <%= @market.name %> Details</h1>
+
+<h2>Address</h2>
+<%= @market.address %> <br>
+<%= @market.city %><br>
+<%= @market.state %><br>
+<%= @market.zip %>
+<h2> Vendors </h2>
+
+<% @market.vendors.each do |vendor| %>
+  <li><%= vendor.name %> </li>
+<% end %>
+<br><br>
