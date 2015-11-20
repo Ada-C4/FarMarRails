@@ -1,14 +1,10 @@
-<div class="page-header">
-  <h1> Vendors </h1>
+<div class="sign-in-button">
+<%= button_to "Add new vendor", new_vendor_path, method: :get, class: "btn btn-default"  %>
 </div>
-
-
-
-<%= button_to "Add new vendor", new_vendor_path, method: :get %>
 <ul>
   <% Vendor.all.each do |vendor| %>
-  <li>
-    <%= link_to vendor.name, vendor_path(vendor.id), role: "button", class: "btn btn-default" %>
+  <li class="vendor_list">
+    <%= link_to vendor.name, vendor_path(vendor.id), role: "button", class: "btn btn-success" %>
     <%= link_to "Edit", edit_vendor_path(vendor.id) %>
     <%= link_to "Delete", "/vendors/#{vendor.id}", method: :delete %>
   </li>

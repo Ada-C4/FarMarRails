@@ -1,16 +1,18 @@
 class MarketsController < ApplicationController
 
   def sign_in
-
+    @title = "Farmers Market Sign In"
   end
 
   def index
     @markets = Market.all
+    @title = "Markets"
   end
 
   def show
     id = params[:id]
     @market = Market.find(id)
+    @title = "Market Info"
   end
 
   def new

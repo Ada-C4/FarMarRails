@@ -1,4 +1,3 @@
-<h3><%= @vendor.name %> Info</h3>
 <h4>Employees: <%= @vendor.num_employees %></h4>
 <h4>Market: <%= @vendor.market.name %></h4>
 <%= button_to "Sales", vendor_sales_path(@vendor.id), method: :get %>
