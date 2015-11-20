@@ -1,5 +1,7 @@
 <h2>Here are the products:</h2>
-<%= button_to "Add new product", new_vendor_product_path, method: :get %>
+<div class="sign-in-button">
+<%= button_to "Add new product", new_vendor_product_path, method: :get, class: "btn btn-default" %>
+</div
 <ul>
   <% @products.each do |product| %>
     <li>

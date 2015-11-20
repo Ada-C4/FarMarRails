@@ -1,7 +1,7 @@
 <h2>Here are the sales:</h2>
-
-<%= button_to "New Sale", new_vendor_sale_path, method: :get %>
-
+<div class="sign-in-button">
+<%= button_to "New Sale", new_vendor_sale_path, method: :get, class: "btn btn-default" %>
+</div>
 <ul>
   <% count = 0 %>
   <% @sales.each do |sale| %>

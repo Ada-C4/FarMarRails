@@ -1,10 +1,12 @@
 class ProductsController < ApplicationController
   def index
+    @title = "Products"
     @vendor_id = params[:vendor_id]
     @products = Product.where(vendor_id: @vendor_id)
   end
 
   def new
+    @title = "Product Info"
     @vendor_id = params[:vendor_id]
     @product = Product.new()
     @action = "create"
@@ -22,6 +24,7 @@ class ProductsController < ApplicationController
     id = params[:id]
     @product = Product.find(id)
     @action = "update"
+    @title = "Product Info"
   end
 
   def update

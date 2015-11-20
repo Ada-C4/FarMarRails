@@ -1,5 +1,6 @@
 class SalesController < ApplicationController
   def index
+    @title = "Sales"
     @vendor_id = params[:vendor_id]
     @product_names = []
     @monthly_product_names = []
@@ -20,6 +21,7 @@ class SalesController < ApplicationController
   end
 
   def new
+    @title = "Sales Info"
     @vendor_id = params[:vendor_id]
     @vendor = Vendor.find(@vendor_id)
     @sale = Sale.new()
