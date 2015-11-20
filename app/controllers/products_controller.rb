@@ -4,7 +4,8 @@ class ProductsController < ApplicationController
   end
 
   def new
-    @new_vendor_product = Product.new
+    @vendor_product = Product.new
+    @url_path = vendor_products_path
   end
 
   def create
@@ -14,13 +15,14 @@ class ProductsController < ApplicationController
 
   def edit
     id = params[:id]
-    @edit_vendor_product = Product.find(id)
+    @vendor_product = Product.find(id)
+    @url_path = vendor_product_path
   end
 
   def update
     id = params[:id]
-    @edit_vendor_product = Product.find(id)
-    @edit_vendor_product.update(product_params[:product])
+    @vendor_product = Product.find(id)
+    @vendor_product.update(product_params[:product])
     redirect_to vendor_path(params[:vendor_id])
   end
 

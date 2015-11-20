@@ -1,0 +1,14 @@
+<section>
+<%= form_for @vendor_product, url: @url_path do |f| %>
+  <fieldset>
+    <legend>Product</legend>
+    <div>
+      <%= f.label :name, "Product name: "%>
+      <%= f.text_field :name %><br />
+    </div>
+    <div>
+      <%= f.submit "#{button_text}" %>
+    </div>
+  </fieldset>
+<% end %>
+</section>
