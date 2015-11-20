@@ -57,6 +57,7 @@ table ul {
 
 table a {
   font-size: 20px;
+  margin: auto;
 }
 
 table a:hover{
