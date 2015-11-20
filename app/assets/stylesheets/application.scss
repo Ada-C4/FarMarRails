@@ -10,11 +10,11 @@ body {
 
 .home-pg-image {
   width: 100%;
-  filter: grayscale(75%);
-  -webkit-filter: grayscale(75%);
+  filter: grayscale(50%);
+  -webkit-filter: grayscale(50%);
   position: relative;
   z-index: -1;
-  margin: 0 0 -45px 0;
+  margin: -100px 0 0 0;
 }
 
 .image-container {
