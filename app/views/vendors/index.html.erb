@@ -1,0 +1,11 @@
+<div class="sub-header">
+  <h1>Vendors:</h1>
+</div>
+
+<ul>
+  <% @vendors.each do |v| %>
+    <li>
+      <%= link_to v.name, vendor_path(v.id)  %>
+    </li>
+  <% end %>
+</ul>

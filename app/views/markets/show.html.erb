@@ -1,0 +1,33 @@
+<div class="side">
+  <h3>Vendors at <%= @market.name%>:</h3>
+  <table>
+    <% @vendors.each do |v| %>
+      <tr>
+        <% if @im_a_market %>
+          <td>
+            <%= link_to "Edit", edit_market_vendor_path(v.market_id, v.id), method: :get %>
+          </td>
+          <% end %>
+          <% if @im_a_market %>
+          <td>
+            <%= link_to "Delete",   "/markets/#{v.market_id}/vendors/#{v.id}", method: "delete",  data: { confirm: "Are you sure you want to delete this vendor?" } %>
+          </td>
+          <% end %>
+          <td>
+            <%= v.name %>
+          </td>
+        </tr>
+    <% end %>
+  </table>
+  <% if @im_a_market %>
+    <br>
+    <%= link_to "Create new Vendor!", new_market_vendor_path(@market) %>
+  <% end %>
+</div>
+
+<div class="byside">
+  <h3>Market Address:</h3>
+  <p><%= @market.address%></p>
+  <p><%= @market.city%>, <%= @market.state%></p>
+  <p><%= @market.county%> county <%= @market.zip%></p>
+</div>

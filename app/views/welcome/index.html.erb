@@ -1,0 +1,13 @@
+<div class="sub-header">
+<h3>would you like to proceed as:
+<br>
+<%= link_to 'market', markets_path, method: :get %>or <%= link_to 'vendor', vendors_path, method: :get %>?
+</h3>
+</div>
+<ul>
+  <% @markets.each do |m| %>
+    <li>
+      <%= link_to m.name, market_path(m.id, type: :user) %>
+    </li>
+  <% end %>
+</ul>

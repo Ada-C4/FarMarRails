@@ -1,0 +1,26 @@
+<div class="sub-header">
+  <h3>All Time Sales for <%= @vendor.name %></h3>
+</div>
+<% total_sales = [] %>
+<table>
+  <% @sales.each do |s| %>
+    <% total_sales.push(s.amount) %>
+    <tr>
+      <td>
+        $<%= p '%.2f' % (s.amount/100.0) %>
+      </td>
+      <td>
+         <%= s.purchase_time.strftime("%D") %>
+      </td>
+    </tr>
+  <% end %>
+    <tr>
+      <td colspan="2">
+        <% if total_sales.length == 0 %>
+          No sales yet! :(
+        <% else %>
+          Total: $<%= p '%.2f' % (total_sales.inject(:+)/100.00) %>
+        <% end %>
+      </td>
+    </tr>
+</table>

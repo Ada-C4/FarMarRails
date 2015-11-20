@@ -1,0 +1,31 @@
+<div class="side">
+  <h3><%= @vendor.name %></h3>
+  <%= @vendor.name %> has <%= @vendor.num_employees%> employees and is located at <%= @vendor.market.name %>
+  <h3><%= @vendor.name %>'s Sales Data:</h3>
+  <%= link_to 'All time sales', vendor_sales_path(@vendor.id)  %>
+  <br>
+  <%= link_to 'Current month sales', current_month_vendor_sales_path(@vendor.id) %>
+</div>
+<div class="byside">
+  <h3><%= @vendor.name %> sells: </h3>
+  <table>
+    <% @products.each do |product| %>
+      <tr>
+        <td>
+          <%= link_to "Edit", edit_vendor_product_path(product.vendor_id, product.id), method: :get %>
+        </td>
+        <td>
+          <%= link_to "Delete", "/vendors/#{product.vendor_id}/products/#{product.id}", method: "delete", data: { confirm: "Are you sure you want to delete this product?" } %>
+        </td>
+        <td>
+          <%= link_to 'Sell', new_vendor_product_sale_path(product.vendor, product),  {:method=>:get} %>
+        </td>
+        <td>
+          <%= product.name.split.map(&:capitalize)*' ' %>
+        </td>
+      </tr>
+    <% end %>
+  </table>
+  <br>
+  <%= link_to "Create a new Product", new_vendor_product_path(@vendor.id) %>
+</div>

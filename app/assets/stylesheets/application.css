@@ -13,3 +13,78 @@
  *= require_tree .
  *= require_self
  */
+@import url(https://fonts.googleapis.com/css?family=Pacifico);
+@import url(https://fonts.googleapis.com/css?family=Arimo:400,400italic);
+
+* {
+  font-family: Arimo;
+}
+
+h1 {
+ font-family: Pacifico;
+ font-size: 40px;
+}
+
+h3 {
+ font-family: Pacifico;
+ font-size: 30px;
+}
+
+header {
+ padding-left: 30px;
+ padding-bottom: 10px;
+ border: dashed black;
+}
+
+a {
+ text-decoration: none;
+ margin-right: 5px;
+ padding: 5px;
+ color: black;
+}
+
+nav a:hover {
+ border-top-style: dashed;
+ text-decoration: none;
+ color: black;
+}
+
+a:hover {
+ text-decoration: underline;
+ color:inherit;
+}
+
+h3 a {
+  text-decoration: none;
+}
+
+h3 a:hover {
+  font-style: italic;
+  text-decoration: none;
+  color: black;
+}
+
+.sub-header {
+  padding-left: 30px;
+  font-family: Pacifico;
+}
+
+ ul {
+   list-style-type: none;
+ }
+
+.side, .byside {
+  margin-left: 30px;
+  margin-right: 30px;
+  display: inline-block;
+  vertical-align: top;
+  max-width: 450px;
+}
+
+table, form {
+  margin-left: 30px;
+}
+
+.byside table {
+  margin-left: -5px;
+}
