@@ -1,6 +1,11 @@
-<div class='nav'>
+<div class='nav-two-links'>
   <%= link_to 'home', '/', class: 'top-nav-button' %>
+  <%= link_to 'return to vendors', vendors_path, method: :get, class: "top-nav-button" %>
 </div>
+
+<!-- <div class='one_button_nav'>
+
+</div> -->
 
 <hr class="nav-hr" />
 
@@ -14,22 +19,33 @@
       <td><%= product.name.downcase %></td>
       <td><%= button_to '', edit_vendor_product_path(vendor_id: product.vendor_id, id: product.id ), method: :get, class: 'edit-button' %></td>
       <td><%= button_to '', product, method: :delete, class: "delete-button" %></td>
-      <td><%= button_to 'Add sale', new_product_sale_path(product_id: product.id), method: :get %></td>
+      <td><%= button_to '+ sale', new_product_sale_path(product_id: product.id), method: :get, class: "add-sale-button" %></td>
     </tr>
   <% end %>
 </table>
 
+<br>
 
-<%= link_to "Add new product", new_vendor_product_path(vendor_id: params[:id]), class: 'nav_button_bottom' %><br><Br>
+<div class="one_button_nav">
+  <%= link_to "Add new product", new_vendor_product_path(vendor_id: params[:id]), class: 'nav_button_bottom' %><br><br>
+</div>
 
 <h2 class='pg-sub-header'>sales</h2>
 
-<div>
-  <%= link_to 'Ascending', vendor_path(order: 'asc') %>
-  <%= link_to 'Descending', vendor_path(order: 'desc') %>
+<div class="two_button_nav_wider">
+  <%= link_to(vendor_path(order: 'asc'), :class => "nav_button_wider") do %>
+    <hr />
+    ascending
+    <hr />
+  <% end %>
+  <%= link_to(vendor_path(order: 'desc'), :class => "nav_button_wider") do %>
+    <hr />
+    descending
+    <hr />
+  <% end %>
 </div>
 
-<table class='table_list'>
+<table class='sale_table_list'>
   <% total_sales = 0 %>
   <% @sales.each do |sale| %>
     <% total_sales += sale.amount %>
@@ -44,7 +60,7 @@
 
 <h2 class="pg-sub-header">current month sales</h2>
 
-<table>
+<table class="sale_table_list">
   <% total_sales = 0 %>
   <% @vendor.products.each do |product| %>
     <% product.sales.each do |sale| %>
@@ -60,7 +76,3 @@
     <td>Total: $<%= p '%.2f' % (total_sales/100.0) %></td>
   </tr>
 </table>
-
-<div class='one_button_nav'>
-  <%= link_to 'Return to Vendors', vendors_path, method: :get, class: "nav_button_bottom" %>
-</div>

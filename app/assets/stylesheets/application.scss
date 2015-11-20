@@ -176,6 +176,26 @@ hr {
   display: block;
 }
 
+.two_button_nav_wider {
+  width: 250px;
+  height: 100px;
+  margin: 0 auto;
+  text-align: center;
+  display: block;
+}
+
+.nav_button_wider {
+ float: left;
+ display: inline;
+ text-align: center;
+ width: 100px;
+ height: 20px;
+ margin: 10px;
+ text-decoration: none;
+ font-size: 16px;
+ color: #000000;
+}
+
 .two_larger_button_nav {
   width: 400px;
   height: 100px;
@@ -186,7 +206,7 @@ hr {
 
 .one_button_nav {
   width: 200px;
-  height: 200px;
+  height: 50px;
   margin: 0 auto;
   text-align: center;
   display: block;
@@ -200,6 +220,17 @@ hr {
   display: inline;
   border-width: 1px;
   border-style: none;
+}
+
+.add-sale-button {
+  width: 42px;
+  height: 20px;
+  display: inline;
+  border-width: 1px;
+  border-style: none;
+  background-color: #FFFFFF;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 13px;
 }
 
 .delete-button {
@@ -226,6 +257,15 @@ table {
 .table_list {
   display: block;
   width: 500px;
+  padding: 5px;
+  margin: auto;
+  border-style: solid;
+  border-width: 1px;
+}
+
+.sale_table_list {
+  display: block;
+  width: 230px;
   padding: 5px;
   margin: auto;
   border-style: solid;
@@ -328,6 +368,14 @@ label {
 .nav {
   text-align: center;
   width: 150px;
+  height: 30px;
+  margin: auto;
+  display: block;
+}
+
+.nav-two-links {
+  text-align: center;
+  width: 300px;
   height: 30px;
   margin: auto;
   display: block;
