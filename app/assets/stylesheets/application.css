@@ -13,6 +13,16 @@
  *= require_tree .
  *= require_self
  */
- body{
+ body {
    font-family: 'Old Standard TT', serif;
+   width: 100%;
+   background-size: cover;
+   background-image: url(apple_black.jpeg);
+   background-size: 100%;
+   color: #F0F0F0;
+   background-color: #251B4A;
+   background-attachment: fixed;
  }
+ a {
+  color: #F2F2F2;
+}
