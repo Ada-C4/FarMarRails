@@ -1,11 +1,29 @@
 <div class="container">
   <h1>ALL OF THEM MARKETS</h1>
-  <ul>
+  <table class="table table-bordered" class="table table-hover">
+    <tr >
+      <th>
+        MARKET
+      </th>
+      <th>
+        STATE
+      </th>
+      <th>
+        MORE INFO
+      </th>
+    </tr>
     <% @markets.each do |market| %>
-      <li>
-        <%= market.name %>
-        <%= link_to "Show Market", "/markets/#{market.id}" %>
-      </li>
+      <tr>
+        <td>
+          <%= market.name %>
+        </td>
+        <td>
+          <%= market.state %>
+        </td>
+       <td>
+         <%= link_to "Show Market", "/markets/#{market.id}", class: "btn btn-default" %>
+       </td>
+     </tr>
     <% end %>
-  </ul>
+  </table>
 </div>

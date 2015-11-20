@@ -38,3 +38,18 @@ sales_array.each do |line|
     product_id: line[4].to_i
   )
 end
+
+
+Sale.create (
+  {amount: 1000,
+  purchase_time: Time.now,
+  vendor_id: 1,
+  product_id: 1}
+)
+
+Sale.create (
+  {amount: 1000,
+  purchase_time: Time.now,
+  vendor_id: 2,
+  product_id: 3}
+)

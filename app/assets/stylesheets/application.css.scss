@@ -33,11 +33,24 @@
   div {
     background-color: #F1F2F2;
     opacity: 0.9;
-    padding: 0px;
+    padding: 20px;
+    margin: 40px;
   }
 
   .container {
     margin-top: 50px;
     margin-bottom: 20px;
     padding-bottom: 20px;
+  }
+
+  h1 {
+    text-align: center;
+    padding: 25px;
+        padding-top: 40px;
+    font-family: 'Fjalla One', sans-serif;
+      font-weight: normal;
+      text-transform: uppercase;
+      line-height: 50px;
+      font-size: 50px;
+      margin: 0 0 23px 0;
   }
