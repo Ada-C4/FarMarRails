@@ -3,3 +3,9 @@
 <div class="centered-button">
   <%= button_to "View All Markets", markets_path, class: "btn btn-lg btn-primary center-block" %>
 </div>
+
+<%= form_tag("/markets/search", method: "get", class: "form-group") do %>
+  <%= label_tag(:search_term, "Search for markets by name:") %>
+  <%= text_field_tag(:search_term) %>
+  <%= submit_tag("Search") %>
+<% end %>

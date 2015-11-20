@@ -44,6 +44,11 @@ class MarketsController < ApplicationController
     redirect_to "/markets"
   end
 
+  def search
+    @markets = Market.where("name LIKE ?" , params[:search_term])
+    render :index
+  end
+
   private
 
   def market_params

@@ -3,7 +3,9 @@ Rails.application.routes.draw do
   post   'login'   => 'sessions#create'
   delete 'logout'  => 'sessions#destroy'
   root 'static_pages#index'
-  resources :markets
+  get 'markets/search' => 'markets#search'
+  resources :markets do
+  end
   resources :vendors do
     member do
       get 'sales/' => 'sales#index'
