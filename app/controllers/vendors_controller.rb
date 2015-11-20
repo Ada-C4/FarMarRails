@@ -1,5 +1,5 @@
 class VendorsController < ApplicationController
-  before_action :get_vendor, only: [:edit, :show, :update]
+  before_action :get_vendor, only: [:show]
 
   def get_vendor
     @vendor = Vendor.find(params[:id])
@@ -16,7 +16,9 @@ class VendorsController < ApplicationController
   end
 
   def edit
-
+    @market_vendor = Vendor.find(params[:id])
+    @market = Market.find(params[:market_id])
+    @url_path = market_vendor_path
   end
 
   def index
@@ -31,7 +33,8 @@ class VendorsController < ApplicationController
   def new
     id = params[:market_id]
     @market = Market.find(id)
-    @new_market_vendor = Vendor.new
+    @market_vendor = Vendor.new
+    @url_path = market_vendors_path
   end
 
 
@@ -48,8 +51,10 @@ class VendorsController < ApplicationController
   end
 
   def update
-    @vendor.update(vendor_params[:vendor])
-    redirect_to market_path(@vendor.market)
+    id = params[:id]
+    @market_vendor = Vendor.find(id)
+    @market_vendor.update(vendor_params[:vendor])
+    redirect_to market_path(@market_vendor.market)
   end
 
   private
