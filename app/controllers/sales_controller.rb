@@ -2,12 +2,20 @@ class SalesController < ApplicationController
   def index
     @vendor_id = params[:vendor_id]
     @product_names = []
+    @monthly_product_names = []
     @total = 0
+    @monthly_total = 0
     @sales = Sale.where(vendor_id: @vendor_id)
     @sales.each do |sale|
       @total += sale.amount
-      product = sale.product
+      product = sale.product.name
       @product_names.push(product)
+    end
+    @sales_month = Vendor.find(@vendor_id).monthly_sales
+    @sales_month.each do |sale|
+      @monthly_total += sale.amount
+      product = sale.product.name
+      @monthly_product_names.push(product)
     end
   end
 

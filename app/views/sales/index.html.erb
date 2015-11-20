@@ -6,7 +6,7 @@
   <% count = 0 %>
   <% @sales.each do |sale| %>
     <li>
-      <%= @product_names[count] %>:<%= sale.amount %>,
+      <%= @product_names[count] %>: <%= sale.amount %>,
       <%= sale.purchase_time %>
     </li>
     <% count += 1 %>
@@ -17,13 +17,17 @@
   The sale total is <%= @total %>
 </p>
 <ul>
-  <% @sales_month = Vendor.find(@vendor_id).monthly_sales %>
+  <%  %>
   <% month_count = 0 %>
   The sales for this month are:
   <% @sales_month.each do |sale| %>
   <li>
-  <%= sale.amount %>, <%= sale.purchase_time %>
+  <%= @monthly_product_names[month_count] %>: <%= sale.amount %>, <%= sale.purchase_time %>
   </li>
   <% month_count += 1 %>
   <% end %>
 </ul>
+
+<p>
+  The total sales for the month is <%= @monthly_total %>
+</p>
