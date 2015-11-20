@@ -72,3 +72,41 @@ a {
   background-color: rgba(0, 102, 34, .75);
 
 }
+
+.edit {
+  color: #392613;
+}
+
+.delete {
+  color: #cc3300;
+}
+
+form {
+  margin: auto;
+  padding: 0px 50px 0px 50px;
+  line-height: 200%;
+}
+
+fieldset {
+  padding-bottom: 20px;
+  border: 0;
+}
+
+legend {
+  padding: 10px;
+}
+
+label {
+  margin-left: 10px;
+}
+
+input {
+  border: none;
+  border-glow: none;
+  background-color: rgba(0, 102, 34, .4);
+  outline: none;
+  padding: 5px;
+  font-size: 1.05em;
+  border-radius: 5px;
+  margin: 10px;
+}
