@@ -40,7 +40,7 @@ body {
 .home-pg-sub-header {
   font-size: 20px;
   font-family: 'Petit Formal Script', cursive;
-  color: #FFFFFF;
+  color: $grey;
 }
 
 .home-pg-button {
@@ -107,7 +107,7 @@ hr {
   margin-bottom: 10px;
   margin-top: 10px;
   font-size: 24px;
-
+  color: #555555;
 }
 
 .description {
@@ -281,8 +281,6 @@ table {
   border-width: 1px;
 }
 
-td#button_row 
-
 #vendor_table {
   text-align: center;
   width: 300px;
@@ -293,12 +291,18 @@ table tbody {
 }
 .button_column {
   text-align: left;
-  width: 50px;
-  float: left;
+  width: 70px;
+  float: right;
+}
+
+.list_name {
+float: left;
+width: 200px;
 }
 
 #vendors_with_buttons {
-  width: 400px;
+  width: 250px;
+  border-collapse: collapse;
 }
 
 tr {
@@ -314,10 +318,10 @@ tr {
   margin: 10px;
   text-decoration: none;
   margin-top: 10%;
-  padding-top: 2px;
-  padding-bottom: 2px;
-  border-top: 1px $grey-teal solid;
-  border-bottom: 1px $grey-teal solid;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  border-top: 2px $grey-teal solid;
+  border-bottom: 2px $grey-teal solid;
 }
 
 .market_form {

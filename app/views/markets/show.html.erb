@@ -43,7 +43,7 @@
   <table class='table_list', id='vendors_with_buttons'>
     <% @market.vendors.each do |vendor| %>
     <tr>
-      <td><%= vendor.name.titleize %></td>
+      <td class='list_name'><%= vendor.name.titleize %></td>
       <td class='button-column'><%= button_to '', edit_market_vendor_path(market_id: vendor.market_id, id: vendor.id), method: :get, class: 'edit-button' %></td>
       <td class='button-column'><%= button_to '', market_vendor_path(market_id:vendor.market_id, id: vendor.id), method: :delete, class: 'delete-button' %></td>
     </tr>
