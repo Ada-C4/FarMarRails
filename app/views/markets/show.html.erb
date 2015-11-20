@@ -14,3 +14,5 @@
 <h3>Vendors at <%= @market.name %>:</h3>
 
 <%= render partial: 'shared/vendorlist', locals: { vendors:  @vendors} %>
+
+<%= link_to "Add a new vendor", new_market_vendor_path(params[:id]) %>
