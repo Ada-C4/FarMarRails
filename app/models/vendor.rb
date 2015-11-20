@@ -24,5 +24,8 @@ class Vendor < ActiveRecord::Base
     return month_sales
   end
 
+def total_monthly
+  monthly_sales.inject(0) { |sum, sale| sum + sale.amount }
+end
 
 end

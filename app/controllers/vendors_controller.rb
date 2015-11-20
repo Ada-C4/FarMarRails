@@ -33,9 +33,15 @@ class VendorsController < ApplicationController
     redirect_to vendor_path(updated_vendor)
   end
 
+  def destroy
+    Vendor.destroy(params[:id])
+    market_id = params[:market_id]
+    redirect_to market_path(market_id)
+  end
+
 ####################
   private
-  
+
   def vendor_params
     vendor = params.require(:vendor).permit(:name)
     vendor.merge(params.permit(:market_id))
