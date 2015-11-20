@@ -36,7 +36,7 @@
     <% @vendor.sales.each do |sale| %>
       <tr>
         <td><%= sale.purchase_time%></td>
-        <td>$ <%= sale.amount.to_f/100 %></td>
+        <td><%= number_to_currency(sale.amount.to_f/100) %></td>
       </tr>
     <% end %>
   </tbody>
@@ -54,7 +54,7 @@
       <% @vendor.month_sales.each do |vendor|%>
       <tr>
           <td><%=vendor.purchase_time%></td>
-          <td><%=vendor.amount.to_f/100%></td>
+          <td><%=number_to_currency(vendor.amount.to_f/100)%></td>
         <%end%>
       </tr>
   </tbody>
