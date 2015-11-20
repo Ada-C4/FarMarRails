@@ -26,6 +26,19 @@ class VendorsController < ApplicationController
 
 	def show
 		@vendor = Vendor.find(params[:id])
+		@sales = []
+		@vendor.products.each do |product|
+			product.sales.each do |sale|
+				@sales << sale
+			end
+		end
+		@sales = @sales if params[:order].nil?
+		# if params[:order] == 'desc'
+		# 	sales = @sales.sort_by { |sale| sale[:amount] }
+		# 	@sales = sales.reverse
+		# end
+		@sales.sort_by! { |sale| sale[:amount] }.reverse! if params[:order] == 'desc'
+		@sales.sort_by! { |sale| sale[:amount] } if params[:order] == 'asc'
 	end
 
 	def destroy
