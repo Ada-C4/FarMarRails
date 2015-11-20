@@ -2,7 +2,7 @@
 <%= form_for [@vendor, @product, @sale] do |f| %>
   <fieldset>
     <legend><%= @product.name.upcase %>Sale Information</legend>
-    <%= f.label :amount %>
+    <%= f.label :amount, 'USD $' %>
     <%= f.number_field :amount, :value => 0, :min => 0, :step => 0.01 %>
   </fieldset>
     <%= f.submit %>
