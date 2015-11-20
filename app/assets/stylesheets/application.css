@@ -36,12 +36,16 @@ h1{
   font-size: 40px;
 }
 .home-page-head{
+  margin-top: 150px;
   font-family: 'Pacifico', cursive;
-  font-size: 4em;
-  text-decoration: underline;
+  font-size: 75px;
 }
 .home-page{
   font-family: 'Pacifico', cursive;
-  font-size: 40px;
+  font-size: 20px;
   text-decoration: none;
+  display: inline;
+  padding: 0 50px;
+  background-color: #F0F0F0;
+  color: #6B1629;
 }

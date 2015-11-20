@@ -8,6 +8,13 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 </head>
 <body>
+  <header>
+  <nav>
+    <%= link_to "View All Markets", markets_user_view_path, class: "home-page" %>
+    <%= link_to "I am a Market", markets_path, class: "home-page" %>
+    <%= link_to "I am a Vendor", vendors_path, class: "home-page" %>
+  </nav>
+</header>
 
 <%= yield %>
 
