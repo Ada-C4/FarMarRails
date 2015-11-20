@@ -1,7 +1,2 @@
 <% provide(:title, "Create a New Vendor") %>
-<% if session[:vendor_id] %>
-  <%= render 'vendors/vendor_header' %>
-<% else %>
-  <%= render 'markets/market_header' %>
-<% end %>
 <%= render partial: 'form', locals: {button_text: "Create Vendor", legend_text: "Add Vendor"} %>

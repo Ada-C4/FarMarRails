@@ -9,6 +9,11 @@
 </head>
 <body>
   <div class="container">
+    <%= render 'layouts/header' %>
+    <div class="bg"></div>
+    <div class="jumbotron">
+      <h1><%= yield(:title) %></h1>
+    </div>
     <%= yield %>
   </div>
 </body>

@@ -3,7 +3,7 @@
     <%= link_to "Hi, Market", markets_path, :id => "logo" %>
     <nav>
       <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to "Home", root_path %></li>
+        <li><%= link_to "Home", markets_path %></li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">
             Market Tools <b class="caret"></b>
@@ -24,9 +24,8 @@
             <li><%= link_to "View Vendors", vendors_path %></li>
           </ul>
         </li>
-        <li><%= link_to "Log Out", root_path %></li>
+        <li><%= link_to "Log Out", logout_path, method: "delete" %></li>
       </ul>
     </nav>
   </div>
 </header>
-<%= render 'layouts/jumbotron' %>
