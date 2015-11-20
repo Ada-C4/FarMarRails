@@ -1,11 +1,17 @@
 class VendorsController < ApplicationController
   def index
     @vendors = Vendor.all
+    @is_market = true if session[:user_type] == "market"
+    @is_vendor = true if session[:user_type] == "vendor"
+    @if_guest = true if session[:user_type] == "guest"
   end
 
   def show
     @vendor = Vendor.find(params[:id])
     @market = Market.find(@vendor.market_id)
+    @is_market = true if session[:user_type] == "market"
+    @is_vendor = true if session[:user_type] == "vendor"
+    @if_guest = true if session[:user_type] == "guest"
   end
 
   def new
