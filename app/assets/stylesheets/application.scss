@@ -16,13 +16,15 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import url(https://fonts.googleapis.com/css?family=Bitter:700);
+@import url(https://fonts.googleapis.com/css?family=Lato);
 
 $purple: rgb(80, 48, 90);
 $yellow: rgb(227, 230, 61);
 $orange: rgb(231, 110, 38);
 
 $jumbo-height: 300px;
-$title-font: 'Bitter', serif;;
+$title-font: 'Bitter', serif;
+$body-font: 'Lato', sans-serif;
 
 .navbar-inverse {
   background-color: $purple;
@@ -114,4 +116,8 @@ thead {
   thead {
     background: $yellow;
   }
+}
+
+body {
+  font-family: $body-font;
 }
