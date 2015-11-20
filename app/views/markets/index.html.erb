@@ -1,16 +1,16 @@
-<h1>You are acting as a market</h1>
+<div class="sub-header">
+  <h3>You are acting as a market</h3>
+  <%= link_to "Create new Market!", new_market_path %>
+</div>
 
-<%= link_to "Create new Market!", new_market_path %>
-<br>
-<br>
 <table>
   <% @markets.each do |m| %>
     <tr>
       <td>
-        <%= link_to m.name, market_path(m.id)  %>
+        <%= link_to "Edit", "/markets/#{m.id}/edit", method: :get %>
       </td>
       <td>
-        <%= button_to "Edit", "/markets/#{m.id}/edit", method: :get %>
+        <%= link_to m.name, market_path(m.id)  %>
       </td>
     </tr>
   <% end %>
