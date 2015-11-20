@@ -18,6 +18,10 @@ class VendorsController < ApplicationController
   def index
     vendors = Vendor.all
     @vendors = vendors.order(:name)
+    if request.path_info.include?('markets')
+      id = params[:market_id]
+      redirect_to market_path(id)
+    end
   end
 
   def new
