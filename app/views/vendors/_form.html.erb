@@ -1,11 +1,9 @@
 <%= form_for [@market, @vendor] do |f| %>
-  <fieldset>
-    <legend>Vendor Information</legend>
     <%= f.label :name %>
     <%= f.text_field :name %>
 
     <%= f.label :num_employees, 'Number of Employees' %>
     <%= f.text_field :num_employees %>
-  </fieldset>
-    <%= f.submit %>
+
+    <%= f.submit 'new vendor', :id => 'submit_button' %>
 <% end %>

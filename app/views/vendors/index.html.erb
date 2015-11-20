@@ -1,14 +1,15 @@
-<h1>You are acting as a vendor</h1>
+<div class="sub-header">
+  <h1>Vendors:</h1>
+</div>
 
-<br>
 <table>
   <% @vendors.each do |v| %>
     <tr>
       <td>
-        <%= link_to v.name, vendor_path(v.id)  %>
+        <%= link_to "Edit", edit_market_vendor_path(market_id: v.market_id, id: v.id), method: :get %>
       </td>
       <td>
-        <%= button_to "Edit", edit_market_vendor_path(market_id: v.market_id, id: v.id), method: :get %>
+        <%= link_to v.name, vendor_path(v.id)  %>
       </td>
     </tr>
   <% end %>
