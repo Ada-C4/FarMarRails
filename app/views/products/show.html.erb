@@ -1,0 +1,19 @@
+<h1>Product Details</h1>
+
+<h2><%= @product.name %></h2>
+
+<h3>Sales for this product:</h3>
+
+<ul>
+  <% @sales.each do |sale| %>
+    <li>
+      <%= number_to_currency(sale.amount/100) %> on <%= sale.purchase_time.strftime("%m-%d-%Y") %>
+    </li>
+  <% end %>
+</ul>
+
+<div class="center">
+  <div class="button vendor_button">
+    <%= link_to "Add a Sale", new_vendor_product_sale_path(@product.vendor_id, @product) %>
+  </div>
+</div>
