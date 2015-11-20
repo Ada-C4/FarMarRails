@@ -7,7 +7,9 @@ Rails.application.routes.draw do
   get 'vendors/:id/home' => 'vendors#v_home', as: :v_home
   resources :vendors
   resources :markets do
-    resources :vendors
+    resources :vendors do
+      resources :vendors, only: [:create, :new, :edit, :destroy, :update]
+    end
   end
 
   # The priority is based upon order of creation: first created -> highest priority.
