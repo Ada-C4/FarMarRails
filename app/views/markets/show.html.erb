@@ -32,7 +32,7 @@
 <% end %>
 
 <% if @is_market %>
-  <table class='table_list'>
+  <table class='table_list', id='vendors_with_buttons'>
     <% @market.vendors.each do |vendor| %>
     <tr>
       <td><%= vendor.name.titleize %></td>
