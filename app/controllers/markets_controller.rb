@@ -40,14 +40,12 @@ class MarketsController < ApplicationController
   end
 
   def destroy
-    id = params[:id]
-    Market.delete(id)
+    Market.delete(params[:id])
     redirect_to "/"
   end
 
   def update
-    id = params[:id]
-    market = Market.find(id)
+    market = Market.find(params[:id])
     market.update(
     name: market_params[:name].titleize,
     address: market_params[:address].titleize,

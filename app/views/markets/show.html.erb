@@ -19,8 +19,9 @@
       </tr>
     <% end %>
   </table>
+  <br><br>
   <div class="one_button_nav">
-    <%= link_to 'Return to Markets', markets_path, class: 'larger_nav_button' %>
+    <%= link_to 'return to markets', markets_path, class: 'top-nav-button' %>
   </div>
 <% end %>
 
@@ -33,7 +34,7 @@
     <% end %>
   </table>
   <div class="one_button_nav">
-    <%= link_to 'Return to Markets', markets_path, class: 'larger_nav_button' %>
+    <%= link_to 'return to markets', markets_path, class: 'top-nav-button' %>
   </div>
 <% end %>
 
@@ -49,6 +50,7 @@
   </table><br>
   <div class="two_larger_button_nav">
     <%= link_to 'Add New Vendor', new_market_vendor_path(market_id: @market.id), class: 'nav_button_bottom' %><br><br>
-
+  <%= link_to 'return to markets', markets_path, class: 'top-nav-button' %>
+  </div>
   </div>
 <% end %>
