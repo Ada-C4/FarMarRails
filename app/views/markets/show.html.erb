@@ -1,18 +1,21 @@
 <h1 class='pg-header'><%= @market.name %></h1>
-<p class='description'>
+<div class='description'>
   <%= @market.address %> | <%= @market.city%> | <%= @market.county %> county | <%= @market.state %> | <%= @market.zip %>
-</p>
+</div>
 
 <h2 class="pg-sub-header">Who's sellin' stuff here?</h2>
 
 <% if @is_guest %>
-<table>
-  <% @market.vendors.each do |vendor| %>
-    <tr>
-      <td><%= vendor.name %></td>
-    </tr>
-  <% end %>
-</table>
+  <table>
+    <% @market.vendors.each do |vendor| %>
+      <tr>
+        <td><%= vendor.name %></td>
+      </tr>
+    <% end %>
+  </table>
+  <div class="one_return_nav">
+    <%= link_to 'Return to Markets', markets_path, class: 'larger_nav_button' %>
+  </div>
 <% end %>
 
 <% if @is_vendor %>
@@ -23,6 +26,9 @@
       </tr>
     <% end %>
   </table>
+  <div class="one_return_nav">
+    <%= link_to 'Return to Markets', markets_path, class: 'larger_nav_button' %>
+  </div>
 <% end %>
 
 <% if @is_market %>
@@ -35,9 +41,12 @@
     </tr>
     <% end %>
   </table>
-  <%= button_to 'Create a Vendor', new_market_vendor_path(market_id: @market.id), method: :get, class: 'nav_button' %>
+  <div class="button_nav">
+    <%= link_to 'Return to Markets', markets_path, class: 'larger_nav_button' %>
+    <%= link_to 'Create a Vendor', new_market_vendor_path(market_id: @market.id), class: 'larger_nav_button' %>
+  </div>
 <% end %>
 
 
 
-<%= button_to 'Return to Markets', markets_path, method: :get %>
+

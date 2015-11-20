@@ -1,3 +1,8 @@
+$grey_teal: #a3c2c2;
+$grey: #666666;
+
+$button_color: $grey_teal;
+
 body {
   font-family: 'Quicksand', sans-serif;
   background-color: #FFFFFF;
@@ -22,18 +27,21 @@ body {
 
 .home-pg-button {
   width: 130px;
-  height: 130px;
-  border-radius: 50%;
+  height: 75px;
+  font-size: 24px;
+  border-radius: 80%;
   border-color: #000000;
   border-style: solid;
   border-width: 1px;
   text-align: center;
-  padding-top: 10px;
+  padding-top: 55px;
   margin: 10px;
+  text-decoration: none;
   opacity: 0.6;
   background-color: #FFFFFF;
   font-size: 14px;
   font-weight: bold;
+  color: #000000;
 }
 
 #market-button {
@@ -67,6 +75,9 @@ body {
 .description {
   text-align: center;
   font-size: 16px;
+  padding: 20px 0px;
+  border-top: 1px solid $grey;
+  border-bottom: 1px solid $grey;
 }
 
 .home-pg-markets {
@@ -76,7 +87,7 @@ body {
 
 .market-link {
   text-decoration: none;
-  color: #666666;
+  color: $grey;
 }
 
 .market-link:hover {color: #000000;}
@@ -85,21 +96,56 @@ body {
   float: left;
   display: inline;
   text-align: center;
-  width: 100px;
-  height: 65px;
+  width: 130px;
+  height: 75px;
   font-size: 24px;
   color: #666666;
-  border: 1px solid #666666;
+  border: 1px solid $grey;
   margin: 10px;
   border-radius: 80%;
   background-color: #FFFFFF;
-  padding-top: 30px;
+  padding-top: 45px;
   text-decoration: none;
 }
 
-.button_nav {
-  width: 375px;
+.larger_nav_button {
+  float: left;
+  display: inline;
+  text-align: center;
+  width: 170px;
+  height: 75px;
+  font-size: 24px;
+  color: $grey;
+  border: 1px solid $grey;
+  margin: 10px;
+  margin-top: 40px;
+  border-radius: 80%;
+  background-color: $button_color;
+  padding-top: 55px;
+  padding-bottom: 35px;
+  text-decoration: none;
+}
+
+
+.three_button_nav {
+  width: 500px;
   height: 100px;
+  margin: 0 auto;
+  text-align: center;
+  display: block;
+}
+
+.two_button_nav {
+  width: 350px;
+  height: 100px;
+  margin: 0 auto;
+  text-align: center;
+  display: block;
+}
+
+.one_return_nav {
+  width: 200px;
+  height: 200px;
   margin: 0 auto;
   text-align: center;
   display: block;
@@ -119,6 +165,11 @@ body {
 table {
   margin-top: 25px;
   margin: auto;
+  width: 500px;
+}
+
+.guest_table {
+  text-align: center;
 }
 
 .table_list {
