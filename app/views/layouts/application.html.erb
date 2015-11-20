@@ -8,17 +8,23 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <div class="container">
-    <%= render 'layouts/header' %>
-    <div class="bg"></div>
-    <div class="jumbotron">
-      <h1><%= yield(:title) %></h1>
+  <%= render 'layouts/header' %>
+  <div class="parallax">
+    <div class="parallax_layer parallax_layer_back">
+      <%= image_tag("market2.jpg") %>
     </div>
-      <div class="row">
-        <div class="col-md-6 col-md-offset-3">
-          <%= yield %>
+    <div class="container">
+      <div class="parallax_layer parallax_layer_base">
+        <div class="jumbotron">
+          <h1><%= yield(:title) %></h1>
+        </div>
+        <div class="row">
+          <div class="col-md-6 col-md-offset-3">
+            <%= yield %>
+          </div>
         </div>
       </div>
+    </div>
   </div>
 </body>
 </html>

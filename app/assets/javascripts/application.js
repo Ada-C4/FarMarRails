@@ -15,17 +15,3 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
-
-// jumbotron code from http://www.bootply.com/103783
-
-$( document ).ready(function() {
-  var jumboHeight = $('.jumbotron').outerHeight();
-  function parallax(){
-    var scrolled = $(window).scrollTop();
-    console.log(scrolled, jumboHeight);
-    $('.bg').css('height', (jumboHeight-scrolled) + 'px');
-  }
-  $(window).scroll(function(e){
-      parallax();
-  });
-});
