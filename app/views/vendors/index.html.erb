@@ -2,15 +2,10 @@
   <h1>Vendors:</h1>
 </div>
 
-<table>
+<ul>
   <% @vendors.each do |v| %>
-    <tr>
-      <td>
-        <%= link_to "Edit", edit_market_vendor_path(market_id: v.market_id, id: v.id), method: :get %>
-      </td>
-      <td>
-        <%= link_to v.name, vendor_path(v.id)  %>
-      </td>
-    </tr>
+    <li>
+      <%= link_to v.name, vendor_path(v.id)  %>
+    </li>
   <% end %>
-</table>
+</ul>

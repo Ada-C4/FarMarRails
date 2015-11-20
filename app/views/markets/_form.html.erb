@@ -1,23 +1,22 @@
 <%= form_for @market do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
 
-    <%= f.label :name %>
-    <%= f.text_field :name %>
+  <%= f.label :address %>
+  <%= f.text_field :address %>
 
-    <%= f.label :address %>
-    <%= f.text_field :address %>
+  <%= f.label :city %>
+  <%= f.text_field :city %>
 
-    <%= f.label :city %>
-    <%= f.text_field :city %>
+  <%= f.label :county %>
+  <%= f.text_field :county %>
 
-    <%= f.label :county %>
-    <%= f.text_field :county %>
+  <%= f.label :state %>
+  <%= f.text_field :state %>
 
-    <%= f.label :state %>
-    <%= f.text_field :state %>
-
-    <%= f.label :zip %>
-    <%= f.text_field :zip %>
-    <br>
-    <br>
-    <%= f.submit 'new market', :class => 'submit_button' %>
+  <%= f.label :zip %>
+  <%= f.text_field :zip %>
+  <br>
+  <br>
+  <%= f.submit :class => 'submit_button' %>
 <% end %>

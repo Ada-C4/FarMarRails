@@ -1,10 +1,10 @@
 <%= form_for [@market, @vendor] do |f| %>
-    <%= f.label :name %>
-    <%= f.text_field :name %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
 
-    <%= f.label :num_employees, 'Number of Employees' %>
-    <%= f.text_field :num_employees %>
-    <br>
-    <br>
-    <%= f.submit 'new vendor', :id => 'submit_button' %>
+  <%= f.label :num_employees, 'Number of Employees' %>
+  <%= f.text_field :num_employees %>
+  <br>
+  <br>
+  <%= f.submit :id => 'submit_button' %>
 <% end %>

@@ -1,7 +1,6 @@
 <div class="sub-header">
   <h3>Current Month's Sales for <%= @vendor.name %></h3>
 </div>
-
 <% total_sales = [] %>
 <% time_marker_month = Time.now.month %>
 <% time_marker_year = Time.now.year %>
@@ -22,9 +21,9 @@
       <tr>
         <td colspan="2">
           <% if total_sales.length == 0 %>
-            No sales were made this month
+            No sales were made this month.
           <% else %>
-            Current Month's Total Sales for <%= @vendor.name %>: $<%= p '%.2f' %    (total_sales.inject(:+)/100.00) %>
+            Current Month's Total Sales for <%= @vendor.name %>: $<%= p '%.2f' % (total_sales.inject(:+)/100.00) %>
           <% end %>
         </td>
       </tr>

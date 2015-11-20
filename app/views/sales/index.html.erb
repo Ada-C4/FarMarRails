@@ -1,7 +1,6 @@
 <div class="sub-header">
   <h3>All Time Sales for <%= @vendor.name %></h3>
 </div>
-
 <% total_sales = [] %>
 <table>
   <% @sales.each do |s| %>
@@ -18,7 +17,7 @@
     <tr>
       <td colspan="2">
         <% if total_sales.length == 0 %>
-          No sales were made this month
+          No sales yet! :(
         <% else %>
           Total Sales for <%= @vendor.name %>: $<%= p '%.2f' % (total_sales.inject(:+)/100.00) %>
         <% end %>
