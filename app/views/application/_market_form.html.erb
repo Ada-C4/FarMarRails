@@ -1,18 +1,19 @@
-<%=  form_for @market do |f| %>
-<div class='legend'><h1><%= form_title %></h1></div>
+<%=  form_for @market, :html => {class: 'market_form'} do |f| %>
+<div class='legend'><h1 class='pg-header'><%= form_title %></h1></div>
   <fieldset>
-    <%= f.label :name %>:
+    <%= f.label :name %>:<br>
     <%= f.text_field :name %><br>
-    <%= f.label :address %>:
+    <%= f.label :address %>:<br>
     <%= f.text_field :address %><br>
-    <%= f.label :city %>
+    <%= f.label :city %>:<br>
     <%= f.text_field :city %><br>
-    <%= f.label :county %>
+    <%= f.label :county %>:<br>
     <%= f.text_field :county %><br>
-    <%= f.label :state %>
+    <%= f.label :state %>:<br>
     <%= f.text_field :state %><br>
-    <%= f.label :zip %>
+    <%= f.label :zip %>:<br>
     <%= f.text_field :zip %><br>
   </fieldset>
-  <%= f.submit %>
+  <%= f.submit 'Submit', class: 'form-button' %><br><br>
+  <%= link_to 'all markets', markets_path, class: "top-nav-button" %>
 <% end %>

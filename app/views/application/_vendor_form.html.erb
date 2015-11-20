@@ -1,11 +1,12 @@
-<%=  form_for :vendor, url: url, method: method, class: 'form' do |f| %>
-<div class='legend'><h1><%= form_title %></h1></div>
-  <fieldset>
-    <%= f.label :name %>:
+<%=  form_for :vendor, url: url, method: method, :html => {class: 'vendor_form'} do |f| %>
+<div class='legend'><h1 class='pg-header'><%= form_title %></h1></div>
+  <fieldset class='vendor_field'>
+    <%= f.label :name %>:<br>
     <%= f.text_field :name %><br>
-    <%= f.label :num_emps, 'Number of Employees' %>:
+    <%= f.label :num_emps, 'Number of Employees' %>:<br>
     <%= f.text_field :num_emps %><br>
     <%= hidden_field_tag :market_id, params[:market_id] %>
   </fieldset>
-  <%= f.submit %>
+  <%= f.submit nil, class: 'form-button' %><br><br>
+  <%= link_to 'Return to Market', market_path(id: params[:market_id]), class: "top-nav-button" %>
 <% end %>
