@@ -6,8 +6,7 @@ class VendorsController < ApplicationController
 	end
 
 	def all
-		@vendors = Vendor.all
-		@vendors.order(:name)
+		@vendors = Vendor.all.order(:name)
 	end
 
 	def new

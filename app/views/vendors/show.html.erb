@@ -12,14 +12,18 @@
     </tr>
   <% end %>
 </table>
-<%= link_to "Add new product", new_vendor_product_path(vendor_id: params[:id]), class: 'larger_nav_button' %>
+
+
+<%= link_to "Add new product", new_vendor_product_path(vendor_id: params[:id]), class: 'larger_nav_button' %><br><Br>
 
 <h2 class='pg-sub-header'>Sales</h2>
 
-<%= link_to 'Ascending', vendor_path(order: 'asc') %>
-<%= link_to 'Descending', vendor_path(order: 'desc') %>
+<div>
+  <%= link_to 'Ascending', vendor_path(order: 'asc') %>
+  <%= link_to 'Descending', vendor_path(order: 'desc') %>
+</div>
 
-<table>
+<table class='table_list'>
   <% total_sales = 0 %>
   <!-- <% @vendor.products.each do |product| %>
     <% product.sales.each do |sale| %>
@@ -59,4 +63,6 @@
   </tr>
 </table>
 
-<%= link_to 'Return to Vendors', vendors_path, method: :get, class: "back-button" %>
+<div class='one_button_nav'>
+  <%= link_to 'Return to Vendors', vendors_path, method: :get, class: "larger_nav_button" %>
+</div>
