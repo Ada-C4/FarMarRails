@@ -2,9 +2,9 @@
 <div class='legend'><h1 class='pg-header'><%= form_title %></h1></div>
   <fieldset class='vendor_field'>
     <%= f.label :name %>:<br>
-    <%= f.text_field :name %><br>
+    <%= f.text_field :name, class: 'text' %><br>
     <%= f.label :num_emps, 'Number of Employees' %>:<br>
-    <%= f.text_field :num_emps %><br>
+    <%= f.text_field :num_emps, class: 'text' %><br>
     <%= hidden_field_tag :market_id, params[:market_id] %>
   </fieldset>
   <%= f.submit nil, class: 'form-button' %><br><br>

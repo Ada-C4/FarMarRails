@@ -366,12 +366,18 @@ fieldset {
 form {
   text-align: center;
 }
-
+/*
 input.form-field {
   font-family: 'Inconsolata', sans-serif;
   width: 360px;
   height: 20px;
   opacity: 0.3;
+  font-size: 14px;
+}*/
+
+input.text {
+  font-family: 'Quicksand', sans-serif;
+  height: 16px;
   font-size: 14px;
 }
 
