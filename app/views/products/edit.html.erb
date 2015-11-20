@@ -1,1 +1,3 @@
 <%= render partial:'product_form', locals:{form_title: 'Edit this Product', url: vendor_product_path(vendor_id: params[:vendor_id]), method: :patch} %>
+
+<%= link_to 'Return to Vendor', @back, method: :get, class: "back-button" %>

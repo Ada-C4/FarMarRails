@@ -2,10 +2,12 @@ class VendorsController < ApplicationController
 	def index
 		session[:user_type] = params[:user_type]
 	  @vendors = Market.find(params[:market_id]).vendors
+		@vendors.sort_by! {|vendor| vendor[:name]}
 	end
 
 	def all
 		@vendors = Vendor.all
+		@vendors.sort! { |vendor| vendor.name }
 	end
 
 	def new
