@@ -27,7 +27,9 @@ class SalesController < ApplicationController
   end
 
   def destroy
-    
+    id = params[:id]
+    Sale.destroy(id)
+    redirect_to sales_vendor_path(session[:vendor_id])
   end
 
   private

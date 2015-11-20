@@ -7,13 +7,13 @@ Rails.application.routes.draw do
   resources :vendors do
     member do
       get 'sales/' => 'sales#index'
+      delete 'sales/:id' => 'sales#destroy'
       get 'sales/month/:id' => 'sales#month', as: :sales_month
     end
     resources :products do
       member do
         get 'sales/new'
         post 'sales/create'
-        delete 'sales/:id' => 'sales#destroy'
       end
     end
   end
