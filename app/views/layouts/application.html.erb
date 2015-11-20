@@ -7,8 +7,13 @@
   <%= csrf_meta_tags %>
 </head>
 <body class="<%= content_for :body_class %>">
+  <header class="<%= content_for :header_class %>" >
+  </header>
+
 
 <%= yield %>
+  <footer class= "<%= content_for :footer_class %>">
+  </footer>
 
 </body>
 </html>
