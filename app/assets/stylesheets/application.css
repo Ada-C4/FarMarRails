@@ -13,6 +13,34 @@
  *= require_tree .
  *= require_self
  */
- body{
+ body {
    font-family: 'Old Standard TT', serif;
+   width: 100%;
+   background-size: cover;
+   background-image: url(apple_black.jpeg);
+   background-size: 100%;
+   color: #F0F0F0;
+   background-color: #251B4A;
+   background-attachment: fixed;
  }
+ img{
+   width: 100%;
+   height: 100%;
+ }
+ a {
+  color: #F2F2F2;
+}
+h1{
+  font-family: 'Pacifico', cursive;
+  font-size: 40px;
+}
+.home-page-head{
+  font-family: 'Pacifico', cursive;
+  font-size: 4em;
+  text-decoration: underline;
+}
+.home-page{
+  font-family: 'Pacifico', cursive;
+  font-size: 40px;
+  text-decoration: none;
+}
