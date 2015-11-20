@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   root 'markets#home'
 
   get 'vendors/' => 'vendors#vendors'
+  get '/markets/:id/view' => 'markets#view'
   # get '/vendors/:vendor_id/product/:product_id' => 'products#create'
 
   resources :markets do

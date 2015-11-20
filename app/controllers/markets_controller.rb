@@ -34,6 +34,10 @@ class MarketsController < ApplicationController
     @action = :create
   end
 
+  def view
+    show
+  end
+
   def create
     a = Market.create( market_params[:market] )
     redirect_to market_path(a.id)
