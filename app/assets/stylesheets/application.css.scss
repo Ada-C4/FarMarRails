@@ -6,8 +6,18 @@ body {
   margin-left: 20px;
 }
 
+btn.title_link {
+  padding: 10px 16px;
+  border-radius: 6px;
+}
+
 div.title_link {
   display: inline-block;
+  font-family: Lobster;
+  padding: 10px 16px;
+  font-size: 23px;
+  line-height: 3;
+  border-radius: 6px;
 }
 
 div.title_link_holder {
@@ -31,6 +41,20 @@ header.cows {
 header img.cows {
   width: 1200px;
   height: 330px;
+}
+
+#market_link {
+  padding: 10px 20px;
+  font-size: 23px;
+  line-height: 3;
+  border-radius: 6px;
+}
+
+#vendor_link {
+  padding: 10px 20px;
+  font-size: 23px;
+  line-height: 3;
+  border-radius: 6px;
 }
 
 .market_info {

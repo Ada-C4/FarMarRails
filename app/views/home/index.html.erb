@@ -6,13 +6,13 @@
 <% end %>
 
 <h1 class= "title_page">Farmers Markets, USA</h1>
-<h3>Are you a market or a vendor? Choose below:</h3>
+<h3>Are you a market or a vendor?</h3>
 <div class = "title_link_holder">
   <div class= "title_link">
-    <%= link_to "Market", markets_path, class: "btn btn-default title_link", role: "button" %>
+    <%= link_to "Market", markets_path, class: "btn btn-default title_link", id: "market_link", role: "button" %>
   </div>
   <div class= "title_link">
-    <%= link_to "Vendor", vendors_path, class: "btn btn-default title_link", role: "button" %>
+    <%= link_to "Vendor", vendors_path, class: "btn btn-default title_link", id: "vendor_link", role: "button" %>
   </div>
 </div>
 
