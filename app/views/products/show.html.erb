@@ -1,6 +1,7 @@
 <div class="pretend-nav">
   <div class="nav-position">
   <%= link_to "CREATE SALE", new_vendor_product_sale_path(@vendor, @product)  %>
+  <%= link_to "DELETE PRODUCT", vendor_product_path(@vendor, @product), method: :delete, onclick: "return confirm('Are you sure you want to delete this product???????')" %>
   </div>
 </div>
 
