@@ -324,6 +324,18 @@ tr {
   display: block;
 }
 
+.product_form {
+  width: 200px;
+  height: 23px;
+  margin: 0 auto;
+  padding: 10px;
+  display: block;
+}
+
+#product_wider {
+  width: 400px;
+}
+
 fieldset {
   border: 1px solid $grey;
   width: 200px;
@@ -332,7 +344,7 @@ fieldset {
 }
 
 .vendor_field {
-  height: 85px;
+  height: 80px;
 }
 
 form {
