@@ -1,12 +1,7 @@
 <% provide(:title, "Farmers Market Central") %>
-<%= render 'static_pages/home_header' %>
-<div class="row">
-  <div class="col-md-6 col-md-offset-3">
-    <h1>Log in as a Vendor</h1>
-    <%= form_for(:session, url: login_path) do |f| %>
-      <%= f.collection_select(:vendor_id, Vendor.all, :id, :name, {prompt: "Select the vendor:"}, {class: 'form-control'}) %>
-      <br>
-      <%= f.submit "Log in", class: "btn btn-primary" %>
-    <% end %>
-  </div>
-</div>
+<h1>Log in as a Vendor</h1>
+<%= form_for(:session, url: login_path) do |f| %>
+  <%= f.collection_select(:vendor_id, Vendor.all, :id, :name, {prompt: "Select the vendor:"}, {class: 'form-control'}) %>
+  <br>
+  <%= f.submit "Log in", class: "btn btn-primary" %>
+<% end %>
