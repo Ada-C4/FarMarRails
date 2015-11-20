@@ -1,4 +1,9 @@
 class SalesController < ApplicationController
+
+  def index
+    @vendor = Vendor.find(params[:vendor_id])
+  end
+
   def new
     @sale = Sale.new
   end
