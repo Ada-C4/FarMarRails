@@ -3,4 +3,6 @@
   <%= link_to 'return to vendor', vendor_path(id: params[:vendor_id]), method: :get, class: "top-nav-button" %>
 </div>
 
-<%= render partial:'product_form', locals:{form_title:'Add Product', url: vendor_products_path(vendor_id: params[:vendor_id]), method: :post} %>
+<hr class="nav-hr" />
+
+<%= render partial:'product_form', locals:{form_title:'add product', url: vendor_products_path(vendor_id: params[:vendor_id]), method: :post} %>

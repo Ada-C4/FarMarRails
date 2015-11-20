@@ -1,3 +1,8 @@
-<%= render partial:'product_form', locals:{form_title: 'Edit this Product', url: vendor_product_path(vendor_id: params[:vendor_id]), method: :patch} %>
+<div class='nav-two-links'>
+  <%= link_to 'home', '/', class: 'top-nav-button' %>
+  <%= link_to 'return to vendor', vendor_path(id: params[:vendor_id]), method: :get, class: "top-nav-button" %>
+</div>
 
-<%= link_to 'Return to Vendor', @back, method: :get, class: "back-button" %>
+<hr class="nav-hr" />
+
+<%= render partial:'product_form', locals:{form_title: 'Edit this Product', url: vendor_product_path(vendor_id: params[:vendor_id]), method: :patch} %>
