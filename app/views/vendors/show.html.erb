@@ -3,7 +3,21 @@
 <p> You can find me at <%= @vendor.market.name %></p>
 <p> Number of employees: <%= @vendor.employees %></p>
 
-<p>Create, edit, or delete a product<p>
+<h3> My sales</h3>
+
+<ul>
+<% @sales.each do |sale| %>
+  <li>
+    <%= number_to_currency(sale.amount/100) %> on <%= sale.purchase_time.strftime("%m-%d-%Y") %>
+  </li>
+<% end %>
+</ul>
+
+<h3>Total Sales</h3>
+<%= number_to_currency(@total_sales) %>
+
+<h3> My products </h3>
+<h4>Create, edit, or delete a product</h4>
 <ul>
   <%= link_to "create", new_vendor_product_path(params[:id]) %>
   <% @products.each do |product| %>

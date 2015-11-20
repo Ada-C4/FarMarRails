@@ -10,7 +10,7 @@ class VendorsController < ApplicationController
   end
 
   def create
-    a = Vendor.create( vendor_params[:vendor])
+    a = Vendor.create(vendor_params[:vendor])
     redirect_to vendor_path(a.id)
   end
 
@@ -19,6 +19,17 @@ class VendorsController < ApplicationController
     id = params[:id]
     @vendor = Vendor.find(id)
     @products = @vendor.products
+    @sales = @vendor.sales
+    @total_sales = total_sales(@sales)
+    @sales_this_month = total_sales()
+  end
+
+  def total_sales(sales)
+    total_sales = 0
+    sales.each do |sale|
+      total_sales += sale.amount
+    end
+    return total_sales/100
   end
 
   def edit
@@ -35,7 +46,6 @@ class VendorsController < ApplicationController
     Vendor.destroy(params[:id])
     redirect_to market_path(params[:market_id])
   end
-
 
   private
 
