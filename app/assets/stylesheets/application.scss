@@ -104,7 +104,7 @@ body {
   margin: 10px;
   border-radius: 80%;
   background-color: #FFFFFF;
-  padding-top: 30px;
+  padding-top: 45px;
   text-decoration: none;
 }
 
@@ -127,8 +127,16 @@ body {
 }
 
 
-.button_nav {
-  width: 375px;
+.three_button_nav {
+  width: 500px;
+  height: 100px;
+  margin: 0 auto;
+  text-align: center;
+  display: block;
+}
+
+.two_button_nav {
+  width: 350px;
   height: 100px;
   margin: 0 auto;
   text-align: center;
@@ -157,6 +165,11 @@ body {
 table {
   margin-top: 25px;
   margin: auto;
+  width: 500px;
+}
+
+.guest_table {
+  text-align: center;
 }
 
 .table_list {

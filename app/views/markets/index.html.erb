@@ -1,8 +1,8 @@
-<h1 class="pg-header">All dem Markets</h1>
+<h1 class="pg-header">Every Farmer's Market</h1>
 
 
   <% if @buttons %>
-  <div class='button_nav'>
+  <div class='three_button_nav'>
     <%= link_to 'A-Z', markets_path(order: 'az'), class: 'nav_button' %>
     <%= link_to 'New', new_market_path, class: 'nav_button' %>
     <%= link_to 'Z-A', markets_path(order: 'za'), class: 'nav_button' %>
@@ -22,13 +22,19 @@
 
 
 <% if !@buttons %>
-  <table>
-    <% @markets.each do |market| %>
-    <tr>
-      <td><%= link_to market.name, market, class: "market-link" %></td>
-    </tr>
-    <% end %>
-  </table>
+<div class='two_button_nav'>
+  <%= link_to 'A-Z', markets_path(order: 'az'), class: 'nav_button' %>
+  <%= link_to 'Z-A', markets_path(order: 'za'), class: 'nav_button' %>
+  </div>
+  <div class='table_list'>
+    <table>
+      <% @markets.each do |market| %>
+      <tr>
+        <td class="guest_table"><%= link_to market.name, market, class: "market-link" %></td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
 <% end %>
 
 
