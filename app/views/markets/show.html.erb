@@ -6,7 +6,7 @@
 <h2 class="pg-sub-header">Who's sellin' stuff here?</h2>
 
 <% if @is_guest %>
-  <table>
+  <table class='guest_table'>
     <% @market.vendors.each do |vendor| %>
       <tr>
         <td><%= vendor.name.titleize %></td>
@@ -19,7 +19,7 @@
 <% end %>
 
 <% if @is_vendor %>
-  <table>
+  <table class='guest_table'>
     <% @market.vendors.each do |vendor| %>
       <tr>
         <td><%= link_to vendor.name.titleize, market_vendor_path(market_id: vendor.market_id, id: vendor.id ) %></td>
@@ -32,7 +32,7 @@
 <% end %>
 
 <% if @is_market %>
-  <table>
+  <table class='table_list'>
     <% @market.vendors.each do |vendor| %>
     <tr>
       <td><%= vendor.name.titleize %></td>
@@ -42,8 +42,8 @@
     <% end %>
   </table>
   <div class="two_larger_button_nav">
+    <%= link_to 'Add New Vendor', new_market_vendor_path(market_id: @market.id), class: 'larger_nav_button' %>
     <%= link_to 'Return to Markets', markets_path, class: 'larger_nav_button' %>
-    <%= link_to 'Create a Vendor', new_market_vendor_path(market_id: @market.id), class: 'larger_nav_button' %>
   </div>
 <% end %>
 
