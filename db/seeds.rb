@@ -29,3 +29,12 @@ sale_csv.each do |id, amount, purchase_time, vendor_id, product_id|
   hash = {:id => id, :amount => amount, :purchase_time => purchase_time, :vendor_id => vendor_id, :product_id => product_id}
   Sale.create(hash)
 end
+
+begin
+  con = PG::Connection
+  Market.connection.execute('SELECT setval(\'markets_id_seq\'::regclass, (SELECT MAX(id) FROM markets))')
+  Vendor.connection.execute('SELECT setval(\'vendors_id_seq\'::regclass, (SELECT MAX(id) FROM vendors))')
+  Product.connection.execute('SELECT setval(\'products_id_seq\'::regclass, (SELECT MAX(id) FROM products))')
+  Sale.connection.execute('SELECT setval(\'sales_id_seq\'::regclass, (SELECT MAX(id) FROM sales))')
+rescue NameError
+end
