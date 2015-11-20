@@ -1,3 +1,8 @@
+$grey_teal: #a3c2c2;
+$grey: #666666;
+
+$button_color: $grey_teal;
+
 body {
   font-family: 'Quicksand', sans-serif;
   background-color: #FFFFFF;
@@ -70,6 +75,9 @@ body {
 .description {
   text-align: center;
   font-size: 16px;
+  padding: 20px 0px;
+  border-top: 1px solid $grey;
+  border-bottom: 1px solid $grey;
 }
 
 .home-pg-markets {
@@ -79,7 +87,7 @@ body {
 
 .market-link {
   text-decoration: none;
-  color: #666666;
+  color: $grey;
 }
 
 .market-link:hover {color: #000000;}
@@ -88,11 +96,11 @@ body {
   float: left;
   display: inline;
   text-align: center;
-  width: 100px;
-  height: 65px;
+  width: 130px;
+  height: 75px;
   font-size: 24px;
   color: #666666;
-  border: 1px solid #666666;
+  border: 1px solid $grey;
   margin: 10px;
   border-radius: 80%;
   background-color: #FFFFFF;
@@ -100,9 +108,36 @@ body {
   text-decoration: none;
 }
 
+.larger_nav_button {
+  float: left;
+  display: inline;
+  text-align: center;
+  width: 170px;
+  height: 75px;
+  font-size: 24px;
+  color: $grey;
+  border: 1px solid $grey;
+  margin: 10px;
+  margin-top: 40px;
+  border-radius: 80%;
+  background-color: $button_color;
+  padding-top: 55px;
+  padding-bottom: 35px;
+  text-decoration: none;
+}
+
+
 .button_nav {
   width: 375px;
   height: 100px;
+  margin: 0 auto;
+  text-align: center;
+  display: block;
+}
+
+.one_return_nav {
+  width: 200px;
+  height: 200px;
   margin: 0 auto;
   text-align: center;
   display: block;
