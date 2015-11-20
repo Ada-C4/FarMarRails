@@ -4,6 +4,10 @@
 <h3><%= link_to "current month sales", current_month_vendor_sales_path %></h3>
 
 <h1>Sales</h1>
+<p>
+  <%= link_to "Add a new sale", new_vendor_sale_path(:vendor_id => @vendor.id) %>
+</p>
+
 <table class="table">
   <% if @sales.length == 0 %>
     <h4>no sales :(</h4>
@@ -24,6 +28,7 @@
   <% end %>
 </table>
 
-<p>
-  <%= link_to "Add a new sale", new_vendor_sale_path(:vendor_id => @vendor.id) %>
-</p>
+<nav>
+  <%=link_to "Back to Vendor", vendor_path(:id => @vendor.id) %>
+  <%= link_to "Back to all Vendors", vendors_path %>
+</nav>

@@ -3,6 +3,11 @@
 <h3><%= link_to "Sales for this vendor", vendor_sales_path(@vendor) %></h3>
 
 <h1>Products</h1>
+
+<p>
+  <%= link_to "Add a new product", new_vendor_product_path(@vendor) %>
+</p>
+
 <table class="table">
   <% @products.each do |product| %>
     <tr>
@@ -19,6 +24,6 @@
    <% end %>
 </table>
 
-<p>
-  <%= link_to "Add a new product", new_vendor_product_path(@vendor) %>
-</p>
+<nav>
+  <%= link_to "Back to Vendors", vendors_path %>
+</nav>
