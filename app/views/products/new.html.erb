@@ -9,5 +9,5 @@
     <br>
     <%= f.submit("Add Product!") %>
   <% end %>
-  <%= link_to "Go back to vendor", "/vendors/#{@vendor.id}" %>
+  <%= link_to "Go back to vendor", vendor_path(params[:vendor_id]) %>
 </div>
