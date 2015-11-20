@@ -7,7 +7,7 @@ class VendorsController < ApplicationController
 
 	def all
 		@vendors = Vendor.all
-		@vendors.sort! { |vendor| vendor.name }
+		@vendors.order(:name)
 	end
 
 	def new
