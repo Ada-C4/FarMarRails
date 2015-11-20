@@ -1,7 +1,9 @@
-<h1>Choose a Vendor</h1>
+<h1 class='pg-header'>Choose a Vendor</h1>
 
-<ul>
+<table class='table_list' id='vendor_table'>
   <% @vendors.each do |vendor| %>
-    <li><%= link_to vendor.name.titleize, market_vendor_path(vendor.market_id, vendor.id) %></li>
+  <tr>
+    <td><%= link_to vendor.name.titleize, market_vendor_path(vendor.market_id, vendor.id), class: "market-link" %></td>
+  </tr>
   <% end %>
-</ul>
+</table>

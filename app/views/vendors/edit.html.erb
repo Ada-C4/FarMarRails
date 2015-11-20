@@ -1,3 +1,5 @@
-<%= render partial:'vendor_form', locals:{form_title: 'Edit this Vendor', url: market_vendor_path, method: :patch} %>
+<div class='form'>
+  <%= render partial:'vendor_form', locals:{form_title: 'Edit this Vendor', url: market_vendor_path, method: :patch} %>
+</div>
 
-<%= link_to 'Return to Market', market_path(id: params[:market_id]), method: :get, class: "back-button" %>
+<%= link_to 'Return to Market', market_path(id: params[:market_id]), method: :get, class: "larger_nav_button" %>

@@ -183,6 +183,24 @@ table {
   display: block;
 }
 
+#vendor_table {
+  text-align: center;
+  width: 300px;
+}
+
 tr {
   margin: 3px;
+}
+
+.form {
+  width: 400px;
+  height: 200px;
+}
+
+fieldset {
+  border: none;
+}
+
+#num_emp {
+  width: 25px;
 }
