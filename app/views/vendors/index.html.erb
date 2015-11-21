@@ -1,0 +1,7 @@
+<h1>Vendors</h1>
+<p>Please Select Which Vendor:</p>
+<ul class='index'>
+  <% @vendors.each do |vendor| %>
+    <li><%= link_to vendor.name, vendor %></li>
+  <% end %>
+</ul>

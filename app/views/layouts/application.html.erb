@@ -1,12 +1,21 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <link href='https://fonts.googleapis.com/css?family=Old+Standard+TT' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
   <title>FarMarRails</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <header>
+  <nav>
+    <%= link_to "View All Markets", markets_user_view_path, class: "home-page" %>
+    <%= link_to "I am a Market", markets_path, class: "home-page" %>
+    <%= link_to "I am a Vendor", vendors_path, class: "home-page" %>
+  </nav>
+</header>
 
 <%= yield %>
 

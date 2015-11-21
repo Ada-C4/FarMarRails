@@ -1,0 +1,60 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+ body {
+   font-family: 'Old Standard TT', serif;
+   background-image: image-url("apple_black.jpeg");
+   -webkit-background-size: cover;
+   -moz-background-size: cover;
+   -o-background-size: cover;
+   background-size: cover;
+   color: #F0F0F0;
+   background-color: #251B4A;
+   background-attachment: fixed;
+   cursor: image-url("apple.png"), auto
+ }
+ img{
+   width: 100%;
+   height: 100%;
+ }
+ .index {
+   line-height: 200%;
+
+ }
+ a {
+  color: #F2F2F2;
+  text-decoration: none;
+
+}
+
+a:hover {color: #20c98e}
+h1{
+  font-family: 'Pacifico', cursive;
+  font-size: 40px;
+}
+.home-page-head{
+  margin-top: 150px;
+  font-family: 'Pacifico', cursive;
+  font-size: 75px;
+}
+.home-page{
+  font-family: 'Pacifico', cursive;
+  font-size: 20px;
+  text-decoration: none;
+  display: inline;
+  padding: 0 50px;
+  background-color: #F0F0F0;
+  color: #6B1629;
+}

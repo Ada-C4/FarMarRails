@@ -1,0 +1,13 @@
+<h1>Markets</h1>
+<% if @market_link == true %>
+  <h2><%=link_to "Add a Market!", new_market_path %></h2>
+<% end %>
+<ul class='index'>
+  <% @markets.each do |market| %>
+    <% if @market_link == false%>
+      <li><%=link_to market.name, user_show_path(market.id) %></li>
+    <% else %>
+      <li><%=link_to market.name, market_path(market.id) %></li>
+    <% end %>
+  <% end %>
+</ul>

@@ -1,0 +1,28 @@
+<h1><%= @market.name %></h1>
+
+<ul>
+  <li>Address: <%= @market.address %></li>
+  <li>City: <%= @market.city %></li>
+  <li>County: <%= @market.county %></li>
+  <li>State: <%= @market.state %></li>
+  <li>Zip Code: <%= @market.zip %></li>
+</ul>
+<% if @buttons == true %>
+  <li><%=link_to "Edit this market", edit_market_path %></li>
+  <li><%=link_to "Create a new vendor", new_market_vendor_path(@market) %></li>
+<% end %>
+
+<h3>Vendors:</h3>
+<table>
+  <tbody>
+  <% @vendors.each do |vendor| %>
+  <tr>
+      <td>◦ <%= vendor.name%></td>
+      <% if @buttons == true %>
+        <td><%=link_to "✐", edit_market_vendor_path(@market, vendor) %></td>
+        <td><%=link_to "✘",market_vendor_path(@market, vendor), method: :delete, data: {confirm: "Are you sure?"} %></td>
+      <% end %>
+  <% end %>
+  </tr>
+</tbody>
+</table>

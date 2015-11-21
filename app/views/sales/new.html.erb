@@ -1,0 +1,11 @@
+<%= form_for @sale, url: { action: "create"} do |f| %>
+
+  <fieldset>
+    <legend><%=@product.name%></legend>
+    <br>
+    <%= f.label :amount, "Amount: $" %>
+    <%= f.number_field :amount, :value => 0, :min => 0, :step => 0.01 %>`
+    <br>
+  </fieldset>
+  <%= f.submit %>
+<% end %>

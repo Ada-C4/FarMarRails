@@ -1,0 +1,7 @@
+<h1><%= @header %></h1>
+
+<%= form_for @product, url: { action: @action}, method: @method do |f| %>
+    <%= f.label :name, "Name: " %>
+    <%= f.text_field :name%>
+  <%= f.submit %>
+<% end %>

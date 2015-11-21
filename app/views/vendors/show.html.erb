@@ -1,0 +1,64 @@
+<h1><%= @vendor.name %></h1>
+
+<p>Number of Employees: <%= @vendor.employees %></p>
+<p>Market: <%= @vendor.market.name %></p>
+
+<h3>Products:</h3>
+<table>
+  <tbody>
+    <% @vendor.products.each do |product| %>
+      <tr>
+        <td>◦ <%= product.name %></td>
+        <td> <%= link_to "✐", edit_vendor_product_path(@vendor.id,product.id) %> </td>
+        <td> <%=link_to "✘", vendor_product_path(@vendor.id,product.id), method: :delete, data: {confirm: "Are you sure?"} %></td>
+        <td> <%= link_to "$ Add Sale", new_vendor_product_sale_path(@vendor.id,product.id) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<%= link_to "Add A New Product", new_vendor_product_path(@vendor) %>
+
+<h3>Total Sales:</h3>
+<table>
+  <thead>
+    <tr>
+      <th>Product</th>
+      <th>Date</th>
+      <th>Amount</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @vendor.sales.each do |sale| %>
+      <tr>
+        <td><%= sale.product.name%></td>
+        <td><%= sale.purchase_time%></td>
+        <td><%= number_to_currency(sale.amount.to_f/100) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<h3>Monthly Sales:</h3>
+<table>
+  <thead>
+    <tr>
+      <th>Product</th>
+      <th>Date</th>
+      <th>Amount</th>
+    </tr>
+  </thead>
+  <tbody>
+      <% @vendor.month_sales.each do |vendor|%>
+      <tr>
+          <td><%= vendor.product.name%></td>
+          <td><%=vendor.purchase_time%></td>
+          <td><%=number_to_currency(vendor.amount.to_f/100)%></td>
+        <%end%>
+      </tr>
+  </tbody>
+</table>
+
+<h4>Total Sales This Month: $<%= @vendor.month_totals %></h4>
+<h4>Overall Total Sales: $<%= @vendor.sales.sum(:amount).to_f/100 %></h4>
