@@ -14,12 +14,14 @@ class VendorsController < ApplicationController
     redirect_to market_path(params[:market_id])
   end
 
+
   def new
     @vendor = Vendor.new
     @action = "create"
     @method = :post
     @title = "Vendor Information"
   end
+
   def edit
     @title = "Edit Vendor"
     id = params[:id]
@@ -30,14 +32,14 @@ class VendorsController < ApplicationController
   end
 
   def update
-    Vendor.update(params[:id], vendor_params[:vendor])
-    redirect_to '/'
+    Vendor.update(params[:id], vendor_params)
+    redirect_to market_path(params[:market_id])
   end
 
   def destroy
     id = params[:id]
     @vendor =Vendor.find(id).destroy
-    redirect_to '/'
+    redirect_to market_path(params[:market_id])
   end
 
 private
