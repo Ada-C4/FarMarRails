@@ -1,0 +1,19 @@
+<div class="pretend-nav">
+  <div class="nav-position">
+  <%= link_to "CREATE MARKET", new_market_path  %>
+  <%= link_to "EDIT", edit_market_path(@market) %>
+  <%= link_to "ADD VENDOR", new_market_vendor_path(@market) %>
+  </div>
+</div>
+
+<h1><%= @market.name %></h1>
+
+
+<h2>Vendors</h2>
+<ul>
+  <% @market.vendors.each do |vendor| %>
+    <li>
+      <span><%= link_to vendor.name, market_vendor_path(@market, vendor) %></span>
+    </li>
+  <% end %>
+</ul>

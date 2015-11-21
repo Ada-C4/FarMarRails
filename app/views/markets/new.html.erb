@@ -1,0 +1,22 @@
+<div class="center">
+  <%= form_for @market, url: { action: @action } do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name, required: true%>
+    <br>
+    <%= f.label :address %>
+    <%= f.text_field :address %>
+    <br>
+    <%= f.label :city %>
+    <%= f.text_field :city %>
+    <br>
+    <%= f.label :county %>
+    <%= f.text_field :county %>
+    <br>
+    <%= f.label :state %>
+    <%= f.text_field :state %>
+    <br>
+    <%= f.label :zip %>
+    <%= f.text_field :zip %>
+    <%= f.submit %>
+  <% end %>
+</div>

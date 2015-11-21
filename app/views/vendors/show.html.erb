@@ -1,0 +1,44 @@
+<div class="pretend-nav">
+  <div class="nav-position">
+  <%= link_to "CREATE PRODUCT", new_vendor_product_path(@vendor) unless @market %>
+  <%= link_to "EDIT", edit_vendor_path(@vendor) unless @market %>
+  <%= link_to "EDIT", edit_market_vendor_path(@market, @vendor) if @market %>
+  <%= link_to "DELETE VENDOR", market_vendor_path(@market, @vendor), method: :delete, onclick: "return confirm('Are you sure?')" if @market%>
+  </div>
+</div>
+
+<h1><%= @vendor.name %></h1>
+
+<h2>Employees: <%= @vendor.employees %></h2>
+<% unless @market %>
+  <%= form_tag vendor_path(@vendor), method: :get do %>
+    <%= select_tag("Your Products", options_from_collection_for_select(@vendor.products, "id", "name"), name: "product_select") %>
+    <%= submit_tag "See Product" %>
+  <% end %>
+
+  <h2>Sales</h2>
+  <ul>
+    <% @vendor.products.each do |product| %>
+    <li>
+      <span><%= link_to product.name, vendor_product_path(@vendor, product) %></span>
+    </li>
+    <% product.sales.each do |sale| %>
+      <div>
+        <%= number_to_currency(in_dollars sale.amount) %>
+      </div>
+      <% end %>
+    <% end %>
+    <h3>Total sales: <%= number_to_currency(in_dollars @vendor.total_sales) %> </h3>
+  </ul>
+
+
+  <h2>Sales for <%= Date::MONTHNAMES[Date.today.month] %> </h2>
+  <ul>
+    <% @vendor.monthly_sales.each do |sale| %>
+      <li>
+        <%= number_to_currency(in_dollars sale.amount) %>
+      </li>
+    <% end %>
+    <h3>Total: <%= number_to_currency(in_dollars @vendor.total_monthly) %> </h3>
+  </ul>
+<% end %>

@@ -1,4 +1,19 @@
 Rails.application.routes.draw do
+  root 'welcome#index'
+
+  get 'welcome/select' => 'welcome#select', as: :select_user
+
+  resources :markets do
+    resources :vendors, only: [:show, :index, :new, :create, :destroy, :edit, :update]
+  end
+
+  resources :vendors, except: [:index, :new, :create, :destroy] do
+    resources :products do
+      resources :sales do
+      end
+    end
+  end
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

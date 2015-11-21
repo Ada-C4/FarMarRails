@@ -1,0 +1,14 @@
+<div class="center">
+  <h1>Welcome to FarMar</h1>
+  <%= form_tag select_user_path, method: :get do %>
+    <%= collection_select(:market, :id, @markets, :id, :name, prompt: "Select a Market") %>
+    <%= submit_tag "View Market" %>
+  <% end %>
+
+  <br>
+
+  <%= form_tag select_user_path, method: :get do %>
+    <%= collection_select(:vendor, :id, @vendors, :id, :name, prompt: "Select a Vendor") %>
+    <%= submit_tag "View Vendor" %>
+  <% end %>
+</div>
