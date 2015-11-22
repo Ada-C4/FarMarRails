@@ -1,0 +1,53 @@
+<div class='nav-two-links'>
+  <%= link_to 'home', '/', class: 'top-nav-button' %>
+  <%= link_to 'all markets', markets_path, method: :get, class: "top-nav-button" %>
+</div>
+
+<hr class="nav-hr" />
+
+<h1 class='pg-header'><%= @market.name %></h1>
+<div class='description'>
+  <%= @market.address.titleize %> | <%= @market.city.titleize %> | <%= @market.county.titleize %> County | <%= @market.state.titleize %> | <%= @market.zip %>
+</div>
+
+<h2 class="pg-sub-header">Current Vendors</h2>
+
+<% if @is_guest %>
+  <table class='guest_table'>
+    <% @market.vendors.each do |vendor| %>
+      <tr>
+        <td><%= vendor.name.titleize %></td>
+      </tr>
+    <% end %>
+  </table>
+  <br><br>
+<% end %>
+
+<% if @is_vendor %>
+  <table class='guest_table'>
+    <% @market.vendors.each do |vendor| %>
+      <tr>
+        <td><%= link_to vendor.name.titleize, market_vendor_path(market_id: vendor.market_id, id: vendor.id ) %></td>
+      </tr>
+    <% end %>
+  </table>
+  <div class="one_button_nav">
+    <%= link_to 'return to markets', markets_path, class: 'top-nav-button' %>
+  </div>
+<% end %>
+
+<% if @is_market %>
+  <table class='table_list', id='vendors_with_buttons'>
+    <% @market.vendors.each do |vendor| %>
+    <tr>
+      <td class='list_name'><%= vendor.name.titleize %></td>
+      <td class='button-column'><%= button_to '', edit_market_vendor_path(market_id: vendor.market_id, id: vendor.id), method: :get, class: 'edit-button' %></td>
+      <td class='button-column'><%= button_to '', market_vendor_path(market_id:vendor.market_id, id: vendor.id), method: :delete, class: 'delete-button' %></td>
+    </tr>
+    <% end %>
+  </table><br>
+  <div class="two_larger_button_nav">
+    <%= link_to 'Add New Vendor', new_market_vendor_path(market_id: @market.id), class: 'nav_button_bottom' %><br><br>
+  </div>
+  </div>
+<% end %>

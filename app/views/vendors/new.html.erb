@@ -1,0 +1,8 @@
+<div class='nav-two-links'>
+  <%= link_to 'home', '/', class: 'top-nav-button' %>
+  <%= link_to 'return to market', market_path(id: params[:market_id]), method: :get, class: "top-nav-button" %>
+</div>
+
+<hr class="nav-hr" />
+
+<%= render partial:'vendor_form', locals:{form_title:'add a vendor', url: market_vendors_path, method: :post} %>

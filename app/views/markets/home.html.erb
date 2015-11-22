@@ -1,0 +1,50 @@
+<div class="image-container">
+  <img src="http://static1.squarespace.com/static/5522b667e4b023edbe766928/5537de53e4b000602c33d971/5537df04e4b000602c33eb51/1402423558000/tinysapriums.jpg?format=original" alt="farmers market" class="home-pg-image">
+</div>
+
+<div class="home-pg-header-container">
+  <h1 class="home-pg-header">FARMER'S MARKETS</h1>
+  <p class="home-pg-sub-header">continue as a:</p>
+</div>
+
+
+<div class="button-container">
+  <%= link_to(markets_path(user_type: 'market'), :class => "home-pg-button", :id => "market-button") do %>
+    <hr />
+    MARKET
+    <hr />
+  <% end %>
+
+  <%= link_to(vendors_path(user_type: 'vendor'), :class => "home-pg-button", :id => "vendor-button") do %>
+    <hr />
+    VENDOR
+    <hr />
+  <% end %>
+
+  <%= link_to(markets_path(user_type: 'guest'), :class => "home-pg-button", :id => "guest-button") do %>
+    <hr />
+    GUEST
+    <hr />
+  <% end %>
+
+  <%= link_to("#markets", :class => "home-pg-button", :id => "all-markets-button") do %>
+    <hr />
+    SEE ALL MARKETS
+    <hr />
+  <% end %>
+</div>
+
+
+<div class="pg-sub-header">
+  <a name="markets" class="pg-sub-header">
+    All Markets
+  </a>
+</div>
+
+<table class="guest_table">
+  <% @markets.each do |market| %>
+  <tr>
+    <td><%= link_to market.name.titleize, market, class: "market-link" %></td>
+  </tr>
+  <% end %>
+</table>

@@ -1,0 +1,17 @@
+<div class='nav'>
+  <%= link_to 'home', '/', class: 'top-nav-button' %>
+</div>
+
+<hr class="nav-hr" />
+
+<h1 class='pg-header'>choose a vendor</h1>
+
+<br>
+
+<table class='table_list' id='vendor_table'>
+  <% @vendors.each do |vendor| %>
+  <tr>
+    <td><%= link_to vendor.name.titleize, market_vendor_path(vendor.market_id, vendor.id), class: "market-link" %></td>
+  </tr>
+  <% end %>
+</table>
