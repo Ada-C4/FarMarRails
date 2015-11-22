@@ -11,7 +11,7 @@ class VendorsController < ApplicationController
 
   def create
     a = Vendor.create(vendor_params[:vendor])
-    redirect_to vendor_path(a.id)
+    redirect_to market_path(a.market_id)
   end
 
   def show

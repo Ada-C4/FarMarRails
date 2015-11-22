@@ -1,3 +1,9 @@
+<nav>
+<a class="nav_link" href="/">Return Home | </a>
+<a class="nav_link" href="/vendors">View All Vendors | </a>
+<%= link_to "Back to Vendor Page", vendor_path(params[:vendor_id]), class: "nav_link" %>
+</nav>
+
 <h1>Product Details</h1>
 
 <h2><%= @product.name %></h2>

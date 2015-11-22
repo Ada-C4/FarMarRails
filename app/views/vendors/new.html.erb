@@ -1,3 +1,9 @@
+<nav>
+<a class="nav_link" href="/">Return Home | </a>
+<a class="nav_link" href="/markets">View All Markets | </a>
+<%= link_to "Back to Market Page", market_path(params[:market_id]), class: "nav_link" %>
+</nav>
+
 <h1>Add a new new vendor</h1>
 <fieldset>
   <%= form_for @new_vendor, url: {action: :create} do |f| %>
