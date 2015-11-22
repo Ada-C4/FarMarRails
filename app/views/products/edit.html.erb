@@ -1,0 +1,14 @@
+<nav>
+<a class="nav_link" href="/">Return Home | </a>
+<a class="nav_link" href="/vendors">View All Vendors | </a>
+<%= link_to "Back to Vendor Page", vendor_path(params[:vendor_id]), class: "nav_link" %>
+</nav>
+
+<fieldset>
+  <legend><h1>Edit product information</h1></legend>
+  <%= form_for @product, url: {action: :update} do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.submit %>
+  <% end %>
+</fieldset>

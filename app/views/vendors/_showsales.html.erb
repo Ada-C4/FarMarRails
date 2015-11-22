@@ -1,0 +1,11 @@
+<h3><%= title %></h3>
+
+<ul>
+<% sales.each do |sale| %>
+  <li>
+    <%= number_to_currency(sale.amount/100) %> on <%= sale.purchase_time.strftime("%m-%d-%Y") %>
+  </li>
+<% end %>
+</ul>
+
+<p><strong>Total: </strong><%= number_to_currency(total_sales) %></p>

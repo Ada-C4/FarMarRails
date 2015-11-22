@@ -1,0 +1,17 @@
+<nav>
+<a class="nav_link" href="/">Return to Home Page</a>
+</nav>
+
+<h1>Welcome to the Market Portal</h1>
+
+<div class="center">
+  <div class="button market_button">
+    <%= link_to "Add a New Market", new_market_path %>
+  </div>
+</div>
+
+Choose your market's name to log in.
+
+<h2>All Markets:</h2>
+
+<%= render partial: 'shared/marketlist', locals: { markets: @markets} %>

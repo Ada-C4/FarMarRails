@@ -1,0 +1,21 @@
+<nav>
+<a class="nav_link" href="/">Return Home</a>
+</nav>
+
+<h1> Welcome to the Vendor Portal</h1>
+
+<h3>All Vendors:</h3>
+
+<p>
+  Choose your vendor name to log in.
+</p>
+
+<ul>
+
+  <% @vendors.each do |vendor| %>
+
+    <li><%= link_to vendor.name, market_vendor_path(vendor.market_id, vendor.id) %>
+    </li>
+  <% end %>
+
+</ul>

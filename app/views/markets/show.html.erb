@@ -1,0 +1,36 @@
+<nav>
+<a class="nav_link" href="/">Return Home | </a>
+<a class="nav_link" href="/markets">View All Markets</a>
+</nav>
+
+<h1>Market Detail</h1>
+
+<h3><%= @market.name %></h3>
+
+<p>Located at:
+<br>
+<%= @market.address %>
+<br>
+<%= @market.city %> in <%= @market.county %> County
+<br>
+<%= @market.state %>, <%= @market.zip %>
+</p>
+<%= link_to "✎ edit market", edit_market_path(@market.id),{class: "edit"} %>
+<%= link_to "✘ delete  market", market_path(@market.id), method: :delete, class: "delete"%>
+
+<h3>Vendors at <%= @market.name %>:</h3>
+
+<ul>
+  <% @vendors.each do |vendor| %>
+    <li><%= vendor.name %>
+      <%= link_to "✎", edit_market_vendor_path(vendor.market_id, vendor.id), {class: "edit"}%>
+      <%= link_to "✘", market_vendor_path(vendor.market_id, vendor.id), method: :delete, class: "delete" %>
+    </li>
+  <% end %>
+</ul>
+
+<div class="center">
+  <div class="button vendor_button">
+    <%= link_to "Add a new vendor", new_market_vendor_path(params[:id]) %>
+  </div>
+</div>

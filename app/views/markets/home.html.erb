@@ -1,0 +1,20 @@
+<h1>Welcome to the FarMar Finder</h1>
+
+<div class="center">
+  <div class="button market_button">
+    <%= link_to "I Am a Market", markets_path %>
+  </div>
+  <div class="button vendor_button">
+    <%= link_to "I Am a Vendor", vendors_path %>
+  </div>
+</div>
+
+<h2>All Markets:</h2>
+
+<ul>
+  <% @markets.each do |market| %>
+    <li>
+      <%= link_to market.name, "/markets/#{market.id}/view" %>
+    </li>
+  <% end %>
+</ul>

@@ -1,0 +1,38 @@
+<nav>
+<a class="nav_link" href="/">Return Home | </a>
+<a class="nav_link" href="/vendors">View All Vendors</a>
+</nav>
+
+<h1> <%= @vendor.name %> details </h1>
+
+<p> You can find me at <%= @vendor.market.name %></p>
+<p> Number of employees: <%= @vendor.employees %></p>
+
+<div class="center">
+  <div class="show_sales">
+    <%= render partial: "showsales", locals: {title: "All Sales", sales: @sales, total_sales: @total_sales} %>
+  </div>
+
+  <div class="show_sales">
+    <%= render partial: "showsales", locals: {title: "All Sales this Month", sales: @sales_this_month, total_sales: @total_sales_this_month} %>
+  </div>
+</div>
+
+
+
+<h3> My Products </h3>
+<ul>
+
+  <% @products.each do |product| %>
+    <li><%=link_to product.name, vendor_product_path(product.vendor_id, product.id) %>
+      <%= link_to "✎", edit_vendor_product_path(product.vendor_id, product.id), method: :get, class: "edit" %>
+      <%= link_to "✘", vendor_product_path(product.vendor_id, product.id), method: :delete, class: "delete"%>
+    </li>
+  <% end %>
+
+</ul>
+<div class="center">
+  <div class="button vendor_button">
+      <%= link_to "Add a New Product", new_vendor_product_path(params[:id]) %>
+  </div>
+</div>

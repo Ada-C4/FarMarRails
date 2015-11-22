@@ -1,4 +1,25 @@
 Rails.application.routes.draw do
+  root 'markets#home'
+
+  get 'vendors/' => 'vendors#vendors'
+  get '/markets/:id/view' => 'markets#view'
+  # get '/vendors/:vendor_id/product/:product_id' => 'products#create'
+
+  resources :markets do
+    resources :vendors do
+    end
+  end
+
+  resources :vendors do
+    resources :products do
+      resources :sales do
+      end
+    end
+  end
+
+
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
