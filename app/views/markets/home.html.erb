@@ -1,0 +1,9 @@
+<div>
+  <h1>Welcome to FarMar!</h1>
+  <h2>Delicious, Nutricious, and Ficticious</h2>
+  <div>
+    <%= link_to "I am a Market", markets_path(user_type: "market"), class: "btn-default" %>
+    <%= link_to "I am a Vendor", vendors_path(user_type: "vendor"), class: "btn-default" %>
+    <%= link_to "I am a Guest", markets_path(user_type: "guest"), class: "btn-default"  %>
+  </div>
+</div>

@@ -1,0 +1,31 @@
+<div class="container">
+  <%= link_to "See all Markets", markets_path, class: "btn btn-default" %>
+  <h1>ALL OF THEM VENDORS</h1>
+  <table class="table table-hover">
+    <tr >
+      <th class="col-md-6">
+        VENDOR
+      </th>
+      <th>
+        MARKET
+      </th>
+      <th>
+        STATE
+      </th>
+    </tr>
+    <% @vendors.each do |vendor| %>
+      <tr>
+        <td>
+          <%= link_to "#{vendor.name}", "/vendors/#{vendor.id}" %>
+        </td>
+        <td>
+          <% market = Market.find(vendor.market_id) %>
+          <%= market.name %>
+        </td>
+       <td>
+         <%= market.state %>
+       </td>
+     </tr>
+    <% end %>
+  </table>
+</div>

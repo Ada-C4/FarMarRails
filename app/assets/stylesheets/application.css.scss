@@ -1,0 +1,76 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+ @import "bootstrap-sprockets";
+ @import "bootstrap";
+ @import url(https://fonts.googleapis.com/css?family=Montserrat);
+ @import url(https://fonts.googleapis.com/css?family=EB+Garamond);
+ @import url(https://fonts.googleapis.com/css?family=Fjalla+One);
+ @import url(https://fonts.googleapis.com/css?family=PT+Serif);
+ @import url(https://fonts.googleapis.com/css?family=Muli);
+
+
+body {
+  font-family: 'PT Serif', serif;
+    font-size: 16px;
+    line-height: 23px;
+    margin: 0 0 23px 0;
+  margin: 0;
+  background: image-url('blue.jpg');
+  background-size: 1440px 800px;
+  display: compact;
+  }
+
+  div {
+    background-color: #F1F2F2;
+    opacity: 0.95;
+    padding: 30px;
+    margin: 60px;
+  }
+
+  .container {
+    margin-top: 50px;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+  }
+
+  h1 {
+    text-align: center;
+    padding: 25px;
+    padding-top: 40px;
+    font-family: 'Muli', sans-serif;
+      font-weight: normal;
+      text-transform: uppercase;
+      line-height: 50px;
+      font-size: 50px;
+      margin: 0 0 23px 0;
+  }
+
+  h2 {
+    text-align: center;
+  }
+
+  .table-division {
+    border-top-style: solid;
+    border-top-width: medium;
+  }
+
+  footer {
+    text-align: center;
+  }
+
+.sales {
+  font-family: 'Muli', sans-serif;
+}
