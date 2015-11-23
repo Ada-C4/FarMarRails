@@ -31,7 +31,8 @@
   <%= link_to "Go back to list of markets", markets_path, class: "btn btn-default" %>
 </div>
 
-<% elsif @is_market %>
+<% end %>
+<% if @is_market %>
 <div>
   <h1><%= @vendor.name %></h1>
   <h3>Stats:</h3>
