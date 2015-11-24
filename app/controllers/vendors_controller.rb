@@ -1,5 +1,5 @@
 class VendorsController < ApplicationController
-  before_action :get_vendor, only: [:edit, :update]
+  before_action :get_vendor, only: [:edit, :update, :show]
 
   def index
     @vendors = Vendor.all
@@ -23,8 +23,6 @@ class VendorsController < ApplicationController
       render 'vendors/error'
     else
       @vendor = Vendor.find(id)
-      @products = @vendor.products
-      @sales = @vendor.sales
     end
   end
 
