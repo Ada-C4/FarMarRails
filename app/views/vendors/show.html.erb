@@ -1,0 +1,27 @@
+<h1>Welcome, <%= @vendor.name %>!</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Num of Employees</th>
+    <th>Products</th>
+  </tr>
+
+  <tr>
+    <td><%= @vendor.name %></td>
+    <td><%= @vendor.no_of_employees %></td>
+    <td>
+      <ul>
+        <% @vendor.products.each do |product| %>
+          <li><%= product.name %> <%= link_to "Delete", product, method: :delete %>
+            <%= link_to "Edit", edit_product_path(:id => product.id), method: :get %></li>
+        <% end %>
+      </ul>
+    </td>
+  </tr>
+</table>
+<section class ="footer">
+  <%= link_to "Add a Product", new_vendor_product_path(@vendor.id) %>
+  <%= link_to "View All Sales", vendor_sales_path(@vendor.id) %>
+  <%= link_to "Add a Sale", new_vendor_sale_path(@vendor.id) %>
+</section>

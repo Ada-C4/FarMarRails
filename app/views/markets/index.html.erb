@@ -1,1 +1,30 @@
-<h1>THIS IS A WEBSITE</h1>
+<h1>All Markets</h1>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Address</th>
+    <th>City</th>
+    <th>County</th>
+    <th>State</th>
+    <th>Zip</th>
+    <th>Vendors</th>
+  </tr>
+  <% @markets.each do |market| %>
+  <tr>
+    <td><%= market.name %></td>
+    <td><%= market.address %></td>
+    <td><%= market.city %></td>
+    <td><%= market.country %></td>
+    <td><%= market.state %></td>
+    <td><%= market.zip %></td>
+    <td>
+      <ul>
+        <% market.vendors.each do |vendor| %>
+        <li><%= vendor.name %></li>
+        <% end %>
+      </ul>
+    </td>
+  </tr>
+  <% end %>
+
+</table>

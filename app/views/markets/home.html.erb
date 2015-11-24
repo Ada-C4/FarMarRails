@@ -1,0 +1,32 @@
+<h1>Farmer's Markets</h1>
+
+<section>
+  <%= form_tag mkt_select_path, method: :get, class: "notopaque" do %>
+    <fieldset>
+      <legend> Visit Market Home</legend>
+      <%= collection_select(:market, :id, Market.all, :id, :name, prompt: "Select one:") %>
+      <br>
+      <%= submit_tag "Go to Market" %>
+    </fieldset>
+  <% end %>
+
+  <%= form_tag v_select_path, method: :get, class: "notopaque" do %>
+    <fieldset>
+      <legend> Visit Vendor Home </legend>
+      <%= collection_select(:vendor, :id, Vendor.all, :id, :name, prompt: "Select one:") %>
+      <br>
+      <%= submit_tag "View Vendor" %>
+    </fieldset>
+  <% end %>
+
+  <%= form_tag mkt_details_path, method: :get do %>
+    <fieldset>
+      <legend> View Market Details </legend>
+      <%= collection_select(:market, :id, Market.all, :id, :name, prompt: "Select one:") %>
+      <br>
+      <%= submit_tag "View Market" %>
+    </fieldset>
+  <% end %>
+
+  <%= link_to "View All Markets", markets_path %>
+  </section>

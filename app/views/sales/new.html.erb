@@ -1,0 +1,19 @@
+<h1>Create a Sale</h1>
+
+<section>
+  <%= form_for @sale, url: "/vendors/#{:vendor_id}/sales" do |f| %>
+  <fieldset>
+    <legend>Create Sale</legend>
+
+    <%= f.label :amount %>
+    <%= f.text_field :amount %><br>
+    <%= collection_select(:product, :id, @products, :id, :name, prompt: "Select one:") %>
+    <%= f.hidden_field :vendor_id, :value => params[:vendor_id] %>
+    <%= f.hidden_field :purchase_time, :value => Time.now %>
+    <br>
+    <%= f.submit %>
+
+  </fieldset>
+  <% end %>
+
+</section>
