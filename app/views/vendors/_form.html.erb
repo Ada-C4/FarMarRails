@@ -1,0 +1,13 @@
+<%= form_for @vendor, :html => {:class => "form-group"} do |f| %>
+  <fieldset>
+    <legend><%= legend_text %></legend>
+    <%= f.label :name %>
+    <%= f.text_field :name, class: 'form-control', :required => true %>
+    <%= f.label :no_employees %>
+    <%= f.text_field :no_employees, class: 'form-control' %>
+    <br>
+    <%= f.collection_select(:market_id, Market.all, :id, :name, {prompt: "Select the market:"}, {class: 'form-control', :required => true}) %>
+    <br>
+    <%= f.submit value: "#{button_text}", class: "btn btn-primary" %>
+  </fieldset>
+<% end %>

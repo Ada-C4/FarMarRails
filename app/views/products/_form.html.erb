@@ -1,0 +1,9 @@
+<%= form_for @product, url: @url_path, :html => {:class => "form-group"} do |f| %>
+  <fieldset>
+    <legend><%= legend_text %></legend>
+    <%= f.label :name %>
+    <%= f.text_field :name, class: 'form-control', :required => true  %>
+    <br>
+    <%= f.submit value: "#{button_text}", class: "btn btn-primary" %>
+  </fieldset>
+<% end %>

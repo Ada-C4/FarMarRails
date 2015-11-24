@@ -1,0 +1,19 @@
+<% provide(:title, "View Vendor's Products") %>
+<table class="table table-hover table-color">
+  <thead>
+    <tr>
+      <td>Product Name</td>
+      <td></td>
+      <td></td>
+    </tr>
+  </thead>
+  <tbody>
+  <% @products.each do |product| %>
+    <tr>
+      <td><%= product.name %></td>
+      <td><%= button_to "Add Sale", sales_new_vendor_product_path(session[:vendor_id], product.id), method: :get %></td>
+      <td><%= button_to "Delete Me", vendor_product_path(session[:vendor_id],product.id), method: :delete, data: { confirm: "Are you sure you want to delete this #{product.name}?" } , class: 'x-button' %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>

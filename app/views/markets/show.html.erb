@@ -1,0 +1,10 @@
+<% provide(:title, "Market Information") %>
+<p>
+  I'm the market: <%= @market.name %>
+</p>
+<p>
+  Here's some info about me: <%= @market.address %> <%= @market.city %> <%= @market.county %> <%= @market.state %> <%= @market.zip %>
+</p>
+<p>
+  Here are my vendors: <% @vendors.each do |vendor| %> <%= vendor.name %> <% end %>
+</p>

@@ -1,0 +1,44 @@
+<% if @month.nil? %>
+  <% provide(:title, "Show All Vendor Sales") %>
+<% else %>
+  <% provide(:title, "Sales For #{@month}") %>
+<% end %>
+<table class="table table-hover table-color">
+  <thead>
+    <tr>
+      <td>Product Name</td>
+      <td>Price</td>
+      <td>Date</td>
+      <td>Time</td>
+      <td></td>
+    </tr>
+  </thead>
+  <tbody>
+    <% total_sales_amount = 0 %>
+    <% product_count = 0 %>
+    <% if @sales.empty? %>
+    <tr>
+      <td colspan="3">No sales in this time period.</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <% else %>
+    <% @sales.each do |sale| %>
+      <tr>
+        <td><%= sale.product.name %></td>
+        <td><%= number_to_currency(sale.amount / 100.0) %></td>
+        <td><%= sale.purchase_time.strftime("%b %-d, %Y") %></td>
+        <td><%= sale.purchase_time.strftime("%l:%M %P") %></td>
+        <td><%= button_to "Delete", "/vendors/#{sale.vendor_id}/sales/#{sale.id}",  method: :delete, data: { confirm: "Are you sure you want to delete this sale?" } , class: 'x-button' %></td>
+      </tr>
+      <% total_sales_amount += sale.amount %>
+      <% product_count += 1 %>
+    <% end %>
+    <% end %>
+  </tbody>
+</table>
+<h3>
+  Total sales: <%= number_to_currency(total_sales_amount / 100.0) %>
+</h3>
+<h3>Total products sold: <%= product_count %></h3>
+</p>

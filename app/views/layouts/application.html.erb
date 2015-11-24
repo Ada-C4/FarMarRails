@@ -1,14 +1,30 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <title>FarMarRails</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
-
+  <%= render 'layouts/header' %>
+  <div class="parallax">
+    <div class="parallax_layer parallax_layer_back">
+      <%= image_tag("market2.jpg") %>
+    </div>
+    <div class="container">
+      <div class="parallax_layer parallax_layer_base">
+        <div class="jumbotron">
+          <h1><%= yield(:title) %></h1>
+        </div>
+        <div class="row">
+          <div class="col-md-6 col-md-offset-3">
+            <%= yield %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </body>
 </html>

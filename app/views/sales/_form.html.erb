@@ -1,0 +1,14 @@
+<%= form_for @sale, url: @url_path, :html => {:class => "form-group"} do |f| %>
+  <fieldset>
+    <legend><%= legend_text %></legend>
+    <h3>Product: <%= Product.find(params[:id]).name %> </h3>
+    <br>
+    <%= f.label :amount, "Amount of sale" %>
+    <div class="input-group">
+      <span class="input-group-addon">$</span>
+      <input class="form-control" type="number" step="0.01" min="0" name="sale[amount]" id="sale_amount" aria-label="Amount in dollars" required>
+    </div>
+  <br>
+    <%= f.submit value: "#{button_text}", class: "btn btn-primary" %>
+  </fieldset>
+<% end %>

@@ -1,0 +1,7 @@
+<% if vendor_logged_in? %>
+  <%= render 'vendors/vendor_header' %>
+<% elsif market_logged_in? %>
+  <%= render 'markets/market_header' %>
+<% else %>
+  <%= render 'static_pages/home_header' %>
+<% end %>

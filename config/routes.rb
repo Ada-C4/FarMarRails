@@ -1,4 +1,31 @@
 Rails.application.routes.draw do
+  get    'login'   => 'sessions#new'
+  post   'login'   => 'sessions#create'
+  delete 'logout'  => 'sessions#destroy'
+
+  root 'static_pages#index'
+  get 'markets/search' => 'markets#search'
+
+  resources :markets do
+    collection do
+      get 'login/' => 'sessions#create'
+    end
+  end
+
+  resources :vendors do
+    member do
+      get 'sales/' => 'sales#index'
+      delete 'sales/:id' => 'sales#destroy'
+      get 'sales/month/:id' => 'sales#month', as: :sales_month
+    end
+    resources :products do
+      member do
+        get 'sales/new'
+        post 'sales/create'
+      end
+    end
+  end
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

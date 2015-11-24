@@ -1,0 +1,19 @@
+<% provide(:title, "Show All Vendors") %>
+<table class="table table-hover table-color">
+  <thead>
+    <tr>
+      <td>Vendor Name</td>
+      <td></td>
+      <td></td>
+    </tr>
+  </thead>
+  <tbody>
+    <% @vendors.each do |vendor| %>
+      <tr>
+        <td><%= vendor.name %></td>
+        <td><%= button_to "Edit", edit_vendor_path(vendor), method: :get %></td>
+        <td><%= button_to "Delete", vendor_path(vendor),  method: :delete, data: { confirm: "Are you sure you want to delete #{vendor.name}?" } , class: 'x-button' %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
