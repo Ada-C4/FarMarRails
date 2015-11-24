@@ -1,4 +1,5 @@
 class MarketsController < ApplicationController
+  before_action :get_market, only: [:edit, :show, :update]
 
   def index
     @markets = Market.all
@@ -14,19 +15,13 @@ class MarketsController < ApplicationController
   end
 
   def edit
-    id = params[:id]
-    @market = Market.find(id)
   end
 
   def show
-    id = params[:id]
-    @market = Market.find(id)
     @vendors = Market.find(id).vendors
   end
 
   def update
-    id = params[:id]
-    @market = Market.find(id)
     @market.update(
       name: market_params[:market][:name],
       address: market_params[:market][:address],
@@ -50,6 +45,11 @@ class MarketsController < ApplicationController
   end
 
   private
+
+  def get_market
+    id = params[:id]
+    @market = Market.find(id)
+  end
 
   def market_params
     params.permit(market:[:id, :name, :address, :city, :county, :state, :zip])
