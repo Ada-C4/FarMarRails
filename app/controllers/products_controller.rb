@@ -1,4 +1,6 @@
 class ProductsController < ApplicationController
+  before_action :get_product, only: [:update, :show, :edit]
+
   def index
     vendor_id = params[:vendor_id]
     @products = Vendor.find(vendor_id).products
@@ -18,35 +20,35 @@ class ProductsController < ApplicationController
   end
 
   def edit
-    id = params[:id]
-    @product = Product.find(id)
     @url_path = vendor_product_path
   end
 
   def show
-    id = params[:id]
-    @product = Product.find(id)
   end
 
   def update
-    id = params[:id]
     vendor_id = params[:vendor_id]
-    @product = Product.find(id)
     @product.update(
       name: product_params[:product][:name],
       vendor_id: product_params[:product][:vendor_id]
       )
-    redirect_to "/vendors/#{vendor_id}/products/#{id}"
+    redirect_to vendor_product_path(vendor_id, id)
   end
 
   def destroy
-    @id = params[:id]
-    @vendor_id = params[:vendor_id]
-    Product.destroy(@id)
-    redirect_to "/vendors/#{@vendor_id}/products"
+    id = params[:id]
+    vendor_id = params[:vendor_id]
+    Product.destroy(id)
+    sales = Sale.where('product_id = ?', id)
+    sales.each { |sale| sale.destroy }
+    redirect_to vendor_products_path(vendor_id)
   end
 
   private
+  def get_product
+    id = params[:id]
+    @product = Product.find(id)
+  end
 
   def product_params
     params.permit(product:[:name])
