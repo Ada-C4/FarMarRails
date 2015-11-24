@@ -30,7 +30,7 @@ class ProductsController < ApplicationController
     vendor_id = params[:vendor_id]
     @product.update(
       name: product_params[:product][:name],
-      vendor_id: product_params[:product][:vendor_id]
+      vendor_id: vendor_id
       )
     redirect_to vendor_product_path(vendor_id, id)
   end
