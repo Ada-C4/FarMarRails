@@ -1,0 +1,76 @@
+<h2>Here are the sales for <%= @vendor.name %>:</h2>
+<div class="sign-in-button">
+<%= button_to "New Sale", new_vendor_sale_path, method: :get, class: "btn btn-default" %>
+</div>
+
+  <table style="width: 500px;", class="table table-hover">
+    <thead>
+      <tr>
+        <th>
+          Product
+        </th>
+        <th>
+          Amount
+        </th>
+        <th>
+          Purchase Time
+        </th>
+      </tr>
+    </thead>
+    <% count = 0 %>
+    <% @sales.each do |sale| %>
+    <tr>
+      <td><%= @product_names[count] %></td>
+      <td><%= number_to_currency(sale.amount/100.0) %></td>
+      <td><%= sale.purchase_time.localtime.strftime("%A, %B %e, %Y @ %m:%M %p") %></td>
+      <% count += 1 %>
+    </tr>
+    <% end %>
+  </table>
+
+<h3>
+  The sale total is <%= number_to_currency(@total/100.0) %>
+</h3>
+
+<div class="month-sales">
+
+
+<h2>The sales for this month are:</h2>
+
+<table style="width: 500px;", class="table table-hover">
+  <thead>
+    <tr>
+      <th>
+        Product
+      </th>
+      <th>
+        Amount
+      </th>
+      <th>
+        Purchase Time
+      </th>
+    </tr>
+  </thead>
+    <% month_count = 0 %>
+
+  <% @sales_month.each do |sale| %>
+  <tr>
+    <td>
+      <%= @monthly_product_names[month_count] %>
+    </td>
+    <td>
+      <%= number_to_currency(sale.amount/100.0) %>
+    </td>
+    <td>
+      <%= sale.purchase_time.localtime.strftime("%A, %B %e, %Y @ %m:%M %p") %>
+    </td>
+  </tr>
+  <% month_count += 1 %>
+  <% end %>
+</table>
+
+<h3>
+  The total sales for the month is <%= number_to_currency(@monthly_total/100.0) %>
+</h3>
+
+</div>

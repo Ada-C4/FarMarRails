@@ -1,3 +1,44 @@
 // Place all the styles related to the Markets controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.sign-in-button {
+  margin-bottom: 10px;
+}
+
+.img-circle {
+  width: 200px;
+  height: 100px;
+  display: inline;
+}
+
+#sign-in {
+  display: inline;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+.sign-in-master {
+  // margin-left: auto;
+  // margin-right: auto;
+  // float: none;
+  // display: block;
+  // text-align: center;
+  width: 200px;
+}
+
+.new-market-form {
+  width: 300px;
+}
+
+form .line {
+  margin-bottom: 3px;
+}
+
+.table {
+  width: 400px;
+}
+
+.table_headers {
+  font-weight: bold;
+}

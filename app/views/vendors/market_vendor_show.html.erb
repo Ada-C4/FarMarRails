@@ -1,0 +1,16 @@
+<h3><%= @market.name %></h3>
+
+  <div class="sign-in-button">
+
+    <%= button_to "Add new vendor", market_vendors_new_path(params[:market_id]), class: "btn btn-default", method: :get %>
+
+  </div>
+
+    <ul>
+      <% @market.vendors.each do |vendor| %>
+      <li>
+        <%= vendor.name %> <%= link_to "Edit", "/markets/#{@market.id}/vendors/#{vendor.id}/edit" %>
+        <%= link_to "Delete", "/markets/#{@market.id}/vendors/#{vendor.id}", method: :delete %>
+      </li>
+      <% end %>
+    </ul>

@@ -2,7 +2,22 @@ Rails.application.routes.draw do
 
   root 'markets#sign_in'
 
-  resources :markets
+
+  resources :markets do
+    get '/vendors' => 'vendors#market_vendor_show'
+    get '/vendors/new' =>'vendors#new'
+    post '/vendors' => 'vendors#market_vendor_create' #, as: :vendor_create
+    delete '/vendors/:id' => 'vendors#destroy'
+    get '/vendors/:id/edit' => 'vendors#edit'
+    patch '/vendors/:id' => 'vendors#market_vendor_update'
+  end
+
+  resources :vendors do
+    resources :sales, :products
+  end
+
+
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

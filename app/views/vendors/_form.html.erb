@@ -1,0 +1,15 @@
+<div class="new-market-form">
+
+<%= bootstrap_form_for @vendor, class: "form-group", url:({action: @action}) do |f|%>
+
+<%= f.label :name %>
+<%= f.text_field :name, hide_label: true %>
+<%= f.label :num_employees, "Number of Employees"%>
+<%= f.number_field :num_employees, hide_label: true  %>
+<% if @sign_in == "Vendor" %>
+  <%= f.collection_select(:market_id, Market.all, :id, :name, prompt: "Select the Market:") %>
+<% end %>
+
+<%= f.submit class: "submit", class: "btn btn-default" %>
+<% end %>
+</div>

@@ -1,0 +1,8 @@
+<h2><%= @vendor.name %></h2>
+<h4>Market: <%= @vendor.market.name %></h4>
+<h4>Employees: <%= @vendor.num_employees %></h4>
+
+<div class="sign-in-button">
+<%= button_to "Sales", vendor_sales_path(@vendor.id), method: :get, class: "btn btn-default" %>
+</div>
+<%= button_to "Products", vendor_products_path(@vendor.id), method: :get, class: "btn btn-default" %>

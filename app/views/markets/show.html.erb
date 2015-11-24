@@ -1,0 +1,57 @@
+<div class="table-master">
+
+<table class='table table-hover'>
+  <tr>
+    <td class="table_headers">
+      Name
+    </td>
+    <td>
+      <%= @market.name %>
+    </td>
+  </tr>
+  <tr>
+    <td class="table_headers">
+      Address
+    </td>
+    <td>
+      <%= @market.address %>
+    </td>
+  </tr>
+  <tr>
+    <td class="table_headers">
+      City
+    </td>
+    <td>
+      <%= @market.city %>
+    </td>
+  </tr>
+  <tr>
+    <td class="table_headers">
+      State
+    </td>
+    <td>
+      <%= @market.state %>
+    </td>
+  </tr>
+  <tr>
+    <td class="table_headers">
+      County
+    </td>
+    <td>
+      <%= @market.county %>
+    </td>
+  </tr>
+  <tr>
+    <td class="table_headers">
+      Zip
+    </td>
+    <td>
+      <%= @market.zip %>
+    </td>
+  </tr>
+</table>
+</div>
+
+<div class="sign-in-button"><%= link_to "View Market Vendors", "/markets/#{@market.id}/vendors", role: "button", class: "btn btn-default" %></div>
+<div class="sign-in-button"><%= button_to "Edit", edit_market_path(@market), method: :get, class: "btn btn-default" %></div>
+<%= button_to "Delete", "/markets/#{@market.id}", method: :delete, class: "btn btn-default" %>

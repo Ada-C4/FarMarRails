@@ -1,2 +1,6 @@
-<%= button_to "Sign in as a Market" %>
-<%= button_to "Sign in as a Vendor" %>
+<div class="center-block sign-in-master">
+<div class="sign-in-button">
+  <%= button_to "Sign in as a Market", "/markets", method: :get, class: "btn btn-default" %>
+</div>
+  <%= button_to "Sign in as a Vendor", "/vendors", method: :get, class: "btn btn-default" %>
+</div>
