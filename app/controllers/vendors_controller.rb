@@ -1,4 +1,6 @@
 class VendorsController < ApplicationController
+  before_action :get_vendor, only: [:edit, :update]
+
   def index
     @vendors = Vendor.all
   end
@@ -13,8 +15,6 @@ class VendorsController < ApplicationController
   end
 
   def edit
-    id = params[:id]
-    @vendor = Vendor.find(id)
   end
 
   def show
@@ -23,20 +23,18 @@ class VendorsController < ApplicationController
       render 'vendors/error'
     else
       @vendor = Vendor.find(id)
-      @products = Vendor.find(id).products
-      @sales = Vendor.find(id).sales
+      @products = @vendor.products
+      @sales = @vendor.sales
     end
   end
 
   def update
-    id = params[:id]
-    @vendor = Vendor.find(id)
     @vendor.update(
       name: vendor_params[:vendor][:name],
       no_employees: vendor_params[:vendor][:no_employees],
       market_id: vendor_params[:vendor][:market_id]
       )
-    redirect_to "/vendors"
+    redirect_to vendor_path(session[:vendor_id])
   end
 
   def destroy
@@ -46,6 +44,11 @@ class VendorsController < ApplicationController
   end
 
   private
+
+  def get_vendor
+    id = params[:id]
+    @vendor = Vendor.find(id)
+  end
 
   def vendor_params
     params.permit(vendor:[:id, :name, :no_employees, :market_id])

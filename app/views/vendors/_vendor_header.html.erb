@@ -4,6 +4,7 @@
     <nav>
       <ul class="nav navbar-nav navbar-right">
         <li><%= link_to "Home", vendor_path(session[:vendor_id]) %></li>
+        <li><%= link_to "Edit", edit_vendor_path(session[:vendor_id]) %></li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">
             Products & Sales <b class="caret"></b>
