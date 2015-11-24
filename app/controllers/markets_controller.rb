@@ -40,7 +40,7 @@ class MarketsController < ApplicationController
   end
 
   def search
-    @markets = Market.where("name LIKE ?" , params[:search_term])
+    @markets = Market.search(params[:search_term])
     render :index
   end
 
