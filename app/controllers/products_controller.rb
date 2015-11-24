@@ -14,7 +14,7 @@ class ProductsController < ApplicationController
     Product.create(
       name: product_params[:product][:name],
       vendor_id: session[:vendor_id])
-    redirect_to "/vendors/#{vendor_id}/products"
+    redirect_to vendor_products_path(vendor_id)
   end
 
   def edit
